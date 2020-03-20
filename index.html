@@ -17,7 +17,7 @@
     
     <meta name="viewport" content="width=device-width,
         initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <style>#map_881ba6faed4f4f1a9c75969c4cfa6117 {
+    <style>#map_7c94fdf4c1b74ac39bfb6cb5c83f86ea {
         position: relative;
         width: 100.0%;
         height: 100.0%;
@@ -28,7 +28,7 @@
 </head>
 <body>    
     
-    <div class="folium-map" id="map_881ba6faed4f4f1a9c75969c4cfa6117" ></div>
+    <div class="folium-map" id="map_7c94fdf4c1b74ac39bfb6cb5c83f86ea" ></div>
 </body>
 <script>    
     
@@ -36,10 +36,10 @@
         var bounds = null;
     
 
-    var map_881ba6faed4f4f1a9c75969c4cfa6117 = L.map(
-        'map_881ba6faed4f4f1a9c75969c4cfa6117', {
-        center: [35.96689637931035, -79.08359979310345],
-        zoom: 12,
+    var map_7c94fdf4c1b74ac39bfb6cb5c83f86ea = L.map(
+        'map_7c94fdf4c1b74ac39bfb6cb5c83f86ea', {
+        center: [35.96211113513515, -79.07954897297297],
+        zoom: 11,
         maxBounds: bounds,
         layers: [],
         worldCopyJump: false,
@@ -49,913 +49,1021 @@
 
 
     
-    var tile_layer_d1e8d64c12eb45e88e64ae6d14a28931 = L.tileLayer(
+    var tile_layer_a51dd44c86b34671ba66f4aef49f6d97 = L.tileLayer(
         'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
         {
         "attribution": null,
         "detectRetina": false,
         "maxNativeZoom": 18,
         "maxZoom": 18,
-        "minZoom": 10,
+        "minZoom": 9,
         "noWrap": false,
         "opacity": 1,
         "subdomains": "abc",
         "tms": false
-}).addTo(map_881ba6faed4f4f1a9c75969c4cfa6117);
+}).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
     
-            var feature_group_dc2e130f1a1f45aa8ed413ff3a22befc = L.featureGroup(
-                ).addTo(map_881ba6faed4f4f1a9c75969c4cfa6117);
+            var feature_group_55073abca9e14d988f82017617f7223f = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_40b2ecd614ba40fb96b0023215f4673b = L.marker(
+            [35.959604, -79.058094],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_55073abca9e14d988f82017617f7223f);
         
     
 
-            var circle_05b897f7b77b4ff5a6083ba8e11ed2cd = L.circle(
-                [35.946263, -79.136862],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_022cfb2d798d41a98dcec33ea247df8b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_40b2ecd614ba40fb96b0023215f4673b.setIcon(icon_022cfb2d798d41a98dcec33ea247df8b);
             
     
-        circle_05b897f7b77b4ff5a6083ba8e11ed2cd.bindTooltip(
+        marker_40b2ecd614ba40fb96b0023215f4673b.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Kingswood<br><strong>Address: </strong>1105 W North Carolina Hwy 54 Bypass, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:15-11:45<br><strong>Location: </strong>Rigsbee MHP<br><strong>Address: </strong>34 Rigsbee Mobile Home Park, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+            var feature_group_d6343e6cde6f4baabde683d1c06c5823 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_0fa7972f7fc141b6995c45aa65814921 = L.marker(
+            [35.946146999999996, -79.05798399999999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_d6343e6cde6f4baabde683d1c06c5823);
+        
+    
 
-            var circle_ce6905e6d46a4a889135909eef088d5b = L.circle(
-                [35.945069000000004, -79.015457],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_cc3814e3e0804d9299ba9c1de61b4730 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0fa7972f7fc141b6995c45aa65814921.setIcon(icon_cc3814e3e0804d9299ba9c1de61b4730);
             
     
-        circle_ce6905e6d46a4a889135909eef088d5b.bindTooltip(
+        marker_0fa7972f7fc141b6995c45aa65814921.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Dobbins Hill<br><strong>Address: </strong>1749 Dobbins Drive, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:15-12:00<br><strong>Location: </strong>Tarheel Moody<br><strong>Address: </strong>1200 MLK Jr Blvd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_a6d63186520845e0a41e55d3181099fe = L.marker(
+            [35.955197, -79.057587],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_d6343e6cde6f4baabde683d1c06c5823);
+        
+    
 
-            var circle_64be5b8209f940eda6d7f0e3ab6b539f = L.circle(
-                [35.941512, -79.016202],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_f76987ec21d248b49532c66106862182 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a6d63186520845e0a41e55d3181099fe.setIcon(icon_f76987ec21d248b49532c66106862182);
             
     
-        circle_64be5b8209f940eda6d7f0e3ab6b539f.bindTooltip(
+        marker_a6d63186520845e0a41e55d3181099fe.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Greenfield<br><strong>Address: </strong>200 Formosa Lane, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:15-12:00<br><strong>Location: </strong>Rainbow Heights<br><strong>Address: </strong>105 Stateside Dr, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+            var feature_group_4ae84778631042c5acb910b349517cc3 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_d694bc5e515246169a1582767043cbc8 = L.marker(
+            [35.903257, -79.072781],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_6918a80a5851451eafd8296021cee6ba = L.circle(
-                [35.910963, -79.092675],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_75009d4fb8a4429ebc8917b5f99d0786 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d694bc5e515246169a1582767043cbc8.setIcon(icon_75009d4fb8a4429ebc8917b5f99d0786);
             
     
-        circle_6918a80a5851451eafd8296021cee6ba.bindTooltip(
+        marker_d694bc5e515246169a1582767043cbc8.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>The Crest<br><strong>Address: </strong>200 Hwy. 54 By-Pass, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Rocky Brook MHP<br><strong>Address: </strong>500 S. Greensboro St., Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_17840e7c29ef431180600707ddfc5f9d = L.marker(
+            [35.903422, -79.077792],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_50cd06d924ca473cbd31afcbeae0ff8a = L.circle(
-                [35.919381, -79.069092],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_e48090dfb24c49929309486f49336e39 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_17840e7c29ef431180600707ddfc5f9d.setIcon(icon_e48090dfb24c49929309486f49336e39);
             
     
-        circle_50cd06d924ca473cbd31afcbeae0ff8a.bindTooltip(
+        marker_17840e7c29ef431180600707ddfc5f9d.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Estes Park<br><strong>Address: </strong>306 Estes Dr, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Royal Park<br><strong>Address: </strong>501 Highway 54 Bypass, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_4794df9cc48a454197ea41cdde3180d0 = L.marker(
+            [35.910963, -79.092675],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_1f48226f9a654ce28bdde514ed000b93 = L.circle(
-                [35.903422, -79.077792],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_6b2e65881137421784affd8632153cad = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4794df9cc48a454197ea41cdde3180d0.setIcon(icon_6b2e65881137421784affd8632153cad);
             
     
-        circle_1f48226f9a654ce28bdde514ed000b93.bindTooltip(
+        marker_4794df9cc48a454197ea41cdde3180d0.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Royal Park<br><strong>Address: </strong>501 Highway 54 Bypass, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>The Crest<br><strong>Address: </strong>200 Hwy. 54 By-Pass, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_1a60b4197bad4799a69e28d0ebb16623 = L.marker(
+            [35.914003, -79.094778],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_7e6a371ea2f1488b9f4d9d72125eaadb = L.circle(
-                [35.922179, -79.05995],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_1b2547afdd664499bbd2ec3fff23dc3b = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1a60b4197bad4799a69e28d0ebb16623.setIcon(icon_1b2547afdd664499bbd2ec3fff23dc3b);
             
     
-        circle_7e6a371ea2f1488b9f4d9d72125eaadb.bindTooltip(
+        marker_1a60b4197bad4799a69e28d0ebb16623.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Eastwood<br><strong>Address: </strong>720 North Pritchard Avenue, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Berkshire 54 East<br><strong>Address: </strong>112 NC-54, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_161337ed2fb842478cb66eb3a0014dd4 = L.marker(
+            [35.915372, -79.064274],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_e3a92bd0f0bf4659bbc8181915b740b4 = L.circle(
-                [35.922179, -79.05995],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_bd29aa0bb3914389ab3c1803f9f5c622 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_161337ed2fb842478cb66eb3a0014dd4.setIcon(icon_bd29aa0bb3914389ab3c1803f9f5c622);
             
     
-        circle_e3a92bd0f0bf4659bbc8181915b740b4.bindTooltip(
+        marker_161337ed2fb842478cb66eb3a0014dd4.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Trinity Court<br><strong>Address: </strong>720 North Pritchard Avenue, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Craig-Gomains<br><strong>Address: </strong>505 Craig Street, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_e7dee1e3be004b4eac90960e08e65800 = L.marker(
+            [35.919381, -79.069092],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_e6573ca671ed43e79cd1f55463c93dca = L.circle(
-                [35.924585, -79.099724],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_68d857f4007645f5b5720310b67a6d11 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e7dee1e3be004b4eac90960e08e65800.setIcon(icon_68d857f4007645f5b5720310b67a6d11);
             
     
-        circle_e6573ca671ed43e79cd1f55463c93dca.bindTooltip(
+        marker_e7dee1e3be004b4eac90960e08e65800.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Pine Grove Mobile Homes<br><strong>Address: </strong>810 Old Fayetteville Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Estes Park<br><strong>Address: </strong>306 Estes Dr, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_ead93744c1ce41a78164cbdc6b56df2f = L.marker(
+            [35.922179, -79.05995],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_120c011b00c34478bb33d4d162a25162 = L.circle(
-                [35.915372, -79.064274],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_643cff9de8e340aaaa92bc1a15149ff4 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ead93744c1ce41a78164cbdc6b56df2f.setIcon(icon_643cff9de8e340aaaa92bc1a15149ff4);
             
     
-        circle_120c011b00c34478bb33d4d162a25162.bindTooltip(
+        marker_ead93744c1ce41a78164cbdc6b56df2f.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Craig-Gomains<br><strong>Address: </strong>505 Craig Street, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Eastwood<br><strong>Address: </strong>720 North Pritchard Avenue, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_1003f3994d844a3ca2ea3089a4de7ed8 = L.marker(
+            [35.922179, -79.05995],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_5d0cd81744f248a295222f16e9ec9744 = L.circle(
-                [35.924803999999995, -79.021709],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_dc2e130f1a1f45aa8ed413ff3a22befc);
+                var icon_9a1b4b43a7064a24976efbfbad641e44 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1003f3994d844a3ca2ea3089a4de7ed8.setIcon(icon_9a1b4b43a7064a24976efbfbad641e44);
             
     
-        circle_5d0cd81744f248a295222f16e9ec9744.bindTooltip(
+        marker_1003f3994d844a3ca2ea3089a4de7ed8.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11:30-Noon<br><strong>Location: </strong>Ridgefield/S. Estes<br><strong>Address: </strong>385 S Estes Dr, Chapel Hill<br><strong>Notes: </strong>In the back of the basketball` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Trinity Court / Prichard Ext<br><strong>Address: </strong>720 North Pritchard Avenue, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
-            var feature_group_319912b84d4545d8bd8fccf5ee94df02 = L.featureGroup(
-                ).addTo(map_881ba6faed4f4f1a9c75969c4cfa6117);
+        var marker_e141fa6213404bfd8a1360b9d62f054a = L.marker(
+            [35.924585, -79.099724],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
         
     
 
-            var circle_fbe7c2534939469c8001086439d49a1f = L.circle(
-                [35.948021999999995, -79.009639],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_488da0422cd14fbaa0d98dd19e97bf50 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e141fa6213404bfd8a1360b9d62f054a.setIcon(icon_488da0422cd14fbaa0d98dd19e97bf50);
             
     
-        circle_fbe7c2534939469c8001086439d49a1f.bindTooltip(
+        marker_e141fa6213404bfd8a1360b9d62f054a.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Pinegate<br><strong>Address: </strong>100 Pinegate Cir, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Pine Grove Mobile Homes<br><strong>Address: </strong>810 Old Fayetteville Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_8fce1e6dc55145b7929e48e857027ec7 = L.marker(
+            [35.924803999999995, -79.021709],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_4485095358b542cf9a519cd1a9ba8f93 = L.circle(
-                [35.959903999999995, -79.081601],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_997f448187b141069345710261a53aea = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8fce1e6dc55145b7929e48e857027ec7.setIcon(icon_997f448187b141069345710261a53aea);
             
     
-        circle_4485095358b542cf9a519cd1a9ba8f93.bindTooltip(
+        marker_8fce1e6dc55145b7929e48e857027ec7.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Rogers Road Community<br><strong>Address: </strong>101 Edgar St, Chapel Hill<br><strong>Notes: </strong>Near RENA building` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Ridgefield/S. Estes<br><strong>Address: </strong>385 S Estes Dr, Chapel Hill<br><strong>Notes: </strong>In the back of the basketball` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_6dc3462cd16c472ca53f6ba38e105242 = L.marker(
+            [35.941512, -79.016202],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_2c87bfce2b3c46a4872bb5c9984b0355 = L.circle(
-                [35.936345, -79.031472],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_7ca3bb0b329040b9966152d81ee130a0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6dc3462cd16c472ca53f6ba38e105242.setIcon(icon_7ca3bb0b329040b9966152d81ee130a0);
             
     
-        circle_2c87bfce2b3c46a4872bb5c9984b0355.bindTooltip(
+        marker_6dc3462cd16c472ca53f6ba38e105242.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Elliot Woods<br><strong>Address: </strong>106 Elliott Road, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Greenfield<br><strong>Address: </strong>200 Formosa Lane, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_2abeb694180847d18bc90c2bf43e49e4 = L.marker(
+            [35.945069000000004, -79.015457],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_e475b8da0208493d886e86ad41b471cc = L.circle(
-                [35.898637, -79.064328],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_e9e7cdfab048431fb1da724fce05d2a8 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2abeb694180847d18bc90c2bf43e49e4.setIcon(icon_e9e7cdfab048431fb1da724fce05d2a8);
             
     
-        circle_e475b8da0208493d886e86ad41b471cc.bindTooltip(
+        marker_2abeb694180847d18bc90c2bf43e49e4.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Chase Park<br><strong>Address: </strong>1060 NC-54, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Dobbins Hill<br><strong>Address: </strong>1749 Dobbins Drive, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_cf0155bccddb4ef6a47e993aae5578c1 = L.marker(
+            [35.946263, -79.136862],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_4ae84778631042c5acb910b349517cc3);
+        
+    
 
-            var circle_b5f56297aa594cd487f61619d15d17a9 = L.circle(
-                [35.914003, -79.094778],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_f515941082874e9dafca12a9c972c285 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cf0155bccddb4ef6a47e993aae5578c1.setIcon(icon_f515941082874e9dafca12a9c972c285);
             
     
-        circle_b5f56297aa594cd487f61619d15d17a9.bindTooltip(
+        marker_cf0155bccddb4ef6a47e993aae5578c1.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Berkshire 54<br><strong>Address: </strong>112 NC-54, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 11:30-Noon<br><strong>Location: </strong>Kingswood<br><strong>Address: </strong>1105 W North Carolina Hwy 54 Bypass, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+            var feature_group_67a0692bd24d4e9e90a4f238165bf546 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_6bf072dbb0b94000bb8c03b3f3c8be27 = L.marker(
+            [35.962337, -79.057437],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_67a0692bd24d4e9e90a4f238165bf546);
+        
+    
 
-            var circle_f1bea7f448bf4980be25fa5479d97f0a = L.circle(
-                [35.904708, -79.078221],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_303d42e7eae04ac4a65faae22ed402d3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'purple',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6bf072dbb0b94000bb8c03b3f3c8be27.setIcon(icon_303d42e7eae04ac4a65faae22ed402d3);
             
     
-        circle_f1bea7f448bf4980be25fa5479d97f0a.bindTooltip(
+        marker_6bf072dbb0b94000bb8c03b3f3c8be27.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Carolina Apartments<br><strong>Address: </strong>301 Barnes Street, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:00-12:30<br><strong>Location: </strong>Village MHP<br><strong>Address: </strong>1660 Airport Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+            var feature_group_ec4598fa12a2430e9472412cacd22441 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_05353e6753404805902eac6bbd3b54e4 = L.marker(
+            [35.883019, -79.118525],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_c7eb6f541855449e8ed637db1593b2f0 = L.circle(
-                [35.904477, -79.08407],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_f8c0ae138d8d48a99d9cabb1eaaf8e8d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_05353e6753404805902eac6bbd3b54e4.setIcon(icon_f8c0ae138d8d48a99d9cabb1eaaf8e8d);
             
     
-        circle_c7eb6f541855449e8ed637db1593b2f0.bindTooltip(
+        marker_05353e6753404805902eac6bbd3b54e4.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Collins Crossing<br><strong>Address: </strong>501 Jones Ferry Rd, Carrboro<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Ridgewood Mobile Homes<br><strong>Address: </strong>2201 Ridgewood Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_48c119dbeb9d4f72a60bdec247bdfc2b = L.marker(
+            [35.898637, -79.064328],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_1e7ae35b1e1141ca8b8106dc2e14f816 = L.circle(
-                [35.922179, -79.05995],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_184e0ca4a84b4fbd8137984e9f74e3e0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_48c119dbeb9d4f72a60bdec247bdfc2b.setIcon(icon_184e0ca4a84b4fbd8137984e9f74e3e0);
             
     
-        circle_1e7ae35b1e1141ca8b8106dc2e14f816.bindTooltip(
+        marker_48c119dbeb9d4f72a60bdec247bdfc2b.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Pritchard Park<br><strong>Address: </strong>720 North Pritchard Avenue, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Chase Park<br><strong>Address: </strong>1060 NC-54, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_b4e03276c20846e18341074887001a35 = L.marker(
+            [35.904477, -79.08407],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_2a8e52ff6dfb4dffb0f8c7dae192f413 = L.circle(
-                [35.927634999999995, -79.05435200000001],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_28d2a19761ce4dba92da21fbb17ad4a6 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b4e03276c20846e18341074887001a35.setIcon(icon_28d2a19761ce4dba92da21fbb17ad4a6);
             
     
-        circle_2a8e52ff6dfb4dffb0f8c7dae192f413.bindTooltip(
+        marker_b4e03276c20846e18341074887001a35.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Airport Gardens<br><strong>Address: </strong>815 Martin Luther King Jr. Blvd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Collins Crossing<br><strong>Address: </strong>501 Jones Ferry Rd, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_09780030acf74c4a86113ce1dc8869b5 = L.marker(
+            [35.904708, -79.078221],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_ac4ddd0231c44dd9be9ac431ba262a98 = L.circle(
-                [35.883019, -79.118525],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "blue",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_319912b84d4545d8bd8fccf5ee94df02);
+                var icon_e0a1137a2a0543d997ce80196d1fd6bb = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_09780030acf74c4a86113ce1dc8869b5.setIcon(icon_e0a1137a2a0543d997ce80196d1fd6bb);
             
     
-        circle_ac4ddd0231c44dd9be9ac431ba262a98.bindTooltip(
+        marker_09780030acf74c4a86113ce1dc8869b5.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>12:15-12:45<br><strong>Location: </strong>Ridgewood Mobile Homes<br><strong>Address: </strong>2201 Ridgewood Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Carolina Apartments<br><strong>Address: </strong>301 Barnes Street, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
-            var feature_group_98f2c17093004a4ea90f73c88cb082a8 = L.featureGroup(
-                ).addTo(map_881ba6faed4f4f1a9c75969c4cfa6117);
+        var marker_bd7450a3862843d288e0af78b261e37b = L.marker(
+            [35.915504, -79.092473],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
         
     
 
-            var circle_6d1b0c1942dd40618b72b11c6234cd3b = L.circle(
-                [36.098923, -79.109536],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_ee5d7350ecb24512bf11552dfb058b53 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bd7450a3862843d288e0af78b261e37b.setIcon(icon_ee5d7350ecb24512bf11552dfb058b53);
             
     
-        circle_6d1b0c1942dd40618b72b11c6234cd3b.bindTooltip(
+        marker_bd7450a3862843d288e0af78b261e37b.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Fairview Community Garden<br><strong>Address: </strong>428 Tulip Tree Road, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Berkshire 54 West<br><strong>Address: </strong>113 NC-54, Carrboro<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_26c88e0346de42c2b97b97b527163781 = L.marker(
+            [35.927634999999995, -79.05435200000001],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_56447a927b6a478d820ca1eaf7548a7c = L.circle(
-                [36.178959000000006, -79.136667],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_9852cc0ec79743f19e0f762b6d5dcb28 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_26c88e0346de42c2b97b97b527163781.setIcon(icon_9852cc0ec79743f19e0f762b6d5dcb28);
             
     
-        circle_56447a927b6a478d820ca1eaf7548a7c.bindTooltip(
+        marker_26c88e0346de42c2b97b97b527163781.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Cedar Grove Community Center<br><strong>Address: </strong>5800 NC Highway 86 N, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Airport Gardens<br><strong>Address: </strong>815 Martin Luther King Jr. Blvd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_748604c2d65a43d3950fb822ffc012a6 = L.marker(
+            [35.936345, -79.031472],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_92ac701d249c457ba40201c01188aadb = L.circle(
-                [36.083758, -79.191164],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_a814d1ab8509480f808b0de3ef66f40a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_748604c2d65a43d3950fb822ffc012a6.setIcon(icon_a814d1ab8509480f808b0de3ef66f40a);
             
     
-        circle_92ac701d249c457ba40201c01188aadb.bindTooltip(
+        marker_748604c2d65a43d3950fb822ffc012a6.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Efland Cheeks Community Center<br><strong>Address: </strong>117 Richmond Rd, Mebane<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Elliot Woods<br><strong>Address: </strong>106 Elliott Road, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_573535b6eced4db79bde229689d418cd = L.marker(
+            [35.948021999999995, -79.009639],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_0ed95394dc6a4baf8997e74843ef30d1 = L.circle(
-                [36.053302, -79.126435],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_193a4e2c836242d6a1aa7ecff0b9e978 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_573535b6eced4db79bde229689d418cd.setIcon(icon_193a4e2c836242d6a1aa7ecff0b9e978);
             
     
-        circle_0ed95394dc6a4baf8997e74843ef30d1.bindTooltip(
+        marker_573535b6eced4db79bde229689d418cd.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Cedar Ridge High School<br><strong>Address: </strong>1125 New Grady Brown School Road, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Pinegate<br><strong>Address: </strong>100 Pinegate Cir, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_8114240a45894cf6a0123a51d18bd280 = L.marker(
+            [35.951365, -79.065442],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_6ae5d75389a84b07b2b48042323cfea1 = L.circle(
-                [36.028045, -79.078971],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_4fe905395fab4c1f918df2983baa4ac0 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8114240a45894cf6a0123a51d18bd280.setIcon(icon_4fe905395fab4c1f918df2983baa4ac0);
             
     
-        circle_6ae5d75389a84b07b2b48042323cfea1.bindTooltip(
+        marker_8114240a45894cf6a0123a51d18bd280.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Partnership Academy School<br><strong>Address: </strong>1006 Storey Lane, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Homestead Shelter<br><strong>Address: </strong>2505 Homestead Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_f747f4f1864046b79c728c82e89b81e1 = L.marker(
+            [35.959903999999995, -79.081601],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_5ad6c74334ac459faddece9b31bf3ad0 = L.circle(
-                [36.079772999999996, -79.114634],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_3b72d4b34f944d02b87739a98b154651 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f747f4f1864046b79c728c82e89b81e1.setIcon(icon_3b72d4b34f944d02b87739a98b154651);
             
     
-        circle_5ad6c74334ac459faddece9b31bf3ad0.bindTooltip(
+        marker_f747f4f1864046b79c728c82e89b81e1.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Central Elementary<br><strong>Address: </strong>154 Hayes St., Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Rogers Road Community<br><strong>Address: </strong>101 Edgar St, Chapel Hill<br><strong>Notes: </strong>Near RENA building` + `</div>`,
             {"sticky": true}
         );
         
     
+        var marker_db2f1e885cc44379bbf8ef27b415b399 = L.marker(
+            [35.92286, -79.066711],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_ec4598fa12a2430e9472412cacd22441);
+        
+    
 
-            var circle_cd3f1f00822f4b08bace03b791f52226 = L.circle(
-                [36.047659, -79.019228],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_1aac6e2acca14d4fa8108068f503e077 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'orange',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_db2f1e885cc44379bbf8ef27b415b399.setIcon(icon_1aac6e2acca14d4fa8108068f503e077);
             
     
-        circle_cd3f1f00822f4b08bace03b791f52226.bindTooltip(
+        marker_db2f1e885cc44379bbf8ef27b415b399.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>New Horizon Church<br><strong>Address: </strong>100 Horizon Pl., Durham<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:15-12:45<br><strong>Location: </strong>Umstead @ Bolinwood<br><strong>Address: </strong>500 Umstead Dr, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
+            var feature_group_9fbdd2a4430b4f5cb3839656e0bb4340 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_b4d203f445c848888757340840b9312f = L.marker(
+            [35.964025, -79.050359],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_9fbdd2a4430b4f5cb3839656e0bb4340);
+        
+    
 
-            var circle_e34c31e5f9ef47618d89c2b31dc0cab0 = L.circle(
-                [36.094918, -79.257136],
-                {
-  "bubblingMouseEvents": true,
-  "color": null,
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "DARKVIOLET",
-  "fillOpacity": 1,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 75,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(feature_group_98f2c17093004a4ea90f73c88cb082a8);
+                var icon_3b781ee24e5947b59c45a30e94a0885c = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b4d203f445c848888757340840b9312f.setIcon(icon_3b781ee24e5947b59c45a30e94a0885c);
             
     
-        circle_e34c31e5f9ef47618d89c2b31dc0cab0.bindTooltip(
+        marker_b4d203f445c848888757340840b9312f.bindTooltip(
             `<div>`
-            + `<strong>Pick-Up Time: </strong>11 a.m.-1 p.m.<br><strong>Location: </strong>Mebane Mobile Home Park<br><strong>Address: </strong>202 Supper Club Road, Mebane<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            + `<strong>Pick-Up Time: </strong>CHCCS: 12:45-1:15<br><strong>Location: </strong>Lakeview MHP<br><strong>Address: </strong>1000 Weaver Dairy Rd, Chapel Hill<br><strong>Notes: </strong>` + `</div>`,
             {"sticky": true}
         );
         
     
-            var layer_control_3eef9c33fb514d5e99c754c30e0eb36b = {
+            var feature_group_1aa0517ed3134e8198284e7db266c708 = L.featureGroup(
+                ).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
+        
+    
+        var marker_a7f8337fdc254c15aa53e363ad65c18a = L.marker(
+            [36.028045, -79.078971],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_11ed4940d70e47408730b202e89c1296 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a7f8337fdc254c15aa53e363ad65c18a.setIcon(icon_11ed4940d70e47408730b202e89c1296);
+            
+    
+        marker_a7f8337fdc254c15aa53e363ad65c18a.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Partnership Academy School<br><strong>Address: </strong>1006 Storey Lane, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_dd90890fc57942b888768eacf9596a7c = L.marker(
+            [36.047659, -79.019228],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_e20efbbf205c41399732795d155fc4b7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dd90890fc57942b888768eacf9596a7c.setIcon(icon_e20efbbf205c41399732795d155fc4b7);
+            
+    
+        marker_dd90890fc57942b888768eacf9596a7c.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>New Horizon Church<br><strong>Address: </strong>100 Horizon Pl., Durham<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_ee7eb47bd30b426f842c7be99a751dc3 = L.marker(
+            [36.053302, -79.126435],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_17b3ecb953d749cf8a1139cf80972474 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ee7eb47bd30b426f842c7be99a751dc3.setIcon(icon_17b3ecb953d749cf8a1139cf80972474);
+            
+    
+        marker_ee7eb47bd30b426f842c7be99a751dc3.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Cedar Ridge High School<br><strong>Address: </strong>1125 New Grady Brown School Road, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_d80c2cd6021b45c6b0232cdc56fcffc4 = L.marker(
+            [36.079772999999996, -79.114634],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_95931bf71b7b451fbbb29cb8d1031ba3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d80c2cd6021b45c6b0232cdc56fcffc4.setIcon(icon_95931bf71b7b451fbbb29cb8d1031ba3);
+            
+    
+        marker_d80c2cd6021b45c6b0232cdc56fcffc4.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Central Elementary<br><strong>Address: </strong>154 Hayes St., Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_ac5a5ecc1c3d459482a6a336b9f370bb = L.marker(
+            [36.083758, -79.191164],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_b409f00061e4446b879b0ec978df725c = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ac5a5ecc1c3d459482a6a336b9f370bb.setIcon(icon_b409f00061e4446b879b0ec978df725c);
+            
+    
+        marker_ac5a5ecc1c3d459482a6a336b9f370bb.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Efland Cheeks Community Center<br><strong>Address: </strong>117 Richmond Rd, Mebane<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_87ecc6d3a7a14835bf1d8946061d42dc = L.marker(
+            [36.094918, -79.257136],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_02752f7331ac4d2db76acaed13da7cfc = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_87ecc6d3a7a14835bf1d8946061d42dc.setIcon(icon_02752f7331ac4d2db76acaed13da7cfc);
+            
+    
+        marker_87ecc6d3a7a14835bf1d8946061d42dc.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Mebane Mobile Home Park<br><strong>Address: </strong>202 Supper Club Road, Mebane<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_35b91c6a0d0b46f381fa15a5204d5d67 = L.marker(
+            [36.098923, -79.109536],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_cfe4b80092fd46bda11fdd20078dc7ff = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_35b91c6a0d0b46f381fa15a5204d5d67.setIcon(icon_cfe4b80092fd46bda11fdd20078dc7ff);
+            
+    
+        marker_35b91c6a0d0b46f381fa15a5204d5d67.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Fairview Community Garden<br><strong>Address: </strong>428 Tulip Tree Road, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_affead0391d04485ba4dc9886a41410b = L.marker(
+            [36.178959000000006, -79.136667],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_1aa0517ed3134e8198284e7db266c708);
+        
+    
+
+                var icon_7478a269412441b1a552172100784820 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'lightred',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_affead0391d04485ba4dc9886a41410b.setIcon(icon_7478a269412441b1a552172100784820);
+            
+    
+        marker_affead0391d04485ba4dc9886a41410b.bindTooltip(
+            `<div>`
+            + `<strong>Pick-Up Time: </strong>Orange: 11 a.m.-1 p.m.<br><strong>Location: </strong>Cedar Grove Community Center<br><strong>Address: </strong>5800 NC Highway 86 N, Hillsborough<br><strong>Notes: </strong>Monday – Friday,  March 16 - 27` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+            var layer_control_1af3d320fe854901a192fa9aaea108a9 = {
                 base_layers : {  },
-                overlays : { "11:30-Noon" : feature_group_dc2e130f1a1f45aa8ed413ff3a22befc,"12:15-12:45" : feature_group_319912b84d4545d8bd8fccf5ee94df02,"11 a.m.-1 p.m." : feature_group_98f2c17093004a4ea90f73c88cb082a8, }
+                overlays : { "CHCCS: 11:15-11:45" : feature_group_55073abca9e14d988f82017617f7223f,"CHCCS: 11:15-12:00" : feature_group_d6343e6cde6f4baabde683d1c06c5823,"CHCCS: 11:30-Noon" : feature_group_4ae84778631042c5acb910b349517cc3,"CHCCS: 12:00-12:30" : feature_group_67a0692bd24d4e9e90a4f238165bf546,"CHCCS: 12:15-12:45" : feature_group_ec4598fa12a2430e9472412cacd22441,"CHCCS: 12:45-1:15" : feature_group_9fbdd2a4430b4f5cb3839656e0bb4340,"Orange: 11 a.m.-1 p.m." : feature_group_1aa0517ed3134e8198284e7db266c708, }
                 };
             L.control.layers(
-                layer_control_3eef9c33fb514d5e99c754c30e0eb36b.base_layers,
-                layer_control_3eef9c33fb514d5e99c754c30e0eb36b.overlays,
+                layer_control_1af3d320fe854901a192fa9aaea108a9.base_layers,
+                layer_control_1af3d320fe854901a192fa9aaea108a9.overlays,
                 {position: 'topright',
                  collapsed: false,
                  autoZIndex: true
-                }).addTo(map_881ba6faed4f4f1a9c75969c4cfa6117);
+                }).addTo(map_7c94fdf4c1b74ac39bfb6cb5c83f86ea);
             
         
 </script>
