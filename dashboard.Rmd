@@ -1,13 +1,13 @@
 ---
 title: "Chapel Hill-Carrboro COVID Community Support Resources"
-output: flexdashboard::flex_dashboard
-orientation: rows
-social: menu
+output:
+    flexdashboard::flex_dashboard:
+        orientation: rows
+        social: ["menu"]
 runtime: shiny #use shiny as the backend
 ---
     ```{r setup, include=FALSE}
 library(flexdashboard)
-library(readr)
 library(tidyverse)
 library(leaflet)
 library(googlesheets4)
@@ -20,12 +20,18 @@ sheets_deauth() # Make googlesheets4 skip authentification, since we're using a 
 # For now, a roundabout approach. Streamline in future.
 # See detail here: https://www.andrewheiss.com/blog/2020/01/01/flexdashboard-dynamic-data/
 load_remote_data <- function() {
-    read_sheet("1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0")
+    read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
+               sheet = "Sheet1",
+               col_types = "??????cnn????????????????")
 }
 
 remote_data <- load_remote_data()
 ```
 
+[comment]: <> (Adding the below so site font can be customized)
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>* {font-size: 100%; font-family: Roboto, sans-serif;}</style>
 
 Sidebar {.sidebar}
 -------------------------------------
@@ -37,13 +43,17 @@ selectInput("language", "Choose your language",
             choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/                             Arabic",  "한국어/ Korean", "Karen"))
 
 selectInput("resource", "What do you need?", 
-            choices=c("Meals", "Groceries", "Pharmacy", "Childcare for medical workers"))
+            choices = c("Meals" = "meal","Groceries" = "grocery", 
+                        "Pharmacy" = "pharmacy","Childcare for medical workers" = "childcare"))
 
-selectInput("day", "When do you want to shop?", 
-            choices =c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",  "Sunday"))
+selectInput(inputId = "day", label =  "What days do you need this resource?",
+            selectize = TRUE, multiple = TRUE,
+            choices =c("Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
+                       "Thursday" = "thr", "Friday" = "fri",
+                       "Saturday" = "sat",  "Sunday" = "sun"))
 
 checkboxGroupInput("cost", "Resource type", 
-                   choices =c("Free resources", "Paid resources"))
+                   choices = c("Free resources" = "free", "Paid resources" = "paid"))
 
 checkboxGroupInput("access", "Access", 
                    choices =c("Pick-up", "Drive-up", "Delivery"))
@@ -57,7 +67,8 @@ checkboxGroupInput("time", "Times available",
 
 hr()
 
-helpText("Last updated 3/18/2020")
+# Automating this workflow
+helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
 
 
 ```
@@ -134,13 +145,22 @@ Row
     
 Map
     ```{r}
-library(leaflet)
 
-m <- leaflet() %>%
-    addTiles() %>%  # Add default OpenStreetMap map tiles
-    addMarkers(lng=remote_data$lon, lat=remote_data$lat, popup=remote_data$details) #to-do: make this interactive
+map_dat <- remote_data %>%
+    filter(is.na(lat) != TRUE)
+
+m <- leaflet(width = "80%") %>%
+    addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Detailed Streets") %>%
+  addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Positron") %>%
+    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
+    addLayersControl(baseGroups = c("Detailed Streets",
+                                  "Positron"))
+
 m  # Print the map
-
 ``` 
 
 Row
@@ -149,5 +169,6 @@ Row
 List
     
     ```{r}
+renderText({input$day})
 ```
 
