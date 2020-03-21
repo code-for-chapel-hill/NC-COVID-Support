@@ -143,11 +143,17 @@ Map
 map_dat <- remote_data %>%
     filter(is.na(lat) != TRUE)
 
-m <- leaflet() %>%
-    addTiles() %>%  # Add default OpenStreetMap map tiles
-    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1)
+m <- leaflet(width = "80%") %>%
+    addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Detailed Streets") %>%
+  addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Positron") %>%
+    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
+    addLayersControl(baseGroups = c("Detailed Streets",
+                                  "Positron"))
 m  # Print the map
-
 ``` 
 
 Row
