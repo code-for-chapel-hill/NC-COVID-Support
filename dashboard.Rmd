@@ -1,8 +1,9 @@
 ---
 title: "Chapel Hill-Carrboro COVID Community Support Resources"
-output: flexdashboard::flex_dashboard
-orientation: rows
-social: menu
+output:
+    flexdashboard::flex_dashboard:
+        orientation: rows
+        social: ["menu"]
 runtime: shiny #use shiny as the backend
 ---
     ```{r setup, include=FALSE}
