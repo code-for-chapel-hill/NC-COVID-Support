@@ -1,0 +1,153 @@
+---
+title: "Chapel Hill-Carrboro COVID Community Support Resources"
+output: flexdashboard::flex_dashboard
+orientation: rows
+social: menu
+runtime: shiny #use shiny as the backend
+---
+    ```{r setup, include=FALSE}
+library(flexdashboard)
+library(readr)
+library(tidyverse)
+library(leaflet)
+library(googlesheets4)
+
+sheets_deauth() # Make googlesheets4 skip authentification, since we're using a public sheet
+```
+
+```{r get-data, message=FALSE, include=FALSE} 
+# Create a function that reads the data from Google.
+# For now, a roundabout approach. Streamline in future.
+# See detail here: https://www.andrewheiss.com/blog/2020/01/01/flexdashboard-dynamic-data/
+load_remote_data <- function() {
+    read_sheet("1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0")
+}
+
+remote_data <- load_remote_data()
+```
+
+
+Sidebar {.sidebar}
+-------------------------------------
+    
+    ```{r}
+# Generate a row with a sidebar
+
+selectInput("language", "Choose your language", 
+            choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/                             Arabic",  "한국어/ Korean", "Karen"))
+
+selectInput("resource", "What do you need?", 
+            choices=c("Meals", "Groceries", "Pharmacy", "Childcare for medical workers"))
+
+selectInput("day", "When do you want to shop?", 
+            choices =c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",  "Sunday"))
+
+checkboxGroupInput("cost", "Resource type", 
+                   choices =c("Free resources", "Paid resources"))
+
+checkboxGroupInput("access", "Access", 
+                   choices =c("Pick-up", "Drive-up", "Delivery"))
+
+
+checkboxGroupInput("time", "Times available", 
+                   choices =c("Morning", "Afternoon", "Evening", "24 hour"))
+
+#radioButtons("bus", "Show bus routes?", #Bus routes might be too much for now
+#choices = c("on", "off"))
+
+hr()
+
+helpText("Last updated 3/18/2020")
+
+
+```
+
+
+
+Row
+-------------------------------------
+    
+### Free meal locations {.value-box}
+    
+    ```{r}
+
+# Sum all active free meal resources 
+renderValueBox({
+    num_free_meals <- count(filter(remote_data, resource == "meal" & free == 1 & status == "active"))
+    valueBox(
+        value = num_free_meals,
+        icon = "fa-utensils", #icon from https://fontawesome.com/icons/utensils?style=solid
+        color = "primary" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+```
+
+
+### Restaurants with curbside pick-up {.value-box}
+
+```{r}
+
+# Sum all active meal resources with curbside pick-up
+renderValueBox({
+    num_curbside <- count(filter(remote_data, resource == "meal" & free == 0 & status == "active" & access_type == "drive-up"))
+    valueBox(
+        value = num_curbside,
+        icon = "fa-car", #icon from https://fontawesome.com/icons/car?style=solid
+        color = "success" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+```
+
+### Senior shopping hours {.value-box}
+
+```{r}
+
+# Sum all active resources with senior shopping hours
+renderValueBox({
+    num_senior <- count(filter(remote_data, status == "active" & access_type == "senior shopping hours"))
+    valueBox(
+        value = num_senior,
+        icon = "fa-history", #icon from https://fontawesome.com/icons/history?style=solid
+        color = "primary" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+```
+
+
+### Discounts for medical workers {.value-box}
+
+```{r}
+
+# Sum all active resources with discounts for medical workers
+renderValueBox({
+    num_discount <- count(filter(remote_data, status == "active" & access_type == "medical worker discount"))
+    valueBox(
+        value = num_discount,
+        icon = "fa-user-md", #icon from https://fontawesome.com/icons/user-md?style=solid
+        color = "success" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+```
+
+Row
+-------------------------------------
+    
+Map
+    ```{r}
+library(leaflet)
+
+m <- leaflet() %>%
+    addTiles() %>%  # Add default OpenStreetMap map tiles
+    addMarkers(lng=remote_data$lon, lat=remote_data$lat, popup=remote_data$details)
+m  # Print the map
+
+``` 
+
+Row
+-------------------------------------
+    
+List
+    
+    ```{r}
+```
+
