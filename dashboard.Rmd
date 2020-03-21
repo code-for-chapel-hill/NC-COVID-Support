@@ -138,7 +138,7 @@ library(leaflet)
 
 m <- leaflet() %>%
     addTiles() %>%  # Add default OpenStreetMap map tiles
-    addMarkers(lng=remote_data$lon, lat=remote_data$lat, popup=remote_data$details)
+    addMarkers(lng=remote_data$lon, lat=remote_data$lat, popup=remote_data$details) #to-do: make this interactive
 m  # Print the map
 
 ``` 
