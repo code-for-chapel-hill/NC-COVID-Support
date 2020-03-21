@@ -8,7 +8,6 @@ runtime: shiny #use shiny as the backend
 ---
     ```{r setup, include=FALSE}
 library(flexdashboard)
-library(readr)
 library(tidyverse)
 library(leaflet)
 library(googlesheets4)
@@ -21,12 +20,18 @@ sheets_deauth() # Make googlesheets4 skip authentification, since we're using a 
 # For now, a roundabout approach. Streamline in future.
 # See detail here: https://www.andrewheiss.com/blog/2020/01/01/flexdashboard-dynamic-data/
 load_remote_data <- function() {
-    read_sheet("1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0")
+    read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
+               sheet = "Sheet1",
+               col_types = "??????cnn????????????????")
 }
 
 remote_data <- load_remote_data()
 ```
 
+[comment]: <> (Adding the below so site font can be customized)
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>* {font-size: 100%; font-family: Roboto, sans-serif;}</style>
 
 Sidebar {.sidebar}
 -------------------------------------
@@ -135,11 +140,12 @@ Row
     
 Map
     ```{r}
-library(leaflet)
+map_dat <- remote_data %>%
+    filter(is.na(lat) != TRUE)
 
 m <- leaflet() %>%
     addTiles() %>%  # Add default OpenStreetMap map tiles
-    addMarkers(lng=remote_data$lon, lat=remote_data$lat, popup=remote_data$details)
+    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1)
 m  # Print the map
 
 ``` 
