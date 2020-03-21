@@ -43,13 +43,17 @@ selectInput("language", "Choose your language",
             choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/                             Arabic",  "한국어/ Korean", "Karen"))
 
 selectInput("resource", "What do you need?", 
-            choices=c("Meals", "Groceries", "Pharmacy", "Childcare for medical workers"))
+            choices = c("Meals" = "meal","Groceries" = "grocery", 
+                        "Pharmacy" = "pharmacy","Childcare for medical workers" = "childcare"))
 
-selectInput("day", "When do you want to shop?", 
-            choices =c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",  "Sunday"))
+selectInput(inputId = "day", label =  "What days do you need this resource?",
+            selectize = TRUE, multiple = TRUE,
+            choices =c("Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
+                       "Thursday" = "thr", "Friday" = "fri",
+                       "Saturday" = "sat",  "Sunday" = "sun"))
 
 checkboxGroupInput("cost", "Resource type", 
-                   choices =c("Free resources", "Paid resources"))
+                   choices = c("Free resources" = "free", "Paid resources" = "paid"))
 
 checkboxGroupInput("access", "Access", 
                    choices =c("Pick-up", "Drive-up", "Delivery"))
@@ -63,7 +67,8 @@ checkboxGroupInput("time", "Times available",
 
 hr()
 
-helpText("Last updated 3/18/2020")
+# Automating this workflow
+helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
 
 
 ```
@@ -162,5 +167,6 @@ Row
 List
     
     ```{r}
+renderText({input$day})
 ```
 
