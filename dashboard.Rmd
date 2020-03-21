@@ -11,6 +11,7 @@ library(flexdashboard)
 library(tidyverse)
 library(leaflet)
 library(googlesheets4)
+library(DT)
 
 sheets_deauth() # Make googlesheets4 skip authentification, since we're using a public sheet
 ```
@@ -21,7 +22,7 @@ sheets_deauth() # Make googlesheets4 skip authentification, since we're using a 
 # See detail here: https://www.andrewheiss.com/blog/2020/01/01/flexdashboard-dynamic-data/
 load_remote_data <- function() {
     read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
-               sheet = "Sheet1",
+               sheet = "resources",
                col_types = "??????cnn????????????????")
 }
 
@@ -40,7 +41,7 @@ Sidebar {.sidebar}
 # Generate a row with a sidebar
 
 selectInput("language", "Choose your language", 
-            choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/                             Arabic",  "한국어/ Korean", "Karen"))
+            choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic",  "한국어/ Korean", "Karen"))
 
 selectInput("resource", "What do you need?", 
             choices = c("Meals" = "meal","Groceries" = "grocery", 
@@ -145,6 +146,7 @@ Row
     
 Map
     ```{r}
+
 map_dat <- remote_data %>%
     filter(is.na(lat) != TRUE)
 
@@ -158,6 +160,7 @@ m <- leaflet(width = "80%") %>%
     addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
                                   "Positron"))
+
 m  # Print the map
 ``` 
 
@@ -167,6 +170,10 @@ Row
 List
     
     ```{r}
-renderText({input$day})
+#renderText({input$day}) #not sure why this is here??
+
+#create a new object that grabs the columns from remote_data that should be included in the table 
+include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
+datatable(include_in_table)#options = list(pageLength = 5)
 ```
 
