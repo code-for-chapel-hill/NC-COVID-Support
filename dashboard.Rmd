@@ -30,7 +30,22 @@ remote_data <- load_remote_data()
 [comment]: <> (Adding the below so site font can be customized)
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<style>* {font-size: 100%; font-family: Roboto, sans-serif;}</style>
+<style>
+* {font-size: 100%; font-family: Roboto, sans-serif;}
+.navbar-brand {
+    float:none;
+    font-size: 19px;
+    line-height: 21px;
+    height: 50px;
+    display: block;
+}
+@media screen and (max-width: 576px) {
+.navbar-brand {
+    padding: 5px 15px;
+    font-size: 17px;
+}
+}
+</style>
 
 Sidebar {.sidebar}
 -------------------------------------
@@ -125,9 +140,8 @@ renderValueBox({
 
 Row
 -------------------------------------
-    
-Map
-    ```{r}
+###
+```{r}
 map_dat <- remote_data %>%
     filter(is.na(lat) != TRUE)
 m <- leaflet(width = "80%") %>%
@@ -145,10 +159,8 @@ m  # Print the map
 
 Row
 -------------------------------------
-    
-List
-    
-    ```{r}
+###
+```{r}
 #renderText({input$day}) #not sure why this is here??
 #create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
