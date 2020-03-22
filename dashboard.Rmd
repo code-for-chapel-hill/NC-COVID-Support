@@ -3,7 +3,7 @@ title: "Chapel Hill-Carrboro COVID Community Support Resources"
 output:
     flexdashboard::flex_dashboard:
         orientation: rows
-        social: ["menu"]
+        social: menu
 runtime: shiny #use shiny as the backend
 ---
     ```{r setup, include=FALSE}
@@ -142,31 +142,40 @@ Row
 -------------------------------------
 ###
 ```{r}
-map_data <- remote_data %>%
-    filter(is.na(lat) != TRUE)
-m <- leaflet(width = "80%") %>%
+
+map_data <- reactive({
+  remote_data %>%
+  filter(is.na(lat) != TRUE & is.na(lon) != TRUE) %>%
+  filter(resource == input$resource)
+})
+
+output$map <- renderLeaflet({
+  
+  leaflet(width = "80%") %>%
     addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
            group = "Detailed Streets") %>%
   addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
            group = "Position") %>%
-    addMarkers(lng=map_data$lon, lat=map_data$lat, popup=paste(
-  "<b><a href='",map_data$web_link,"'>",map_data$provider,"</a></b><br/>",
-  "<b>Address:</b> ",map_data$address,", ",map_data$city,", ",map_data$state,", ",map_data$zip,"<br/>",
-    "<b>Notes:</b> ",map_data$details_1
+    addMarkers(lng=map_data()$lon, lat=map_data()$lat, popup=paste(
+  "<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
+  "<b>Address:</b> ",map_data()$address,", ",map_data()$city,", ",map_data()$state,", ",map_data()$zip,"<br/>",
+    "<b>Notes:</b> ",map_data()$details_1
 
 )) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
                                   "Position"))
-m  # Print the map
+})
+
+leafletOutput("map") # Print the map
+
 ``` 
 
 Row
 -------------------------------------
 ###
 ```{r}
-#renderText({input$day}) #not sure why this is here??
 #create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
 datatable(include_in_table)#options = list(pageLength = 5)
