@@ -30,7 +30,22 @@ remote_data <- load_remote_data()
 [comment]: <> (Adding the below so site font can be customized)
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<style>* {font-size: 100%; font-family: Roboto, sans-serif;}</style>
+<style>
+* {font-size: 100%; font-family: Roboto, sans-serif;}
+.navbar-brand {
+    float:none;
+    font-size: 19px;
+    line-height: 21px;
+    height: 50px;
+    display: block;
+}
+@media screen and (max-width: 576px) {
+.navbar-brand {
+    padding: 5px 15px;
+    font-size: 17px;
+}
+}
+</style>
 
 Sidebar {.sidebar}
 -------------------------------------
@@ -125,10 +140,9 @@ renderValueBox({
 
 Row
 -------------------------------------
-    
-Map
-    ```{r}
-map_dat <- remote_data %>%
+###
+```{r}
+map_data <- remote_data %>%
     filter(is.na(lat) != TRUE)
 m <- leaflet(width = "80%") %>%
     addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
@@ -136,19 +150,22 @@ m <- leaflet(width = "80%") %>%
            group = "Detailed Streets") %>%
   addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
-           group = "Positron") %>%
-    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
+           group = "Position") %>%
+    addMarkers(lng=map_data$lon, lat=map_data$lat, popup=paste(
+  "<b><a href='",map_data$web_link,"'>",map_data$provider,"</a></b><br/>",
+  "<b>Address:</b> ",map_data$address,", ",map_data$city,", ",map_data$state,", ",map_data$zip,"<br/>",
+    "<b>Notes:</b> ",map_data$details_1
+
+)) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
-                                  "Positron"))
+                                  "Position"))
 m  # Print the map
 ``` 
 
 Row
 -------------------------------------
-    
-List
-    
-    ```{r}
+###
+```{r}
 #renderText({input$day}) #not sure why this is here??
 #create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
