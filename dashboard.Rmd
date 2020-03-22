@@ -22,7 +22,7 @@ sheets_deauth() # Make googlesheets4 skip authentification, since we're using a 
 load_remote_data <- function() {
     read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
                sheet = "resources",
-               col_types = "??????cnn?????????????????")
+               col_types = "??????cnn???????TTnnnnnnnn")
 }
 remote_data <- load_remote_data()
 ```
@@ -50,28 +50,47 @@ remote_data <- load_remote_data()
 Sidebar {.sidebar}
 -------------------------------------
     
-    ```{r}
-# Generate a row with a sidebar
-selectInput("language", "Choose your language", 
-            choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic",  "한국어/ Korean", "Karen"))
-selectInput("resource", "What do you need?", 
-            choices = c("Meals" = "meal","Groceries" = "grocery", 
-                        "Pharmacy" = "pharmacy","Childcare for medical workers" = "childcare"))
-selectInput(inputId = "day", label =  "What days do you need this resource?",
-            selectize = TRUE, multiple = TRUE,
-            choices =c("Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
-                       "Thursday" = "thr", "Friday" = "fri",
-                       "Saturday" = "sat",  "Sunday" = "sun"))
-checkboxGroupInput("cost", "Resource type", 
-                   choices = c("Free resources" = "free", "Paid resources" = "paid"))
-checkboxGroupInput("access", "Access", 
-                   choices =c("Pick-up", "Drive-up", "Delivery"))
-checkboxGroupInput("time", "Times available", 
-                   choices =c("Morning", "Afternoon", "Evening", "24 hour"))
-#radioButtons("bus", "Show bus routes?", #Bus routes might be too much for now
-#choices = c("on", "off"))
+```{r}
+selectInput(inputId = "language",label =  "Choose your language",
+            selected = "English", selectize = TRUE,
+  choices = c("English", "Español", "Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic", "한국어/ Korean", "Karen")
+)
+    
+selectInput(inputId = "resource",label =  "What do you need?",
+            selectize = TRUE, selected = "meal",
+            choices = c(
+              "Meals" = "meal", "Groceries" = "grocery",
+              "Pharmacy" = "pharmacy", "Childcare for medical workers" = "childcare"
+              )
+            )
+
+selectInput(
+  inputId = "day", label = "What days do you need this resource?",
+  selectize = TRUE, multiple = TRUE, selected = "mon",
+  choices = c(
+    "Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
+    "Thursday" = "thr", "Friday" = "fri",
+    "Saturday" = "sat", "Sunday" = "sun"
+  )
+)
+
+checkboxGroupInput(inputId = "cost",label =  "Resource type",
+  choices = c("Free resources" = "free", "Paid resources" = "paid")
+)
+
+checkboxGroupInput(inputId = "access",label =  "Access",
+  choices = c("Pick-up", "Drive-up", "Delivery")
+)
+
+checkboxGroupInput(inputId = "time",label =  "Times available",
+  choices = c("Morning", "Afternoon", "Evening", "24 hour")
+)
+
+# radioButtons("bus", "Show bus routes?", #Bus routes might be too much for now
+# choices = c("on", "off"))
+
 hr()
-# Automating this workflow
+
 helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
 ```
 
@@ -82,7 +101,7 @@ Row
     
 ### Free meal locations {.value-box}
     
-    ```{r}
+```{r}
 # Sum all active free meal resources 
 renderValueBox({
     num_free_meals <- count(filter(remote_data, resource == "meal" & free == 1 & status == "active"))
@@ -144,9 +163,15 @@ Row
 ```{r}
 
 map_data <- reactive({
+  
   remote_data %>%
-  filter(is.na(lat) != TRUE & is.na(lon) != TRUE) %>%
-  filter(resource == input$resource)
+    filter(is.na(lat) != TRUE & is.na(lon) != TRUE) %>%
+    filter(resource == input$resource) %>%
+    pivot_longer(cols = 19:25, names_to = "days", values_to = "des") %>%
+    filter(is.na(des) != TRUE & des == 1) %>%
+    filter(days %in% input$day) %>%
+    pivot_wider(names_from = "days", values_from = "des")
+    
 })
 
 output$map <- renderLeaflet({
@@ -183,7 +208,17 @@ include_in_table <- reactive({
 })
 
 output$table <- renderReactable({
-  reactable(include_in_table())
+  reactable(include_in_table(),rownames = FALSE, resizable = TRUE,
+            defaultPageSize = 5,striped = TRUE,
+            columns = list(
+              provider = colDef(name = "Provider"),
+              address = colDef(name = "Address"),
+              city = colDef(name = "City"),
+              state = colDef(name = "State"),
+              zip = colDef(name = "Zip"),
+              details_1 = colDef(name = "Notes"),
+              details_2 = colDef(name = "Addtl. Notes")
+            ))
 })
 
 reactableOutput("table")
