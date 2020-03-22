@@ -11,7 +11,7 @@ library(flexdashboard)
 library(tidyverse)
 library(leaflet)
 library(googlesheets4)
-library(DT)
+library(reactable)
 sheets_deauth() # Make googlesheets4 skip authentification, since we're using a public sheet
 ```
 
@@ -158,12 +158,12 @@ output$map <- renderLeaflet({
   addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
            group = "Position") %>%
-    addMarkers(lng=map_data()$lon, lat=map_data()$lat, popup=paste(
-  "<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
-  "<b>Address:</b> ",map_data()$address,", ",map_data()$city,", ",map_data()$state,", ",map_data()$zip,"<br/>",
-    "<b>Notes:</b> ",map_data()$details_1
-
-)) %>%
+    addMarkers(lng=map_data()$lon, lat=map_data()$lat,
+               popup=paste("<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
+                           "<b>Address:</b>", map_data()$address,",", map_data()$city,",", map_data()$state,",",
+                           map_data()$zip,"<br/>", "<b>Notes:</b> ",map_data()$details_1),
+               clusterOptions = markerClusterOptions()
+               ) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
                                   "Position"))
 })
@@ -177,6 +177,14 @@ Row
 ###
 ```{r}
 #create a new object that grabs the columns from remote_data that should be included in the table 
-include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
-datatable(include_in_table)#options = list(pageLength = 5)
+include_in_table <- reactive({
+  map_data() %>%
+    select(provider, address, city, state, zip, details_1, details_2)
+})
+
+output$table <- renderReactable({
+  reactable(include_in_table())
+})
+
+reactableOutput("table")
 ```
