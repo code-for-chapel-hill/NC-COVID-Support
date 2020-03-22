@@ -142,7 +142,7 @@ Row
 -------------------------------------
 ###
 ```{r}
-map_dat <- remote_data %>%
+map_data <- remote_data %>%
     filter(is.na(lat) != TRUE)
 m <- leaflet(width = "80%") %>%
     addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
@@ -150,10 +150,15 @@ m <- leaflet(width = "80%") %>%
            group = "Detailed Streets") %>%
   addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
-           group = "Positron") %>%
-    addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
+           group = "Position") %>%
+    addMarkers(lng=map_data$lon, lat=map_data$lat, popup=paste(
+  "<b><a href='",map_data$web_link,"'>",map_data$provider,"</a></b><br/>",
+  "<b>Address:</b> ",map_data$address,", ",map_data$city,", ",map_data$state,", ",map_data$zip,"<br/>",
+    "<b>Notes:</b> ",map_data$details_1
+
+)) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
-                                  "Positron"))
+                                  "Position"))
 m  # Print the map
 ``` 
 
