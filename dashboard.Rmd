@@ -12,7 +12,6 @@ library(tidyverse)
 library(leaflet)
 library(googlesheets4)
 library(DT)
-
 sheets_deauth() # Make googlesheets4 skip authentification, since we're using a public sheet
 ```
 
@@ -23,9 +22,8 @@ sheets_deauth() # Make googlesheets4 skip authentification, since we're using a 
 load_remote_data <- function() {
     read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
                sheet = "resources",
-               col_types = "??????cnn????????????????")
+               col_types = "??????cnn?????????????????")
 }
-
 remote_data <- load_remote_data()
 ```
 
@@ -39,39 +37,27 @@ Sidebar {.sidebar}
     
     ```{r}
 # Generate a row with a sidebar
-
 selectInput("language", "Choose your language", 
             choices=c("English", "Español","Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic",  "한국어/ Korean", "Karen"))
-
 selectInput("resource", "What do you need?", 
             choices = c("Meals" = "meal","Groceries" = "grocery", 
                         "Pharmacy" = "pharmacy","Childcare for medical workers" = "childcare"))
-
 selectInput(inputId = "day", label =  "What days do you need this resource?",
             selectize = TRUE, multiple = TRUE,
             choices =c("Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
                        "Thursday" = "thr", "Friday" = "fri",
                        "Saturday" = "sat",  "Sunday" = "sun"))
-
 checkboxGroupInput("cost", "Resource type", 
                    choices = c("Free resources" = "free", "Paid resources" = "paid"))
-
 checkboxGroupInput("access", "Access", 
                    choices =c("Pick-up", "Drive-up", "Delivery"))
-
-
 checkboxGroupInput("time", "Times available", 
                    choices =c("Morning", "Afternoon", "Evening", "24 hour"))
-
 #radioButtons("bus", "Show bus routes?", #Bus routes might be too much for now
 #choices = c("on", "off"))
-
 hr()
-
 # Automating this workflow
 helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
-
-
 ```
 
 
@@ -82,7 +68,6 @@ Row
 ### Free meal locations {.value-box}
     
     ```{r}
-
 # Sum all active free meal resources 
 renderValueBox({
     num_free_meals <- count(filter(remote_data, resource == "meal" & free == 1 & status == "active"))
@@ -98,7 +83,6 @@ renderValueBox({
 ### Restaurants with curbside pick-up {.value-box}
 
 ```{r}
-
 # Sum all active meal resources with curbside pick-up
 renderValueBox({
     num_curbside <- count(filter(remote_data, resource == "meal" & free == 0 & status == "active" & access_type == "drive-up"))
@@ -113,7 +97,6 @@ renderValueBox({
 ### Senior shopping hours {.value-box}
 
 ```{r}
-
 # Sum all active resources with senior shopping hours
 renderValueBox({
     num_senior <- count(filter(remote_data, status == "active" & access_type == "senior shopping hours"))
@@ -129,7 +112,6 @@ renderValueBox({
 ### Discounts for medical workers {.value-box}
 
 ```{r}
-
 # Sum all active resources with discounts for medical workers
 renderValueBox({
     num_discount <- count(filter(remote_data, status == "active" & access_type == "medical worker discount"))
@@ -146,10 +128,8 @@ Row
     
 Map
     ```{r}
-
 map_dat <- remote_data %>%
     filter(is.na(lat) != TRUE)
-
 m <- leaflet(width = "80%") %>%
     addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
            attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
@@ -160,7 +140,6 @@ m <- leaflet(width = "80%") %>%
     addMarkers(lng=map_dat$lon, lat=map_dat$lat, popup=map_dat$details_1) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
                                   "Positron"))
-
 m  # Print the map
 ``` 
 
@@ -171,9 +150,7 @@ List
     
     ```{r}
 #renderText({input$day}) #not sure why this is here??
-
 #create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- select(remote_data, provider, address, city, state, zip, details_1, details_2)
 datatable(include_in_table)#options = list(pageLength = 5)
 ```
-
