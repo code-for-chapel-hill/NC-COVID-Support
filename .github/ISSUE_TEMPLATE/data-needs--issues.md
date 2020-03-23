@@ -1,6 +1,6 @@
 ---
 name: Data needs/ issues
-about: What do we need to change/fix in our data sructure?
+about: What do we need to change/fix in our data structure?
 title: ''
 labels: documentation
 assignees: ''
