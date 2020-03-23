@@ -39,16 +39,18 @@ remote_data <- load_remote_data()
     height: 50px;
     display: block;
 }
+
 @media screen and (max-width: 576px) {
 .navbar-brand {
     padding: 5px 15px;
     font-size: 17px;
 }
+
 }
 </style>
 
 Sidebar {.sidebar}
--------------------------------------
+======================================================================
     
 ```{r}
 selectInput(inputId = "language",label =  "Choose your language",
@@ -96,8 +98,11 @@ helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")
 
 
 
+Find Resources
+======================================================================
+
 Row
--------------------------------------
+----------------------------------------------------------------------
     
 ### Free meal locations {.value-box}
     
@@ -165,37 +170,45 @@ Row {.tabset .tabset-fade}
 ```{r}
 
 map_data <- reactive({
-  
   remote_data %>%
     filter(is.na(lat) != TRUE & is.na(lon) != TRUE) %>%
     filter(resource == input$resource) %>%
     pivot_longer(cols = 19:25, names_to = "days", values_to = "des") %>%
-    filter(is.na(des) != TRUE & des == 1) %>%
+    filter(is.na(des) != TRUE & des != 0) %>%
     filter(days %in% input$day) %>%
     pivot_wider(names_from = "days", values_from = "des")
-    
 })
 
 output$map <- renderLeaflet({
   
+  map_data() %>%
   leaflet(width = "80%") %>%
-    addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
-           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
-           group = "Detailed Streets") %>%
-  addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
-           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
-           group = "Position") %>%
-    addMarkers(lng=map_data()$lon, lat=map_data()$lat,
-               popup=paste("<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
-                           "<b>Address:</b>", map_data()$address,",", map_data()$city,",", map_data()$state,",",
-                           map_data()$zip,"<br/>","<b>Phone:</b> ", map_data()$contact , "<br/><b>Notes:</b> ",map_data()$details_1,"<br/>",map_data()$details_2),
-               clusterOptions = markerClusterOptions()
-               ) %>%
-    addLayersControl(baseGroups = c("Detailed Streets",
-                                  "Position"))
+    addTiles(
+      urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+      attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+      group = "Detailed Streets"
+    ) %>%
+    addTiles(
+      urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+      attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+      group = "Positron"
+    ) %>%
+    addMarkers(
+      lng = ~lon, lat = ~lat,
+      popup = paste(
+        "<b><a href='", map_data()$web_link, "'>", map_data()$provider, "</a></b><br/>",
+        "<b>Address:</b>", map_data()$address, ",", map_data()$city, ",", map_data()$state, ",",
+        map_data()$zip, "<br/>", "<b>Phone:</b> ", map_data()$contact, "<br/><b>Notes:</b> ", map_data()$details_1, "<br/>", map_data()$details_2
+      ),
+      clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
+    ) %>%
+    addLayersControl(baseGroups = c(
+      "Detailed Streets",
+      "Positron"
+    ))
 })
 
-leafletOutput("map") # Print the map
+leafletOutput("map")
 
 ``` 
 
@@ -225,3 +238,27 @@ output$table <- renderReactable({
 
 reactableOutput("table")
 ```
+
+About
+======================================================================
+
+### About the project
+
+#### This project IS….
+- A website/webapp with an interactive community map.
+- A tool to help our communities and neighbors locate resources.
+- A collaborative effort connected to local officials and support organizations.
+- An open project that can be quickly adapted to other locations & future needs.
+- Resources we might want to map:
+- Where can I find a free meal?
+- Where can I find free diapers/tp/personal care items?
+- Where can I find a drive-up pharmacy?
+- Where can I find a market with age-60+ shopping hours?
+
+#### This project is NOT…..
+- A map of COVID-19 cases.
+- Information related to emergency medical resources.
+- Outdated information or a dilution of other information channels.
+
+### How can you help?
+Insert information and links for how people can help
