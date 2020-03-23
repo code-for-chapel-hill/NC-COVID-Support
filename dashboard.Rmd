@@ -186,7 +186,7 @@ output$map <- renderLeaflet({
     addMarkers(lng=map_data()$lon, lat=map_data()$lat,
                popup=paste("<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
                            "<b>Address:</b>", map_data()$address,",", map_data()$city,",", map_data()$state,",",
-                           map_data()$zip,"<br/>", "<b>Notes:</b> ",map_data()$details_1),
+                           map_data()$zip,"<br/>","<b>Phone:</b> ", map_data()$contact , "<br/><b>Notes:</b> ",map_data()$details_1,"<br/>",map_data()$details_2),
                clusterOptions = markerClusterOptions()
                ) %>%
     addLayersControl(baseGroups = c("Detailed Streets",
