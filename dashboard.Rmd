@@ -157,9 +157,11 @@ renderValueBox({
 })
 ```
 
-Row
+Row {.tabset .tabset-fade}
 -------------------------------------
-###
+
+### Map View
+
 ```{r}
 
 map_data <- reactive({
@@ -197,9 +199,9 @@ leafletOutput("map") # Print the map
 
 ``` 
 
-Row
--------------------------------------
-###
+
+### Table View
+
 ```{r}
 #create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- reactive({
