@@ -31,8 +31,10 @@ load_remote_data <- function() {
                sheet = "resources",
                col_types = "??????cnn???????TTnnnnnnnn")
 }
+
 remote_data <- load_remote_data() %>%
   mutate(index = row_number())
+
 ```
 
 <!-- This code section is for data processing -->
@@ -176,17 +178,6 @@ output$selected_table <- renderReactable({
 })
 
 ```
-
-```{r event-handling, include=FALSE, message=FALSE}
-# Click event for the map (will use to generate chart)
-click_marker <- eventReactive(input$map_marker_click, {
-    x <- input$map_marker_click
-    return(x)
-  })
-
-output$text <- renderPrint({ input$map_marker_click$id })
-```
-
 
 <!-- This section should be utilized for inline HTML and CSS -->
 
