@@ -11,6 +11,7 @@ runtime: shiny
 
     ```{r setup, include=FALSE}
 library(flexdashboard)
+library(shiny)
 library(tidyverse)
 library(leaflet)
 library(googlesheets4)
@@ -30,7 +31,8 @@ load_remote_data <- function() {
                sheet = "resources",
                col_types = "??????cnn???????TTnnnnnnnn")
 }
-remote_data <- load_remote_data()
+remote_data <- load_remote_data() %>%
+  mutate(index = row_number())
 ```
 
 <!-- This code section is for data processing -->
@@ -50,6 +52,13 @@ map_data <- reactive({
 # create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- reactive({
   map_data() %>%
+    select(provider, address, city, state, zip, details_1, details_2)
+})
+
+# create a new data object for only the row selected on the map
+selected_marker <- reactive({
+  map_data() %>%
+    filter(index == input$map_marker_click$id) %>%
     select(provider, address, city, state, zip, details_1, details_2)
 })
 
@@ -119,6 +128,7 @@ output$map <- renderLeaflet({
       group = "Positron"
     ) %>%
     addMarkers(
+      layerId = ~index,
       lng = ~lon, lat = ~lat,
       popup = paste(
         "<b><a href='", map_data()$web_link, "'>", map_data()$provider, "</a></b><br/>",
@@ -148,7 +158,35 @@ output$table <- renderReactable({
             ))
 })
 
+# Generate table to display information for the selected feature
+output$selected_table <- renderReactable({
+  req(input$map_marker_click)
+  
+  reactable(selected_marker(), rownames = FALSE, resizable = TRUE,
+            defaultPageSize = 1,
+            columns = list(
+              provider = colDef(name = "Provider"),
+              address = colDef(name = "Address"),
+              city = colDef(name = "City"),
+              state = colDef(name = "State"),
+              zip = colDef(name = "Zip"),
+              details_1 = colDef(name = "Notes"),
+              details_2 = colDef(name = "Addtl. Notes")
+            ))
+})
+
 ```
+
+```{r event-handling, include=FALSE, message=FALSE}
+# Click event for the map (will use to generate chart)
+click_marker <- eventReactive(input$map_marker_click, {
+    x <- input$map_marker_click
+    return(x)
+  })
+
+output$text <- renderPrint({ input$map_marker_click$id })
+```
+
 
 <!-- This section should be utilized for inline HTML and CSS -->
 
@@ -221,6 +259,8 @@ checkboxGroupInput(inputId = "time",label =  "Times available",
 hr()
 
 helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
+
+verbatimTextOutput("text")
 ```
 
 <!-- This section defines the elements for the main landing page -->
@@ -266,11 +306,19 @@ Row {.tabset .tabset-fade}
 leafletOutput("map")
 ``` 
 
-
-### Table View
+### Full Table View
 
 ```{r}
 reactableOutput("table")
+```
+
+Row {data-height=200}
+----------------------------------------------------------------------
+
+### Selected Resource
+
+```{r}
+reactableOutput("selected_table")
 ```
 
 <!-- This section defines elements for an additional About page -->
