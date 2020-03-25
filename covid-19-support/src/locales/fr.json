@@ -1,0 +1,22 @@
+{
+	"category": {
+		"childcare": "Garde d'enfants",
+		"grocery": "Épicerie | Épicerie",
+		"meal": "Repas | Repas",
+		"pharmacy": "Pharmacie | Pharmacies"
+	},
+	"dayofweek": {
+		"friday": "Vendredi",
+		"monday": "Lundi",
+		"saturday": "Samedi",
+		"sunday": "Dimanche",
+		"thursday": "Jeudi",
+		"tuesday": "Mardi",
+		"wednesday": "Mercredi"
+	},
+	"sidebar": {
+		"what-do-you-need": "De quoi avez-vous besoin?",
+		"when-do-you-need-it": "Quand en as-tu besoin?"
+	},
+	"title": "Le Ressources de soutien communautaire COVID-19"
+}

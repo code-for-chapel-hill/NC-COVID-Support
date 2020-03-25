@@ -1,0 +1,22 @@
+{
+	"category": {
+		"childcare": "Cuidado de los niños",
+		"grocery": "Comestibles",
+		"meal": "Comida | Comidas",
+		"pharmacy": "Farmacia | Farmacias"
+	},
+	"dayofweek": {
+		"friday": "Viernes",
+		"monday": "Lunes",
+		"saturday": "Sábado",
+		"sunday": "Domingo",
+		"thursday": "Jueves",
+		"tuesday": "Martes",
+		"wednesday": "Miércoles"
+	},
+	"sidebar": {
+		"what-do-you-need": "¿Que necesitas?",
+		"when-do-you-need-it": "Cuando lo necesitas?"
+	},
+	"title": "Recursos de apoyo comunitario de COVID-19"
+}

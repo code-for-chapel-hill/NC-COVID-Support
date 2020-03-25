@@ -1,0 +1,376 @@
+---
+title: "Chapel Hill-Carrboro COVID Community Support Resources"
+output:
+    flexdashboard::flex_dashboard:
+        orientation: rows
+        social: menu
+runtime: shiny
+---
+
+<!-- This code section is for initial package loading and global setup options -->
+
+    ```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(tidyverse)
+library(leaflet)
+library(googlesheets4)
+library(reactable)
+    
+sheets_deauth() # Make googlesheets4 skip authentification, since we're using a public sheet
+```
+
+<!-- This code section is for retrieving data from the Google Sheet -->
+
+```{r get-data, message=FALSE, include=FALSE} 
+# Create a function that reads the data from Google.
+# For now, a roundabout approach. Streamline in future.
+# See detail here: https://www.andrewheiss.com/blog/2020/01/01/flexdashboard-dynamic-data/
+load_remote_data <- function() {
+    read_sheet(ss = "1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0", 
+               sheet = "resources",
+               col_types = "??????cnn???????TTnnnnnnnn")
+}
+
+remote_data <- load_remote_data() %>%
+  mutate(index = row_number())
+
+```
+
+<!-- This code section is for data processing -->
+
+```{r data-processing, message=FALSE, include=FALSE}
+# data object for Leaflet map
+map_data <- reactive({
+  remote_data %>%
+    filter(is.na(lat) != TRUE & is.na(lon) != TRUE) %>%
+    filter(resource == input$resource) %>%
+    pivot_longer(cols = 19:25, names_to = "days", values_to = "des") %>%
+    filter(is.na(des) != TRUE & des != 0) %>%
+    filter(days %in% input$day) %>%
+    pivot_wider(names_from = "days", values_from = "des")
+})
+
+# create a new object that grabs the columns from remote_data that should be included in the table 
+include_in_table <- reactive({
+  map_data() %>%
+    select(provider, address, city, state, zip, details_1, details_2)
+})
+
+# create a new data object for only the row selected on the map
+selected_marker <- reactive({
+  map_data() %>%
+    filter(index == input$map_marker_click$id) %>%
+    select(provider, address, city, state, zip, details_1, details_2)
+})
+
+```
+
+<!-- This code section is for rendering static UI outpus -->
+
+```{r static-rendering, message=FALSE, include=FALSE}
+# Sum all active free meal resources 
+output$meal_count <- renderValueBox({
+  num_free_meals <- count(filter(remote_data, resource == "meal" & free == 1 & status == "active"))
+  valueBox(
+    value = num_free_meals,
+    icon = "fa-utensils", # icon from https://fontawesome.com/icons/utensils?style=solid
+    color = "primary" # https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+  )
+})
+
+# Sum all active meal resources with curbside pick-up
+output$restaurant_count <- renderValueBox({
+    num_curbside <- count(filter(remote_data, resource == "meal" & free == 0 & status == "active" & access_type == "drive-up"))
+    valueBox(
+        value = num_curbside,
+        icon = "fa-car", #icon from https://fontawesome.com/icons/car?style=solid
+        color = "success" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+
+# Sum all active resources with senior shopping hours
+output$senior_count <- renderValueBox({
+    num_senior <- count(filter(remote_data, status == "active" & access_type == "senior shopping hours"))
+    valueBox(
+        value = num_senior,
+        icon = "fa-history", #icon from https://fontawesome.com/icons/history?style=solid
+        color = "primary" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+
+# Sum all active resources with discounts for medical workers
+output$discount_count <- renderValueBox({
+    num_discount <- count(filter(remote_data, status == "active" & access_type == "medical worker discount"))
+    valueBox(
+        value = num_discount,
+        icon = "fa-user-md", #icon from https://fontawesome.com/icons/user-md?style=solid
+        color = "success" #https://rstudio.github.io/shinydashboard/appearance.html#statuses-and-colors
+    )
+})
+
+```
+
+<!-- This code section is for rendering reactive UI outpus -->
+
+```{r reactive-rendering, message=FALSE, include=FALSE}
+# Creating main Leaflet map using reactive map data
+output$map <- renderLeaflet({
+  
+  map_data() %>%
+  leaflet(width = "80%") %>%
+    addTiles(
+      urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+      attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+      group = "Detailed Streets"
+    ) %>%
+    addTiles(
+      urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+      attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+      group = "Positron"
+    ) %>%
+    addMarkers(
+      layerId = ~index,
+      lng = ~lon, lat = ~lat,
+      popup = paste(
+        "<b><a href='", map_data()$web_link, "'>", map_data()$provider, "</a></b><br/>",
+        "<b>Address:</b>", map_data()$address, ",", map_data()$city, ",", map_data()$state, ",",
+        map_data()$zip, "<br/>", "<b>Phone:</b> ", map_data()$contact, "<br/><b>Notes:</b> ", map_data()$details_1, "<br/>", map_data()$details_2
+      ),
+      clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
+    ) %>%
+    addLayersControl(baseGroups = c(
+      "Detailed Streets",
+      "Positron"
+    ))
+})
+
+# Generating main table using reactive table data
+output$table <- renderReactable({
+  reactable(include_in_table(),rownames = FALSE, resizable = TRUE,
+            defaultPageSize = 5,striped = TRUE,
+            columns = list(
+              provider = colDef(name = "Provider"),
+              address = colDef(name = "Address"),
+              city = colDef(name = "City"),
+              state = colDef(name = "State"),
+              zip = colDef(name = "Zip"),
+              details_1 = colDef(name = "Notes"),
+              details_2 = colDef(name = "Addtl. Notes")
+            ))
+})
+
+# Generate table to display information for the selected feature
+output$selected_table <- renderReactable({
+  req(input$map_marker_click)
+  
+  reactable(selected_marker(), rownames = FALSE, resizable = TRUE,
+            defaultPageSize = 1,
+            columns = list(
+              provider = colDef(name = "Provider"),
+              address = colDef(name = "Address"),
+              city = colDef(name = "City"),
+              state = colDef(name = "State"),
+              zip = colDef(name = "Zip"),
+              details_1 = colDef(name = "Notes"),
+              details_2 = colDef(name = "Addtl. Notes")
+            ))
+})
+
+```
+
+<!-- This section should be utilized for inline HTML and CSS -->
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+* {font-size: 100%; font-family: Roboto, sans-serif;}
+.navbar-brand {
+    float:none;
+    font-size: 19px;
+    line-height: 21px;
+    height: 50px;
+    display: block;
+}
+
+@media screen and (max-width: 576px) {
+.navbar-brand {
+    padding: 5px 15px;
+    font-size: 17px;
+}
+
+}
+</style>
+
+<!-- End of inline HTML and CSS section -->
+
+<!-- The section defines the global sidebar for the dashboard -->
+
+Sidebar {.sidebar}
+======================================================================
+    
+```{r}
+# selectInput(inputId = "language",label =  "Choose your language",
+<<<<<<< HEAD:dashboard.Rmd
+#             selected = "English", selectize = TRUE,
+#   choices = c("English", "Español", "Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic", "한국어/ Korean", "Karen")
+# )
+=======
+#            selected = "English", selectize = TRUE,
+#  choices = c("English", "Español", "Française", "中文／Chinese", "日本語/ Japanese", "عربي/ Arabic", "한국어/ Korean", "Karen")
+#)
+>>>>>>> Archiving the R project and added the Javascript + VueJS project.:R-Project/dashboard.Rmd
+    
+selectInput(inputId = "resource",label =  "What do you need?",
+            selectize = TRUE, selected = "meal",
+            choices = c(
+              "Meals" = "meal", "Groceries" = "grocery",
+              "Pharmacy" = "pharmacy", "Childcare for medical workers" = "childcare"
+              )
+            )
+
+selectInput(
+  inputId = "day", label = "What days do you need this resource?",
+  selectize = TRUE, multiple = TRUE, selected = "mon",
+  choices = c(
+    "Monday" = "mon", "Tuesday" = "tues", "Wednesday" = "wed",
+    "Thursday" = "thr", "Friday" = "fri",
+    "Saturday" = "sat", "Sunday" = "sun"
+  )
+)
+
+checkboxGroupInput(inputId = "cost",label =  "Resource type",
+  choices = c("Free resources" = "free", "Paid resources" = "paid")
+)
+
+checkboxGroupInput(inputId = "access",label =  "Access",
+  choices = c("Pick-up", "Drive-up", "Delivery")
+)
+
+checkboxGroupInput(inputId = "time",label =  "Times available",
+  choices = c("Morning", "Afternoon", "Evening", "24 hour")
+)
+
+# radioButtons("bus", "Show bus routes?", #Bus routes might be too much for now
+# choices = c("on", "off"))
+
+hr()
+
+helpText(sprintf("Last updated: %s", format(Sys.time(), "%b %d, %Y at %I:%M %p")))
+
+verbatimTextOutput("text")
+```
+
+<!-- This section defines the elements for the main landing page -->
+
+Resources
+======================================================================
+
+Row
+----------------------------------------------------------------------
+    
+### Free meal locations {.value-box}
+    
+```{r}
+valueBoxOutput("meal_count")
+```
+
+
+### Restaurants with curbside pick-up {.value-box}
+
+```{r}
+valueBoxOutput("restaurant_count")
+```
+
+### Senior shopping hours {.value-box}
+
+```{r}
+valueBoxOutput("senior_count")
+```
+
+
+### Discounts for medical workers {.value-box}
+
+```{r}
+valueBoxOutput("discount_count")
+```
+
+Row
+-------------------------------------
+###
+```{r}
+leafletOutput("map")
+``` 
+
+### Full Table View
+
+<<<<<<< HEAD:dashboard.Rmd
+```{r}
+reactableOutput("table")
+```
+=======
+output$map <- renderLeaflet({
+  
+  leaflet(width = "80%") %>%
+    addTiles(urlTemplate = "https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Detailed Streets") %>%
+  addTiles(urlTemplate = "https://api.maptiler.com/maps/positron/256/{z}/{x}/{y}@2x.png?key=TxvhrAmR6qR1BMLNZjOj",
+           attribution = htmltools::HTML("<a href='https://www.maptiler.com/copyright/' target='_blank'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap contributors</a>"),
+           group = "Position") %>%
+    addMarkers(lng=map_data()$lon, lat=map_data()$lat,
+               popup=paste("<b><a href='",map_data()$web_link,"'>",map_data()$provider,"</a></b><br/>",
+                           "<b>Address:</b>", map_data()$address,",", map_data()$city,",", map_data()$state,",",
+                           map_data()$zip,"<br/>","<b>Phone:</b> ", map_data()$contact , "<br/><b>Notes:</b> ",ifelse(!is.na(map_data()$details_1),map_data()$details_1,""),"<br/>",ifelse(!is.na(map_data()$details_2),map_data()$details_2,"")),
+               clusterOptions = markerClusterOptions()
+               ) %>%
+    addLayersControl(baseGroups = c("Detailed Streets",
+                                  "Position"))
+})
+>>>>>>> Archiving the R project and added the Javascript + VueJS project.:R-Project/dashboard.Rmd
+
+Row {data-height=200}
+----------------------------------------------------------------------
+
+### Selected Resource
+
+```{r}
+reactableOutput("selected_table")
+```
+
+<<<<<<< HEAD:dashboard.Rmd
+<!-- This section defines elements for an additional About page -->
+
+About
+======================================================================
+
+### About the project
+=======
+Row
+-------------------------------------
+###
+```{r}
+#create a new object that grabs the columns from remote_data that should be included in the table 
+include_in_table <- reactive({
+  map_data() %>%
+    select(provider, address, city, state, zip, details_1, details_2)
+})
+>>>>>>> Archiving the R project and added the Javascript + VueJS project.:R-Project/dashboard.Rmd
+
+#### This project IS….
+- A website/webapp with an interactive community map.
+- A tool to help our communities and neighbors locate resources.
+- A collaborative effort connected to local officials and support organizations.
+- An open project that can be quickly adapted to other locations & future needs.
+- Resources we might want to map:
+- Where can I find a free meal?
+- Where can I find free diapers/tp/personal care items?
+- Where can I find a drive-up pharmacy?
+- Where can I find a market with age-60+ shopping hours?
+
+#### This project is NOT…..
+- A map of COVID-19 cases.
+- Information related to emergency medical resources.
+- Outdated information or a dilution of other information channels.
+
+### How can you help?
+Insert information and links for how people can help
