@@ -1,0 +1,22 @@
+{
+	"category": {
+		"childcare": "Child Care",
+		"grocery": "Grocery|Groceries",
+		"meal": "Meal|Meals",
+		"pharmacy": "Pharmacy|Pharmacies"
+	},
+	"dayofweek": {
+		"friday": "Friday",
+		"monday": "Monday",
+		"saturday": "Saturday",
+		"sunday": "Sunday",
+		"thursday": "Thursday",
+		"tuesday": "Tuesday",
+		"wednesday": "Wednesday"
+	},
+	"sidebar": {
+		"what-do-you-need": "What do you need?",
+		"when-do-you-need-it": "When do you need it?"
+	},
+	"title": "COVID-19 Community Support Resources"
+}

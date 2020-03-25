@@ -1,0 +1,56 @@
+{
+  "name": "covid-19-support",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "description": "covid-19-support",
+  "author": {
+    "name": "Code for Chapel Hill Brigade"
+  },
+  "dependencies": {
+    "@kazupon/vue-i18n-loader": "^0.5.0",
+    "bootstrap": "4.4.1",
+    "bootstrap-vue": "2.8.0",
+    "leaflet": "1.6.0",
+    "vue": "2.6.11",
+    "vue-cli-plugin-i18n": "^0.6.1",
+    "vue-i18n": "^8.15.6",
+    "vue2-leaflet": "2.5.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "3.0.4",
+    "@vue/cli-plugin-eslint": "3.0.4",
+    "@vue/cli-service": "3.0.4",
+    "eslint": "5.6.0",
+    "eslint-plugin-vue": "4.7.1",
+    "vue-template-compiler": "2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
