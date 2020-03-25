@@ -4,8 +4,11 @@
 ## Frontend Packages Used
 
 VueJS - The Progressive JavaScript Framework - https://vuejs.org/
+
 Vue I18n - Internationalization Plugin - https://kazupon.github.io/vue-i18n/
+
 Vue Leaflet - Mapping - ( Version of Leaflet that works with VueJS ) - https://vue2-leaflet.netlify.com/ 
+
 BootstrapVue - Responsive Layout - ( Version of Bootstrap that works well with VueJS ) - https://bootstrap-vue.js.org/
 
 ## Development Machine Prerequisites 
