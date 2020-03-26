@@ -1,5 +1,22 @@
-# COVID-19 NC Community Information Site 2020
-# Created by Chapel Hill Code for America Brigade
+# NC COVID Community Support Project
+# Created by the Chapel Hill Brigade of Code for America
+
+## This project is:
+* A website/webapp with an interactive map and table of local resources.
+* A tool to help our communities and neighbors navigate the COVID crisis.
+* A collaborative effort connected to local officials and support organizations.
+* An open project that can be quickly adapted to other locations & future needs.
+
+## The types of resource questions we want to answer:
+* Where can I find a free meal?
+* Where can I find free diapers/toilet paper/personal care items?
+* Where can I find a drive-up pharmacy?
+* Where can I find a market with senior/vulnerable shopping hours?
+* Where can I find a pet store with a drive-up option?
+* Which businesses offer discounts for medical workers?
+
+## Authors
+This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhill.com/) with input from our local town and county officials.
 
 ## Frontend Packages Used
 
