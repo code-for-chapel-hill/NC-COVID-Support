@@ -75,10 +75,13 @@
                                           :attribution="attribution" />
                             <l-marker :lat-lng="latLong(item.gsx$lat.$t,item.gsx$lon.$t)" v-for="(item,index) in filteredMarkers" v-bind:key="index">
                                 <l-popup>
-                                    <div @click="innerClick">
-                                        {{item.gsx$provider.$t}}
+                                    <div>
+                                        <a v-bind:href="item.gsx$weblink.$t">{{item.gsx$provider.$t}}</a>
                                         <p v-show="showParagraph">
-                                            {{item.gsx$details1.$t}}
+                                            <b>Address</b> {{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}}  {{item.gsx$zip.$t}}<br/>
+                                            <b>Phone</b>  {{item.gsx$contact.$t}}<br/>
+                                            <b>Notes:</b> {{item.gsx$details1.$t}}<br/>
+                                            {{item.gsx$details2.$t}}
                                         </p>
                                     </div>
                                 </l-popup>
@@ -166,7 +169,7 @@ Icon.Default.mergeOptions({
                 //withTooltip: latLng(47.41422, -1.250482),
                 currentZoom: 9,
                 currentCenter: latLng(36.0613527,-79.12061721),
-                showParagraph: false,
+                showParagraph: true,
                 mapOptions: {
                     zoomSnap: 0.5
                 },
