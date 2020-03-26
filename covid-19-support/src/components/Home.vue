@@ -41,6 +41,12 @@
                         {{$t('sidebar.when-do-you-need-it')}}
                         <b-form-select v-model="userday" :options="dayOptions"></b-form-select>
                     </div>
+
+                    <div> <i class="fas fa-car"></i>
+                    <i class="fas fa-history"></i>
+                    <i class="fas fa-user-md"></i>
+                    h<value-box/>ea
+                     </div>
                     <!--<div class="list-group-item list-group-item-action bg-light">
                         Resource type
                         Free resources
@@ -113,10 +119,9 @@
     // If you need to reference 'L', such as in 'L.icon', then be sure to
     // explicitly import 'leaflet' into your component
     //import L from 'leaflet';
-    import { latLng } from "leaflet";
     import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
 
-    import { Icon } from 'leaflet';
+    import { latLng, Icon } from 'leaflet';
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -124,7 +129,6 @@ Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
-
     export default {
         name: 'Home',
         props: {

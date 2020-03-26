@@ -1,0 +1,55 @@
+<template>
+    <div class="valuebox">
+        <div class="number">{{value}}</div>
+        <div class="title">{{title}}</div>
+        <i v-bind:class="'fas ' + icon"></i>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'ValueBox',
+        props: {
+            title: { type: String },
+            value: { type: String },
+            icon: { type: String }
+        }
+    };
+</script>
+
+<style>
+    .valuebox {
+        height: 100px;
+        padding: 0 20px;
+        margin: 8px 4px;
+    }
+
+    .number, .title {
+        color: #fff;
+    }
+    .number {
+        font-size: 2em;
+    }
+    i.fas {
+        font-size: 4.5em;
+        opacity: 0.1;
+        position: absolute;
+        right: 25px;
+        top: 24px;
+    }
+    .valuebox.bg-blue {
+        background-color: #63a2e7 !important;
+    }
+    .valuebox.bg-green {
+        background-color: #75c759 !important;
+    }    
+    .valuebox.bg-green:hover {
+        background-color: #52AA36 !important;
+        cursor: pointer;
+    }
+    .valuebox.bg-blue:hover {
+        background-color: #4189DA !important;
+        cursor: pointer;
+    }
+    
+</style>

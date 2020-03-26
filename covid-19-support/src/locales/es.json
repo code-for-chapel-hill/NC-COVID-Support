@@ -16,9 +16,13 @@
 	},
 	"label": {
 		"address": "Dirección",
+		"curbsidepickup": "Restaurantes con recogida en la acera",
+		"discounts": "Descuentos para trabajadores médicos.",
+		"freemeals": "Lugares de comidas gratis",
 		"instructions": "Instrucciones",
 		"offers": "Ofertas",
-		"phone": "Teléfono"
+		"phone": "Teléfono",
+		"seniorshopping": "Horario comercial senior"
 	},
 	"sidebar": {
 		"what-do-you-need": "¿Que necesitas?",

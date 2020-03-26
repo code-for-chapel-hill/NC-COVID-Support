@@ -54,14 +54,14 @@ map_data <- reactive({
 # create a new object that grabs the columns from remote_data that should be included in the table 
 include_in_table <- reactive({
   map_data() %>%
-    select(provider, address, city, state, zip, details_1, details_2)
+    select(providername, address, city, state, zip, information, offers)
 })
 
 # create a new data object for only the row selected on the map
 selected_marker <- reactive({
   map_data() %>%
     filter(index == input$map_marker_click$id) %>%
-    select(provider, address, city, state, zip, details_1, details_2)
+    select(providername, address, city, state, zip, information, offers)
 })
 
 ```
@@ -133,9 +133,9 @@ output$map <- renderLeaflet({
       layerId = ~index,
       lng = ~lon, lat = ~lat,
       popup = paste(
-        "<b><a href='", map_data()$web_link, "'>", map_data()$provider, "</a></b><br/>",
+        "<b><a href='", map_data()$web_link, "'>", map_data()$providername, "</a></b><br/>",
         "<b>Address:</b>", map_data()$address, ",", map_data()$city, ",", map_data()$state, ",",
-        map_data()$zip, "<br/>", "<b>Phone:</b> ", map_data()$contact, "<br/><b>Notes:</b> ", map_data()$details_1, "<br/>", map_data()$details_2
+        map_data()$zip, "<br/>", "<b>Phone:</b> ", map_data()$contact, "<br/><b>Notes:</b> ", map_data()$information, "<br/>", map_data()$offers
       ),
       clusterOptions = markerClusterOptions(spiderfyOnMaxZoom = TRUE)
     ) %>%
@@ -150,13 +150,13 @@ output$table <- renderReactable({
   reactable(include_in_table(),rownames = FALSE, resizable = TRUE,
             defaultPageSize = 5,striped = TRUE,
             columns = list(
-              provider = colDef(name = "Provider"),
+              providername = colDef(name = "Provider"),
               address = colDef(name = "Address"),
               city = colDef(name = "City"),
               state = colDef(name = "State"),
               zip = colDef(name = "Zip"),
-              details_1 = colDef(name = "Notes"),
-              details_2 = colDef(name = "Addtl. Notes")
+              information = colDef(name = "Notes"),
+              offers = colDef(name = "Addtl. Notes")
             ))
 })
 
@@ -167,13 +167,13 @@ output$selected_table <- renderReactable({
   reactable(selected_marker(), rownames = FALSE, resizable = TRUE,
             defaultPageSize = 1,
             columns = list(
-              provider = colDef(name = "Provider"),
+              providername = colDef(name = "Provider"),
               address = colDef(name = "Address"),
               city = colDef(name = "City"),
               state = colDef(name = "State"),
               zip = colDef(name = "Zip"),
-              details_1 = colDef(name = "Notes"),
-              details_2 = colDef(name = "Addtl. Notes")
+              information = colDef(name = "Notes"),
+              offers = colDef(name = "Addtl. Notes")
             ))
 })
 
