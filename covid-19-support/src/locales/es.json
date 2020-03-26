@@ -14,6 +14,12 @@
 		"tuesday": "Martes",
 		"wednesday": "Miércoles"
 	},
+	"label": {
+		"address": "Dirección",
+		"instructions": "Instrucciones",
+		"offers": "Ofertas",
+		"phone": "Teléfono"
+	},
 	"sidebar": {
 		"what-do-you-need": "¿Que necesitas?",
 		"when-do-you-need-it": "Cuando lo necesitas?"

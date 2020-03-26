@@ -76,12 +76,14 @@
                             <l-marker :lat-lng="latLong(item.gsx$lat.$t,item.gsx$lon.$t)" v-for="(item,index) in filteredMarkers" v-bind:key="index">
                                 <l-popup>
                                     <div>
-                                        <a v-bind:href="item.gsx$weblink.$t">{{item.gsx$provider.$t}}</a>
+                                        <a v-bind:href="item.gsx$weblink.$t">{{item.gsx$providername.$t}}</a>
                                         <p v-show="showParagraph">
-                                            <b>Address:</b> {{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}} {{item.gsx$zip.$t}}<br/>
-                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><b>Phone:</b>  {{item.gsx$contact.$t}}<br/></span>
-                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><hr/><b>Notes:</b><br/>{{item.gsx$details1.$t}}</span>
-                                            <span v-if="!isNullEmpty(item.gsx$details2.$t)"><br/>{{item.gsx$details2.$t}}</span>
+                                            <b>{{$t('label.address')}}:</b> <span v-if="!isNullEmpty(item.gsx$provideraddloc.$t)">{{item.gsx$provideraddloc.$t}}, </span>{{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}} {{item.gsx$zip.$t}}<br/>
+                                            <span v-if="!isNullEmpty(item.gsx$contact.$t)"><b>{{$t('label.phone')}}:</b>  {{item.gsx$contact.$t}}<br/></span>
+                                            <span v-if="!isNullEmpty(item.gsx$instructions.$t) || !isNullEmpty(item.gsx$offers.$t)"><hr/></span>
+                                            <span v-if="!isNullEmpty(item.gsx$instructions.$t)"><b>{{$t('label.instructions')}}:</b><br/>{{item.gsx$instructions.$t}}</span>
+                                            <span v-if="!isNullEmpty(item.gsx$instructions.$t) && !isNullEmpty(item.gsx$offers.$t)"><br/></span>
+                                            <span v-if="!isNullEmpty(item.gsx$offers.$t)"><b>{{$t('label.offers')}}:</b><br/>{{item.gsx$offers.$t}}</span>
                                         </p>
                                     </div>
                                 </l-popup>
@@ -181,7 +183,8 @@ Icon.Default.mergeOptions({
         },
         methods: {
             isNullEmpty(str) {
-                str !== null && str !== '' ? false : true;
+                str = str.trim();
+                return str !== null && str !== "" ? false : true;
             },
             latLong(lat, lng) {
                 return latLng(lat, lng);
