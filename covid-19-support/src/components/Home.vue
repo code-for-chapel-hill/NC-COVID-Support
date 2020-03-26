@@ -73,7 +73,7 @@
                                @update:zoom="zoomUpdate">
                             <l-tile-layer :url="url"
                                           :attribution="attribution" />
-                            <l-marker :lat-lng="latLong(item.gsx$lat.$t,item.gsx$lon.$t)" v-for="(item,index) in entries" v-bind:key="index">
+                            <l-marker :lat-lng="latLong(item.gsx$lat.$t,item.gsx$lon.$t)" v-for="(item,index) in filteredMarkers" v-bind:key="index">
                                 <l-popup>
                                     <div @click="innerClick">
                                         {{item.gsx$provider.$t}}
@@ -145,8 +145,8 @@ Icon.Default.mergeOptions({
                 tileLayer: null,
                 layers: [],
                 sheetUrl: 'https://spreadsheets.google.com/feeds/list/1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0/1/public/values?alt=json',
-                userneed: String,
-                userday: String,
+                userneed: 'meal',
+                userday: new Date().getDay(),
                 language: {
                     name : 'English', iso: 'en'
                 },
@@ -208,23 +208,26 @@ Icon.Default.mergeOptions({
             }
         },
         computed: {
+            filteredMarkers() {
+                return this.entries == null ? null : this.entries.filter(c => c.gsx$resource.$t == this.userneed);
+            },
             needOptions() {
                 return [
-                    { value: 'Meals', text: this.$tc('category.meal', 2) },
-                    { value: 'Groceries', text: this.$tc('category.grocery', 2) },
-                    { value: 'Pharmacy', text: this.$tc('category.pharmacy', 1) },
-                    { value: 'Childcare', text: this.$t('category.childcare') }
+                    { value: 'meal', text: this.$tc('category.meal', 2) },
+                    { value: 'grocery', text: this.$tc('category.grocery', 2) },
+                    { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
+                    { value: 'childcare', text: this.$t('category.childcare') }
                 ]
             },
             dayOptions() {
                 return [
-                    { value: 'Monday', text: this.$t('dayofweek.monday') },
-                    { value: 'Tuesday', text: this.$t('dayofweek.tuesday') },
-                    { value: 'Wednesday', text: this.$t('dayofweek.wednesday') },
-                    { value: 'Thursday', text: this.$t('dayofweek.thursday') },
-                    { value: 'Friday', text: this.$t('dayofweek.friday') },
-                    { value: 'Saturday', text: this.$t('dayofweek.saturday') },
-                    { value: 'Sunday', text: this.$t('dayofweek.sunday') }
+                    { value: '1', text: this.$t('dayofweek.monday') },
+                    { value: '2', text: this.$t('dayofweek.tuesday') },
+                    { value: '3', text: this.$t('dayofweek.wednesday') },
+                    { value: '4', text: this.$t('dayofweek.thursday') },
+                    { value: '5', text: this.$t('dayofweek.friday') },
+                    { value: '6', text: this.$t('dayofweek.saturday') },
+                    { value: '0', text: this.$t('dayofweek.sunday') }
                 ]
             }
         }
