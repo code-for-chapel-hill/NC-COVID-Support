@@ -26,7 +26,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-
+    
+    - working-directory: covid-19-support
+      
     # Install all the packages
     - run: npm install
     
