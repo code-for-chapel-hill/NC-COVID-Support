@@ -27,11 +27,10 @@ jobs:
       with:
         node-version: '12.x'    
 
-    # Move to the covid-19-support directory
-    - run: cd covid-19-support
-
     # Install all the packages
     - run: npm install
+      working-directory: covid-19-support
     
     # Run the production build
     - run: npm run build
+      working-directory: covid-19-support
