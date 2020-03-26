@@ -80,7 +80,7 @@
                                         <p v-show="showParagraph">
                                             <b>Address:</b> {{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}} {{item.gsx$zip.$t}}<br/>
                                             <span v-if="!isNullEmpty(item.gsx$details1.$t)"><b>Phone:</b>  {{item.gsx$contact.$t}}<br/></span>
-                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><b>Notes:</b><br/>{{item.gsx$details1.$t}}</span>
+                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><hr/><b>Notes:</b><br/>{{item.gsx$details1.$t}}</span>
                                             <span v-if="!isNullEmpty(item.gsx$details2.$t)"><br/>{{item.gsx$details2.$t}}</span>
                                         </p>
                                     </div>
