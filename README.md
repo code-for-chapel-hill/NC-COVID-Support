@@ -1,5 +1,5 @@
 # NC COVID Community Support Project
-# Created by Chapel Hill Code for America Brigade
+# Created by the Chapel Hill Brigade of Code for America
 
 ## This project is:
 * A website/webapp with an interactive map and table of local resources.
