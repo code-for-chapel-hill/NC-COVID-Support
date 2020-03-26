@@ -1,6 +1,6 @@
 # This is a workflow to build the COVID project for production
 
-name: CI
+name: Continuous Integration
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -21,7 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      
+      with:
+        persist-credentials: false
+        
     # Setup NodeJS  
     - uses: actions/setup-node@v1
       with:
@@ -34,3 +36,10 @@ jobs:
     # Run the production build
     - run: npm run build
       working-directory: covid-19-support
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist # The folder the action should deploy.
