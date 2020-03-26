@@ -218,7 +218,42 @@ Icon.Default.mergeOptions({
         },
         computed: {
             filteredMarkers() {
-                return this.entries == null ? null : this.entries.filter(c => c.gsx$resource.$t == this.userneed);
+                var filterMarks;
+                
+                if (this.entries == null) {
+                    filterMarks = null;
+                } else {
+                    filterMarks = this.entries.filter(c => c.gsx$resource.$t == this.userneed);   
+
+                    switch (this.userday) {
+                        case '0':
+                            filterMarks = filterMarks.filter(c => c.gsx$sun.$t !== '0');
+                            break;
+                        case '1':
+                            filterMarks = filterMarks.filter(c => c.gsx$mon.$t !== '0');
+                            break;
+                        case '2':
+                            filterMarks = filterMarks.filter(c => c.gsx$tues.$t !== '0');
+                            break;
+                        case '3':
+                            filterMarks = filterMarks.filter(c => c.gsx$wed.$t !== '0');
+                            break;
+                        case '4':
+                            filterMarks = filterMarks.filter(c => c.gsx$thr.$t !== '0');
+                            break;
+                        case '5':
+                            filterMarks = filterMarks.filter(c => c.gsx$fri.$t !== '0');
+                            break;
+                        case '6':
+                            filterMarks = filterMarks.filter(c => c.gsx$sat.$t !== '0');
+                            break;
+                    
+                        default:
+                            break;                        
+                    }
+                }
+
+                return filterMarks;
             },
             needOptions() {
                 return [
