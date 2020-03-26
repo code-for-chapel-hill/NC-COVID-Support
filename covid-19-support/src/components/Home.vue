@@ -78,10 +78,10 @@
                                     <div>
                                         <a v-bind:href="item.gsx$weblink.$t">{{item.gsx$provider.$t}}</a>
                                         <p v-show="showParagraph">
-                                            <b>Address</b> {{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}}  {{item.gsx$zip.$t}}<br/>
-                                            <b>Phone</b>  {{item.gsx$contact.$t}}<br/>
-                                            <b>Notes:</b> {{item.gsx$details1.$t}}<br/>
-                                            {{item.gsx$details2.$t}}
+                                            <b>Address:</b> {{item.gsx$address.$t}}, {{item.gsx$city.$t}}, {{item.gsx$state.$t}} {{item.gsx$zip.$t}}<br/>
+                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><b>Phone:</b>  {{item.gsx$contact.$t}}<br/></span>
+                                            <span v-if="!isNullEmpty(item.gsx$details1.$t)"><b>Notes:</b><br/>{{item.gsx$details1.$t}}</span>
+                                            <span v-if="!isNullEmpty(item.gsx$details2.$t)"><br/>{{item.gsx$details2.$t}}</span>
                                         </p>
                                     </div>
                                 </l-popup>
@@ -180,6 +180,9 @@ Icon.Default.mergeOptions({
 
         },
         methods: {
+            isNullEmpty(str) {
+                str !== null && str !== '' ? false : true;
+            },
             latLong(lat, lng) {
                 return latLng(lat, lng);
             },
