@@ -179,7 +179,7 @@ Icon.Default.mergeOptions({
                     { name: 'Fran&#231;ais', iso: 'fr' }
                 ],
                 zoom: 13,
-                center: latLng(36.0613527,-79.12061721),                
+                center: latLng(35.91371,-79.057919),                
                 // url: 'https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=TxvhrAmR6qR1BMLNZjOj',
                 // attribution:
                 //     '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
@@ -192,7 +192,7 @@ Icon.Default.mergeOptions({
                 //withPopup: latLng(47.41322, -1.219482),
                 //withTooltip: latLng(47.41422, -1.250482),
                 currentZoom: 9,
-                currentCenter: latLng(36.0613527,-79.12061721),
+                currentCenter: latLng(35.91371,-79.057919),
                 showParagraph: true,
                 mapOptions: {
                     zoomSnap: 0.5
@@ -320,6 +320,7 @@ Icon.Default.mergeOptions({
     #topnav {
         position: absolute;
         width: 100%;
+        z-index: 1;
     }
 
     .bv-example-row {
@@ -361,7 +362,7 @@ Icon.Default.mergeOptions({
         }
 
     #page-content-wrapper {
-        min-width: 100vw;
+        /* min-width: 100vw; */
     }
 
     #wrapper.toggled #sidebar-wrapper {
