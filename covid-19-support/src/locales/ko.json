@@ -1,0 +1,32 @@
+{
+	"category": {
+		"childcare": "육아",
+		"grocery": "식료품 | 식료품 점",
+		"meal": "식사 | 식사",
+		"pharmacy": "약국 | 약국"
+	},
+	"dayofweek": {
+		"friday": "금요일",
+		"monday": "월요일",
+		"saturday": "토요일",
+		"sunday": "일요일",
+		"thursday": "목요일",
+		"tuesday": "화요일",
+		"wednesday": "수요일"
+	},
+	"label": {
+		"address": "주소",
+		"curbsidepickup": "커브 사이드 픽업 레스토랑",
+		"discounts": "의료인 할인",
+		"freemeals": "무료 식사 장소",
+		"instructions": "명령",
+		"offers": "제안",
+		"phone": "전화",
+		"seniorshopping": "수석 쇼핑 시간"
+	},
+	"sidebar": {
+		"what-do-you-need": "무엇이 필요합니까?",
+		"when-do-you-need-it": "언제 필요합니까?"
+	},
+	"title": "COVID-19 커뮤니티 지원 자료"
+}

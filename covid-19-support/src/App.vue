@@ -65,7 +65,7 @@
             <div id="page-content-wrapper">
                 <div class="row highlights">
                     <div class="col-6 col-md-3 order-md-1">                    
-                        <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" value="30" class="bg-blue"/>
+                        <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" v-bind:value="countPickup" class="bg-blue"/>
                     </div>
                     <div class="col-6 col-md-3 order-md-2">                    
                         <value-box icon="fa-car" v-bind:title="$t('label.curbsidepickup')" value="76" class="bg-green"/>
@@ -176,7 +176,8 @@ Icon.Default.mergeOptions({
                 languages: [
                     { name: 'English', iso: 'en' },
                     { name: 'Espa&#241;ol', iso: 'es' },
-                    { name: 'Fran&#231;ais', iso: 'fr' }
+                    { name: 'Fran&#231;ais', iso: 'fr' },
+                    { name: '한국어', iso: 'ko' }
                 ],
                 zoom: 13,
                 center: latLng(35.91371,-79.057919),                
@@ -239,6 +240,9 @@ Icon.Default.mergeOptions({
             }
         },
         computed: {
+            countPickup() {
+                return new Set(this.filteredMarkers).size;
+            },
             filteredMarkers() {
                 var filterMarks;
                 
@@ -281,8 +285,8 @@ Icon.Default.mergeOptions({
                 return [
                     { value: 'meal', text: this.$tc('category.meal', 2) },
                     { value: 'grocery', text: this.$tc('category.grocery', 2) },
-                    { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
-                    { value: 'childcare', text: this.$t('category.childcare') }
+                    { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) }
+                    // ,{ value: 'childcare', text: this.$t('category.childcare') }
                 ]
             },
             dayOptions() {
@@ -320,7 +324,7 @@ Icon.Default.mergeOptions({
     #topnav {
         position: absolute;
         width: 100%;
-        z-index: 1;
+        z-index: 500;
     }
 
     .bv-example-row {
