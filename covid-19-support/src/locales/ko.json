@@ -16,13 +16,13 @@
 	},
 	"label": {
 		"address": "주소",
-		"curbsidepickup": "커브 사이드 픽업 레스토랑",
-		"discounts": "의료인 할인",
+		"curbsidepickup": "보도 픽업 레스토랑",
+		"discounts": "의료인 할인 장소",
 		"freemeals": "무료 식사 장소",
-		"instructions": "명령",
-		"offers": "제안",
+		"instructions": "방법",
+		"offers": "서비스",
 		"phone": "전화",
-		"seniorshopping": "수석 쇼핑 시간"
+		"seniorshopping": "노약자 쇼핑 시간"
 	},
 	"sidebar": {
 		"what-do-you-need": "무엇이 필요합니까?",

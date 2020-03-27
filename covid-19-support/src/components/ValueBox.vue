@@ -11,7 +11,7 @@
         name: 'ValueBox',
         props: {
             title: { type: String },
-            value: { type: String },
+            value: { type: Number },
             icon: { type: String }
         }
     };

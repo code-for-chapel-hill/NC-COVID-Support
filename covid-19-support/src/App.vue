@@ -65,16 +65,16 @@
             <div id="page-content-wrapper">
                 <div class="row highlights">
                     <div class="col-6 col-md-3 order-md-1">                    
-                        <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" v-bind:value="countPickup" class="bg-blue"/>
+                        <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" :value="countPickup" class="bg-blue"/>
                     </div>
                     <div class="col-6 col-md-3 order-md-2">                    
-                        <value-box icon="fa-car" v-bind:title="$t('label.curbsidepickup')" value="76" class="bg-green"/>
+                        <value-box icon="fa-car" v-bind:title="$t('label.curbsidepickup')" :value=76 class="bg-green"/>
                     </div>
                     <div class="col-6 col-md-3 order-md-4">                    
-                        <value-box icon="fa-user-md" v-bind:title="$t('label.discounts')" value="0" class="bg-green"/> 
+                        <value-box icon="fa-user-md" v-bind:title="$t('label.discounts')" :value=0 class="bg-green"/> 
                     </div>
                     <div class="col-6 col-md-3 order-md-3">              
-                        <value-box icon="fa-history" v-bind:title="$t('label.seniorshopping')" value="8" class="bg-blue"/>
+                        <value-box icon="fa-history" v-bind:title="$t('label.seniorshopping')" :value=8 class="bg-blue"/>
                     </div>
                </div>
                 <b-container class="bv-example-row px-0" fluid>
