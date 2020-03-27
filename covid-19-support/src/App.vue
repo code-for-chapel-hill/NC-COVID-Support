@@ -64,17 +64,17 @@
             </div>
             <div id="page-content-wrapper">
                 <div class="row highlights">
-                    <div class="col-6 col-md-3">                    
+                    <div class="col-6 col-md-3 order-md-1">                    
                         <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" value="30" class="bg-blue"/>
                     </div>
-                    <div class="col-6 col-md-3">                    
+                    <div class="col-6 col-md-3 order-md-2">                    
                         <value-box icon="fa-car" v-bind:title="$t('label.curbsidepickup')" value="76" class="bg-green"/>
                     </div>
-                    <div class="col-6 col-md-3">              
-                        <value-box icon="fa-history" v-bind:title="$t('label.seniorshopping')" value="8" class="bg-blue"/>
-                    </div>
-                    <div class="col-6 col-md-3">                    
+                    <div class="col-6 col-md-3 order-md-4">                    
                         <value-box icon="fa-user-md" v-bind:title="$t('label.discounts')" value="0" class="bg-green"/> 
+                    </div>
+                    <div class="col-6 col-md-3 order-md-3">              
+                        <value-box icon="fa-history" v-bind:title="$t('label.seniorshopping')" value="8" class="bg-blue"/>
                     </div>
                </div>
                 <b-container class="bv-example-row px-0" fluid>
@@ -179,7 +179,13 @@ Icon.Default.mergeOptions({
                     { name: 'Fran&#231;ais', iso: 'fr' }
                 ],
                 zoom: 13,
-                center: latLng(36.0613527,-79.12061721),
+                center: latLng(36.0613527,-79.12061721),                
+                // url: 'https://api.maptiler.com/maps/positron/{z}/{x}/{y}.png?key=TxvhrAmR6qR1BMLNZjOj',
+                // attribution:
+                //     '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+                // url: 'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=TxvhrAmR6qR1BMLNZjOj',
+                // attribution:
+                //     '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
                 url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 attribution:
                     '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -296,12 +302,12 @@ Icon.Default.mergeOptions({
 </script>
 
 <style>
+
    html, body, #wrapper {
         height: 100%;
     }
     .highlights {
-        margin-left: 4px !important;
-        margin-right: 4px !important;
+        margin: 4px !important;
     }
 
     .highlights div.col-md-3 {

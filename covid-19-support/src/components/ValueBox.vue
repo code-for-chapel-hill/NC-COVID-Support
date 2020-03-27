@@ -21,8 +21,12 @@
     .valuebox {
         height: 100px;
         padding: 0 20px;
-        margin: 8px 4px;
+        margin: 4px 4px;
     }
+   @media (min-width: 768px) {
+        margin: 8px 4px;
+   }
+
 
     .number, .title {
         color: #fff;
