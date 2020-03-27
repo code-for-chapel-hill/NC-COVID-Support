@@ -283,7 +283,9 @@ Icon.Default.mergeOptions({
             },
             needOptions() {
                 return [
+                    { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
                     { value: 'meal', text: this.$tc('category.meal', 2) },
+                    { value: 'school', text: this.$tc('category.school', 2) },
                     { value: 'grocery', text: this.$tc('category.grocery', 2) },
                     { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) }
                     // ,{ value: 'childcare', text: this.$t('category.childcare') }

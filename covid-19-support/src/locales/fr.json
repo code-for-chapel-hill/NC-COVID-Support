@@ -2,8 +2,10 @@
 	"category": {
 		"childcare": "Garde d'enfants",
 		"grocery": "Épicerie | Épicerie",
-		"meal": "Repas | Repas",
-		"pharmacy": "Pharmacie | Pharmacies"
+		"meal": "Repas gratuit | Repas gratuits",
+		"pharmacy": "Pharmacie | Pharmacies",
+		"restaurant": "Restaurant | Restaurants",
+		"school": "Repas scolaire | Repas scolaires"
 	},
 	"dayofweek": {
 		"friday": "Vendredi",

@@ -2,8 +2,10 @@
 	"category": {
 		"childcare": "Cuidado de los niños",
 		"grocery": "Comestibles",
-		"meal": "Comida | Comidas",
-		"pharmacy": "Farmacia | Farmacias"
+		"meal": "Comida gratis | Comidas gratis",
+		"pharmacy": "Farmacia | Farmacias",
+		"restaurant": "Restaurante | Restaurantes",
+		"school": "Comida escolar | Comidas escolares"
 	},
 	"dayofweek": {
 		"friday": "Viernes",

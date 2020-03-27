@@ -1,9 +1,11 @@
 {
 	"category": {
-		"childcare": "Child Care",
+		"childcare": "Child care",
 		"grocery": "Grocery|Groceries",
-		"meal": "Meal|Meals",
-		"pharmacy": "Pharmacy|Pharmacies"
+		"meal": "Free meal|Free meals",
+		"pharmacy": "Pharmacy|Pharmacies",
+		"restaurant": "Restaurant|Restaurants",
+		"school": "School meal|School meals"
 	},
 	"dayofweek": {
 		"friday": "Friday",

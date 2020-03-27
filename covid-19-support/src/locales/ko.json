@@ -2,8 +2,10 @@
 	"category": {
 		"childcare": "육아",
 		"grocery": "식료품 | 식료품 점",
-		"meal": "식사 | 식사",
-		"pharmacy": "약국 | 약국"
+		"meal": "무료 식사 | 무료 식사",
+		"pharmacy": "약국 | 약국",
+		"restaurant": "식당 | 레스토랑",
+		"school": "학교 급식 | 학교 급식"
 	},
 	"dayofweek": {
 		"friday": "금요일",
