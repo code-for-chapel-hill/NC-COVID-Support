@@ -20,8 +20,9 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-        <div class="d-flex" id="wrapper">
+        <div class="d-flex" id="wrapper" :class="{'toggled' : tab}">
             <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="tab bg-light border-right border-top border-bottom" @click="tab = !tab"><i class="fas fa-caret-square-down"></i></div>
                 <div class="list-group list-group-flush">
                     <div class="list-group-item list-group-item-action bg-light">
                         {{$t('sidebar.what-do-you-need')}}
@@ -35,7 +36,7 @@
                 </div>
             </div>
             <div id="page-content-wrapper">
-                <highlights :valueBoxes="boxValues" />
+                <highlights :valueBoxes="boxValues" :class="{'toggled' : tab}"/>
                 <b-container class="bv-example-row px-0" fluid>
                     <div class="map">
                         <l-map v-if="showMap"
@@ -149,6 +150,7 @@ Icon.Default.mergeOptions({
                 sheetUrl: 'https://spreadsheets.google.com/feeds/list/1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0/1/public/values?alt=json',
                 userneed: 'restaurant',
                 userday: new Date().getDay(),
+                tab: true,
                 language: {
                     name : 'English', iso: 'en'
                 },
@@ -386,6 +388,18 @@ Icon.Default.mergeOptions({
         z-index: 500;
     }
 
+    .navbar-brand {
+        margin-right: 2px !important;
+        font-size: 1rem !important;
+    }
+
+    @media (min-width: 768px) {
+        .navbar-brand {
+            margin-right: 2px !important;
+            font-size: 1.25rem !important;
+        }
+    }
+
     .bv-example-row {
         height: 100%;
     }
@@ -394,12 +408,46 @@ Icon.Default.mergeOptions({
         padding-top: 56px;
         box-sizing: border-box;
     }
+    .tab {
+        width: 40px;
+        height: 60px;
+        position: absolute;
+        top: 388px;
+        z-index: 500;
+        left: 0;
+        background: #fff;
+        transition: left .25s ease-out;
+    }
+    .tab i {
+        font-size: 2rem;
+        color: #dee2e6;
+        transform: rotate(-90deg);
+        margin-top: 12px;
+        margin-left: 4px;
+    }
+
+        #wrapper.toggled .tab {
+        left: 15rem;
+    }
+
+    #wrapper.toggled .tab i {
+        transform: rotate(90deg);
+    }
+@media (min-width: 768px)
+{
+    .tab {
+        margin-left: 0;
+        top: 257px;
+    }
+}
 
     .map {
-        width: 100%;
+        width: auto;
         height: 100%;
         top: 0;
         padding: 0;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
     .side-nav {
@@ -434,16 +482,16 @@ Icon.Default.mergeOptions({
 
     @media (min-width: 768px) {
         #sidebar-wrapper {
-            margin-left: 0;
+            /* margin-left: 0; */
         }
 
         #page-content-wrapper {
             min-width: 0;
-            width: 100%;
+            width: 80%;
         }
 
         #wrapper.toggled #sidebar-wrapper {
-            margin-left: -15rem;
+            /* margin-left: -15rem; */
         }
     }
 </style>
