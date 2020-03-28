@@ -385,7 +385,7 @@ Icon.Default.mergeOptions({
     #topnav {
         position: absolute;
         width: 100%;
-        z-index: 500;
+        z-index: 1200;
     }
 
     .navbar-brand {
@@ -401,8 +401,15 @@ Icon.Default.mergeOptions({
     }
 
     .bv-example-row {
-        height: 100%;
+        height: calc(100% - 232px);
     }
+    @media (min-width: 768px)
+    {
+        .bv-example-row {
+            height: calc(100% - 124px);
+        }
+    }
+
 
     #sidebar-wrapper, #page-content-wrapper {
         padding-top: 56px;
@@ -420,7 +427,7 @@ Icon.Default.mergeOptions({
     }
     .tab i {
         font-size: 2rem;
-        color: #dee2e6;
+        color: #B5BFCA;
         transform: rotate(-90deg);
         margin-top: 12px;
         margin-left: 4px;
@@ -461,6 +468,7 @@ Icon.Default.mergeOptions({
         -moz-transition: margin .25s ease-out;
         -o-transition: margin .25s ease-out;
         transition: margin .25s ease-out;
+        z-index: 1100;
     }
 
         #sidebar-wrapper .sidebar-heading {
@@ -473,7 +481,9 @@ Icon.Default.mergeOptions({
         }
 
     #page-content-wrapper {
-        /* min-width: 100vw; */
+        width:100%;
+        height:100%;
+        position:absolute;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -487,7 +497,6 @@ Icon.Default.mergeOptions({
 
         #page-content-wrapper {
             min-width: 0;
-            width: 80%;
         }
 
         #wrapper.toggled #sidebar-wrapper {

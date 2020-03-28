@@ -41,18 +41,10 @@
     .highlights div.col-md-3 {
         padding:0 !important;
     }    
-    .highlights.toggled {
-        height: 0;
-        opacity: 0;
-    }
 
     @media (min-width: 768px) {
         .highlights {
             height: 108px;
-        }
-        .highlights.toggled {
-            height: 108px;
-            opacity: 1;
         }
     }
 
