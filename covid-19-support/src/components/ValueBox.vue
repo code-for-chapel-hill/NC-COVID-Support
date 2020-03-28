@@ -40,7 +40,7 @@
     .number {
         font-size: 2em;
     }
-    i.fas {
+    .valuebox i.fas {
         font-size: 4.5em;
         opacity: 0.1;
         position: absolute;
