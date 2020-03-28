@@ -3,6 +3,7 @@
 		"childcare": "육아",
 		"grocery": "식료품 | 식료품 점",
 		"meal": "무료 식사 | 무료 식사",
+		"petsupplies": "애완 용품",
 		"pharmacy": "약국 | 약국",
 		"restaurant": "식당 | 레스토랑",
 		"school": "학교 급식 | 학교 급식"
@@ -19,10 +20,16 @@
 	"label": {
 		"address": "주소",
 		"curbsidepickup": "보도 픽업 레스토랑",
+		"delivery": "배달",
 		"discounts": "의료인 할인 장소",
+		"freegrocery": "무료 식료품 점",
 		"freemeals": "무료 식사 장소",
+		"freeproduce": "무료 농산물 위치",
 		"instructions": "방법",
+		"mealsforstudents": "학생들을위한 식사",
 		"offers": "서비스",
+		"opentopublic": "공개 식사",
+		"orderonline": "온라인 주문 및 결제",
 		"phone": "전화",
 		"seniorshopping": "노약자 쇼핑 시간"
 	},

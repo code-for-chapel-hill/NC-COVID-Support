@@ -3,6 +3,7 @@
 		"childcare": "Garde d'enfants",
 		"grocery": "Épicerie | Épicerie",
 		"meal": "Repas gratuit | Repas gratuits",
+		"petsupplies": "Fournitures pour animaux",
 		"pharmacy": "Pharmacie | Pharmacies",
 		"restaurant": "Restaurant | Restaurants",
 		"school": "Repas scolaire | Repas scolaires"
@@ -19,10 +20,16 @@
 	"label": {
 		"address": "Adresse",
 		"curbsidepickup": "Restaurants avec ramassage en bordure de rue",
+		"delivery": "Livraison",
 		"discounts": "Réductions pour les travailleurs médicaux",
+		"freegrocery": "Emplacements d'épicerie gratuits",
 		"freemeals": "Lieux de repas gratuits",
+		"freeproduce": "Lieu de production gratuit",
 		"instructions": "Instructions",
+		"mealsforstudents": "Repas pour les étudiants",
 		"offers": "Des offres",
+		"opentopublic": "Repas ouverts au public",
+		"orderonline": "Commandez et payez en ligne",
 		"phone": "Téléphone",
 		"seniorshopping": "Heures de magasinage pour les seniors"
 	},
@@ -30,5 +37,5 @@
 		"what-do-you-need": "De quoi avez-vous besoin?",
 		"when-do-you-need-it": "Quand en avez-vous besoin?"
 	},
-	"title": "Le Ressources de soutien communautaire COVID-19"
+	"title": "Ressources communautaires COVID-19"
 }

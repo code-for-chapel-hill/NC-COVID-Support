@@ -11,7 +11,7 @@
     <preset_collections/>
     <framework>vue-json</framework>
     <filename>BabelEdit.babel</filename>
-    <source_root_dir></source_root_dir>
+    <source_root_dir>../../</source_root_dir>
     <folder_node>
         <name></name>
         <children>
@@ -70,6 +70,31 @@
                     </concept_node>
                     <concept_node>
                         <name>meal</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>petsupplies</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
                         <comment></comment>
@@ -404,7 +429,57 @@
                         </translations>
                     </concept_node>
                     <concept_node>
+                        <name>delivery</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>discounts</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>freegrocery</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
                         <comment></comment>
@@ -454,6 +529,31 @@
                         </translations>
                     </concept_node>
                     <concept_node>
+                        <name>freeproduce</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>instructions</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
@@ -479,7 +579,82 @@
                         </translations>
                     </concept_node>
                     <concept_node>
+                        <name>mealsforstudents</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>offers</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>opentopublic</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>true</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>orderonline</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
                         <comment></comment>
