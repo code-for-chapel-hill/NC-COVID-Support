@@ -17,21 +17,11 @@
                         </template>
                         <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso"><div v-html="item.name" @click="changeLanguage(item)"></div></b-dropdown-item>
                     </b-nav-item-dropdown>
-
-                    <!--<b-nav-item-dropdown right>
-                         Using 'button-content' slot
-                        <template v-slot:button-content>
-                            <em>User</em>
-                        </template>
-                        <b-dropdown-item href="#">Profile</b-dropdown-item>
-                        <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-                    </b-nav-item-dropdown>-->
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
         <div class="d-flex" id="wrapper">
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <!--<div class="sidebar-heading">Start Bootstrap </div>-->
                 <div class="list-group list-group-flush">
                     <div class="list-group-item list-group-item-action bg-light">
                         {{$t('sidebar.what-do-you-need')}}
@@ -42,41 +32,10 @@
                         <b-form-select v-model="userday" :options="dayOptions"></b-form-select>
                     </div>
 
-                    <!--<div class="list-group-item list-group-item-action bg-light">
-                        Resource type
-                        Free resources
-                        Paid resources
-                    </div>
-                    <div class="list-group-item list-group-item-action bg-light">
-                        Access
-                        Pick-up
-                        Drive-up
-                        Delivery
-                    </div>
-                    <div class="list-group-item list-group-item-action bg-light">
-                        Times available
-                        Morning
-                        Afternoon
-                        Evening
-                        24 hour
-                    </div>-->
                 </div>
             </div>
             <div id="page-content-wrapper">
-                <div class="row highlights">
-                    <div class="col-6 col-md-3 order-md-1">                    
-                        <value-box icon="fa-utensils" v-bind:title="$t('label.freemeals')" :value="countPickup" class="bg-blue"/>
-                    </div>
-                    <div class="col-6 col-md-3 order-md-2">                    
-                        <value-box icon="fa-car" v-bind:title="$t('label.curbsidepickup')" :value=76 class="bg-green"/>
-                    </div>
-                    <div class="col-6 col-md-3 order-md-4">                    
-                        <value-box icon="fa-user-md" v-bind:title="$t('label.discounts')" :value=0 class="bg-green"/> 
-                    </div>
-                    <div class="col-6 col-md-3 order-md-3">              
-                        <value-box icon="fa-history" v-bind:title="$t('label.seniorshopping')" :value=8 class="bg-blue"/>
-                    </div>
-               </div>
+                <highlights :valueBoxes="boxValues" />
                 <b-container class="bv-example-row px-0" fluid>
                     <div class="map">
                         <l-map v-if="showMap"
@@ -125,7 +84,7 @@
 </template>
 
 <script>
-    import ValueBox from "./components/ValueBox.vue";
+    import Highlights from "./components/Highlights.vue";
 
    // If you need to reference 'L', such as in 'L.icon', then be sure to
     // explicitly import 'leaflet' into your component
@@ -140,6 +99,28 @@ Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
+
+    function countFeature(filteredMarkers, feature) {
+        var cntFeature = 0;
+        if (filteredMarkers !== null) {
+                filteredMarkers.forEach(c => { if (c.gsx$accesstype.$t.indexOf(feature) > -1) {
+                    cntFeature = cntFeature + 1;
+                }
+            });
+        }
+        return cntFeature;
+    }
+
+    function countBoolean(filteredMarkers, fieldName) {
+        var cntBool = 0;
+        if (filteredMarkers !== null) {
+                filteredMarkers.forEach(c => { if (c['gsx$' + fieldName].$t == "1") {
+                    cntBool = cntBool + 1;
+                }
+            });
+        }
+        return cntBool;
+    }
     export default {
         name: 'app',
         props: {
@@ -157,7 +138,7 @@ Icon.Default.mergeOptions({
             LMarker,
             LPopup,
             LTooltip,
-            ValueBox
+            Highlights
         },
         data() {
             return {
@@ -166,7 +147,7 @@ Icon.Default.mergeOptions({
                 tileLayer: null,
                 layers: [],
                 sheetUrl: 'https://spreadsheets.google.com/feeds/list/1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0/1/public/values?alt=json',
-                userneed: 'meal',
+                userneed: 'restaurant',
                 userday: new Date().getDay(),
                 language: {
                     name : 'English', iso: 'en'
@@ -241,7 +222,37 @@ Icon.Default.mergeOptions({
         },
         computed: {
             countPickup() {
-                return new Set(this.filteredMarkers).size;
+                return countFeature(this.filteredMarkers, 'pick-up');
+            },
+            countDriveUp() {
+                return countFeature(this.filteredMarkers, 'drive-up');
+            },
+            countSenior() {
+                return countFeature(this.filteredMarkers, 'senior shopping hours');
+            },
+            countFreeStudentMeal() {
+                return countBoolean(this.filteredMarkers, 'mealstudent');
+            },
+            countPublicMeal() {
+                return countBoolean(this.filteredMarkers, 'mealpublic');
+            },            
+            countFamilyMeal() { // Family meal kits to purchase
+                return countBoolean(this.filteredMarkers, 'mealfamily');
+            },
+            countOrderOnline() {
+                return countBoolean(this.filteredMarkers, 'orderonline');
+            },   
+            countDiscountMedical() {
+                return countBoolean(this.filteredMarkers, 'discountmedical');
+            },    
+            countDelivery() {
+                return countBoolean(this.filteredMarkers, 'delivery');
+            },
+            countProduce() {
+                return countBoolean(this.filteredMarkers, 'freeproduce');
+            },
+            countGroceries() {
+                return countBoolean(this.filteredMarkers, 'freegroceries');
             },
             filteredMarkers() {
                 var filterMarks;
@@ -249,7 +260,7 @@ Icon.Default.mergeOptions({
                 if (this.entries == null) {
                     filterMarks = null;
                 } else {
-                    filterMarks = this.entries.filter(c => c.gsx$resource.$t == this.userneed);   
+                    filterMarks = this.entries.filter(c => c.gsx$resource.$t == this.userneed && c.gsx$status.$t == 'active');   
 
                     switch (this.userday) {
                         case '0':
@@ -281,13 +292,65 @@ Icon.Default.mergeOptions({
 
                 return filterMarks;
             },
+            boxValues() {
+                switch (this.userneed) {
+                    case "grocery":
+                        return [
+                            { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
+                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' },
+                            { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' }
+                        ]                
+
+                    case "restaurant":
+                        return [
+                            { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
+                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-user-md', title: this.$t('label.discounts'), value: this.countDiscountMedical, color: '' },
+                            { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
+                        ]                
+
+                    case "family": // Family Meal Kits
+                        return [
+                            { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
+                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' },
+                            { icon: 'fa-history', title: this.$t('label.discounts'), value: this.countSenior, color: '' }
+                        ]                
+
+                    case "meal": // Free Meals
+                        return [
+                            { icon: 'fa-users', title: this.$t('label.opentopublic'), value: this.countPublicMeal, color: '' },
+                            { icon: 'fa-school', title: this.$t('label.mealsforstudents'), value: this.countFreeStudentMeal, color: '' },
+                            { icon: 'fa-apple-alt', title: this.$t('label.freeproduce'), value: this.countProduce, color: '' },
+                            { icon: 'fa-shopping-basket', title: this.$t('label.freegrocery'), value: this.countGroceries, color: '' }
+                        ]                
+
+                    case "pharmacy":
+                        return [
+                            { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
+                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' },
+                            { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
+                        ]                
+
+                    case "pet":
+                        return [
+                            { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
+                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-user-md', title: this.$t('label.discounts'), value: this.countDiscountMedical, color: '' },
+                            { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
+                        ]                 
+                }
+            },
             needOptions() {
                 return [
                     { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
                     { value: 'meal', text: this.$tc('category.meal', 2) },
-                    { value: 'school', text: this.$tc('category.school', 2) },
                     { value: 'grocery', text: this.$tc('category.grocery', 2) },
-                    { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) }
+                    { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
+                    { value: 'pet', text: this.$tc('category.petsupplies', 2) }
+                    // { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) }
                     // ,{ value: 'childcare', text: this.$t('category.childcare') }
                 ]
             },
@@ -312,13 +375,7 @@ Icon.Default.mergeOptions({
    html, body, #wrapper {
         height: 100%;
     }
-    .highlights {
-        margin: 4px !important;
-    }
 
-    .highlights div.col-md-3 {
-        padding:0 !important;
-    }
     .language {
         padding:0 5px;
     }

@@ -5,7 +5,8 @@
 		"meal": "Free meal|Free meals",
 		"pharmacy": "Pharmacy|Pharmacies",
 		"restaurant": "Restaurant|Restaurants",
-		"school": "School meal|School meals"
+		"school": "School meal|School meals",
+		"petsupplies": "Pet Supplies"
 	},
 	"dayofweek": {
 		"friday": "Friday",
@@ -18,13 +19,19 @@
 	},
 	"label": {
 		"address": "Address",
-		"curbsidepickup": "Restaurants with curbside pick-up",
-		"discounts": "Discounts for medical workers",
+		"curbsidepickup": "Curbside pick-up",
+		"discounts": "Medical worker discounts",
 		"freemeals": "Free Meal locations",
 		"instructions": "Instructions",
 		"offers": "Offers",
 		"phone": "Phone",
-		"seniorshopping": "Senior shopping hours"
+		"seniorshopping": "Senior shopping hours",
+		"delivery": "Delivery",
+		"orderonline": "Order & pay online",
+		"opentopublic" : "Meals open to public",
+		"mealsforstudents" : "Meals for students",
+		"freegrocery" : "Free grocery locations",
+		"freeproduce" : "Free produce location"
 	},
 	"sidebar": {
 		"what-do-you-need": "What do you need?",

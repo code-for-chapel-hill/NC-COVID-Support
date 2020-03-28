@@ -1,14 +1,19 @@
 <template>
-    <div class="valuebox">
+    <div class="valuebox" :class="{'selected' : selected}" > <!-- @click="selected = !selected" -->
         <div class="number">{{value}}</div>
         <div class="title">{{title}}</div>
-        <i v-bind:class="'fas ' + icon"></i>
+        <i class="fas" v-bind:class="icon"></i>
     </div>
 </template>
 
 <script>
     export default {
         name: 'ValueBox',
+        data() {
+            return {
+                selected: false
+            }
+        },
         props: {
             title: { type: String },
             value: { type: Number },
@@ -23,6 +28,7 @@
         padding: 0 20px;
         margin: 4px 4px;
     }
+
    @media (min-width: 768px) {
         margin: 8px 4px;
    }
@@ -55,5 +61,8 @@
         background-color: #4189DA !important;
         cursor: pointer;
     }
-    
+
+    .valuebox.valuebox.selected i {
+        opacity: 0.3;
+    }
 </style>
