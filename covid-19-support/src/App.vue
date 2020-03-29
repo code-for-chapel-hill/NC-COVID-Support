@@ -24,7 +24,7 @@
             </b-collapse>
         </b-navbar>
 
-        <b-modal id="about-us" centered hide-footer>
+        <b-modal id="about-us" centered scrollable>
             <template v-slot:modal-title>
                 {{$t('about.title')}}
             </template>
@@ -43,11 +43,20 @@
                     </b-tab>
                     <b-tab :title="$t('about.getinvolved')">
                         <p>
-                            <i18n path="about.devhelp.info" tag="p">
-                                <a href="https://github.com/code-for-chapel-hill/COVID-Support-For-CH" target="_blank">{{$t('about.devhelp.github')}}</a>
-                                <a href="https://join.slack.com/t/open-nc/shared_invite/zt-ctabrccj-3m9b83WJnoEzViPRh9yEGw" target="_blank">{{$t('about.devhelp.slack')}}</a>
-                            </i18n>
+                            {{$t('about.devhelp.info')}}
                         </p>
+                        <ol>
+                            <li>{{$t('about.devhelp.step1')}}</li>
+                            <li>{{$t('about.devhelp.step2')}}</li>
+                            <li>{{$t('about.devhelp.step3')}}</li>
+                        </ol>
+                        <p>
+                            {{$t('about.devhelp.dupsite')}}
+                        </p>
+                        <i18n path="about.devhelp.devnote" tag="p">
+                            <a href="https://github.com/code-for-chapel-hill/COVID-Support-For-CH" target="_blank">{{$t('about.devhelp.source')}}</a>
+                            <a href="https://github.com/codeforamerica/codeofconduct" target="_blank">{{$t('about.devhelp.conduct')}}</a>
+                        </i18n>
                     </b-tab>
                     <b-tab :title="$t('about.contact')">
                         <i18n path="about.contactus.info" tag="p">
@@ -58,8 +67,9 @@
                     </b-tab>
                 </b-tabs>
             </b-card>
-            <br>
-            <b-button @click="$bvModal.hide('about-us')">{{$t('about.close')}}</b-button>
+            <template v-slot:modal-footer>
+                <b-button @click="$bvModal.hide('about-us')" right>{{$t('about.close')}}</b-button>
+            </template>
         </b-modal>
 
         <div class="d-flex" id="wrapper" :class="{'toggled' : tab}">
