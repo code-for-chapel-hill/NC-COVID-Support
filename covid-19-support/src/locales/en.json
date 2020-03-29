@@ -58,9 +58,14 @@
 			"farmstewards":"Carolina Farm Stewardship Association"
 		},
 		"devhelp": {
-			"info":"To help build this site, please join us on {0} and {1}.",
-			"github":"GitHub",
-			"slack":"Slack"
+			"info":"This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
+			"step1":"Reach out to local government and business associations to gather information.",
+			"step2":"Organize resource information using our spreadsheet template.",
+			"step3":"Email us when you are ready to join the NC site.",
+			"dupsite":"Alternatively, you can duplicate a site for your state.",
+			"source":"source code",
+			"conduct":"Code of Conduct",
+			"devnote":"Developers - find our {0} and {1} on GitHub."
 		},
 		"contactus": {
 			"info":"This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
