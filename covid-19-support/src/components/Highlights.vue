@@ -35,7 +35,7 @@
     .highlights {
         margin: 4px !important;
         transition: height .25s ease-out;
-        height:216px;
+        height:116px;
     }
 
     .highlights div.col-md-3 {

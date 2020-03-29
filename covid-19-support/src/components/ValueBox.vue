@@ -24,29 +24,44 @@
 
 <style>
     .valuebox {
-        height: 100px;
-        padding: 0 20px;
+        height: 50px;
+        padding: 0 8px;
         margin: 4px 4px;
     }
 
    @media (min-width: 768px) {
-        margin: 8px 4px;
+        /* margin: 8px 4px; */
+        .valuebox {
+            height: 100px;
+            padding: 20px;
+        }
    }
-
 
     .number, .title {
         color: #fff;
+        display: inline;
+    }
+    .title {
+        margin-left: 8px;
     }
     .number {
         font-size: 2em;
     }
     .valuebox i.fas {
-        font-size: 4.5em;
+        font-size: 2em;
         opacity: 0.1;
         position: absolute;
+        right: 13px;
+        top: 13px;
+    }
+   @media (min-width: 768px) {
+    .valuebox i.fas {
+        font-size: 4.5em;
         right: 25px;
         top: 24px;
-    }
+    }   
+   }
+
     .valuebox.bg-blue {
         background-color: #63a2e7 !important;
     }

@@ -185,9 +185,13 @@ Icon.Default.mergeOptions({
             }
         },
         mounted() {
-
+        this.editZoomControl();
         },
         methods: {
+            editZoomControl() {
+            const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left');
+            zoomControl.className = 'leaflet-bottom leaflet-right';
+            },
             isNullEmpty(str) {
                 str = str.trim();
                 return str !== null && str !== "" ? false : true;
@@ -401,12 +405,12 @@ Icon.Default.mergeOptions({
     }
 
     .bv-example-row {
-        height: calc(100% - 232px);
+        height: calc(100% - 124px);
     }
     @media (min-width: 768px)
     {
         .bv-example-row {
-            height: calc(100% - 124px);
+            height: calc(100% - 116px);
         }
     }
 
@@ -453,8 +457,8 @@ Icon.Default.mergeOptions({
         height: 100%;
         top: 0;
         padding: 0;
-        margin-left: 8px;
-        margin-right: 8px;
+        /* margin-left: 8px;
+        margin-right: 8px; */
     }
 
     .side-nav {
