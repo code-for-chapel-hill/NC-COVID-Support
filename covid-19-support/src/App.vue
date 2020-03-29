@@ -313,7 +313,7 @@ Icon.Default.mergeOptions({
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
                             { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
-                            { icon: 'fa-user-md', title: this.$t('label.discounts'), value: this.countDiscountMedical, color: '' },
+                            { icon: 'fa-user-md', title: this.$tc('label.discounts', this.countDiscountMedical), value: this.countDiscountMedical, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
                         ]                
 
@@ -322,15 +322,15 @@ Icon.Default.mergeOptions({
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
                             { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' },
-                            { icon: 'fa-history', title: this.$t('label.discounts'), value: this.countSenior, color: '' }
+                            { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' }
                         ]                
 
                     case "meal": // Free Meals
                         return [
-                            { icon: 'fa-users', title: this.$t('label.opentopublic'), value: this.countPublicMeal, color: '' },
-                            { icon: 'fa-school', title: this.$t('label.mealsforstudents'), value: this.countFreeStudentMeal, color: '' },
-                            { icon: 'fa-apple-alt', title: this.$t('label.freeproduce'), value: this.countProduce, color: '' },
-                            { icon: 'fa-shopping-basket', title: this.$t('label.freegrocery'), value: this.countGroceries, color: '' }
+                            { icon: 'fa-users', title: this.$tc('label.opentopublic', this.countPublicMeal), value: this.countPublicMeal, color: '' },
+                            { icon: 'fa-school', title: this.$tc('label.mealsforstudents', this.countFreeStudentMeal), value: this.countFreeStudentMeal, color: '' },
+                            { icon: 'fa-apple-alt', title: this.$tc('label.freeproduce', this.countProduce), value: this.countProduce, color: '' },
+                            { icon: 'fa-shopping-basket', title: this.$tc('label.freegrocery', this.countGroceries), value: this.countGroceries, color: '' }
                         ]                
 
                     case "pharmacy":
@@ -345,7 +345,7 @@ Icon.Default.mergeOptions({
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
                             { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
-                            { icon: 'fa-user-md', title: this.$t('label.discounts'), value: this.countDiscountMedical, color: '' },
+                            { icon: 'fa-user-md', title: this.$tc('label.discounts', this.countDiscountMedical), value: this.countDiscountMedical, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
                         ]                 
                 }
