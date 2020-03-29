@@ -17,9 +17,31 @@
                         </template>
                         <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso"><div v-html="item.name" @click="changeLanguage(item)"></div></b-dropdown-item>
                     </b-nav-item-dropdown>
+                    <b-nav-item right>
+                        <b-icon icon="question-diamond" aria-hidden="true" @click="$bvModal.show('about-us')"></b-icon>
+                    </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
+
+        <b-modal id="about-us" centered hide-footer>
+            <template v-slot:modal-title>
+                {{$t('about.title')}}
+            </template>
+            <p>
+                <i18n path="about.info" tag="p">
+                    <a href="https://www.meetup.com/Triangle-Code-for-America/" target="_blank">{{$t('about.chb')}}</a>
+                    <a href="https://www.codeforamerica.org/" target="_blank">{{$t('about.cfa')}}</a>
+                </i18n>
+            </p>
+            <ul>
+                <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t(about.bureau)}}</a></li>
+                <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t(about.partnership)}}</a></li>
+                <li><a href="https://locallistnc.com/" target="_blank">{{$t(about.localistnc)}}</a></li>
+            </ul>
+            <b-button @click="$bvModal.hide('about-us')">{{$t('about.close')}}</b-button>
+        </b-modal>
+
         <div class="d-flex" id="wrapper" :class="{'toggled' : tab}">
             <div class="bg-light border-right" id="sidebar-wrapper">
                 <div class="tab bg-light border-right border-top border-bottom" @click="tab = !tab"><i class="fas fa-caret-square-down"></i></div>
