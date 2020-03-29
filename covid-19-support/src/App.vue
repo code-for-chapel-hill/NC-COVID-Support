@@ -304,7 +304,7 @@ Icon.Default.mergeOptions({
                     case "grocery":
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
-                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-car', title: this.$tc('label.curbsidepickup', this.countPickup + this.countDriveUp), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' },
                             { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' }
                         ]                
@@ -312,7 +312,7 @@ Icon.Default.mergeOptions({
                     case "restaurant":
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
-                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-car', title: this.$tc('label.curbsidepickup', this.countPickup + this.countDriveUp), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-user-md', title: this.$tc('label.discounts', this.countDiscountMedical), value: this.countDiscountMedical, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
                         ]                
@@ -320,7 +320,7 @@ Icon.Default.mergeOptions({
                     case "family": // Family Meal Kits
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
-                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-car', title: this.$tc('label.curbsidepickup', this.countPickup + this.countDriveUp), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' },
                             { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' }
                         ]                
@@ -336,7 +336,7 @@ Icon.Default.mergeOptions({
                     case "pharmacy":
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
-                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-car', title: this.$tc('label.curbsidepickup', this.countPickup + this.countDriveUp), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-history', title: this.$t('label.seniorshopping'), value: this.countSenior, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
                         ]                
@@ -344,7 +344,7 @@ Icon.Default.mergeOptions({
                     case "pet":
                         return [
                             { icon: 'fa-mouse', title: this.$t('label.orderonline'), value: this.countOrderOnline, color: '' },
-                            { icon: 'fa-car', title: this.$t('label.curbsidepickup'), value: this.countPickup + this.countDriveUp, color: '' },
+                            { icon: 'fa-car', title: this.$tc('label.curbsidepickup', this.countPickup + this.countDriveUp), value: this.countPickup + this.countDriveUp, color: '' },
                             { icon: 'fa-user-md', title: this.$tc('label.discounts', this.countDiscountMedical), value: this.countDiscountMedical, color: '' },
                             { icon: 'fa-shipping-fast', title: this.$t('label.delivery'), value: this.countDelivery, color: '' }
                         ]                 
