@@ -179,6 +179,7 @@ Icon.Default.mergeOptions({
                 currentCenter: latLng(35.91371,-79.057919),
                 showParagraph: true,
                 mapOptions: {
+                    minZoom: 7,
                     zoomSnap: 0.5
                 },
                 showMap: true
