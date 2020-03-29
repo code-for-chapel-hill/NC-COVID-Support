@@ -45,12 +45,13 @@
   },
 	"about": {
 		"title": "About this site",
-		"info": "This page is powered by the {0} of {1}. Our database of resources is created with the help of our partners:",
+		"info": "This page is powered by the {0} of {1}. Our database of resources benefits from information collected by these organizations:",
 		"chb": "Chapel Hill Brigade",
 		"cfa": "Code for America",
 		"bureau": "Chapel Hill/Orange County Visitors Bureau",
-		"partnership": "Chapel Hill Partnership",
+		"partnership": "Chapel Hill Downtown Partnership",
 		"localistnc":"#LocalListNC",
+		"farmstewards":"Carolina Farm Stewardship Association",
 		"close": "Close"
 	},
   "title": "COVID-19 Community Resources"
