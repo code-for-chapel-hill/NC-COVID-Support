@@ -28,18 +28,37 @@
             <template v-slot:modal-title>
                 {{$t('about.title')}}
             </template>
-            <p>
-                <i18n path="about.info" tag="p">
-                    <a href="https://www.meetup.com/Triangle-Code-for-America/" target="_blank">{{$t('about.chb')}}</a>
-                    <a href="https://www.codeforamerica.org/" target="_blank">{{$t('about.cfa')}}</a>
-                </i18n>
-            </p>
-            <ul>
-                <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t('about.bureau')}}</a></li>
-                <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t('about.partnership')}}</a></li>
-                <li><a href="https://locallistnc.com/" target="_blank">{{$t('about.localistnc')}}</a></li>
-                <li><a href="https://www.carolinafarmstewards.org/on-farm-pickups/" target="_blank">{{$t('about.farmstewards')}}</a></li>
-            </ul>
+            <b-card no-body>
+                <b-tabs card>
+                    <b-tab :title="$t('about.partners')">
+                        <p>
+                            {{$t('about.info')}}
+                        </p>
+                        <ul>
+                            <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t('about.orgs.bureau')}}</a></li>
+                            <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t('about.orgs.partnership')}}</a></li>
+                            <li><a href="https://locallistnc.com/" target="_blank">{{$t('about.orgs.localistnc')}}</a></li>
+                            <li><a href="https://www.carolinafarmstewards.org/on-farm-pickups/" target="_blank">{{$t('about.orgs.farmstewards')}}</a></li>
+                        </ul>
+                    </b-tab>
+                    <b-tab :title="$t('about.getinvolved')">
+                        <p>
+                            <i18n path="about.devhelp.info" tag="p">
+                                <a href="https://github.com/code-for-chapel-hill/COVID-Support-For-CH" target="_blank">{{$t('about.devhelp.github')}}</a>
+                                <a href="https://join.slack.com/t/open-nc/shared_invite/zt-ctabrccj-3m9b83WJnoEzViPRh9yEGw" target="_blank">{{$t('about.devhelp.slack')}}</a>
+                            </i18n>
+                        </p>
+                    </b-tab>
+                    <b-tab :title="$t('about.contact')">
+                        <i18n path="about.contactus.info" tag="p">
+                            <a href="https://www.meetup.com/Triangle-Code-for-America/" target="_blank">{{$t('about.orgs.chb')}}</a>
+                            <a href="https://www.codeforamerica.org/" target="_blank">{{$t('about.orgs.cfa')}}</a>
+                            <a href="mailto:codeforchapelhill@gmail.com" target="_blank">{{$t('about.contactus.email')}}</a>
+                        </i18n>
+                    </b-tab>
+                </b-tabs>
+            </b-card>
+            <br>
             <b-button @click="$bvModal.hide('about-us')">{{$t('about.close')}}</b-button>
         </b-modal>
 
