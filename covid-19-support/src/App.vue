@@ -27,9 +27,9 @@
                 </i18n>
             </p>
             <ul>
-                <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t(about.bureau)}}</a></li>
-                <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t(about.partnership)}}</a></li>
-                <li><a href="https://locallistnc.com/" target="_blank">{{$t(about.localistnc)}}</a></li>
+                <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t('about.bureau')}}</a></li>
+                <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t('about.partnership')}}</a></li>
+                <li><a href="https://locallistnc.com/" target="_blank">{{$t('about.localistnc')}}</a></li>
             </ul>
             <b-button @click="$bvModal.hide('about-us')">{{$t('about.close')}}</b-button>
         </b-modal>
