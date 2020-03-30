@@ -93,7 +93,7 @@ body,
 }
 
 #wrapper.toggled .tab {
-  left: 23rem;
+  left: 22rem;
 }
 
 #wrapper.toggled .tab i {

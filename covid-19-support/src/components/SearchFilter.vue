@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 #search-filter-wrapper {
-  margin-left: -23rem;
+  margin-left: -22rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -78,7 +78,7 @@ export default {
 }
 
 .list-group {
-  width: 23rem;
+  width: 22rem;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
 }
 
