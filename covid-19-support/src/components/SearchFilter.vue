@@ -1,42 +1,38 @@
 <template>
   <div class="bg-light border-right" id="search-filter-wrapper">
-    <div
-      class="tab bg-light border-right border-top border-bottom"
-      @click="$emit('toggle')"
-    >
-      <i class="fas fa-caret-square-down" />
+    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')">
+      <i class="fas fa-caret-down" />
     </div>
 
     <div class="list-group list-group-flush">
       <div class="list-group-item list-group-item-action bg-light">
         {{ $t('sidebar.what-do-you-need') }}
-        <b-form-select
-          :value="need"
-          :options="needOptions"
-          @change="(opt) => $emit('need-selected', opt)"
-        />
+        <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
       <div class="list-group-item list-group-item-action bg-light">
         {{ $t('sidebar.when-do-you-need-it') }}
-        <b-form-select
-          :value="day"
-          :options="dayOptions"
-          @change="(opt) => $emit('day-selected', opt)"
-        />
+        <b-form-select :value="day" :options="dayOptions" @change="(opt) => $emit('day-selected', opt)" />
       </div>
     </div>
+
+    <results-list :filteredMarkers="filteredMarkers" />
   </div>
 </template>
 
 <script>
 import { weekdays } from '../constants'
+import ResultsList from './ResultsList.vue'
 
 export default {
   name: 'search-filter',
+  components: {
+    ResultsList
+  },
   props: {
     isFilterOpen: Boolean,
     need: String,
-    day: Number
+    day: Number,
+    filteredMarkers: Array
   },
   computed: {
     needOptions() {
@@ -62,13 +58,18 @@ export default {
 
 <style scoped>
 #search-filter-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -23rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
   transition: margin 0.25s ease-out;
   z-index: 1100;
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+#wrapper.toggled #search-filter-wrapper {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-heading {
@@ -77,7 +78,12 @@ export default {
 }
 
 .list-group {
-  width: 15rem;
+  width: 23rem;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.125);
+}
+
+.list-group-item {
+  border: none !important;
 }
 
 .side-nav {
@@ -85,10 +91,10 @@ export default {
 }
 
 .tab {
-  width: 40px;
+  width: 20px;
   height: 60px;
   position: absolute;
-  top: 388px;
+  top: 90px;
   z-index: 500;
   left: 0;
   background: #fff;
@@ -96,17 +102,17 @@ export default {
   cursor: pointer;
 }
 .tab i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #b5bfca;
   transform: rotate(-90deg);
-  margin-top: 12px;
-  margin-left: 4px;
+  margin-top: 18px;
+  margin-left: 2px;
 }
 
 @media (min-width: 768px) {
   .tab {
     margin-left: 0;
-    top: 257px;
+    top: 169px;
   }
 }
 </style>

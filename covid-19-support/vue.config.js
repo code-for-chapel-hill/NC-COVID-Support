@@ -1,6 +1,5 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === 'production' ? '/COVID-Support-For-CH/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/COVID-Support-For-CH/' : '/',
 
   pluginOptions: {
     i18n: {

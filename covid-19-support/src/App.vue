@@ -1,26 +1,18 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" />
-    <div
-      class="d-flex"
-      id="wrapper"
-      :class="{ toggled: isFilterOpen }"
-      v-if="!!entries"
-    >
+    <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <search-filter
         :isFilterOpen="isFilterOpen"
         :need="need"
         :day="day"
+        :filteredMarkers="filteredMarkers"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="(val) => (need = val)"
         @day-selected="(val) => (day = val)"
       />
       <div id="page-content-wrapper">
-        <highlights
-          :need="need"
-          :class="{ toggled: isFilterOpen }"
-          :filteredMarkers="filteredMarkers"
-        />
+        <highlights :need="need" :class="{ toggled: isFilterOpen }" :filteredMarkers="filteredMarkers" />
         <resource-map :filteredMarkers="filteredMarkers" />
       </div>
     </div>
@@ -76,13 +68,9 @@ export default {
     filteredMarkers() {
       if (this.entries == null) return null
 
-      const markers = this.entries.filter(
-        (c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active'
-      )
+      const markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
 
-      const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map(
-        (attr) => `gsx$${attr}`
-      )
+      const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `gsx$${attr}`)
       const dayFilter = dayFilters[this.day]
 
       return markers.filter((c) => c[dayFilter].$t !== '0')
@@ -105,7 +93,7 @@ body,
 }
 
 #wrapper.toggled .tab {
-  left: 15rem;
+  left: 23rem;
 }
 
 #wrapper.toggled .tab i {

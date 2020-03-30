@@ -11,40 +11,24 @@
         @update:zoom="(val) => (zoom = val)"
       >
         <l-tile-layer :url="url" :attribution="attribution" />
-        <l-marker
-          :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
-          v-for="(item, index) in filteredMarkers"
-          v-bind:key="index"
-        >
+        <l-marker :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)" v-for="(item, index) in filteredMarkers" v-bind:key="index">
           <l-popup>
             <div>
-              <a v-bind:href="item.gsx$weblink.$t">{{
-                item.gsx$providername.$t
-              }}</a>
+              <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
               <p v-show="showParagraph">
                 <b>{{ $t('label.address') }}:</b>
-                <span v-if="!!item.gsx$provideraddloc.$t"
-                  >{{ item.gsx$provideraddloc.$t }}, </span
-                >{{ item.gsx$address.$t }}, {{ item.gsx$city.$t }},
-                {{ item.gsx$state.$t }} {{ item.gsx$zip.$t }}<br />
+                <span v-if="!!item.gsx$provideraddloc.$t">{{ item.gsx$provideraddloc.$t }}, </span>{{ item.gsx$address.$t }},
+                {{ item.gsx$city.$t }}, {{ item.gsx$state.$t }} {{ item.gsx$zip.$t }}<br />
                 <span v-if="!!item.gsx$contact.$t"
                   ><b>{{ $t('label.phone') }}:</b> {{ item.gsx$contact.$t }}<br
                 /></span>
-                <span v-if="!!item.gsx$instructions.$t || !!item.gsx$offers.$t"
-                  ><hr
-                /></span>
+                <span v-if="!!item.gsx$instructions.$t || !!item.gsx$offers.$t"><hr /></span>
                 <span v-if="!!item.gsx$instructions.$t"
-                  ><b>{{ $t('label.instructions') }}:</b><br />{{
-                    item.gsx$instructions.$t
-                  }}</span
+                  ><b>{{ $t('label.instructions') }}:</b><br />{{ item.gsx$instructions.$t }}</span
                 >
-                <span v-if="!!item.gsx$instructions.$t && !!item.gsx$offers.$t"
-                  ><br
-                /></span>
+                <span v-if="!!item.gsx$instructions.$t && !!item.gsx$offers.$t"><br /></span>
                 <span v-if="!!item.gsx$offers.$t"
-                  ><b>{{ $t('label.offers') }}:</b><br />{{
-                    item.gsx$offers.$t
-                  }}</span
+                  ><b>{{ $t('label.offers') }}:</b><br />{{ item.gsx$offers.$t }}</span
                 >
               </p>
             </div>

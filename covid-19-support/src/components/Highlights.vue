@@ -1,36 +1,16 @@
 <template>
   <div class="row highlights">
     <div class="col-6 col-md-3 order-md-1">
-      <value-box
-        :icon="valueBoxes[0].icon"
-        :title="valueBoxes[0].title"
-        :value="valueBoxes[0].value"
-        class="bg-blue"
-      />
+      <value-box :icon="valueBoxes[0].icon" :title="valueBoxes[0].title" :value="valueBoxes[0].value" class="bg-blue" />
     </div>
     <div class="col-6 col-md-3 order-md-2">
-      <value-box
-        :icon="valueBoxes[1].icon"
-        :title="valueBoxes[1].title"
-        :value="valueBoxes[1].value"
-        class="bg-green"
-      />
+      <value-box :icon="valueBoxes[1].icon" :title="valueBoxes[1].title" :value="valueBoxes[1].value" class="bg-green" />
     </div>
     <div class="col-6 col-md-3 order-md-4">
-      <value-box
-        :icon="valueBoxes[2].icon"
-        :title="valueBoxes[2].title"
-        :value="valueBoxes[2].value"
-        class="bg-green"
-      />
+      <value-box :icon="valueBoxes[2].icon" :title="valueBoxes[2].title" :value="valueBoxes[2].value" class="bg-green" />
     </div>
     <div class="col-6 col-md-3 order-md-3">
-      <value-box
-        :icon="valueBoxes[3].icon"
-        :title="valueBoxes[3].title"
-        :value="valueBoxes[3].value"
-        class="bg-blue"
-      />
+      <value-box :icon="valueBoxes[3].icon" :title="valueBoxes[3].title" :value="valueBoxes[3].value" class="bg-blue" />
     </div>
   </div>
 </template>
@@ -39,17 +19,10 @@
 import ValueBox from './ValueBox.vue'
 
 export const countFeature = (filteredMarkers = [], feature) =>
-  (filteredMarkers || []).reduce(
-    (total, c) =>
-      c.gsx$accesstype.$t.indexOf(feature) > -1 ? total + 1 : total,
-    0
-  )
+  (filteredMarkers || []).reduce((total, c) => (c.gsx$accesstype.$t.indexOf(feature) > -1 ? total + 1 : total), 0)
 
 export const countBoolean = (filteredMarkers, fieldName) =>
-  (filteredMarkers || []).reduce(
-    (total, c) => (c['gsx$' + fieldName].$t == '1' ? total + 1 : total),
-    0
-  )
+  (filteredMarkers || []).reduce((total, c) => (c['gsx$' + fieldName].$t == '1' ? total + 1 : total), 0)
 
 export default {
   name: 'Highlights',
@@ -107,118 +80,46 @@ export default {
       return countBoolean(this.filteredMarkers, 'freegroceries')
     },
     orderOnlineValueBox() {
-      return this.buildBoxValue(
-        'orderonline',
-        'fa-mouse',
-        this.countOrderOnline
-      )
+      return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
-      return this.buildBoxValue(
-        'curbsidepickup',
-        'fa-mouse',
-        this.countPickup + this.countDriveUp,
-        true
-      )
+      return this.buildBoxValue('curbsidepickup', 'fa-mouse', this.countPickup + this.countDriveUp, true)
     },
     deliveryValueBox() {
-      return this.buildBoxValue(
-        'delivery',
-        'fa-shipping-fast',
-        this.countDelivery
-      )
+      return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
     },
     seniorShoppingValueBox() {
-      return this.buildBoxValue(
-        'seniorshopping',
-        'fa-history',
-        this.countSenior
-      )
+      return this.buildBoxValue('seniorshopping', 'fa-history', this.countSenior)
     },
     medicalDiscountsValueBox() {
-      return this.buildBoxValue(
-        'discounts',
-        'fa-user-md',
-        this.countDiscountMedical,
-        true
-      )
+      return this.buildBoxValue('discounts', 'fa-user-md', this.countDiscountMedical, true)
     },
     openToPublicValueBox() {
-      return this.buildBoxValue(
-        'opentopublic',
-        'fa-users',
-        this.countPublicMeal,
-        true
-      )
+      return this.buildBoxValue('opentopublic', 'fa-users', this.countPublicMeal, true)
     },
     freeStudentMealsValueBox() {
-      return this.buildBoxValue(
-        'mealsforstudents',
-        'fa-school',
-        this.countFreeStudentMeal,
-        true
-      )
+      return this.buildBoxValue('mealsforstudents', 'fa-school', this.countFreeStudentMeal, true)
     },
     freeProduceValueBox() {
-      return this.buildBoxValue(
-        'freeproduce',
-        'fa-apple-alt',
-        this.countProduce,
-        true
-      )
+      return this.buildBoxValue('freeproduce', 'fa-apple-alt', this.countProduce, true)
     },
     freeGroceryValueBox() {
-      return this.buildBoxValue(
-        'freegrocery',
-        'fa-shopping-basket',
-        this.countGroceries,
-        true
-      )
+      return this.buildBoxValue('freegrocery', 'fa-shopping-basket', this.countGroceries, true)
     },
     valueBoxes() {
       switch (this.need) {
         case 'grocery':
-          return [
-            this.orderOnlineValueBox,
-            this.curbsidePickupValueBox,
-            this.deliveryValueBox,
-            this.seniorShoppingValueBox
-          ]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
         case 'restaurant':
-          return [
-            this.orderOnlineValueBox,
-            this.curbsidePickupValueBox,
-            this.medicalDiscountsValueBox,
-            this.deliveryValueBox
-          ]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         case 'family': // Family Meal Kits
-          return [
-            this.orderOnlineValueBox,
-            this.curbsidePickupValueBox,
-            this.deliveryValueBox,
-            this.medicalDiscountsValueBox
-          ]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.medicalDiscountsValueBox]
         case 'meal': // Free Meals
-          return [
-            this.openToPublicValueBox,
-            this.freeStudentMealsValueBox,
-            this.freeProduceValueBox,
-            this.freeGroceryValueBox
-          ]
+          return [this.openToPublicValueBox, this.freeStudentMealsValueBox, this.freeProduceValueBox, this.freeGroceryValueBox]
         case 'pharmacy':
-          return [
-            this.orderOnlineValueBox,
-            this.curbsidePickupValueBox,
-            this.seniorShoppingValueBox,
-            this.deliveryValueBox
-          ]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.seniorShoppingValueBox, this.deliveryValueBox]
         case 'pet':
-          return [
-            this.orderOnlineValueBox,
-            this.curbsidePickupValueBox,
-            this.medicalDiscountsValueBox,
-            this.deliveryValueBox
-          ]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
       }
     }
   }

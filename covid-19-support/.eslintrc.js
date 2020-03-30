@@ -5,11 +5,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  extends: [
-    'plugin:vue/essential',
-    'plugin:prettier/recommended',
-    'eslint:recommended'
-  ],
+  extends: ['plugin:vue/essential', 'plugin:prettier/recommended', 'eslint:recommended'],
   env: {
     browser: true,
     node: true,
