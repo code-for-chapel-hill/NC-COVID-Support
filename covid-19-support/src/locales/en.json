@@ -2,6 +2,7 @@
   "category": {
     "childcare": "Child care",
     "grocery": "Grocery|Groceries",
+    "farm": "Farm|Farms",
     "meal": "Free meal|Free meals",
     "petsupplies": "Pet Supplies",
     "pharmacy": "Pharmacy|Pharmacies",
@@ -32,7 +33,9 @@
     "orderonline": "Order & pay online",
     "phone": "Phone",
     "seniorshopping": "Senior shopping hours",
-    "selectacategory": "Select a category..."
+    "selectacategory": "Select a category...",
+    "farmersmarket": "Farmers Market|Farmers Markets",
+    "onfarmpickup": "On-farm pick-up"
   },
   "sidebar": {
     "what-do-you-need": "What do you need?",

@@ -13,7 +13,7 @@
       />
       <div id="page-content-wrapper">
         <highlights :need="need" :class="{ toggled: isFilterOpen }" :filteredMarkers="filteredMarkers" />
-        <resource-map :filteredMarkers="filteredMarkers" />
+        <resource-map :filteredMarkers="filteredMarkers" :class="{ noselection: need == 'none' }" />
       </div>
     </div>
   </div>
