@@ -1,41 +1,41 @@
 {
-	"category": {
-		"childcare": "Garde d'enfants",
-		"grocery": "Épicerie | Épicerie",
-		"meal": "Repas gratuit | Repas gratuits",
-		"petsupplies": "Fournitures pour animaux",
-		"pharmacy": "Pharmacie | Pharmacies",
-		"restaurant": "Restaurant | Restaurants",
-		"school": "Repas scolaire | Repas scolaires"
-	},
-	"dayofweek": {
-		"friday": "Vendredi",
-		"monday": "Lundi",
-		"saturday": "Samedi",
-		"sunday": "Dimanche",
-		"thursday": "Jeudi",
-		"tuesday": "Mardi",
-		"wednesday": "Mercredi"
-	},
-	"label": {
-		"address": "Adresse",
-		"curbsidepickup": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
-		"delivery": "Livraison",
-		"discounts": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
-		"freegrocery": "Emplacement d'épicerie gratuits|Emplacements d'épicerie gratuits",
-		"freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
-		"freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
-		"instructions": "Instructions",
-		"mealsforstudents": "Repas pour les étudiants",
-		"offers": "Des offres",
-		"opentopublic": "Repas ouverts au public",
-		"orderonline": "Commandez et payez en ligne",
-		"phone": "Téléphone",
-		"seniorshopping": "Heures de magasinage pour les seniors"
-	},
-	"sidebar": {
-		"what-do-you-need": "De quoi avez-vous besoin?",
-		"when-do-you-need-it": "Quand en avez-vous besoin?"
-	},
-	"title": "Ressources communautaires COVID-19"
+  "category": {
+    "childcare": "Garde d'enfants",
+    "grocery": "Épicerie | Épicerie",
+    "meal": "Repas gratuit | Repas gratuits",
+    "petsupplies": "Fournitures pour animaux",
+    "pharmacy": "Pharmacie | Pharmacies",
+    "restaurant": "Restaurant | Restaurants",
+    "school": "Repas scolaire | Repas scolaires"
+  },
+  "dayofweek": {
+    "friday": "Vendredi",
+    "monday": "Lundi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "thursday": "Jeudi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi"
+  },
+  "label": {
+    "address": "Adresse",
+    "curbsidepickup": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
+    "delivery": "Livraison",
+    "discounts": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
+    "freegrocery": "Emplacement d'épicerie gratuits|Emplacements d'épicerie gratuits",
+    "freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
+    "freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
+    "instructions": "Instructions",
+    "mealsforstudents": "Repas pour les étudiants",
+    "offers": "Des offres",
+    "opentopublic": "Repas ouverts au public",
+    "orderonline": "Commandez et payez en ligne",
+    "phone": "Téléphone",
+    "seniorshopping": "Heures de magasinage pour les seniors"
+  },
+  "sidebar": {
+    "what-do-you-need": "De quoi avez-vous besoin?",
+    "when-do-you-need-it": "Quand en avez-vous besoin?"
+  },
+  "title": "Ressources communautaires COVID-19"
 }

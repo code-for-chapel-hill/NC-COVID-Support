@@ -1,41 +1,41 @@
 {
-	"category": {
-		"childcare": "Cuidado de los niños",
-		"grocery": "Comestibles",
-		"meal": "Comida gratis | Comidas gratis",
-		"petsupplies": "Suministros de mascotas",
-		"pharmacy": "Farmacia | Farmacias",
-		"restaurant": "Restaurante | Restaurantes",
-		"school": "Comida escolar | Comidas escolares"
-	},
-	"dayofweek": {
-		"friday": "Viernes",
-		"monday": "Lunes",
-		"saturday": "Sábado",
-		"sunday": "Domingo",
-		"thursday": "Jueves",
-		"tuesday": "Martes",
-		"wednesday": "Miércoles"
-	},
-	"label": {
-		"address": "Dirección",
-		"curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
-		"delivery": "Entrega",
-		"discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
-		"freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
-		"freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
-		"freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
-		"instructions": "Instrucciones",
-		"mealsforstudents": "Comidas para estudiantes",
-		"offers": "Ofertas",
-		"opentopublic": "Comidas abiertas al público",
-		"orderonline": "Ordene y pague en línea",
-		"phone": "Teléfono",
-		"seniorshopping": "Horario comercial senior"
-	},
-	"sidebar": {
-		"what-do-you-need": "¿Que necesitas?",
-		"when-do-you-need-it": "Cuando lo necesitas?"
-	},
-	"title": "COVID-19 Recursos de la comunidad"
+  "category": {
+    "childcare": "Cuidado de los niños",
+    "grocery": "Comestibles",
+    "meal": "Comida gratis | Comidas gratis",
+    "petsupplies": "Suministros de mascotas",
+    "pharmacy": "Farmacia | Farmacias",
+    "restaurant": "Restaurante | Restaurantes",
+    "school": "Comida escolar | Comidas escolares"
+  },
+  "dayofweek": {
+    "friday": "Viernes",
+    "monday": "Lunes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "thursday": "Jueves",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles"
+  },
+  "label": {
+    "address": "Dirección",
+    "curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
+    "delivery": "Entrega",
+    "discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
+    "freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
+    "freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
+    "freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
+    "instructions": "Instrucciones",
+    "mealsforstudents": "Comidas para estudiantes",
+    "offers": "Ofertas",
+    "opentopublic": "Comidas abiertas al público",
+    "orderonline": "Ordene y pague en línea",
+    "phone": "Teléfono",
+    "seniorshopping": "Horario comercial senior"
+  },
+  "sidebar": {
+    "what-do-you-need": "¿Que necesitas?",
+    "when-do-you-need-it": "Cuando lo necesitas?"
+  },
+  "title": "COVID-19 Recursos de la comunidad"
 }

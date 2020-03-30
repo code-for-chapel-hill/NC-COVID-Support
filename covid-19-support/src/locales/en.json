@@ -1,41 +1,41 @@
 {
-	"category": {
-		"childcare": "Child care",
-		"grocery": "Grocery|Groceries",
-		"meal": "Free meal|Free meals",
-		"petsupplies": "Pet Supplies",
-		"pharmacy": "Pharmacy|Pharmacies",
-		"restaurant": "Restaurant|Restaurants",
-		"school": "School meal|School meals"
-	},
-	"dayofweek": {
-		"friday": "Friday",
-		"monday": "Monday",
-		"saturday": "Saturday",
-		"sunday": "Sunday",
-		"thursday": "Thursday",
-		"tuesday": "Tuesday",
-		"wednesday": "Wednesday"
-	},
-	"label": {
-		"address": "Address",
-		"curbsidepickup": "Curbside pick-up",
-		"delivery": "Delivery",
-		"discounts": "Medical worker discount|Medical worker discounts",
-		"freegrocery": "Free grocery location|Free grocery locations",
-		"freemeals": "Free meal location|Free meal locations",
-		"freeproduce": "Free produce location|Free produce locations",
-		"instructions": "Instructions",
-		"mealsforstudents": "Meals for students",
-		"offers": "Offers",
-		"opentopublic": "Meals open to public",
-		"orderonline": "Order & pay online",
-		"phone": "Phone",
-		"seniorshopping": "Senior shopping hours"
-	},
-	"sidebar": {
-		"what-do-you-need": "What do you need?",
-		"when-do-you-need-it": "When do you need it?"
-	},
-	"title": "COVID-19 Community Resources"
+  "category": {
+    "childcare": "Child care",
+    "grocery": "Grocery|Groceries",
+    "meal": "Free meal|Free meals",
+    "petsupplies": "Pet Supplies",
+    "pharmacy": "Pharmacy|Pharmacies",
+    "restaurant": "Restaurant|Restaurants",
+    "school": "School meal|School meals"
+  },
+  "dayofweek": {
+    "friday": "Friday",
+    "monday": "Monday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "thursday": "Thursday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday"
+  },
+  "label": {
+    "address": "Address",
+    "curbsidepickup": "Curbside pick-up",
+    "delivery": "Delivery",
+    "discounts": "Medical worker discount|Medical worker discounts",
+    "freegrocery": "Free grocery location|Free grocery locations",
+    "freemeals": "Free meal location|Free meal locations",
+    "freeproduce": "Free produce location|Free produce locations",
+    "instructions": "Instructions",
+    "mealsforstudents": "Meals for students",
+    "offers": "Offers",
+    "opentopublic": "Meals open to public",
+    "orderonline": "Order & pay online",
+    "phone": "Phone",
+    "seniorshopping": "Senior shopping hours"
+  },
+  "sidebar": {
+    "what-do-you-need": "What do you need?",
+    "when-do-you-need-it": "When do you need it?"
+  },
+  "title": "COVID-19 Community Resources"
 }
