@@ -37,6 +37,7 @@ export default {
   computed: {
     needOptions() {
       return [
+        { value: 'none', text: this.$tc('label.selectacategory', 1) },
         { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
         { value: 'meal', text: this.$tc('category.meal', 2) },
         { value: 'grocery', text: this.$tc('category.grocery', 2) },
@@ -58,7 +59,7 @@ export default {
 
 <style scoped>
 #search-filter-wrapper {
-  margin-left: -22rem;
+  margin-left: -300px;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -78,7 +79,7 @@ export default {
 }
 
 .list-group {
-  width: 22rem;
+  width: 300px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
 }
 
@@ -100,6 +101,16 @@ export default {
   background: #fff;
   transition: left 0.25s ease-out;
   cursor: pointer;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.3);
+}
+
+#wrapper.toggled .tab {
+  box-shadow: 12px 0px 14px 0px rgba(0, 0, 0, 0.3);
+  left: 300px;
+}
+
+#wrapper.toggled .tab i {
+  transform: rotate(90deg);
 }
 .tab i {
   font-size: 1.5rem;

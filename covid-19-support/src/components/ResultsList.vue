@@ -31,8 +31,8 @@ export default {
 
 <style>
 .resultList {
-  height: 100vh;
-  overflow-y: scroll;
+  max-height: calc(100vh - 229px);
+  overflow-y: auto;
 }
 .resultItem {
   padding: 10px;

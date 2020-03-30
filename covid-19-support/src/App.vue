@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       entries: null,
-      need: 'restaurant',
+      need: 'none',
       day: new Date().getDay(),
       isFilterOpen: true,
       language: { name: 'English', iso: 'en' }
@@ -90,14 +90,6 @@ body,
 #page-content-wrapper {
   padding-top: 56px;
   box-sizing: border-box;
-}
-
-#wrapper.toggled .tab {
-  left: 22rem;
-}
-
-#wrapper.toggled .tab i {
-  transform: rotate(90deg);
 }
 
 #page-content-wrapper {
