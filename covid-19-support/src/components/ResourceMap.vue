@@ -119,4 +119,8 @@ export default {
     height: calc(100% - 116px);
   }
 }
+
+.noselection.bv-example-row {
+  height: 100%;
+}
 </style>

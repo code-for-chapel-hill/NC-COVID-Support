@@ -83,10 +83,16 @@ export default {
       return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
-      return this.buildBoxValue('curbsidepickup', 'fa-mouse', this.countPickup + this.countDriveUp, true)
+      return this.buildBoxValue('curbsidepickup', 'fa-car', this.countPickup + this.countDriveUp, true)
     },
     deliveryValueBox() {
       return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
+    },
+    onFarmPickupValueBox() {
+      return this.buildBoxValue('onfarmpickup', 'fa-tractor', this.countPickup + this.countDriveUp, true)
+    },
+    farmersMarketValueBox() {
+      return this.buildBoxValue('farmersmarket', 'fa-store', this.countPickup + this.countDriveUp, true)
     },
     seniorShoppingValueBox() {
       return this.buildBoxValue('seniorshopping', 'fa-history', this.countSenior)
@@ -114,6 +120,8 @@ export default {
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         case 'family': // Family Meal Kits
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.medicalDiscountsValueBox]
+        case 'farm': // Farms
+          return [this.curbsidePickupValueBox, this.onFarmPickupValueBox, this.farmersMarketValueBox, this.orderOnlineValueBox]
         case 'meal': // Free Meals
           return [this.openToPublicValueBox, this.freeStudentMealsValueBox, this.freeProduceValueBox, this.freeGroceryValueBox]
         case 'pharmacy':
