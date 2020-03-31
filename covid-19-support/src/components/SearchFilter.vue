@@ -18,7 +18,8 @@
     <div class="list-group list-group-flush">
       <div class="list-group-item list-group-item-action bg-light note">
         <i class="fas fa-info-circle" />
-        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a>{{ $t('sidebar.info-end-text') }}
+        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
+        >{{ $t('sidebar.info-end-text') }}
       </div>
     </div>
 
