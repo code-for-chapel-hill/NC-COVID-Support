@@ -24,13 +24,10 @@
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
-
-    <about-us-modal />
   </b-navbar>
 </template>
 
 <script>
-import AboutUsModal from './AboutUs.vue'
 import { BIcon, BIconGearFill, BIconQuestionDiamond } from 'bootstrap-vue'
 
 export default {
@@ -39,7 +36,6 @@ export default {
     language: String
   },
   components: {
-    AboutUsModal,
     BIcon,
     BIconGearFill,
     BIconQuestionDiamond
@@ -61,7 +57,7 @@ export default {
 #topnav {
   position: absolute;
   width: 100%;
-  z-index: 1200;
+  z-index: 1038;
 }
 
 .navbar-brand {

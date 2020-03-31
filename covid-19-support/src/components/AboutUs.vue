@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="about-us" centered scrollable>
+  <b-modal id="about-us" size="lg" centered scrollable>
     <template v-slot:modal-title>
       {{ $t('about.title') }}
     </template>
@@ -57,10 +57,3 @@ export default {
   name: 'about-us-modal'
 }
 </script>
-
-<style>
-#about-us {
-  z-index: 15000;
-  width: 100%;
-}
-</style>
