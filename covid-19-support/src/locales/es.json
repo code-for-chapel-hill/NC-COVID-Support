@@ -1,71 +1,41 @@
 {
-	"category": {
-		"childcare": "Cuidado de los niños",
-		"grocery": "Comestibles",
-		"meal": "Comida gratis | Comidas gratis",
-		"petsupplies": "Suministros de mascotas",
-		"pharmacy": "Farmacia | Farmacias",
-		"restaurant": "Restaurante | Restaurantes",
-		"school": "Comida escolar | Comidas escolares"
-	},
-	"dayofweek": {
-		"friday": "Viernes",
-		"monday": "Lunes",
-		"saturday": "Sábado",
-		"sunday": "Domingo",
-		"thursday": "Jueves",
-		"tuesday": "Martes",
-		"wednesday": "Miércoles"
-	},
-	"label": {
-		"address": "Dirección",
-		"curbsidepickup": "Restaurantes con recogida en la acera",
-		"delivery": "Entrega",
-		"discounts": "Descuentos para trabajadores médicos.",
-		"freegrocery": "Tiendas de comestibles gratis",
-		"freemeals": "Lugares de comidas gratis",
-		"freeproduce": "Lugar de producción gratuito",
-		"instructions": "Instrucciones",
-		"mealsforstudents": "Comidas para estudiantes",
-		"offers": "Ofertas",
-		"opentopublic": "Comidas abiertas al público",
-		"orderonline": "Ordene y pague en línea",
-		"phone": "Teléfono",
-		"seniorshopping": "Horario comercial senior"
-	},
-	"sidebar": {
-		"what-do-you-need": "¿Que necesitas?",
-		"when-do-you-need-it": "Cuando lo necesitas?"
-	},
-	"about": {
-		"title": "About this site",
-		"info": "Our database of resources benefits from information collected by these organizations:",
-		"partners":"Info Sources",
-		"getinvolved":"Get Involved",
-		"contact":"Contact Us",
-		"orgs": {
-			"chb": "Chapel Hill Brigade",
-			"cfa": "Code for America",
-			"bureau": "Chapel Hill/Orange County Visitors Bureau",
-			"partnership": "Chapel Hill Downtown Partnership",
-			"localistnc":"#LocalListNC",
-			"farmstewards":"Carolina Farm Stewardship Association"
-		},
-		"devhelp": {
-			"info":"This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
-			"step1":"Reach out to local government and business associations to gather information.",
-			"step2":"Organize resource information using our spreadsheet template.",
-			"step3":"Email us when you are ready to join the NC site.",
-			"dupsite":"Alternatively, you can duplicate a site for your state.",
-			"source":"source code",
-			"conduct":"Code of Conduct",
-			"devnote":"Developers - find our {0} and {1} on GitHub."
-		},
-		"contactus": {
-			"info":"This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
-			"email":"email"
-		},
-		"close": "Close"
-	},
-	"title": "COVID-19 Recursos de la comunidad"
+  "category": {
+    "childcare": "Cuidado de los niños",
+    "grocery": "Comestibles",
+    "meal": "Comida gratis | Comidas gratis",
+    "petsupplies": "Suministros de mascotas",
+    "pharmacy": "Farmacia | Farmacias",
+    "restaurant": "Restaurante | Restaurantes",
+    "school": "Comida escolar | Comidas escolares"
+  },
+  "dayofweek": {
+    "friday": "Viernes",
+    "monday": "Lunes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "thursday": "Jueves",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles"
+  },
+  "label": {
+    "address": "Dirección",
+    "curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
+    "delivery": "Entrega",
+    "discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
+    "freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
+    "freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
+    "freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
+    "instructions": "Instrucciones",
+    "mealsforstudents": "Comidas para estudiantes",
+    "offers": "Ofertas",
+    "opentopublic": "Comidas abiertas al público",
+    "orderonline": "Ordene y pague en línea",
+    "phone": "Teléfono",
+    "seniorshopping": "Horario comercial senior"
+  },
+  "sidebar": {
+    "what-do-you-need": "¿Que necesitas?",
+    "when-do-you-need-it": "Cuando lo necesitas?"
+  },
+  "title": "COVID-19 Recursos de la comunidad"
 }

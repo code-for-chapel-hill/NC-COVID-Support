@@ -1,71 +1,41 @@
 {
-	"category": {
-		"childcare": "Garde d'enfants",
-		"grocery": "Épicerie | Épicerie",
-		"meal": "Repas gratuit | Repas gratuits",
-		"petsupplies": "Fournitures pour animaux",
-		"pharmacy": "Pharmacie | Pharmacies",
-		"restaurant": "Restaurant | Restaurants",
-		"school": "Repas scolaire | Repas scolaires"
-	},
-	"dayofweek": {
-		"friday": "Vendredi",
-		"monday": "Lundi",
-		"saturday": "Samedi",
-		"sunday": "Dimanche",
-		"thursday": "Jeudi",
-		"tuesday": "Mardi",
-		"wednesday": "Mercredi"
-	},
-	"label": {
-		"address": "Adresse",
-		"curbsidepickup": "Restaurants avec ramassage en bordure de rue",
-		"delivery": "Livraison",
-		"discounts": "Réductions pour les travailleurs médicaux",
-		"freegrocery": "Emplacements d'épicerie gratuits",
-		"freemeals": "Lieux de repas gratuits",
-		"freeproduce": "Lieu de production gratuit",
-		"instructions": "Instructions",
-		"mealsforstudents": "Repas pour les étudiants",
-		"offers": "Des offres",
-		"opentopublic": "Repas ouverts au public",
-		"orderonline": "Commandez et payez en ligne",
-		"phone": "Téléphone",
-		"seniorshopping": "Heures de magasinage pour les seniors"
-	},
-	"sidebar": {
-		"what-do-you-need": "De quoi avez-vous besoin?",
-		"when-do-you-need-it": "Quand en avez-vous besoin?"
-	},
-	"about": {
-		"title": "About this site",
-		"info": "Our database of resources benefits from information collected by these organizations:",
-		"partners":"Info Sources",
-		"getinvolved":"Get Involved",
-		"contact":"Contact Us",
-		"orgs": {
-			"chb": "Chapel Hill Brigade",
-			"cfa": "Code for America",
-			"bureau": "Chapel Hill/Orange County Visitors Bureau",
-			"partnership": "Chapel Hill Downtown Partnership",
-			"localistnc":"#LocalListNC",
-			"farmstewards":"Carolina Farm Stewardship Association"
-		},
-		"devhelp": {
-			"info":"This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
-			"step1":"Reach out to local government and business associations to gather information.",
-			"step2":"Organize resource information using our spreadsheet template.",
-			"step3":"Email us when you are ready to join the NC site.",
-			"dupsite":"Alternatively, you can duplicate a site for your state.",
-			"source":"source code",
-			"conduct":"Code of Conduct",
-			"devnote":"Developers - find our {0} and {1} on GitHub."
-		},
-		"contactus": {
-			"info":"This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
-			"email":"email"
-		},
-		"close": "Close"
-	},
-	"title": "Ressources communautaires COVID-19"
+  "category": {
+    "childcare": "Garde d'enfants",
+    "grocery": "Épicerie | Épicerie",
+    "meal": "Repas gratuit | Repas gratuits",
+    "petsupplies": "Fournitures pour animaux",
+    "pharmacy": "Pharmacie | Pharmacies",
+    "restaurant": "Restaurant | Restaurants",
+    "school": "Repas scolaire | Repas scolaires"
+  },
+  "dayofweek": {
+    "friday": "Vendredi",
+    "monday": "Lundi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "thursday": "Jeudi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi"
+  },
+  "label": {
+    "address": "Adresse",
+    "curbsidepickup": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
+    "delivery": "Livraison",
+    "discounts": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
+    "freegrocery": "Emplacement d'épicerie gratuits|Emplacements d'épicerie gratuits",
+    "freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
+    "freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
+    "instructions": "Instructions",
+    "mealsforstudents": "Repas pour les étudiants",
+    "offers": "Des offres",
+    "opentopublic": "Repas ouverts au public",
+    "orderonline": "Commandez et payez en ligne",
+    "phone": "Téléphone",
+    "seniorshopping": "Heures de magasinage pour les seniors"
+  },
+  "sidebar": {
+    "what-do-you-need": "De quoi avez-vous besoin?",
+    "when-do-you-need-it": "Quand en avez-vous besoin?"
+  },
+  "title": "Ressources communautaires COVID-19"
 }

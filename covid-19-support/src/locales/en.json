@@ -1,71 +1,75 @@
 {
-	"category": {
-		"childcare": "Child care",
-		"grocery": "Grocery|Groceries",
-		"meal": "Free meal|Free meals",
-		"petsupplies": "Pet Supplies",
-		"pharmacy": "Pharmacy|Pharmacies",
-		"restaurant": "Restaurant|Restaurants",
-		"school": "School meal|School meals"
-	},
-	"dayofweek": {
-		"friday": "Friday",
-		"monday": "Monday",
-		"saturday": "Saturday",
-		"sunday": "Sunday",
-		"thursday": "Thursday",
-		"tuesday": "Tuesday",
-		"wednesday": "Wednesday"
-	},
-	"label": {
-		"address": "Address",
-		"curbsidepickup": "Curbside pick-up",
-		"delivery": "Delivery",
-		"discounts": "Medical worker discounts",
-		"freegrocery": "Free grocery locations",
-		"freemeals": "Free Meal locations",
-		"freeproduce": "Free produce location",
-		"instructions": "Instructions",
-		"mealsforstudents": "Meals for students",
-		"offers": "Offers",
-		"opentopublic": "Meals open to public",
-		"orderonline": "Order & pay online",
-		"phone": "Phone",
-		"seniorshopping": "Senior shopping hours"
-	},
-	"sidebar": {
-		"what-do-you-need": "What do you need?",
-		"when-do-you-need-it": "When do you need it?"
-	},
-	"about": {
-		"title": "About this site",
-		"info": "Our database of resources benefits from information collected by these organizations:",
-		"partners":"Info Sources",
-		"getinvolved":"Get Involved",
-		"contact":"Contact Us",
-		"orgs": {
-			"chb": "Chapel Hill Brigade",
-			"cfa": "Code for America",
-			"bureau": "Chapel Hill/Orange County Visitors Bureau",
-			"partnership": "Chapel Hill Downtown Partnership",
-			"localistnc":"#LocalListNC",
-			"farmstewards":"Carolina Farm Stewardship Association"
-		},
-		"devhelp": {
-			"info":"This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
-			"step1":"Reach out to local government and business associations to gather information.",
-			"step2":"Organize resource information using our spreadsheet template.",
-			"step3":"Email us when you are ready to join the NC site.",
-			"dupsite":"Alternatively, you can duplicate a site for your state.",
-			"source":"source code",
-			"conduct":"Code of Conduct",
-			"devnote":"Developers - find our {0} and {1} on GitHub."
-		},
-		"contactus": {
-			"info":"This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
-			"email":"email"
-		},
-		"close": "Close"
-	},
-	"title": "COVID-19 Community Resources"
+  "category": {
+    "childcare": "Child care",
+    "grocery": "Grocery|Groceries",
+    "farm": "Farm|Farms",
+    "meal": "Free meal|Free meals",
+    "petsupplies": "Pet Supplies",
+    "pharmacy": "Pharmacy|Pharmacies",
+    "restaurant": "Restaurant|Restaurants",
+    "school": "School meal|School meals"
+  },
+  "dayofweek": {
+    "friday": "Friday",
+    "monday": "Monday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "thursday": "Thursday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday"
+  },
+  "label": {
+    "address": "Address",
+    "curbsidepickup": "Curbside pick-up",
+    "delivery": "Delivery",
+    "discounts": "Medical worker discount|Medical worker discounts",
+    "freegrocery": "Free grocery location|Free grocery locations",
+    "freemeals": "Free meal location|Free meal locations",
+    "freeproduce": "Free produce location|Free produce locations",
+    "instructions": "Instructions",
+    "mealsforstudents": "Meals for students",
+    "offers": "Offers",
+    "opentopublic": "Meals open to public",
+    "orderonline": "Order & pay online",
+    "phone": "Phone",
+    "seniorshopping": "Senior shopping hours",
+    "selectacategory": "Select a category...",
+    "farmersmarket": "Farmers Market|Farmers Markets",
+    "onfarmpickup": "On-farm pick-up",
+    "close": "Close",
+    "email_lowercase": "email"
+  },
+  "sidebar": {
+    "what-do-you-need": "What do you need?",
+    "when-do-you-need-it": "When do you need it?"
+  },
+  "about": {
+    "title": "About this site",
+    "info": "Our database of resources benefits from information collected by these organizations:",
+    "partners": "Info Sources",
+    "getinvolved": "Get Involved",
+    "contact": "Contact Us",
+    "orgs": {
+      "chb": "Chapel Hill Brigade",
+      "cfa": "Code for America",
+      "bureau": "Chapel Hill/Orange County Visitors Bureau",
+      "partnership": "Chapel Hill Downtown Partnership",
+      "localistnc": "#LocalListNC",
+      "farmstewards": "Carolina Farm Stewardship Association"
+    },
+    "devhelp": {
+      "info": "This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
+      "step1": "Reach out to local government and business associations to gather information.",
+      "step2": "Organize resource information using our spreadsheet template.",
+      "step3": "Email us when you are ready to join the NC site.",
+      "dupsite": "Alternatively, you can duplicate a site for your state.",
+      "source": "source code",
+      "conduct": "Code of Conduct",
+      "devnote": "Developers - find our {0} and {1} on GitHub."
+    },
+    "contactus": {
+      "info": "This page is powered by the {0} of {1}. For questions, please contact us via {2}."
+    }
+  },
+  "title": "COVID-19 Community Resources"
 }
