@@ -1,7 +1,7 @@
 <template>
   <div class="valuebox" :class="{ selected: selected }">
-    <div class="number">{{ value }}</div>
-    <div class="title">{{ title }}</div>
+    <span class="number">{{ value }}</span>
+    <span class="title">{{ title }}</span>
     <i class="fas" v-bind:class="icon"></i>
   </div>
 </template>
@@ -38,11 +38,36 @@ export default {
 .number,
 .title {
   color: #fff;
-  display: inline;
 }
 .title {
   margin-left: 8px;
+
+  position: absolute;
+  line-height: 1.1rem;
+  margin-top: 8px;
+  margin-right: 37px;
+  font-size: 0.9rem;
 }
+@media (min-width: 768px) {
+  .title {
+    line-height: 1.5rem;
+    margin-top: -6px;
+    font-size: 1.2rem;
+  }
+  .number {
+    font-size: 2em;
+    margin-top: 14px;
+    display: inline-block;
+  }
+}
+@media (min-width: 1200px) {
+  .title {
+    line-height: 1.5rem;
+    margin-top: 12px;
+    font-size: 1.3rem;
+  }
+}
+
 .number {
   font-size: 2em;
 }

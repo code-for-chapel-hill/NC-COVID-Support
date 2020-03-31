@@ -1,5 +1,5 @@
 <template>
-  <div class="row highlights">
+  <div class="row highlights" v-if="valueBoxes[0] != null">
     <div class="col-6 col-md-3 order-md-1">
       <value-box :icon="valueBoxes[0].icon" :title="valueBoxes[0].title" :value="valueBoxes[0].value" class="bg-blue" />
     </div>
@@ -46,13 +46,13 @@ export default {
   },
   computed: {
     countPickup() {
-      return countFeature(this.filteredMarkers, 'pick-up')
+      return countBoolean(this.filteredMarkers, 'in-storepickup')
     },
-    countDriveUp() {
-      return countFeature(this.filteredMarkers, 'drive-up')
+    countCurbside() {
+      return countBoolean(this.filteredMarkers, 'curbside')
     },
     countSenior() {
-      return countFeature(this.filteredMarkers, 'senior shopping hours')
+      return countBoolean(this.filteredMarkers, 'specialhours')
     },
     countFreeStudentMeal() {
       return countBoolean(this.filteredMarkers, 'mealstudent')
@@ -62,10 +62,13 @@ export default {
     },
     countFamilyMeal() {
       // Family meal kits to purchase
-      return countBoolean(this.filteredMarkers, 'mealfamily')
+      return countBoolean(this.filteredMarkers, 'familymeal')
     },
     countOrderOnline() {
       return countBoolean(this.filteredMarkers, 'orderonline')
+    },
+    countPayOnline() {
+      return countBoolean(this.filteredMarkers, 'payonline')
     },
     countDiscountMedical() {
       return countBoolean(this.filteredMarkers, 'discountmedical')
@@ -79,20 +82,26 @@ export default {
     countGroceries() {
       return countBoolean(this.filteredMarkers, 'freegroceries')
     },
+    countFarmPickUp() {
+      return countBoolean(this.filteredMarkers, 'farmpick-up')
+    },
+    countFarmersMarket() {
+      return countBoolean(this.filteredMarkers, 'farmersmarket')
+    },
     orderOnlineValueBox() {
       return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
-      return this.buildBoxValue('curbsidepickup', 'fa-car', this.countPickup + this.countDriveUp, true)
+      return this.buildBoxValue('curbsidepickup', 'fa-car', this.countCurbside, true)
     },
     deliveryValueBox() {
       return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
     },
     onFarmPickupValueBox() {
-      return this.buildBoxValue('onfarmpickup', 'fa-tractor', this.countPickup + this.countDriveUp, true)
+      return this.buildBoxValue('onfarmpickup', 'fa-tractor', this.countFarmPickUp, true)
     },
     farmersMarketValueBox() {
-      return this.buildBoxValue('farmersmarket', 'fa-store', this.countPickup + this.countDriveUp, true)
+      return this.buildBoxValue('farmersmarket', 'fa-store', this.countFarmersMarket, true)
     },
     seniorShoppingValueBox() {
       return this.buildBoxValue('seniorshopping', 'fa-history', this.countSenior)
@@ -128,6 +137,8 @@ export default {
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.seniorShoppingValueBox, this.deliveryValueBox]
         case 'pet':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
+        default:
+          return [null, null, null, null]
       }
     }
   }

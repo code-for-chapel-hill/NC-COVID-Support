@@ -67,7 +67,6 @@ export default {
   transition: margin 0.25s ease-out;
   z-index: 1100;
   max-height: 100vh;
-  overflow-y: hidden;
 }
 
 #wrapper.toggled #search-filter-wrapper {
@@ -93,10 +92,11 @@ export default {
 }
 
 .tab {
+  font-size: 0.8rem;
   width: 20px;
   height: 60px;
   position: absolute;
-  top: 90px;
+  top: 169px;
   z-index: 500;
   left: 0;
   background: #fff;
@@ -124,7 +124,7 @@ export default {
 @media (min-width: 768px) {
   .tab {
     margin-left: 0;
-    top: 169px;
+    font-size: 1rem;
   }
 }
 </style>

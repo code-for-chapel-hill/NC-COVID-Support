@@ -6,10 +6,13 @@
           <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
         </span>
         <span class="resultAddress">
-          <span v-if="!!item.gsx$cuisine.$t">{{ item.gsx$cuisine.$t }} - </span>
+          <span v-if="!!item.gsx$cuisine.$t">{{ item.gsx$cuisine.$t }}<br /></span>
           <template v-if="!!item.gsx$provideraddloc.$t">{{ item.gsx$provideraddloc.$t }}, </template>{{ item.gsx$address.$t }},
           {{ item.gsx$city.$t }}
         </span>
+        <template v-if="item.gsx$curbside.$t == 1"><i class="fas fa-car" /></template>
+        <template v-if="item.gsx$orderonline.$t == 1"><i class="fas fa-mouse" /></template>
+        <template v-if="item.gsx$delivery.$t == 1"><i class="fas fa-shipping-fast" /></template>
       </div>
     </div>
   </div>
@@ -49,6 +52,12 @@ export default {
 .resultItem a {
   color: #000;
 }
+
+.resultItem i {
+  margin-right: 8px;
+  color: #63a2e7;
+}
+
 .resultTitle {
   font-size: 1.05rem;
 }
