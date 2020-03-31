@@ -45,26 +45,30 @@ export default {
   position: absolute;
   line-height: 1.1rem;
   margin-top: 8px;
-  margin-right: 37px;
+  margin-right: 24px;
   font-size: 0.9rem;
 }
 @media (min-width: 768px) {
   .title {
-    line-height: 1.5rem;
+    line-height: 1.2rem;
     margin-top: -6px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    left: 15px;
+    bottom: 15px;
   }
   .number {
     font-size: 2em;
     margin-top: 14px;
     display: inline-block;
+    position: absolute;
+    top:0;
   }
 }
 @media (min-width: 1200px) {
   .title {
     line-height: 1.5rem;
     margin-top: 12px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
