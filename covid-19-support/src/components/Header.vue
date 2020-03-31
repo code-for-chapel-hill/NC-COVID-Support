@@ -54,7 +54,7 @@ export default {
 
 .navbar-brand {
   margin-right: 2px !important;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
 }
 
 .language {
