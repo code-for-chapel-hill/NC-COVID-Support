@@ -70,6 +70,9 @@ export default {
     countPayOnline() {
       return countBoolean(this.filteredMarkers, 'payonline')
     },
+    countMustPreOrder() {
+      return countBoolean(this.filteredMarkers, 'mustpreorder')
+    },
     countDiscountMedical() {
       return countBoolean(this.filteredMarkers, 'discountmedical')
     },
@@ -121,6 +124,9 @@ export default {
     freeGroceryValueBox() {
       return this.buildBoxValue('freegrocery', 'fa-shopping-basket', this.countGroceries, true)
     },
+    mustPreOrderValueBox() {
+      return this.buildBoxValue('mustpreorder', 'fa-phone', this.countMustPreOrder, true)
+    },
     valueBoxes() {
       switch (this.need) {
         case 'grocery':
@@ -128,7 +134,7 @@ export default {
         case 'restaurant':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         case 'family': // Family Meal Kits
-          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.medicalDiscountsValueBox]
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.mustPreOrderValueBox]
         case 'farm': // Farms
           return [this.curbsidePickupValueBox, this.onFarmPickupValueBox, this.farmersMarketValueBox, this.orderOnlineValueBox]
         case 'meal': // Free Meals

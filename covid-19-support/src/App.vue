@@ -68,7 +68,13 @@ export default {
     filteredMarkers() {
       if (this.entries == null) return null
 
-      const markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
+      var markers
+
+      if (this.need == 'family') {
+        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t === 'active')
+      } else {
+        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
+      }
 
       const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `gsx$${attr}`)
       const dayFilter = dayFilters[this.day]
