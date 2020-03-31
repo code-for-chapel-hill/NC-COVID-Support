@@ -37,41 +37,43 @@
     "selectacategory": "Select a category...",
     "farmersmarket": "Farmers Market|Farmers Markets",
     "onfarmpickup": "On-farm pick-up",
-    "mustpreorder": "Must pre order"
+    "mustpreorder": "Must pre order",
+    "close": "Close"
   },
   "sidebar": {
     "what-do-you-need": "What do you need?",
     "when-do-you-need-it": "When do you need it?"
   },
-	"about": {
-		"title": "About this site",
-		"info": "Our database of resources benefits from information collected by these organizations:",
-		"partners":"Info Sources",
-		"getinvolved":"Get Involved",
-		"contact":"Contact Us",
-		"orgs": {
-			"chb": "Chapel Hill Brigade",
-			"cfa": "Code for America",
-			"bureau": "Chapel Hill/Orange County Visitors Bureau",
-			"partnership": "Chapel Hill Downtown Partnership",
-			"localistnc":"#LocalListNC",
-			"farmstewards":"Carolina Farm Stewardship Association"
-		},
-		"devhelp": {
-			"info":"This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
-			"step1":"Reach out to local government and business associations to gather information.",
-			"step2":"Organize resource information using our spreadsheet template.",
-			"step3":"Email us when you are ready to join the NC site.",
-			"dupsite":"Alternatively, you can duplicate a site for your state.",
-			"source":"source code",
-			"conduct":"Code of Conduct",
-			"devnote":"Developers - find our {0} and {1} on GitHub."
-		},
-		"contactus": {
-			"info":"This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
-			"email":"email"
-		},
-		"close": "Close"
-	},
+  "about": {
+    "linktext": "About us",
+    "title": "About this site",
+    "info": "Our database of resources benefits from information collected by these organizations:",
+    "partners": "Info Sources",
+    "getinvolved": "Get Involved",
+    "contact": "Contact Us",
+    "orgs": {
+      "chb": "Chapel Hill Brigade",
+      "cfa": "Code for America",
+      "bureau": "Chapel Hill/Orange County Visitors Bureau",
+      "partnership": "Chapel Hill Downtown Partnership",
+      "localistnc": "#LocalListNC",
+      "farmstewards": "Carolina Farm Stewardship Association"
+    },
+    "devhelp": {
+      "info": "This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
+      "step1": "Reach out to local government and business associations to gather information.",
+      "step2": "Organize resource information using our spreadsheet template.",
+      "step3": "Email us when you are ready to join the NC site.",
+      "dupsite": "Alternatively, you can duplicate a site for your state.",
+      "source": "source code",
+      "conduct": "Code of Conduct",
+      "devnote": "Developers - find our {0} and {1} on GitHub."
+    },
+    "contactus": {
+      "info": "This page is powered by the {0} of {1}. For questions, please contact us via {2}.",
+      "email": "email"
+    },
+    "close": "Close"
+  },
   "title": "COVID-19 Community Resources"
 }

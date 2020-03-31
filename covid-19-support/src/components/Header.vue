@@ -9,6 +9,9 @@
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
+        <b-nav-item right @click="$bvModal.show('about-us')">
+          {{ $t('about.linktext') }}
+        </b-nav-item>
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
             <i class="fas fa-globe-americas" aria-hidden="true" />
