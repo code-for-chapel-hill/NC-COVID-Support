@@ -11,7 +11,7 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
-            <b-icon icon="gear-fill" aria-hidden="true" />
+            <i class="fas fa-globe-americas" aria-hidden="true" />
             <span v-html="language" class="language" />
           </template>
           <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso">
