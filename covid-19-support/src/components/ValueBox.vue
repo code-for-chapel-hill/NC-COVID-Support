@@ -61,7 +61,7 @@ export default {
     margin-top: 14px;
     display: inline-block;
     position: absolute;
-    top:0;
+    top: 0;
   }
 }
 @media (min-width: 1200px) {
