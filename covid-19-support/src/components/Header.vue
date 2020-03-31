@@ -46,7 +46,7 @@ export default {
 #topnav {
   position: absolute;
   width: 100%;
-  z-index: 1200;
+  z-index: 1038;
 }
 
 .navbar-brand {

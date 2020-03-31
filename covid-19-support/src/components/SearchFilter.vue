@@ -66,7 +66,7 @@ export default {
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
   transition: margin 0.25s ease-out;
-  z-index: 1100;
+  z-index: 1035;
   max-height: 100vh;
 }
 

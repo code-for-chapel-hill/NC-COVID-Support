@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" />
+    <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <search-filter
         :isFilterOpen="isFilterOpen"
@@ -76,6 +77,7 @@ import AppHeader from './components/Header.vue'
 import SearchFilter from './components/SearchFilter.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
+import AboutUsModal from './components/AboutUs.vue'
 
 import { spreadsheetUrl } from './constants'
 
@@ -94,7 +96,8 @@ export default {
     AppHeader,
     Highlights,
     SearchFilter,
-    ResourceMap
+    ResourceMap,
+    AboutUsModal
   },
   data() {
     return {
