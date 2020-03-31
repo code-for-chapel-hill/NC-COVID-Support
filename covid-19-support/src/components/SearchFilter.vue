@@ -15,6 +15,13 @@
       </div>
     </div>
 
+    <div class="list-group list-group-flush">
+      <div class="list-group-item list-group-item-action bg-light note">
+        <i class="fas fa-info-circle" />
+        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a>{{ $t('sidebar.info-end-text') }}
+      </div>
+    </div>
+
     <results-list :filteredMarkers="filteredMarkers" />
   </div>
 </template>
@@ -60,6 +67,18 @@ export default {
 </script>
 
 <style scoped>
+.note {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.note i {
+  font-size: 3rem;
+  color: #ffb71c;
+  margin: 7px 10px 0 0;
+  float: left;
+}
+
 #search-filter-wrapper {
   margin-left: -300px;
   -webkit-transition: margin 0.25s ease-out;

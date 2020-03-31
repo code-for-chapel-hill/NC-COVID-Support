@@ -42,7 +42,10 @@
   },
   "sidebar": {
     "what-do-you-need": "What do you need?",
-    "when-do-you-need-it": "When do you need it?"
+    "when-do-you-need-it": "When do you need it?",
+    "info-about-us": "Currently, this site supports Orange County, NC. With",
+    "info-link-text": "your help",
+    "info-end-text": ", we can expand our coverage."
   },
   "about": {
     "linktext": "About us",
