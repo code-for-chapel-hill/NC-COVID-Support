@@ -37,5 +37,15 @@
     "what-do-you-need": "¿Que necesitas?",
     "when-do-you-need-it": "Cuando lo necesitas?"
   },
+	"about": {
+		"title": "About this site",
+		"info": "This page is powered by the {0} of {1}. Our database of resources is created with the help of our partners:",
+		"chb": "Chapel Hill Brigade",
+		"cfa": "Code for America",
+		"bureau": "Chapel Hill/Orange County Visitors Bureau",
+		"partnership": "Chapel Hill Partnership",
+		"localistnc":"#LocalListNC",
+		"close": "Close"
+	},
   "title": "COVID-19 Recursos de la comunidad"
 }

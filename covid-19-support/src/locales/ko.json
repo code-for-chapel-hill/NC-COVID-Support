@@ -37,5 +37,15 @@
     "what-do-you-need": "무엇이 필요합니까?",
     "when-do-you-need-it": "언제 필요합니까?"
   },
+	"about": {
+		"title": "About this site",
+		"info": "This page is powered by the {0} of {1}. Our database of resources is created with the help of our partners:",
+		"chb": "Chapel Hill Brigade",
+		"cfa": "Code for America",
+		"bureau": "Chapel Hill/Orange County Visitors Bureau",
+		"partnership": "Chapel Hill Partnership",
+		"localistnc":"#LocalListNC",
+		"close": "Close"
+	},
   "title": "COVID-19 커뮤니티 지원 자료"
 }

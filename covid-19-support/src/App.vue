@@ -11,6 +11,28 @@
         @need-selected="(val) => (need = val)"
         @day-selected="(val) => (day = val)"
       />
+
+        <b-nav-item right>
+            <b-icon icon="question-diamond" aria-hidden="true" @click="$bvModal.show('about-us')"></b-icon>
+        </b-nav-item>
+
+        <b-modal id="about-us" centered hide-footer>
+            <template v-slot:modal-title>
+                {{$t('about.title')}}
+            </template>
+            <p>
+                <i18n path="about.info" tag="p">
+                    <a href="https://www.meetup.com/Triangle-Code-for-America/" target="_blank">{{$t('about.chb')}}</a>
+                    <a href="https://www.codeforamerica.org/" target="_blank">{{$t('about.cfa')}}</a>
+                </i18n>
+            </p>
+            <ul>
+                <li><a href="https://www.orangecountync.gov/1710/Visitors-Bureau" target="_blank">{{$t(about.bureau)}}</a></li>
+                <li><a href="http://www.downtownchapelhill.com/" target="_blank">{{$t(about.partnership)}}</a></li>
+                <li><a href="https://locallistnc.com/" target="_blank">{{$t(about.localistnc)}}</a></li>
+            </ul>
+            <b-button @click="$bvModal.hide('about-us')">{{$t('about.close')}}</b-button>
+        </b-modal>
       <div id="page-content-wrapper">
         <highlights :need="need" :class="{ toggled: isFilterOpen }" :filteredMarkers="filteredMarkers" />
         <resource-map :filteredMarkers="filteredMarkers" :class="{ noselection: need == 'none' }" />
