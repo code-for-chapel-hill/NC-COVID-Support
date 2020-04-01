@@ -46,7 +46,7 @@ You should also have version 6.14.3 of NPM, again you can check this using the f
 
 If you need to update the NPM version on Windows, use the accepted instructions found here:
 
-https://stackoverflow.com/questions/18412129/how-can-i-update-npm-on-windows
+[Stack Overflow - How can I update npm on windows](https://stackoverflow.com/questions/18412129/how-can-i-update-npm-on-windows)
 
 Which for reference are:
 
@@ -62,12 +62,24 @@ npm-windows-upgrade
 
 Currently not applicable for this solution as it's currently all front end code.
 
-### Visual Studio Setup
+### Visual Studio Setup (Optional)
 If you use Visual Studio it has its own version of NodeJS which will be quite out of date, you can easily set it up to use your default version by adding it's location in the options here:
 
 `Options > Projects and Solutions > Web Package Management > External Web Tools`
 
 You will need to add: `C:\Program Files\nodejs` and then move it to the top of the list so that it's chosen above the current default.
+
+## VS Code Setup (Optional)
+If you use Visual Studio code I recommend installing the following plugins:
+
+* ESLint
+* Prettier - Code formatter
+
+A good blog post explaining how to set this up can be found here:
+
+[Setting up Prettier on VS Code](https://travishorn.com/setting-up-prettier-on-vs-code-1fd5e5a43523)
+
+We are using Prettier to maintain a common code format between developers, a check is run against the solution on every commit or Pull request, please ensure your code passes the Prettier tests before submitting a PR :)
 
 ## Solution Structure
 
