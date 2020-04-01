@@ -1,7 +1,14 @@
 <template>
   <div class="resultWrapper">
-    <div class="resultList">
-      <div v-for="(item, index) in filteredMarkers" v-bind:key="index" class="resultItem">
+    <div ref="results" class="resultList">
+      <div
+        v-for="(item, index) in filteredMarkers"
+        v-bind:key="index"
+        class="resultItem"
+        :class="{ selected: index == location.locValue }"
+        :ref="'result' + index"
+        @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
+      >
         <span class="resultTitle">
           <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
         </span>
@@ -27,14 +34,24 @@ export default {
     }
   },
   props: {
-    filteredMarkers: Array
+    filteredMarkers: Array,
+    location: { locValue: Number, isSetByMap: Boolean }
+  },
+  watch: {
+    location: function (locationVal) {
+      console.log('locationData' + locationVal.isSetByMap)
+      if (locationVal.isSetByMap) {
+        var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
+        this.$refs['results'].scrollTo(0, top)
+      }
+    }
   }
 }
 </script>
 
 <style>
 .resultList {
-  max-height: calc(100vh - 310px);
+  max-height: calc(100vh - 330px);
   overflow-y: auto;
 }
 .resultItem {
@@ -47,6 +64,10 @@ export default {
 .resultItem:hover {
   background: #f8f9fa !important;
   cursor: pointer;
+}
+
+.resultItem.selected {
+  background: #dffafe !important;
 }
 
 .resultItem a {
