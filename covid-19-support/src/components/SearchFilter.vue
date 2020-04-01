@@ -17,9 +17,11 @@
 
     <div class="list-group list-group-flush">
       <div class="list-group-item list-group-item-action bg-light note">
-        <i class="fas fa-info-circle" /><div>
-        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
-        >{{ $t('sidebar.info-end-text') }}</div>
+        <i class="fas fa-info-circle" />
+        <div>
+          {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
+          >{{ $t('sidebar.info-end-text') }}
+        </div>
       </div>
     </div>
 
@@ -27,11 +29,12 @@
       <div class="list-group-item list-group-item-action bg-light handwash">
         <i class="fas fa-hands-wash"></i>
         <div>
-        <b>{{$t('sidebar.shopsafe')}}</b></br>
-        (1) {{$t('sidebar.stayhome')}}</br>
-        (2) {{$t('sidebar.sixfeet')}}</br>
-        (3) {{$t('sidebar.washhands')}}</br>
-      </div>
+          <b>{{ $t('sidebar.shopsafe') }}</b
+          ><br />
+          (1) {{ $t('sidebar.stayhome') }}<br />
+          (2) {{ $t('sidebar.sixfeet') }}<br />
+          (3) {{ $t('sidebar.washhands') }}<br />
+        </div>
       </div>
     </div>
 
@@ -88,7 +91,7 @@ export default {
       this.locationData = val
       this.$emit('location-selected', val)
     }
-  },  
+  },
   watch: {
     locationData: function (locationVal) {
       console.log('SearchFilter (82): watch ' + locationVal.isSetByMap)
@@ -98,12 +101,14 @@ export default {
 </script>
 
 <style scoped>
-.note, .handwash {
+.note,
+.handwash {
   font-size: 0.8rem;
   color: #666;
 }
 
-.note i, .handwash i {
+.note i,
+.handwash i {
   font-size: 3rem;
   color: #ffb71c;
   margin: 7px 10px 0 0;
@@ -111,12 +116,13 @@ export default {
 }
 
 .handwash i {
-  color: #FF2C1C;
+  color: #ff2c1c;
 }
 
-.note div, .handwash div {
-display: inline-block;
-width: 195px;
+.note div,
+.handwash div {
+  display: inline-block;
+  width: 195px;
 }
 
 #search-filter-wrapper {

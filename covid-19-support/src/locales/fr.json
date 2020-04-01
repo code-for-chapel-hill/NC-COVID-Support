@@ -1,86 +1,86 @@
 {
-	"about": {
-		"close": "Fermer",
-		"contact": "Contactez nous",
-		"contactus": {
-			"email": "",
-			"info": "Cette page est alimentée par le {0} de {1}. Pour toute question, veuillez nous contacter via {2}."
-		},
-		"devhelp": {
-			"conduct": "Code de conduite",
-			"devnote": "Développeurs - trouvez nos {0} et {1} sur GitHub.",
-			"dupsite": "Alternativement, vous pouvez dupliquer un site pour votre état.",
-			"info": "Il s'agit d'un projet open source. Vous pouvez créer une base de données pour votre communauté et rejoindre notre site ou créer la vôtre en seulement 3 étapes! Aucune compétence en ingénierie requise.",
-			"source": "Code source",
-			"step1": "Contactez le gouvernement local et les associations professionnelles pour recueillir des informations.",
-			"step2": "Organisez les informations sur les ressources à l'aide de notre modèle de feuille de calcul.",
-			"step3": "Envoyez-nous un e-mail lorsque vous êtes prêt à rejoindre le site NC."
-		},
-		"getinvolved": "Être impliqué",
-		"info": "Notre base de données de ressources bénéficie des informations collectées par ces organisations:",
-		"linktext": "À propos de nous",
-		"orgs": {
-			"bureau": "Bureau des visiteurs de Chapel Hill / Orange County",
-			"cfa": "Code pour l'Amérique",
-			"chb": "Brigade de Chapel Hill",
-			"farmstewards": "Association de gestion agricole de la Caroline",
-			"localistnc": "#LocalListNC",
-			"partnership": "Partenariat du centre-ville de Chapel Hill"
-		},
-		"partners": "Sources d'informations",
-		"title": "A propos de ce site"
-	},
-	"category": {
-		"childcare": "Garde d'enfants",
-		"family": "Plats préparés en famille | Plats préparés en famille",
-		"farm": "Marché fermier ou fermier | Fermes et marchés fermiers",
-		"grocery": "Épicerie | Épicerie",
-		"meal": "Repas gratuit | Repas gratuits",
-		"petsupplies": "Fournitures pour animaux",
-		"pharmacy": "Pharmacie | Pharmacies",
-		"restaurant": "Restaurant | Restaurants",
-		"school": "Repas scolaire | Repas scolaires"
-	},
-	"dayofweek": {
-		"friday": "Vendredi",
-		"monday": "Lundi",
-		"saturday": "Samedi",
-		"sunday": "Dimanche",
-		"thursday": "Jeudi",
-		"tuesday": "Mardi",
-		"wednesday": "Mercredi"
-	},
-	"label": {
-		"address": "Adresse",
-		"close": "Fermer",
-		"curbsidepickup": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
-		"delivery": "Livraison",
-		"discounts": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
-		"farmersmarket": "Marché fermier | Marchés fermiers",
-		"freegrocery": "Emplacement d'épicerie gratuits|Emplacements d'épicerie gratuits",
-		"freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
-		"freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
-		"instructions": "Instructions",
-		"mealsforstudents": "Repas pour les étudiants",
-		"mustpreorder": "Doit précommander",
-		"offers": "Des offres",
-		"onfarmpickup": "Ramassage à la ferme",
-		"opentopublic": "Repas ouverts au public",
-		"orderonline": "Commandez et payez en ligne",
-		"phone": "Téléphone",
-		"selectacategory": "Choisissez une catégorie...",
-		"seniorshopping": "Heures de magasinage pour les seniors"
-	},
-	"sidebar": {
-		"info-about-us": "Actuellement, ce site prend en charge Orange County, NC. Avec",
-		"info-end-text": ", nous pouvons étendre notre couverture.",
-		"info-link-text": "ton aide",
-		"shopsafe": "S'il vous plaît, achetez en toute sécurité!",
-		"sixfeet": "Restez à 6 pieds de distance lorsque vous magasinez.",
-		"stayhome": "Si vous êtes malade, restez à la maison.",
-		"washhands": "Lavez-vous souvent les mains.",
-		"what-do-you-need": "De quoi avez-vous besoin?",
-		"when-do-you-need-it": "Quand en avez-vous besoin?"
-	},
-	"title": "Ressources communautaires COVID-19"
+  "about": {
+    "close": "Fermer",
+    "contact": "Contactez nous",
+    "contactus": {
+      "email": "",
+      "info": "Cette page est alimentée par le {0} de {1}. Pour toute question, veuillez nous contacter via {2}."
+    },
+    "devhelp": {
+      "conduct": "Code de conduite",
+      "devnote": "Développeurs - trouvez nos {0} et {1} sur GitHub.",
+      "dupsite": "Alternativement, vous pouvez dupliquer un site pour votre état.",
+      "info": "Il s'agit d'un projet open source. Vous pouvez créer une base de données pour votre communauté et rejoindre notre site ou créer la vôtre en seulement 3 étapes! Aucune compétence en ingénierie requise.",
+      "source": "Code source",
+      "step1": "Contactez le gouvernement local et les associations professionnelles pour recueillir des informations.",
+      "step2": "Organisez les informations sur les ressources à l'aide de notre modèle de feuille de calcul.",
+      "step3": "Envoyez-nous un e-mail lorsque vous êtes prêt à rejoindre le site NC."
+    },
+    "getinvolved": "Être impliqué",
+    "info": "Notre base de données de ressources bénéficie des informations collectées par ces organisations:",
+    "linktext": "À propos de nous",
+    "orgs": {
+      "bureau": "Bureau des visiteurs de Chapel Hill / Orange County",
+      "cfa": "Code pour l'Amérique",
+      "chb": "Brigade de Chapel Hill",
+      "farmstewards": "Association de gestion agricole de la Caroline",
+      "localistnc": "#LocalListNC",
+      "partnership": "Partenariat du centre-ville de Chapel Hill"
+    },
+    "partners": "Sources d'informations",
+    "title": "A propos de ce site"
+  },
+  "category": {
+    "childcare": "Garde d'enfants",
+    "family": "Plats préparés en famille | Plats préparés en famille",
+    "farm": "Marché fermier ou fermier | Fermes et marchés fermiers",
+    "grocery": "Épicerie | Épicerie",
+    "meal": "Repas gratuit | Repas gratuits",
+    "petsupplies": "Fournitures pour animaux",
+    "pharmacy": "Pharmacie | Pharmacies",
+    "restaurant": "Restaurant | Restaurants",
+    "school": "Repas scolaire | Repas scolaires"
+  },
+  "dayofweek": {
+    "friday": "Vendredi",
+    "monday": "Lundi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "thursday": "Jeudi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi"
+  },
+  "label": {
+    "address": "Adresse",
+    "close": "Fermer",
+    "curbsidepickup": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
+    "delivery": "Livraison",
+    "discounts": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
+    "farmersmarket": "Marché fermier | Marchés fermiers",
+    "freegrocery": "Emplacement d'épicerie gratuits|Emplacements d'épicerie gratuits",
+    "freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
+    "freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
+    "instructions": "Instructions",
+    "mealsforstudents": "Repas pour les étudiants",
+    "mustpreorder": "Doit précommander",
+    "offers": "Des offres",
+    "onfarmpickup": "Ramassage à la ferme",
+    "opentopublic": "Repas ouverts au public",
+    "orderonline": "Commandez et payez en ligne",
+    "phone": "Téléphone",
+    "selectacategory": "Choisissez une catégorie...",
+    "seniorshopping": "Heures de magasinage pour les seniors"
+  },
+  "sidebar": {
+    "info-about-us": "Actuellement, ce site prend en charge Orange County, NC. Avec",
+    "info-end-text": ", nous pouvons étendre notre couverture.",
+    "info-link-text": "ton aide",
+    "shopsafe": "S'il vous plaît, achetez en toute sécurité!",
+    "sixfeet": "Restez à 6 pieds de distance lorsque vous magasinez.",
+    "stayhome": "Si vous êtes malade, restez à la maison.",
+    "washhands": "Lavez-vous souvent les mains.",
+    "what-do-you-need": "De quoi avez-vous besoin?",
+    "when-do-you-need-it": "Quand en avez-vous besoin?"
+  },
+  "title": "Ressources communautaires COVID-19"
 }

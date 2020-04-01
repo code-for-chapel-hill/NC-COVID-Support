@@ -12,6 +12,7 @@
       >
         <l-tile-layer :url="url" :attribution="attribution" />
         <l-marker
+          :ref="'mapmark' + index"
           :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
           v-for="(item, index) in filteredMarkers"
           v-bind:key="index"
@@ -103,6 +104,14 @@ export default {
     LMarker,
     LPopup,
     LTooltip
+  },
+  watch: {
+    location: function (locationVal) {
+      console.log(this.$refs['mapmark' + locationVal.locValue])
+      if (!locationVal.isSetByMap) {
+        this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
+      }
+    }
   }
 }
 </script>
