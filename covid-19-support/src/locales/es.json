@@ -1,41 +1,86 @@
 {
-  "category": {
-    "childcare": "Cuidado de los niños",
-    "grocery": "Comestibles",
-    "meal": "Comida gratis | Comidas gratis",
-    "petsupplies": "Suministros de mascotas",
-    "pharmacy": "Farmacia | Farmacias",
-    "restaurant": "Restaurante | Restaurantes",
-    "school": "Comida escolar | Comidas escolares"
-  },
-  "dayofweek": {
-    "friday": "Viernes",
-    "monday": "Lunes",
-    "saturday": "Sábado",
-    "sunday": "Domingo",
-    "thursday": "Jueves",
-    "tuesday": "Martes",
-    "wednesday": "Miércoles"
-  },
-  "label": {
-    "address": "Dirección",
-    "curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
-    "delivery": "Entrega",
-    "discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
-    "freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
-    "freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
-    "freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
-    "instructions": "Instrucciones",
-    "mealsforstudents": "Comidas para estudiantes",
-    "offers": "Ofertas",
-    "opentopublic": "Comidas abiertas al público",
-    "orderonline": "Ordene y pague en línea",
-    "phone": "Teléfono",
-    "seniorshopping": "Horario comercial senior"
-  },
-  "sidebar": {
-    "what-do-you-need": "¿Que necesitas?",
-    "when-do-you-need-it": "Cuando lo necesitas?"
-  },
-  "title": "COVID-19 Recursos de la comunidad"
+	"about": {
+		"close": "Cerrar",
+		"contact": "Contáctenos",
+		"contactus": {
+			"email": "Email",
+			"info": "Esta página funciona con {0} de {1}. Para preguntas, contáctenos a través de {2}."
+		},
+		"devhelp": {
+			"conduct": "Código de Conducta",
+			"devnote": "Desarrolladores: encuentre nuestros {0} y {1} en GitHub.",
+			"dupsite": "Alternativamente, puede duplicar un sitio para su estado.",
+			"info": "Este es un proyecto de código abierto. ¡Puede crear una base de datos para su comunidad y unirse a nuestro sitio o crear la suya propia en solo 3 pasos! No se necesitan habilidades de ingeniería.",
+			"source": "codigo fuente",
+			"step1": "Póngase en contacto con el gobierno local y las asociaciones empresariales para recopilar información.",
+			"step2": "Organice la información de recursos utilizando nuestra plantilla de hoja de cálculo.",
+			"step3": "Envíenos un correo electrónico cuando esté listo para unirse al sitio de Carolina del Norte."
+		},
+		"getinvolved": "Involucrarse",
+		"info": "Nuestra base de datos de recursos se beneficia de la información recopilada por estas organizaciones:",
+		"linktext": "Sobre nosotros",
+		"orgs": {
+			"bureau": "Oficina de Visitantes de Chapel Hill / Condado de Orange",
+			"cfa": "Código para América",
+			"chb": "Brigada de Chapel Hill",
+			"farmstewards": "Asociación de administración agrícola de Carolina",
+			"localistnc": "#LocalListNC",
+			"partnership": "Asociación del centro de Chapel Hill"
+		},
+		"partners": "Fuentes de información",
+		"title": "Sobre este sitio"
+	},
+	"category": {
+		"childcare": "Cuidado de los niños",
+		"family": "Comida familiar preparada | Comida familiar preparada",
+		"farm": "Granja o Mercado de Granjeros | Granjas y Mercados de Agricultores",
+		"grocery": "Comestibles",
+		"meal": "Comida gratis | Comidas gratis",
+		"petsupplies": "Suministros de mascotas",
+		"pharmacy": "Farmacia | Farmacias",
+		"restaurant": "Restaurante | Restaurantes",
+		"school": "Comida escolar | Comidas escolares"
+	},
+	"dayofweek": {
+		"friday": "Viernes",
+		"monday": "Lunes",
+		"saturday": "Sábado",
+		"sunday": "Domingo",
+		"thursday": "Jueves",
+		"tuesday": "Martes",
+		"wednesday": "Miércoles"
+	},
+	"label": {
+		"address": "Dirección",
+		"close": "Cerrar",
+		"curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
+		"delivery": "Entrega",
+		"discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
+		"farmersmarket": "Mercado de agricultores | Mercados de agricultores",
+		"freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
+		"freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
+		"freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
+		"instructions": "Instrucciones",
+		"mealsforstudents": "Comidas para estudiantes",
+		"mustpreorder": "Debe pre-ordenar",
+		"offers": "Ofertas",
+		"onfarmpickup": "Recogida en la granja",
+		"opentopublic": "Comidas abiertas al público",
+		"orderonline": "Ordene y pague en línea",
+		"phone": "Teléfono",
+		"selectacategory": "Seleccione una categoría...",
+		"seniorshopping": "Horario comercial senior"
+	},
+	"sidebar": {
+		"info-about-us": "Actualmente, este sitio admite el Condado de Orange, Carolina del Norte. Con",
+		"info-end-text": ", podemos ampliar nuestra cobertura.",
+		"info-link-text": "tu ayuda",
+		"shopsafe": "Por favor, ¡TIENDA SEGURO!",
+		"sixfeet": "Manténgase a 6 pies de distancia cuando vaya de compras.",
+		"stayhome": "Si está enfermo, quédese en casa.",
+		"washhands": "Lávate las manos con frecuencia.",
+		"what-do-you-need": "¿Que necesitas?",
+		"when-do-you-need-it": "Cuando lo necesitas?"
+	},
+	"title": "COVID-19 Recursos de la comunidad"
 }
