@@ -69,7 +69,7 @@ If you use Visual Studio it has its own version of NodeJS which will be quite ou
 
 You will need to add: `C:\Program Files\nodejs` and then move it to the top of the list so that it's chosen above the current default.
 
-## VS Code Setup (Optional)
+### VS Code Setup (Optional)
 If you use Visual Studio code I recommend installing the following plugins:
 
 * ESLint
