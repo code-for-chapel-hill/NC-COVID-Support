@@ -11,7 +11,13 @@
         @update:zoom="(val) => (zoom = val)"
       >
         <l-tile-layer :url="url" :attribution="attribution" />
-        <l-marker :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)" v-for="(item, index) in filteredMarkers" v-bind:key="index">
+        <l-marker
+          :ref="'mapmark' + index"
+          :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
+          v-for="(item, index) in filteredMarkers"
+          v-bind:key="index"
+          @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
+        >
           <l-popup>
             <div>
               <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
@@ -67,7 +73,8 @@ Icon.Default.mergeOptions({
 export default {
   name: 'ResourceMap',
   props: {
-    filteredMarkers: Array
+    filteredMarkers: Array,
+    location: { locValue: Number, isSetByMap: Boolean }
   },
   mounted() {
     this.editZoomControl()
@@ -85,9 +92,10 @@ export default {
       zoom: 13,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       showParagraph: true,
-      mapOptions: { zoomSnap: 0.5 },
+      mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
-      attribution
+      attribution,
+      locationData: location
     }
   },
   components: {
@@ -96,6 +104,14 @@ export default {
     LMarker,
     LPopup,
     LTooltip
+  },
+  watch: {
+    location: function (locationVal) {
+      if (!locationVal.isSetByMap) {
+        this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
+        var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
+      }
+    }
   }
 }
 </script>

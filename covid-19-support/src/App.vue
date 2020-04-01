@@ -8,6 +8,8 @@
         :need="need"
         :day="day"
         :filteredMarkers="filteredMarkers"
+        :location="locationData"
+        @location-selected="passLocation"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="(val) => (need = val)"
         @day-selected="(val) => (day = val)"
@@ -15,7 +17,13 @@
 
       <div id="page-content-wrapper">
         <highlights :need="need" :class="{ toggled: isFilterOpen }" :filteredMarkers="filteredMarkers" />
-        <resource-map :filteredMarkers="filteredMarkers" :class="{ noselection: need == 'none' }" />
+
+        <resource-map
+          :filteredMarkers="filteredMarkers"
+          :class="{ noselection: need == 'none' }"
+          :location="locationData"
+          @location-selected="passLocation"
+        />
       </div>
     </div>
   </div>
@@ -54,7 +62,8 @@ export default {
       need: 'none',
       day: new Date().getDay(),
       isFilterOpen: true,
-      language: { name: 'English', iso: 'en' }
+      language: { name: 'English', iso: 'en' },
+      locationData: { locValue: null, isSetByMap: false }
     }
   },
   methods: {
@@ -66,6 +75,9 @@ export default {
       const res = await fetch(spreadsheetUrl)
       const entries = await res.json()
       this.entries = entries.feed.entry
+    },
+    passLocation: function (val) {
+      this.locationData = val
     }
   },
   computed: {

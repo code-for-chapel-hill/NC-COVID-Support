@@ -18,12 +18,27 @@
     <div class="list-group list-group-flush">
       <div class="list-group-item list-group-item-action bg-light note">
         <i class="fas fa-info-circle" />
-        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
-        >{{ $t('sidebar.info-end-text') }}
+        <div>
+          {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
+          >{{ $t('sidebar.info-end-text') }}
+        </div>
       </div>
     </div>
 
-    <results-list :filteredMarkers="filteredMarkers" />
+    <div class="list-group list-group-flush" v-if="filteredMarkers.length == 0">
+      <div class="list-group-item list-group-item-action bg-light handwash">
+        <i class="fas fa-hands-wash"></i>
+        <div>
+          <b>{{ $t('sidebar.shopsafe') }}</b
+          ><br />
+          (1) {{ $t('sidebar.stayhome') }}<br />
+          (2) {{ $t('sidebar.sixfeet') }}<br />
+          (3) {{ $t('sidebar.washhands') }}<br />
+        </div>
+      </div>
+    </div>
+
+    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" />
   </div>
 </template>
 
@@ -36,11 +51,17 @@ export default {
   components: {
     ResultsList
   },
+  data() {
+    return {
+      locationData: location
+    }
+  },
   props: {
     isFilterOpen: Boolean,
     need: String,
     day: Number,
-    filteredMarkers: Array
+    filteredMarkers: Array,
+    location: { value: Number, isSetByMap: Boolean }
   },
   computed: {
     needOptions() {
@@ -63,21 +84,45 @@ export default {
         text: this.$t(`dayofweek.${day}`)
       }))
     }
+  },
+  methods: {
+    passLocation: function (val) {
+      console.log('SearchFilter (75): passLocation' + val.isSetByMap)
+      this.locationData = val
+      this.$emit('location-selected', val)
+    }
+  },
+  watch: {
+    locationData: function (locationVal) {
+      console.log('SearchFilter (82): watch ' + locationVal.isSetByMap)
+    }
   }
 }
 </script>
 
 <style scoped>
-.note {
+.note,
+.handwash {
   font-size: 0.8rem;
   color: #666;
 }
 
-.note i {
+.note i,
+.handwash i {
   font-size: 3rem;
   color: #ffb71c;
   margin: 7px 10px 0 0;
   float: left;
+}
+
+.handwash i {
+  color: #ff2c1c;
+}
+
+.note div,
+.handwash div {
+  display: inline-block;
+  width: 195px;
 }
 
 #search-filter-wrapper {
