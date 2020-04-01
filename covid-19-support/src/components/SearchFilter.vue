@@ -74,8 +74,6 @@ export default {
         { value: 'grocery', text: this.$tc('category.grocery', 2) },
         { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
         { value: 'pet', text: this.$tc('category.petsupplies', 2) }
-        // { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) }
-        // { value: 'childcare', text: this.$t('category.childcare') }
       ]
     },
     dayOptions() {
@@ -87,15 +85,12 @@ export default {
   },
   methods: {
     passLocation: function (val) {
-      console.log('SearchFilter (75): passLocation' + val.isSetByMap)
       this.locationData = val
       this.$emit('location-selected', val)
     }
   },
   watch: {
-    locationData: function (locationVal) {
-      console.log('SearchFilter (82): watch ' + locationVal.isSetByMap)
-    }
+    locationData: function (locationVal) {}
   }
 }
 </script>
