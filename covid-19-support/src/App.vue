@@ -44,10 +44,7 @@ export default {
     msg: String
   },
   watch: {
-    currentPage: 'fetchData',
-    locationData: function (locationVal) {
-      console.log('App (49) Watch locationData ' + locationVal.locValue)
-    }
+    currentPage: 'fetchData'
   },
   created() {
     this.fetchData()
@@ -80,7 +77,6 @@ export default {
       this.entries = entries.feed.entry
     },
     passLocation: function (val) {
-      console.log('App (83): passLocation' + val.isSetByMap)
       this.locationData = val
     }
   },

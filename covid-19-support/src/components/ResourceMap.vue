@@ -92,7 +92,7 @@ export default {
       zoom: 13,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       showParagraph: true,
-      mapOptions: { zoomSnap: 0.5 },
+      mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       attribution,
       locationData: location
@@ -107,9 +107,9 @@ export default {
   },
   watch: {
     location: function (locationVal) {
-      console.log(this.$refs['mapmark' + locationVal.locValue])
       if (!locationVal.isSetByMap) {
         this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
+        var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
       }
     }
   }
