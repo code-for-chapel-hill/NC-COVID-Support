@@ -22,19 +22,23 @@
           <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
           {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}<br />
           <span v-if="!!business.gsx$contact.$t" class="metaData">
-            <b>{{ $t('label.phone') }}:</b> {{ business.gsx$contact.$t }}<br />
+            <b>{{ $t('label.phone') }}:</b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a><br />
           </span>
           <span v-if="!!business.gsx$email.$t" class="metaData">
             <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
           </span>
           <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t"><hr /></span>
-          <span v-if="!!business.gsx$instructions.$t"
-            ><b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
+          <span v-if="!!business.gsx$instructions.$t">
+            <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
           </span>
           <span v-if="!!business.gsx$instructions.$t && !!business.gsx$offers.$t"><br /></span>
-          <span v-if="!!business.gsx$offers.$t"
-            ><b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}</span
-          >
+          <span v-if="!!business.gsx$offers.$t">
+            <b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}
+          </span>
+          <span v-if="(!!business.gsx$instructions.$t || !!business.gsx$offers.$t) && !!business.gsx$notes.$t"><br /></span>
+          <span v-if="!!business.gsx$notes.$t">
+            <b>{{ $t('label.notes') }}:</b><br />{{ business.gsx$notes.$t }}
+          </span>
         </div>
       </div>
     </div>
