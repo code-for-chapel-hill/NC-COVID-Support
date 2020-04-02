@@ -70,7 +70,9 @@
     "phone": "Phone",
     "selectacategory": "Select a category...",
     "seniorshopping": "Senior shopping hours",
-    "email_lowercase": "email"
+    "email_lowercase": "email",
+    "backtolist": "Back to list",
+    "email": "Email"
   },
   "sidebar": {
     "info-about-us": "Currently, this site supports Orange County, NC. With",

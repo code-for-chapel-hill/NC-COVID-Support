@@ -15,45 +15,48 @@
       </div>
     </div>
 
-    <div class="list-group list-group-flush">
-      <div class="list-group-item list-group-item-action bg-light note">
-        <i class="fas fa-info-circle" />
-        <div>
-          {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a
-          >{{ $t('sidebar.info-end-text') }}
-        </div>
-      </div>
-    </div>
+    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showList">
+      {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a>
+      {{ $t('sidebar.info-end-text') }}
+    </InfoPanel>
 
-    <div class="list-group list-group-flush" v-if="filteredMarkers.length == 0">
-      <div class="list-group-item list-group-item-action bg-light handwash">
-        <i class="fas fa-hands-wash"></i>
-        <div>
-          <b>{{ $t('sidebar.shopsafe') }}</b
-          ><br />
-          (1) {{ $t('sidebar.stayhome') }}<br />
-          (2) {{ $t('sidebar.sixfeet') }}<br />
-          (3) {{ $t('sidebar.washhands') }}<br />
-        </div>
-      </div>
-    </div>
+    <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+      <b>{{ $t('sidebar.shopsafe') }}</b>
+      <br />
+      (1) {{ $t('sidebar.stayhome') }}<br />
+      (2) {{ $t('sidebar.sixfeet') }}<br />
+      (3) {{ $t('sidebar.washhands') }}<br />
+    </InfoPanel>
 
-    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" />
+    <BusinessDetails
+      :infotype="'green'"
+      :icon="'fa-tractor'"
+      :business="currentBusiness"
+      v-if="currentBusiness != null && showList != true"
+      @close-details="closeDetails"
+    ></BusinessDetails>
+
+    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" v-if="showList" />
   </div>
 </template>
 
 <script>
 import { weekdays } from '../constants'
+import BusinessDetails from './BusinessDetails.vue'
+import InfoPanel from './InfoPanel.vue'
 import ResultsList from './ResultsList.vue'
 
 export default {
   name: 'search-filter',
   components: {
+    BusinessDetails,
+    InfoPanel,
     ResultsList
   },
   data() {
     return {
-      locationData: location
+      locationData: location,
+      showListing: this.showList
     }
   },
   props: {
@@ -61,9 +64,13 @@ export default {
     need: String,
     day: Number,
     filteredMarkers: Array,
-    location: { value: Number, isSetByMap: Boolean }
+    location: { locValue: Number, isSetByMap: Boolean },
+    showList: Boolean
   },
   computed: {
+    currentBusiness() {
+      return '0' + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
+    },
     needOptions() {
       return [
         { value: 'none', text: this.$tc('label.selectacategory', 1) },
@@ -84,42 +91,29 @@ export default {
     }
   },
   methods: {
+    closeDetails: function () {
+      this.showList = true
+    },
     passLocation: function (val) {
       this.locationData = val
       this.$emit('location-selected', val)
+      this.showList = false
     }
   },
   watch: {
-    locationData: function (locationVal) {}
+    need: function (val) {
+      this.locationData = null
+      if (val == 'none') {
+        this.showList = false
+      } else {
+        this.showList = true
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
-.note,
-.handwash {
-  font-size: 0.8rem;
-  color: #666;
-}
-
-.note i,
-.handwash i {
-  font-size: 3rem;
-  color: #ffb71c;
-  margin: 7px 10px 0 0;
-  float: left;
-}
-
-.handwash i {
-  color: #ff2c1c;
-}
-
-.note div,
-.handwash div {
-  display: inline-block;
-  width: 195px;
-}
-
 #search-filter-wrapper {
   margin-left: -300px;
   -webkit-transition: margin 0.25s ease-out;

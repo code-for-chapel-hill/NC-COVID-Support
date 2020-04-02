@@ -103,7 +103,7 @@ export default {
   background-color: #4189da !important;
   cursor: pointer;
 }
-.valuebox.valuebox.selected i {
+.valuebox.selected i {
   opacity: 0.3;
 }
 </style>
