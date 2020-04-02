@@ -28,13 +28,17 @@
             <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
           </span>
           <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t"><hr /></span>
-          <span v-if="!!business.gsx$instructions.$t"
-            ><b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
+          <span v-if="!!business.gsx$instructions.$t">
+            <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
           </span>
           <span v-if="!!business.gsx$instructions.$t && !!business.gsx$offers.$t"><br /></span>
-          <span v-if="!!business.gsx$offers.$t"
-            ><b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}</span
-          >
+          <span v-if="!!business.gsx$offers.$t">
+            <b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}
+          </span>
+          <span v-if="(!!business.gsx$instructions.$t || !!business.gsx$offers.$t) && !!business.gsx$notes.$t"><br /></span>
+          <span v-if="!!business.gsx$notes.$t">
+            <b>{{ $t('label.notes') }}:</b><br />{{ business.gsx$notes.$t }}
+          </span>
         </div>
       </div>
     </div>
