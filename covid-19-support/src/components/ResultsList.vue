@@ -10,7 +10,7 @@
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
         <span class="resultTitle">
-          <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
+          {{ item.gsx$providername.$t }}
         </span>
         <span class="resultAddress">
           <span v-if="!!item.gsx$cuisine.$t">{{ item.gsx$cuisine.$t }}<br /></span>
@@ -50,7 +50,7 @@ export default {
 
 <style>
 .resultList {
-  max-height: calc(100vh - 330px);
+  max-height: calc(100vh - 333px);
   overflow-y: auto;
 }
 .resultItem {
