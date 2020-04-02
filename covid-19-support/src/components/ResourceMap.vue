@@ -12,7 +12,7 @@
       >
         <l-tile-layer :url="url" :attribution="attribution" />
 
-        <v-marker-cluster @clusterclick="click()" @ready="ready">
+        <v-marker-cluster :options="clusterOptions" @clusterclick="click()" @ready="ready">
           <l-marker
             :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
             :icon="selectedIcon(index === location.locValue)"
@@ -131,7 +131,8 @@ export default {
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       attribution,
-      locationData: location
+      locationData: location,
+      clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40 }
     }
   },
   computed: {},
@@ -144,12 +145,12 @@ export default {
     'v-marker-cluster': Vue2LeafletMarkerCluster
   },
   watch: {
-    location: function (locationVal) {
-      if (!locationVal.isSetByMap) {
-        this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
-        // var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
-      }
-    }
+    // location: function (locationVal) {
+    //   if (!locationVal.isSetByMap) {
+    //     this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
+    //     // var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
+    //   }
+    // }
   }
 }
 </script>

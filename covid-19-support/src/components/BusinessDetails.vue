@@ -22,7 +22,7 @@
           <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
           {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}<br />
           <span v-if="!!business.gsx$contact.$t" class="metaData">
-            <b>{{ $t('label.phone') }}:</b> {{ business.gsx$contact.$t }}<br />
+            <b>{{ $t('label.phone') }}:</b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a><br />
           </span>
           <span v-if="!!business.gsx$email.$t" class="metaData">
             <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
