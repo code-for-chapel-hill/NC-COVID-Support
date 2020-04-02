@@ -11,6 +11,19 @@
         @update:zoom="(val) => (zoom = val)"
       >
         <l-tile-layer :url="url" :attribution="attribution" />
+
+        <v-marker-cluster @clusterclick="click()" @ready="ready">
+          <l-marker
+            :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
+            :icon="selectedIcon(index === location.locValue)"
+            v-for="(item, index) in filteredMarkers"
+            v-bind:key="index"
+            @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
+          />
+        </v-marker-cluster>
+        <!-- 
+          index === location.locValue
+
         <l-marker
           :ref="'mapmark' + index"
           :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
@@ -39,7 +52,7 @@
               </p>
             </div>
           </l-popup>
-        </l-marker>
+        </l-marker> -->
         <!--<l-marker :lat-lng="withTooltip">
                 <l-tooltip :options="{ permanent: true, interactive: true }">
                     <div @click="innerClick">
@@ -59,8 +72,8 @@
 
 <script>
 import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from 'vue2-leaflet'
-import { latLng, Icon } from 'leaflet'
-
+import { latLng, Icon, icon } from 'leaflet'
+import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '../constants'
 
 delete Icon.Default.prototype._getIconUrl
@@ -84,7 +97,30 @@ export default {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
-    latLng
+    latLng,
+    selectedIcon(selected) {
+      if (selected) {
+        return icon({
+          iconUrl: require('../images/Red.png'),
+          iconRetinaUrl: require('../images/Red2x.png'),
+          shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+          iconSize: [25, 40],
+          iconAnchor: [12.5, 40]
+        })
+      }
+
+      return icon({
+        iconUrl: require('../images/Blue.png'),
+        iconRetinaUrl: require('../images/Blue2x.png'),
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+        iconSize: [25, 41],
+        iconAnchor: [12.5, 41]
+      })
+    },
+    // eslint-disable-next-line no-console
+    click: (e) => console.log('clusterclick', e),
+    // eslint-disable-next-line no-console
+    ready: (e) => console.log('ready', e)
   },
   data() {
     return {
@@ -98,18 +134,20 @@ export default {
       locationData: location
     }
   },
+  computed: {},
   components: {
     LMap,
     LTileLayer,
     LMarker,
     LPopup,
-    LTooltip
+    LTooltip,
+    'v-marker-cluster': Vue2LeafletMarkerCluster
   },
   watch: {
     location: function (locationVal) {
       if (!locationVal.isSetByMap) {
         this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
-        var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
+        // var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
       }
     }
   }

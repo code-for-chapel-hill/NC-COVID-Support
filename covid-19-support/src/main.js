@@ -7,6 +7,8 @@ import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
