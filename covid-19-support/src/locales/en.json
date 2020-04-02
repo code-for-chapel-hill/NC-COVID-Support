@@ -69,7 +69,9 @@
     "orderonline": "Order & pay online",
     "phone": "Phone",
     "selectacategory": "Select a category...",
-    "seniorshopping": "Senior shopping hours"
+    "seniorshopping": "Senior shopping hours",
+    "backtolist": "Back to list",
+    "email": "Email"
   },
   "sidebar": {
     "info-about-us": "Currently, this site supports Orange County, NC. With",

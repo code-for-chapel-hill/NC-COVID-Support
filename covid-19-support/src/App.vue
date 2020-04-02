@@ -9,6 +9,7 @@
         :day="day"
         :filteredMarkers="filteredMarkers"
         :location="locationData"
+        :showlist="showList"
         @location-selected="passLocation"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="(val) => (need = val)"
@@ -63,7 +64,8 @@ export default {
       day: new Date().getDay(),
       isFilterOpen: true,
       language: { name: 'English', iso: 'en' },
-      locationData: { locValue: null, isSetByMap: false }
+      locationData: { locValue: null, isSetByMap: false },
+      showList: false
     }
   },
   methods: {
@@ -78,6 +80,7 @@ export default {
     },
     passLocation: function (val) {
       this.locationData = val
+      this.showList = false
     }
   },
   computed: {
