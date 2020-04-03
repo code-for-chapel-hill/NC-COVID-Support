@@ -3,7 +3,7 @@
 		"close": "닫기",
 		"contact": "문의하기",
 		"contactus": {
-			"email": "",
+			"email": "이메일",
 			"info": "이 페이지는 {1}의 {0} 에 의해 제공됩니다. 질문이 있으시면 {2}를 통해 문의하십시오."
 		},
 		"devhelp": {
@@ -52,13 +52,13 @@
 	},
 	"label": {
 		"address": "주소",
-		"backtolist": "",
+		"backtolist": "다시 목록으로",
 		"close": "닫기",
 		"curbsidepickup": "보도 픽업 레스토랑",
 		"delivery": "배달",
 		"discounts": "의료인 할인 장소",
-		"email": "",
-		"email_lowercase": "",
+		"email": "이메일",
+		"email_lowercase": "이메일",
 		"farmersmarket": "농민 시장 | 농민 시장",
 		"freegrocery": "무료 식료품 점",
 		"freemeals": "무료 식사 장소",
@@ -73,7 +73,8 @@
 		"orderonline": "온라인 주문 및 결제",
 		"phone": "전화",
 		"selectacategory": "카테고리를 선택하십시오 ...",
-		"seniorshopping": "노약자 쇼핑 시간"
+		"seniorshopping": "노약자 쇼핑 시간",
+		"website": "웹 사이트"
 	},
 	"sidebar": {
 		"info-about-us": "현재이 사이트는 노스 캐롤라이나 주 오렌지 카운티를 지원합니다. 와",

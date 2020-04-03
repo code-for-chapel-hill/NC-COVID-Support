@@ -28,7 +28,8 @@
             <b><i class="fas fa-globe"></i></b> <a :href="business.gsx$weblink.$t">{{ getDomain(business.gsx$weblink.$t) }}</a>
           </span>
           <span v-if="!!business.gsx$email.$t" class="metaData">
-            <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a><br />
+            <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a
+            ><br />
           </span>
 
           <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t || !!business.gsx$notes.$t"><br /></span>

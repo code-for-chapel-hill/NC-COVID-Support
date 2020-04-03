@@ -52,13 +52,13 @@
 	},
 	"label": {
 		"address": "Dirección",
-		"backtolist": "",
+		"backtolist": "Volver a la lista",
 		"close": "Cerrar",
 		"curbsidepickup": "Negocio con recogida en la acera|Negocios con recogida en la acera",
 		"delivery": "Entrega",
 		"discounts": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
-		"email": "",
-		"email_lowercase": "",
+		"email": "Email",
+		"email_lowercase": "email",
 		"farmersmarket": "Mercado de agricultores | Mercados de agricultores",
 		"freegrocery": "Tienda de comestibles gratis|Tiendas de comestibles gratis",
 		"freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
@@ -73,7 +73,8 @@
 		"orderonline": "Ordene y pague en línea",
 		"phone": "Teléfono",
 		"selectacategory": "Seleccione una categoría...",
-		"seniorshopping": "Horario comercial senior"
+		"seniorshopping": "Horario comercial senior",
+		"website": "Sitio web"
 	},
 	"sidebar": {
 		"info-about-us": "Actualmente, este sitio admite el Condado de Orange, Carolina del Norte. Con",
