@@ -1,91 +1,91 @@
 {
-	"about": {
-		"close": "닫기",
-		"contact": "문의하기",
-		"contactus": {
-			"email": "이메일",
-			"info": "이 페이지는 {1}의 {0} 에 의해 제공됩니다. 질문이 있으시면 {2}를 통해 문의하십시오."
-		},
-		"devhelp": {
-			"conduct": "행동 강령",
-			"devnote": "개발자-GitHub에서 {0} 및 {1} 을 (를) 찾으십시오.",
-			"dupsite": "또는 해당주의 사이트를 복제 할 수 있습니다.",
-			"info": "이것은 오픈 소스 프로젝트입니다. 커뮤니티를위한 데이터베이스를 구축하고 사이트에 가입하거나 단 3 단계만으로 자신 만의 데이터베이스를 만들 수 있습니다! 엔지니어링 기술이 필요하지 않습니다.",
-			"source": "소스 코드",
-			"step1": "정보를 수집하기 위해 지방 정부 및 기업 협회에 연락하십시오.",
-			"step2": "스프레드 시트 템플릿을 사용하여 리소스 정보를 구성하십시오.",
-			"step3": "NC 사이트에 가입 할 준비가되면 이메일을 보내주십시오."
-		},
-		"getinvolved": "참여하다",
-		"info": "당사의 리소스 데이터베이스는 다음 조직에서 수집 한 정보를 활용합니다.",
-		"linktext": "회사 소개",
-		"orgs": {
-			"bureau": "채플 힐 / 오렌지 카운티 관광청",
-			"cfa": "미국을위한 코드",
-			"chb": "채플 힐 여단",
-			"farmstewards": "캐롤라이나 농장 관리 협회",
-			"localistnc": "#LocalListNC",
-			"partnership": "채플 힐 다운타운 파트너십"
-		},
-		"partners": "정보 출처",
-		"title": "이 사이트에 대하여"
-	},
-	"category": {
-		"childcare": "육아",
-		"family": "가족 식사 준비 | 가족 식사 준비",
-		"farm": "농장 또는 농부 시장 | 농장 및 농부의 시장",
-		"grocery": "식료품 | 식료품 점",
-		"meal": "무료 식사 | 무료 식사",
-		"petsupplies": "애완 용품",
-		"pharmacy": "약국 | 약국",
-		"restaurant": "식당 | 레스토랑",
-		"school": "학교 급식 | 학교 급식"
-	},
-	"dayofweek": {
-		"friday": "금요일",
-		"monday": "월요일",
-		"saturday": "토요일",
-		"sunday": "일요일",
-		"thursday": "목요일",
-		"tuesday": "화요일",
-		"wednesday": "수요일"
-	},
-	"label": {
-		"address": "주소",
-		"backtolist": "다시 목록으로",
-		"close": "닫기",
-		"curbsidepickup": "보도 픽업 레스토랑",
-		"delivery": "배달",
-		"discounts": "의료인 할인 장소",
-		"email": "이메일",
-		"email_lowercase": "이메일",
-		"farmersmarket": "농민 시장 | 농민 시장",
-		"freegrocery": "무료 식료품 점",
-		"freemeals": "무료 식사 장소",
-		"freeproduce": "무료 농산물 위치",
-		"instructions": "방법",
-		"mealsforstudents": "학생들을위한 식사",
-		"mustpreorder": "선주문해야합니다",
-		"notes": "노트",
-		"offers": "서비스",
-		"onfarmpickup": "농장 내 픽업",
-		"opentopublic": "공개 식사",
-		"orderonline": "온라인 주문 및 결제",
-		"phone": "전화",
-		"selectacategory": "카테고리를 선택하십시오 ...",
-		"seniorshopping": "노약자 쇼핑 시간",
-		"website": "웹 사이트"
-	},
-	"sidebar": {
-		"info-about-us": "현재이 사이트는 노스 캐롤라이나 주 오렌지 카운티를 지원합니다. 와",
-		"info-end-text": "커버리지를 확장 할 수 있습니다.",
-		"info-link-text": "당신의 도움",
-		"shopsafe": "안전한 쇼핑하십시오!",
-		"sixfeet": "쇼핑 할 때는 6 피트 떨어져 있어야합니다.",
-		"stayhome": "아프면 집에 계십시오.",
-		"washhands": "손을 자주 씻으십시오.",
-		"what-do-you-need": "무엇이 필요합니까?",
-		"when-do-you-need-it": "언제 필요합니까?"
-	},
-	"title": "COVID-19 커뮤니티 지원 자료"
+  "about": {
+    "close": "닫기",
+    "contact": "문의하기",
+    "contactus": {
+      "email": "이메일",
+      "info": "이 페이지는 {1}의 {0} 에 의해 제공됩니다. 질문이 있으시면 {2}를 통해 문의하십시오."
+    },
+    "devhelp": {
+      "conduct": "행동 강령",
+      "devnote": "개발자-GitHub에서 {0} 및 {1} 을 (를) 찾으십시오.",
+      "dupsite": "또는 해당주의 사이트를 복제 할 수 있습니다.",
+      "info": "이것은 오픈 소스 프로젝트입니다. 커뮤니티를위한 데이터베이스를 구축하고 사이트에 가입하거나 단 3 단계만으로 자신 만의 데이터베이스를 만들 수 있습니다! 엔지니어링 기술이 필요하지 않습니다.",
+      "source": "소스 코드",
+      "step1": "정보를 수집하기 위해 지방 정부 및 기업 협회에 연락하십시오.",
+      "step2": "스프레드 시트 템플릿을 사용하여 리소스 정보를 구성하십시오.",
+      "step3": "NC 사이트에 가입 할 준비가되면 이메일을 보내주십시오."
+    },
+    "getinvolved": "참여하다",
+    "info": "당사의 리소스 데이터베이스는 다음 조직에서 수집 한 정보를 활용합니다.",
+    "linktext": "회사 소개",
+    "orgs": {
+      "bureau": "채플 힐 / 오렌지 카운티 관광청",
+      "cfa": "미국을위한 코드",
+      "chb": "채플 힐 여단",
+      "farmstewards": "캐롤라이나 농장 관리 협회",
+      "localistnc": "#LocalListNC",
+      "partnership": "채플 힐 다운타운 파트너십"
+    },
+    "partners": "정보 출처",
+    "title": "이 사이트에 대하여"
+  },
+  "category": {
+    "childcare": "육아",
+    "family": "가족 식사 준비 | 가족 식사 준비",
+    "farm": "농장 또는 농부 시장 | 농장 및 농부의 시장",
+    "grocery": "식료품 | 식료품 점",
+    "meal": "무료 식사 | 무료 식사",
+    "petsupplies": "애완 용품",
+    "pharmacy": "약국 | 약국",
+    "restaurant": "식당 | 레스토랑",
+    "school": "학교 급식 | 학교 급식"
+  },
+  "dayofweek": {
+    "friday": "금요일",
+    "monday": "월요일",
+    "saturday": "토요일",
+    "sunday": "일요일",
+    "thursday": "목요일",
+    "tuesday": "화요일",
+    "wednesday": "수요일"
+  },
+  "label": {
+    "address": "주소",
+    "backtolist": "다시 목록으로",
+    "close": "닫기",
+    "curbsidepickup": "보도 픽업 레스토랑",
+    "delivery": "배달",
+    "discounts": "의료인 할인 장소",
+    "email": "이메일",
+    "email_lowercase": "이메일",
+    "farmersmarket": "농민 시장 | 농민 시장",
+    "freegrocery": "무료 식료품 점",
+    "freemeals": "무료 식사 장소",
+    "freeproduce": "무료 농산물 위치",
+    "instructions": "방법",
+    "mealsforstudents": "학생들을위한 식사",
+    "mustpreorder": "선주문해야합니다",
+    "notes": "노트",
+    "offers": "서비스",
+    "onfarmpickup": "농장 내 픽업",
+    "opentopublic": "공개 식사",
+    "orderonline": "온라인 주문 및 결제",
+    "phone": "전화",
+    "selectacategory": "카테고리를 선택하십시오 ...",
+    "seniorshopping": "노약자 쇼핑 시간",
+    "website": "웹 사이트"
+  },
+  "sidebar": {
+    "info-about-us": "현재이 사이트는 노스 캐롤라이나 주 오렌지 카운티를 지원합니다. 와",
+    "info-end-text": "커버리지를 확장 할 수 있습니다.",
+    "info-link-text": "당신의 도움",
+    "shopsafe": "안전한 쇼핑하십시오!",
+    "sixfeet": "쇼핑 할 때는 6 피트 떨어져 있어야합니다.",
+    "stayhome": "아프면 집에 계십시오.",
+    "washhands": "손을 자주 씻으십시오.",
+    "what-do-you-need": "무엇이 필요합니까?",
+    "when-do-you-need-it": "언제 필요합니까?"
+  },
+  "title": "COVID-19 커뮤니티 지원 자료"
 }
