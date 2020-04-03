@@ -1,8 +1,8 @@
 <template>
   <div class="valuebox" :class="{ selected: selected }">
-    <span class="number">{{ value }}</span>
-    <span class="title">{{ title }}</span>
-    <i class="fas" v-bind:class="icon"></i>
+    <span class="number">{{ content.value }}</span>
+    <span class="title">{{ content.title }}</span>
+    <i class="fas" v-bind:class="content.icon"></i>
   </div>
 </template>
 
@@ -15,9 +15,12 @@ export default {
     }
   },
   props: {
-    title: { type: String },
-    value: { type: Number },
-    icon: { type: String }
+    content: {
+      title: { type: String },
+      value: { type: Number },
+      icon: { type: String },
+      color: { type: String }
+    }
   }
 }
 </script>

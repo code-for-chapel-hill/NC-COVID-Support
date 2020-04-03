@@ -4,7 +4,7 @@
     "contact": "Contáctenos",
     "contactus": {
       "email": "Email",
-      "info": "Esta página funciona con {0} de {1}. Para preguntas, contáctenos a través de {2}."
+      "info": "Esta página funciona con {0} de {1}. Para preguntas, contáctenos por correo electrónico al {2}."
     },
     "devhelp": {
       "conduct": "Código de Conducta",
@@ -14,7 +14,7 @@
       "source": "codigo fuente",
       "step1": "Póngase en contacto con el gobierno local y las asociaciones empresariales para recopilar información.",
       "step2": "Organice la información de recursos utilizando nuestra plantilla de hoja de cálculo.",
-      "step3": "Envíenos un correo electrónico cuando esté listo para unirse al sitio de Carolina del Norte."
+      "step3": "Envíenos un correo electrónico a {0} cuando esté listo para unirse al sitio de Carolina del Norte."
     },
     "getinvolved": "Involucrarse",
     "info": "Nuestra base de datos de recursos se beneficia de la información recopilada por estas organizaciones:",

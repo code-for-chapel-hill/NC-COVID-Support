@@ -28,7 +28,11 @@
           <ol>
             <li>{{ $t('about.devhelp.step1') }}</li>
             <li>{{ $t('about.devhelp.step2') }}</li>
-            <li>{{ $t('about.devhelp.step3') }}</li>
+            <li>
+              <i18n path="about.devhelp.step3">
+                <a href="mailto:contact@nccovidsupport.org" target="_blank">contact@nccovidsupport.org</a>
+              </i18n>
+            </li>
           </ol>
           <p>{{ $t('about.devhelp.dupsite') }}</p>
           <i18n path="about.devhelp.devnote" tag="p">
