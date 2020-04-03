@@ -9,7 +9,7 @@
         :day="day"
         :filteredMarkers="filteredMarkers"
         :location="locationData"
-        :showlist="showList"
+        :show-list="showList"
         @location-selected="passLocation"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="(val) => (need = val)"

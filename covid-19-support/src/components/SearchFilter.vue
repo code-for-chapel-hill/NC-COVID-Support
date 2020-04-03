@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showList">
+    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showListing">
       {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a>
       {{ $t('sidebar.info-end-text') }}
     </InfoPanel>
@@ -32,11 +32,11 @@
       :infotype="'green'"
       :icon="'fa-tractor'"
       :business="currentBusiness"
-      v-if="currentBusiness != null && showList != true"
+      v-if="currentBusiness != null && showListing != true"
       @close-details="closeDetails"
     ></BusinessDetails>
 
-    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" v-if="showList" />
+    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" v-if="showListing" />
   </div>
 </template>
 
@@ -92,22 +92,27 @@ export default {
   },
   methods: {
     closeDetails: function () {
-      this.showList = true
+      this.showListing = true
     },
     passLocation: function (val) {
       this.locationData = val
+      this.showListing = false
       this.$emit('location-selected', val)
-      this.showList = false
     }
   },
   watch: {
     need: function (val) {
       this.locationData = null
       if (val == 'none') {
-        this.showList = false
+        this.showListing = false
       } else {
-        this.showList = true
+        this.showListing = true
       }
+    },
+    location: function (val) {
+      console.log('location: showList' + this.showList)
+      console.log(val)
+      this.showListing = false
     }
   }
 }
