@@ -2,6 +2,7 @@
   <b-container class="bv-example-row px-0" fluid>
     <div class="map">
       <l-map
+        ref="covidMap"
         v-if="showMap"
         :zoom="zoom"
         :center="center"
@@ -12,7 +13,7 @@
       >
         <l-tile-layer :url="url" :attribution="attribution" />
 
-        <v-marker-cluster :options="clusterOptions" @clusterclick="click()" @ready="ready">
+        <v-marker-cluster ref="marks" :options="clusterOptions" @clusterclick="click()" @ready="ready">
           <l-marker
             :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
             :icon="selectedIcon(index === location.locValue)"
@@ -92,6 +93,14 @@ export default {
   mounted() {
     this.editZoomControl()
   },
+  updated: function () {
+    this.$nextTick(function () {
+      // eslint-disable-next-line no-console
+      // console.log('Updated Yay!')
+      // var bounds = latLng.latLngBounds(this.$refs.mar)
+      // this.$refs.covidMap.mapObject.fitBounds(bounds)
+    })
+  },
   methods: {
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
@@ -126,13 +135,13 @@ export default {
     return {
       center: latLng(35.91371, -79.057919),
       zoom: 13,
-      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       attribution,
       locationData: location,
-      clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40 }
+      clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 }
     }
   },
   computed: {},
@@ -145,12 +154,14 @@ export default {
     'v-marker-cluster': Vue2LeafletMarkerCluster
   },
   watch: {
-    // location: function (locationVal) {
-    //   if (!locationVal.isSetByMap) {
-    //     this.$refs['mapmark' + locationVal.locValue][0].mapObject.openPopup()
-    //     // var latLng = this.$refs['mapmark' + locationVal.locValue[0]]
-    //   }
-    // }
+    // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+    location: function (locationVal) {
+      if (locationVal.isSetByMap) {
+        return
+      }
+      var item = this.filteredMarkers[locationVal.locValue]
+      this.$refs.covidMap.mapObject.setView(latLng(item.gsx$lat.$t, item.gsx$lon.$t), 16, { duration: 1 })
+    }
   }
 }
 </script>

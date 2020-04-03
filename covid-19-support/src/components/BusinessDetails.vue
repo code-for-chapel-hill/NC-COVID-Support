@@ -1,7 +1,7 @@
 <template>
   <span>
     <div class="list-group list-group-flush">
-      <div class="list-group-item list-group-item-action bg-light" :class="backtolist" @click="$emit('close-details')">
+      <div class="list-group-item list-group-item-action bg-light backtolist" @click="$emit('close-details')">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
       </div>
@@ -22,7 +22,8 @@
           <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
           {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}<br />
           <span v-if="!!business.gsx$contact.$t" class="metaData">
-            <b>{{ $t('label.phone') }}:</b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a><br />
+            <b>{{ $t('label.phone') }}:</b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
+            <br />
           </span>
           <span v-if="!!business.gsx$email.$t" class="metaData">
             <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
@@ -130,7 +131,10 @@ export default {
 .backtolist i {
   margin-right: 0.375rem;
 }
-
+.backtolist:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer;
+}
 .title {
   margin: 0 0 0.75rem 0;
   display: inline-block;
@@ -159,6 +163,6 @@ export default {
 
 .green > div {
   /* display: inline-block; */
-  width: 270px;
+  width: 260px;
 }
 </style>
