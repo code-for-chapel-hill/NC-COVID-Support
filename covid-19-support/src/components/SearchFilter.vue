@@ -16,7 +16,7 @@
     </div>
 
     <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showListing">
-      {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show()">{{ $t('sidebar.info-link-text') }}</a>
+      {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a>
       {{ $t('sidebar.info-end-text') }}
     </InfoPanel>
 
