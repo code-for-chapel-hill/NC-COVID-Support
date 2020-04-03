@@ -28,7 +28,7 @@
           <span v-if="!!business.gsx$email.$t" class="metaData">
             <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
           </span>
-          <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t"><hr /></span>
+          <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t || !!business.gsx$notes.$t"><br /></span>
           <span v-if="!!business.gsx$instructions.$t">
             <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
           </span>

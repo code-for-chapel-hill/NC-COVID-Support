@@ -81,6 +81,7 @@ export default {
     passLocation: function (val) {
       this.locationData = val
       this.showList = false
+      this.isFilterOpen = true
     }
   },
   computed: {
