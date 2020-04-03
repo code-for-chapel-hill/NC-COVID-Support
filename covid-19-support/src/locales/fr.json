@@ -4,7 +4,7 @@
     "contact": "Contactez nous",
     "contactus": {
       "email": "email",
-      "info": "Cette page est alimentée par le {0} de {1}. Pour toute question, veuillez nous contacter via {2}."
+      "info": "Cette page est alimentée par le {0} de {1}. Pour toute question, veuillez nous contacter par e-mail au {2}."
     },
     "devhelp": {
       "conduct": "Code de conduite",
@@ -14,7 +14,7 @@
       "source": "Code source",
       "step1": "Contactez le gouvernement local et les associations professionnelles pour recueillir des informations.",
       "step2": "Organisez les informations sur les ressources à l'aide de notre modèle de feuille de calcul.",
-      "step3": "Envoyez-nous un e-mail lorsque vous êtes prêt à rejoindre le site NC."
+      "step3": "Envoyez-nous un e-mail à {0} lorsque vous êtes prêt à rejoindre le site NC."
     },
     "getinvolved": "Être impliqué",
     "info": "Notre base de données de ressources bénéficie des informations collectées par ces organisations:",
