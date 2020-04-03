@@ -41,7 +41,7 @@
           <i18n path="about.contactus.info" tag="p">
             <a href="https://www.meetup.com/Triangle-Code-for-America/" target="_blank">{{ $t('about.orgs.chb') }}</a>
             <a href="https://www.codeforamerica.org/" target="_blank">{{ $t('about.orgs.cfa') }}</a>
-            <a href="mailto:codeforchapelhill@gmail.com" target="_blank">{{ $t('label.email_lowercase') }}</a>
+            <a href="mailto:contact@nccovidsupport.org" target="_blank">contact@nccovidsupport.org</a>
           </i18n>
         </b-tab>
       </b-tabs>
