@@ -96,7 +96,7 @@ export default {
         markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
       }
 
-      const dayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$${attr}`)
+      const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `gsx$${attr}`)
       const dayFilter = dayFilters[this.day]
 
       return markers.filter((c) => c[dayFilter].$t !== '0')

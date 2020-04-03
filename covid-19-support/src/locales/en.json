@@ -4,7 +4,7 @@
     "contact": "Contact Us",
     "contactus": {
       "email": "email",
-      "info": "This page is powered by the {0} of {1}. For questions, please contact us via {2}."
+      "info": "This page is powered by the {0} of {1}. For questions, please contact us via email at {2}."
     },
     "devhelp": {
       "conduct": "Code of Conduct",
@@ -87,5 +87,5 @@
     "what-do-you-need": "What do you need?",
     "when-do-you-need-it": "When do you need it?"
   },
-  "title": "COVID-19 Community Resources"
+  "title": "NC COVID Support"
 }
