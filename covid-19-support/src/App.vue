@@ -12,8 +12,8 @@
         :show-list="showList"
         @location-selected="passLocation"
         @toggle="isFilterOpen = !isFilterOpen"
-        @need-selected="(val) => (need = val)"
-        @day-selected="(val) => (day = val)"
+        @need-selected="needSelected"
+        @day-selected="daySelected"
       />
 
       <div id="page-content-wrapper">
@@ -37,7 +37,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 
-import { spreadsheetUrl } from './constants'
+import { spreadsheetUrl, weekdays } from './constants'
 
 export default {
   name: 'app',
@@ -69,6 +69,14 @@ export default {
     }
   },
   methods: {
+    needSelected: function (val) {
+      this.need = val
+      gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
+    },
+    daySelected: function (val) {
+      this.day = val
+      gtag('event', 'When do you need it?', { event_category: 'Search - (' + this.language.name + ')', event_label: weekdays[val].day })
+    },
     changeLanguage: function (item) {
       this.language = item
       this.$root.updateLang(item.iso)
@@ -82,6 +90,14 @@ export default {
       this.locationData = val
       this.showList = false
       this.isFilterOpen = true
+      var proName = this.filteredMarkers[val.locValue].gsx$provideraddloc.$t
+        ? ', ' + this.filteredMarkers[val.locValue].gsx$provideraddloc.$t
+        : ''
+
+      gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
+        event_category: 'View details - (' + this.language.name + ')',
+        event_label: this.filteredMarkers[val.locValue].gsx$providername.$t + proName
+      })
     }
   },
   computed: {
