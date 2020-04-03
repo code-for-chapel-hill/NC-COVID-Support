@@ -13,7 +13,8 @@
       >
         <l-tile-layer :url="url" :attribution="attribution" />
 
-        <v-marker-cluster ref="marks" :options="clusterOptions" @clusterclick="click()" @ready="ready">
+        <v-marker-cluster ref="marks" :options="clusterOptions">
+          <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
             :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
             :icon="selectedIcon(index === location.locValue)"
@@ -125,11 +126,11 @@ export default {
         iconSize: [25, 41],
         iconAnchor: [12.5, 41]
       })
-    },
+    }
     // eslint-disable-next-line no-console
-    click: (e) => console.log('clusterclick', e),
+    // click: (e) => console.log('clusterclick', e),
     // eslint-disable-next-line no-console
-    ready: (e) => console.log('ready', e)
+    // ready: (e) => console.log('ready', e)
   },
   data() {
     return {

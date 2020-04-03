@@ -22,13 +22,16 @@
           <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
           {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}<br />
           <span v-if="!!business.gsx$contact.$t" class="metaData">
-            <b>{{ $t('label.phone') }}:</b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
-            <br />
+            <b><i class="fas fa-phone-alt"></i></b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
+          </span>
+          <span v-if="!!business.gsx$weblink.$t" class="metaData">
+            <b><i class="fas fa-globe"></i></b> <a :href="business.gsx$weblink.$t">{{ getDomain(business.gsx$weblink.$t) }}</a>
           </span>
           <span v-if="!!business.gsx$email.$t" class="metaData">
-            <b>{{ $t('label.email') }}:</b> {{ business.gsx$email.$t }}<br />
+            <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a><br />
           </span>
-          <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t"><hr /></span>
+
+          <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t || !!business.gsx$notes.$t"><br /></span>
           <span v-if="!!business.gsx$instructions.$t">
             <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
           </span>
@@ -58,6 +61,10 @@ export default {
     business: Object
   },
   methods: {
+    getDomain: function (url) {
+      var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
+      return urlParts[0]
+    },
     businessIcon: function (business) {
       switch (business.gsx$resource.$t) {
         case 'grocery':

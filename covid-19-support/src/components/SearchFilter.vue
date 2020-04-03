@@ -84,9 +84,9 @@ export default {
       ]
     },
     dayOptions() {
-      return weekdays.map((day, index) => ({
-        value: index,
-        text: this.$t(`dayofweek.${day}`)
+      return weekdays.map((i) => ({
+        value: i.pos,
+        text: this.$t(`dayofweek.${i.day}`)
       }))
     }
   },
@@ -101,6 +101,13 @@ export default {
     }
   },
   watch: {
+    day: function (val) {
+      if (this.locationData.locValue > 0 && this.filteredMarkers[this.locationData.locValue].gsx$[val] !== 0) {
+        return
+      }
+      this.locationData = null
+      this.showListing = true
+    },
     need: function (val) {
       this.locationData = null
       if (val == 'none') {
@@ -109,9 +116,7 @@ export default {
         this.showListing = true
       }
     },
-    location: function (val) {
-      console.log('location: showList' + this.showList)
-      console.log(val)
+    location: function () {
       this.showListing = false
     }
   }
