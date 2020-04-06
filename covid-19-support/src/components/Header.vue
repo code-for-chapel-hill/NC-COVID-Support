@@ -35,10 +35,13 @@ export default {
   data() {
     return {
       languages: [
-        { name: 'English', iso: 'en' },
-        { name: 'Espa&#241;ol', iso: 'es' },
-        { name: 'Fran&#231;ais', iso: 'fr' },
-        { name: '한국어', iso: 'ko' }
+        { iso: 'en', name: 'English' },
+        { iso: 'es', name: 'Espa&#241;ol' },
+        { iso: 'fr', name: 'Fran&#231;ais' },
+        { iso: 'ko', name: '한국어' },
+        { iso: 'ar', name: 'عربى' },
+        { iso: 'ja', name: '日本人' },
+        { iso: 'zh', name: '中文' }
       ]
     }
   }
