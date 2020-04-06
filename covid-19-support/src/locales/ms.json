@@ -1,91 +1,101 @@
 {
-  "about": {
-    "close": "Tutup",
-    "contact": "Hubungi Kami",
-    "contactus": {
-      "email": "E-mel",
-      "info": "Halaman ini dikuasakan oleh {0} dari {1}. Untuk pertanyaan, sila hubungi kami melalui e-mel di {2}."
-    },
-    "devhelp": {
-      "conduct": "Tatakelakuan",
-      "devnote": "Pemaju - cari {0} dan {1} pada GitHub.",
-      "dupsite": "Sebagai alternatif, anda boleh menduplikasi tapak untuk keadaan anda.",
-      "info": "Ini adalah projek sumber terbuka. Anda boleh membina pangkalan data untuk komuniti anda dan menyertai laman web kami atau membuat sendiri dalam hanya 3 langkah! Tiada kemahiran kejuruteraan diperlukan.",
-      "source": "kod sumber",
-      "step1": "Jangkau kepada persatuan kerajaan dan persatuan perniagaan untuk mengumpulkan maklumat.",
-      "step2": "Atur maklumat sumber menggunakan templat hamparan kami.",
-      "step3": "E-mel kami di {0} apabila anda sudah bersedia untuk menyertai tapak NC."
-    },
-    "getinvolved": "Melibatkan diri",
-    "info": "Pangkalan data kami mendapat manfaat daripada maklumat yang dikumpulkan oleh organisasi-organisasi ini:",
-    "linktext": "Tentang kita",
-    "orgs": {
-      "bureau": "Chapel Hill / Biro Pelawat Orange County",
-      "cfa": "Kod untuk Amerika",
-      "chb": "Briged Hill Chapel",
-      "farmstewards": "Persatuan Pengawasan Ladang Carolina",
-      "localistnc": "#LocalListNC",
-      "partnership": "Perkongsian Downtown Chapel Hill"
-    },
-    "partners": "Sumber Maklumat",
-    "title": "Mengenai laman web ini"
-  },
-  "category": {
-    "childcare": "Penjagaan kanak-kanak",
-    "family": "Hidangan keluarga yang disediakan | Makanan keluarga yang disediakan",
-    "farm": "Pasar Ladang atau Petani | Pasaran Ladang & Petani",
-    "grocery": "Runcit | Groceries",
-    "meal": "Makanan percuma | Makanan percuma",
-    "petsupplies": "Bekalan Haiwan Peliharaan",
-    "pharmacy": "Farmasi | Farmasi",
-    "restaurant": "Restoran | Restoran",
-    "school": "Makan sekolah | Makanan sekolah"
-  },
-  "dayofweek": {
-    "friday": "Jumaat",
-    "monday": "Isnin",
-    "saturday": "Sabtu",
-    "sunday": "Ahad",
-    "thursday": "Khamis",
-    "tuesday": "Selasa",
-    "wednesday": "Rabu"
-  },
-  "label": {
-    "address": "Alamat",
-    "backtolist": "Kembali kepada senarai",
-    "close": "Tutup",
-    "curbsidepickup": "Pengambilan Curbside",
-    "delivery": "penghantaran",
-    "discounts": "Diskaun pekerja perubatan | diskaun pekerja perubatan |",
-    "email": "E-mel",
-    "email_lowercase": "E-mel",
-    "farmersmarket": "Pasaran Peladang | Pasaran Peladang",
-    "freegrocery": "Lokasi runcit percuma | Lokasi runcit percuma",
-    "freemeals": "Lokasi makanan percuma | Lokasi makan percuma",
-    "freeproduce": "Lokasi menghasilkan percuma | Lokasi menghasilkan percuma",
-    "instructions": "Arahan",
-    "mealsforstudents": "Makanan untuk pelajar",
-    "mustpreorder": "Mesti prapesan",
-    "notes": "Nota",
-    "offers": "Tawaran",
-    "onfarmpickup": "Pengambilan di ladang",
-    "opentopublic": "Makanan dibuka untuk orang ramai",
-    "orderonline": "Perintah & bayar dalam talian",
-    "phone": "Telefon",
-    "selectacategory": "Pilih kategori...",
-    "seniorshopping": "Waktu membeli-belah kanan",
-    "website": "Laman web"
-  },
-  "sidebar": {
-    "info-about-us": "Pada masa ini, laman web ini menyokong Orange County, NC. Dengan",
-    "info-end-text": ", kami boleh mengembangkan liputan kami.",
-    "info-link-text": "pertolongan anda",
-    "shopsafe": "Tolong, selamatkan!",
-    "sixfeet": "Tinggal 6 kaki apabila membeli-belah.",
-    "stayhome": "Sekiranya anda sakit, tinggal di rumah.",
-    "washhands": "Cuci tangan anda dengan kerap.",
-    "what-do-you-need": "Apa yang anda perlukan?",
-    "when-do-you-need-it": "Bilakah anda memerlukannya?"
-  },
-  "title": "NC COVID Support"
+	"about": {
+		"close": "Tutup",
+		"contact": "Hubungi Kami",
+		"contactus": {
+			"email": "E-mel",
+			"info": "Halaman ini dikuasakan oleh {0} dari {1}. Untuk pertanyaan, sila hubungi kami melalui e-mel di {2}."
+		},
+		"devhelp": {
+			"conduct": "Tatakelakuan",
+			"devnote": "Pemaju - cari {0} dan {1} pada GitHub.",
+			"dupsite": "Sebagai alternatif, anda boleh menduplikasi tapak untuk keadaan anda.",
+			"info": "Ini adalah projek sumber terbuka. Anda boleh membina pangkalan data untuk komuniti anda dan menyertai laman web kami atau membuat sendiri dalam hanya 3 langkah! Tiada kemahiran kejuruteraan diperlukan.",
+			"source": "kod sumber",
+			"step1": "Jangkau kepada persatuan kerajaan dan persatuan perniagaan untuk mengumpulkan maklumat.",
+			"step2": "Atur maklumat sumber menggunakan templat hamparan kami.",
+			"step3": "E-mel kami di {0} apabila anda sudah bersedia untuk menyertai tapak NC."
+		},
+		"getinvolved": "Melibatkan diri",
+		"info": "Pangkalan data kami mendapat manfaat daripada maklumat yang dikumpulkan oleh organisasi-organisasi ini:",
+		"linktext": "Tentang kita",
+		"orgs": {
+			"bureau": "Chapel Hill / Biro Pelawat Orange County",
+			"cfa": "Kod untuk Amerika",
+			"chb": "Briged Hill Chapel",
+			"farmstewards": "Persatuan Pengawasan Ladang Carolina",
+			"localistnc": "#LocalListNC",
+			"partnership": "Perkongsian Downtown Chapel Hill"
+		},
+		"partners": "Sumber Maklumat",
+		"title": "Mengenai laman web ini"
+	},
+	"category": {
+		"childcare": "Penjagaan kanak-kanak",
+		"family": "Hidangan keluarga yang disediakan | Makanan keluarga yang disediakan",
+		"farm": "Pasar Ladang atau Petani | Pasaran Ladang & Petani",
+		"grocery": "Runcit | Groceries",
+		"meal": "Makanan percuma | Makanan percuma",
+		"petsupplies": "Bekalan Haiwan Peliharaan",
+		"pharmacy": "Farmasi | Farmasi",
+		"restaurant": "Restoran | Restoran",
+		"school": "Makan sekolah | Makanan sekolah"
+	},
+	"dayofweek": {
+		"friday": "Jumaat",
+		"monday": "Isnin",
+		"saturday": "Sabtu",
+		"sunday": "Ahad",
+		"thursday": "Khamis",
+		"tuesday": "Selasa",
+		"wednesday": "Rabu"
+	},
+	"label": {
+		"address": "Alamat",
+		"backtolist": "Kembali kepada senarai",
+		"close": "Tutup",
+		"curbsidepickup": "Pengambilan Curbside",
+		"delivery": "penghantaran",
+		"discounts": "Diskaun pekerja perubatan | diskaun pekerja perubatan |",
+		"email": "E-mel",
+		"email_lowercase": "E-mel",
+		"farmersmarket": "Pasaran Peladang | Pasaran Peladang",
+		"freegrocery": "Lokasi runcit percuma | Lokasi runcit percuma",
+		"freemeals": "Lokasi makanan percuma | Lokasi makan percuma",
+		"freeproduce": "Lokasi menghasilkan percuma | Lokasi menghasilkan percuma",
+		"instructions": "Arahan",
+		"mealsforstudents": "Makanan untuk pelajar",
+		"mustpreorder": "Mesti prapesan",
+		"notes": "Nota",
+		"offers": "Tawaran",
+		"onfarmpickup": "Pengambilan di ladang",
+		"opentopublic": "Makanan dibuka untuk orang ramai",
+		"orderonline": "Perintah & bayar dalam talian",
+		"phone": "Telefon",
+		"selectacategory": "Pilih kategori...",
+		"seniorshopping": "Waktu membeli-belah kanan",
+		"website": "Laman web"
+	},
+	"languages": {
+		"ar": "Bahasa Arab",
+		"en": "Bahasa Inggeris",
+		"es": "Sepanyol",
+		"fr": "Perancis",
+		"ja": "Jepun",
+		"ko": "Korea",
+		"ms": "Burma",
+		"zh": "Bahasa Cina Ringkas"
+	},
+	"sidebar": {
+		"info-about-us": "Pada masa ini, laman web ini menyokong Orange County, NC. Dengan",
+		"info-end-text": ", kami boleh mengembangkan liputan kami.",
+		"info-link-text": "pertolongan anda",
+		"shopsafe": "Tolong, selamatkan!",
+		"sixfeet": "Tinggal 6 kaki apabila membeli-belah.",
+		"stayhome": "Sekiranya anda sakit, tinggal di rumah.",
+		"washhands": "Cuci tangan anda dengan kerap.",
+		"what-do-you-need": "Apa yang anda perlukan?",
+		"when-do-you-need-it": "Bilakah anda memerlukannya?"
+	},
+	"title": "NC COVID Support"
 }

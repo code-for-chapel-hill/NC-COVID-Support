@@ -18,7 +18,9 @@
             <span v-html="language" class="language" />
           </template>
           <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso">
-            <div v-html="item.name" @click="$emit('language-selected', item)"></div>
+            <span :title="$t('languages.' + item.iso)"
+              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"></div
+            ></span>
           </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
