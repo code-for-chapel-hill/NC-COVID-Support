@@ -41,7 +41,8 @@ export default {
         { iso: 'ko', name: '한국어' },
         { iso: 'ar', name: 'عربى' },
         { iso: 'ja', name: '日本人' },
-        { iso: 'zh', name: '中文' }
+        { iso: 'zh', name: '中文' },
+        { iso: 'ms', name: 'ဗမာ' }
       ]
     }
   }
