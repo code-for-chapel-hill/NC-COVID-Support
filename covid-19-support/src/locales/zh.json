@@ -1,91 +1,105 @@
 {
-  "about": {
-    "close": "关",
-    "contact": "联系我们",
-    "contactus": {
-      "email": "电子邮件",
-      "info": "该页面由 {1}的 {0} 驱动。如有疑问，请通过 {2}的电子邮件与我们联系。"
-    },
-    "devhelp": {
-      "conduct": "行为守则",
-      "devnote": "开发人员-在GitHub上找到我们的 {0} 和 {1} 。",
-      "dupsite": "或者，您可以为您的州复制一个站点。",
-      "info": "这是一个开源项目。您可以为您的社区建立数据库并加入我们的网站，或者仅需3个步骤即可创建自己的网站！不需要工程技能。",
-      "source": "源代码",
-      "step1": "与地方政府和商业协会联系以收集信息。",
-      "step2": "使用我们的电子表格模板来组织资源信息。",
-      "step3": "准备加入NC站点时，请通过 {0} 给我们发送电子邮件。"
-    },
-    "getinvolved": "参与其中",
-    "info": "我们的资源数据库受益于这些组织收集的信息：",
-    "linktext": "关于我们",
-    "orgs": {
-      "bureau": "教堂山/橙县游客管理局",
-      "cfa": "美国法典",
-      "chb": "教堂山大队",
-      "farmstewards": "卡罗来纳州农场管理协会",
-      "localistnc": "#LocalListNC",
-      "partnership": "教堂山市中心合作伙伴"
-    },
-    "partners": "信息来源",
-    "title": "关于本网站"
-  },
-  "category": {
-    "childcare": "育儿",
-    "family": "家庭准备饭|家庭准备饭",
-    "farm": "农场或农贸市场|农场与农贸市场",
-    "grocery": "杂货|杂货",
-    "meal": "免费餐|免费餐",
-    "petsupplies": "宠物用品",
-    "pharmacy": "药房|药房",
-    "restaurant": "餐厅|餐厅",
-    "school": "学校餐|学校餐"
-  },
-  "dayofweek": {
-    "friday": "星期️五",
-    "monday": "星期一",
-    "saturday": "星期️六",
-    "sunday": "星期️日",
-    "thursday": "星期️四",
-    "tuesday": "星期二",
-    "wednesday": "星期三"
-  },
-  "label": {
-    "address": "地址",
-    "backtolist": "返回目录",
-    "close": "关",
-    "curbsidepickup": "路边捡拾",
-    "delivery": "交货",
-    "discounts": "医务人员折扣|医务人员折扣",
-    "email": "电子邮件",
-    "email_lowercase": "电子邮件",
-    "farmersmarket": "农贸市场|农贸市场",
-    "freegrocery": "免费杂货店|免费杂货店",
-    "freemeals": "免费用餐地点|免费用餐地点",
-    "freeproduce": "免费产品位置|免费产品位置",
-    "instructions": "说明",
-    "mealsforstudents": "给学生的饭菜",
-    "mustpreorder": "必须预订",
-    "notes": "笔记",
-    "offers": "优惠",
-    "onfarmpickup": "农场接送",
-    "opentopublic": "餐点向公众开放",
-    "orderonline": "在线订购和付款",
-    "phone": "电话",
-    "selectacategory": "选择一个类别...",
-    "seniorshopping": "高级购物时间",
-    "website": "网站"
-  },
-  "sidebar": {
-    "info-about-us": "当前，此站点支持北卡罗来纳州奥兰治县。用",
-    "info-end-text": "，我们可以扩大覆盖范围。",
-    "info-link-text": "你的帮助",
-    "shopsafe": "请安全！",
-    "sixfeet": "购物时，相隔6英尺。",
-    "stayhome": "如果您生病了，请待在家里。",
-    "washhands": "经常洗手。",
-    "what-do-you-need": "你需要什么？",
-    "when-do-you-need-it": "您什么时候需要它？"
-  },
-  "title": "NC COVID支持"
+	"about": {
+		"close": "关",
+		"contact": "联系我们",
+		"contactus": {
+			"email": "电子邮件",
+			"info": "该页面由 {1}的 {0} 驱动。如有疑问，请通过 {2}的电子邮件与我们联系。"
+		},
+		"devhelp": {
+			"conduct": "行为守则",
+			"devnote": "开发人员-在GitHub上找到我们的 {0} 和 {1} 。",
+			"dupsite": "或者，您可以为您的州复制一个站点。",
+			"info": "这是一个开源项目。您可以为您的社区建立数据库并加入我们的网站，或者仅需3个步骤即可创建自己的网站！不需要工程技能。",
+			"source": "源代码",
+			"step1": "与地方政府和商业协会联系以收集信息。",
+			"step2": "使用我们的电子表格模板来组织资源信息。",
+			"step3": "准备加入NC站点时，请通过 {0} 给我们发送电子邮件。"
+		},
+		"getinvolved": "参与其中",
+		"info": "我们的资源数据库受益于这些组织收集的信息：",
+		"linktext": "关于我们",
+		"orgs": {
+			"bureau": "教堂山/橙县游客管理局",
+			"cfa": "美国法典",
+			"chb": "教堂山大队",
+			"farmstewards": "卡罗来纳州农场管理协会",
+			"localistnc": "#LocalListNC",
+			"partnership": "教堂山市中心合作伙伴"
+		},
+		"partners": "信息来源",
+		"title": "关于本网站"
+	},
+	"category": {
+		"childcare": "育儿",
+		"family": "家庭准备饭|家庭准备饭",
+		"farm": "农场或农贸市场|农场与农贸市场",
+		"grocery": "杂货|杂货",
+		"meal": "免费餐|免费餐",
+		"petsupplies": "宠物用品",
+		"pharmacy": "药房|药房",
+		"restaurant": "餐厅|餐厅",
+		"school": "学校餐|学校餐"
+	},
+	"dayofweek": {
+		"friday": "星期️五",
+		"monday": "星期一",
+		"saturday": "星期️六",
+		"sunday": "星期️日",
+		"thursday": "星期️四",
+		"tuesday": "星期二",
+		"wednesday": "星期三"
+	},
+	"label": {
+		"address": "地址",
+		"backtolist": "返回目录",
+		"close": "关",
+		"closed": "关闭",
+		"curbsidepickup": "路边捡拾",
+		"delivery": "交货",
+		"discounts": "医务人员折扣|医务人员折扣",
+		"email": "电子邮件",
+		"email_lowercase": "电子邮件",
+		"farmersmarket": "农贸市场|农贸市场",
+		"freegrocery": "免费杂货店|免费杂货店",
+		"freemeals": "免费用餐地点|免费用餐地点",
+		"freeproduce": "免费产品位置|免费产品位置",
+		"instructions": "说明",
+		"mealsforstudents": "给学生的饭菜",
+		"mustpreorder": "必须预订",
+		"normalhours": "正常营业时间",
+		"notes": "笔记",
+		"offers": "优惠",
+		"onfarmpickup": "农场接送",
+		"openinghours": "营业时间",
+		"opentopublic": "餐点向公众开放",
+		"orderonline": "在线订购和付款",
+		"phone": "电话",
+		"selectacategory": "选择一个类别...",
+		"seniorhours": "高级时间",
+		"seniorshopping": "高级购物时间",
+		"website": "网站"
+	},
+	"languages": {
+		"ar": "阿拉伯",
+		"en": "英语",
+		"es": "西班牙语",
+		"fr": "法国",
+		"ja": "日本",
+		"ko": "朝鲜的",
+		"ms": "缅甸语",
+		"zh": "简体中文"
+	},
+	"sidebar": {
+		"info-about-us": "当前，此站点支持北卡罗来纳州奥兰治县。用",
+		"info-end-text": "，我们可以扩大覆盖范围。",
+		"info-link-text": "你的帮助",
+		"shopsafe": "请安全！",
+		"sixfeet": "购物时，相隔6英尺。",
+		"stayhome": "如果您生病了，请待在家里。",
+		"washhands": "经常洗手。",
+		"what-do-you-need": "你需要什么？",
+		"when-do-you-need-it": "您什么时候需要它？"
+	},
+	"title": "NC COVID支持"
 }
