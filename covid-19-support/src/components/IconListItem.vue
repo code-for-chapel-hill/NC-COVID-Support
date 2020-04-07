@@ -43,16 +43,16 @@ export default {
 
 <style>
 .iconListItem div {
-  display:inline-block;
+  display: inline-block;
   line-height: 1.2rem;
   vertical-align: middle;
   margin: 0.25rem 0;
 }
 .ilIcon {
   font-size: 1.2rem;
-  width: 28px;
+  width: 33px;
 }
 .ilTitle {
-  width: 215px;
+  width: 210px;
 }
 </style>

@@ -52,12 +52,14 @@
   },
   "label": {
     "address": "Address",
+    "allweek": "All week",
     "backtolist": "Back to list",
     "close": "Close",
     "closed": "Closed",
     "curbsidepickup": "Curbside pick-up",
     "delivery": "Delivery",
     "discounts": "Medical worker discount|Medical worker discounts",
+    "drivethru": "Drive thru",
     "email": "Email",
     "email_lowercase": "email",
     "farmersmarket": "Farmers Market|Farmers Markets",
@@ -78,8 +80,7 @@
     "selectacategory": "Select a category...",
     "seniorhours": "Senior hours",
     "seniorshopping": "Senior shopping hours",
-    "website": "Website",
-    "allweek": "All week"
+    "website": "Website"
   },
   "languages": {
     "ar": "Arabic",
