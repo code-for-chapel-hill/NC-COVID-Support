@@ -98,7 +98,7 @@ export default {
 .valuebox.bg-green {
   background-color: #75c759 !important;
 }
-.valuebox.bg-green:hover {
+/* .valuebox.bg-green:hover {
   background-color: #52aa36 !important;
   cursor: pointer;
 }
@@ -108,5 +108,5 @@ export default {
 }
 .valuebox.selected i {
   opacity: 0.3;
-}
+} */
 </style>

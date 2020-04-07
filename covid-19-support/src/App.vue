@@ -37,7 +37,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 
-import { spreadsheetUrl, weekdays } from './constants'
+import { spreadsheetUrl, weekdays, dayFilters } from './constants'
 
 export default {
   name: 'app',
@@ -71,11 +71,14 @@ export default {
   methods: {
     needSelected: function (val) {
       this.need = val
-      gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
+      window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     daySelected: function (val) {
       this.day = val
-      gtag('event', 'When do you need it?', { event_category: 'Search - (' + this.language.name + ')', event_label: weekdays[val].day })
+      window.gtag('event', 'When do you need it?', {
+        event_category: 'Search - (' + this.language.name + ')',
+        event_label: weekdays[val].day
+      })
     },
     changeLanguage: function (item) {
       this.language = item
@@ -94,7 +97,7 @@ export default {
         ? ', ' + this.filteredMarkers[val.locValue].gsx$provideraddloc.$t
         : ''
 
-      gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
+      window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
         event_category: 'View details - (' + this.language.name + ')',
         event_label: this.filteredMarkers[val.locValue].gsx$providername.$t + proName
       })
@@ -112,7 +115,6 @@ export default {
         markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
       }
 
-      const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `gsx$${attr}`)
       const dayFilter = dayFilters[this.day]
 
       return markers.filter((c) => c[dayFilter].$t !== '0')

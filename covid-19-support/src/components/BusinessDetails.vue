@@ -6,7 +6,7 @@
         {{ $t('label.backtolist') }}
       </div>
     </div>
-    <div class="list-group list-group-flush">
+    <div class="list-group list-group-flush business-details">
       <div class="list-group-item list-group-item-action bg-light" :class="infotype">
         <!-- <i class="fas" :class="icon" /> -->
         <div>
@@ -18,32 +18,47 @@
             </div>
           </div>
 
-          <b>{{ $t('label.address') }}:</b><br />
-          <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
-          {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}<br />
-          <span v-if="!!business.gsx$contact.$t" class="metaData">
-            <b><i class="fas fa-phone-alt"></i></b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
-          </span>
-          <span v-if="!!business.gsx$weblink.$t" class="metaData">
-            <b><i class="fas fa-globe"></i></b> <a :href="business.gsx$weblink.$t">{{ getDomain(business.gsx$weblink.$t) }}</a>
-          </span>
-          <span v-if="!!business.gsx$email.$t" class="metaData">
-            <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a
-            ><br />
-          </span>
+          <p>
+            <b>{{ $t('label.address') }}:</b><br />
+            <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
+            {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}
+          </p>
+          <template v-if="!!business.gsx$contact.$t">
+            <p>
+              <b><i class="fas fa-phone-alt"></i></b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
+            </p>
+          </template>
+          <template v-if="!!business.gsx$weblink.$t">
+            <p>
+              <b><i class="fas fa-globe"></i></b> <a :href="business.gsx$weblink.$t">{{ getDomain(business.gsx$weblink.$t) }}</a>
+            </p>
+          </template>
+          <template v-if="!!business.gsx$email.$t">
+            <p>
+              <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a>
+            </p>
+          </template>
 
-          <span v-if="!!business.gsx$instructions.$t || !!business.gsx$offers.$t || !!business.gsx$notes.$t"><br /></span>
-          <span v-if="!!business.gsx$instructions.$t">
-            <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
-          </span>
-          <span v-if="!!business.gsx$instructions.$t && !!business.gsx$offers.$t"><br /></span>
-          <span v-if="!!business.gsx$offers.$t">
-            <b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}
-          </span>
-          <span v-if="(!!business.gsx$instructions.$t || !!business.gsx$offers.$t) && !!business.gsx$notes.$t"><br /></span>
-          <span v-if="!!business.gsx$notes.$t">
-            <b>{{ $t('label.notes') }}:</b><br />{{ business.gsx$notes.$t }}
-          </span>
+          <opening-hours :business="business" :title="$t('label.openinghours')"></opening-hours>
+
+          <opening-hours :business="business" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
+
+          <template v-if="!!business.gsx$instructions.$t">
+            <p>
+              <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
+            </p>
+          </template>
+          <template v-if="!!business.gsx$offers.$t">
+            <p>
+              <b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}
+            </p>
+          </template>
+          <template v-if="!!business.gsx$notes.$t">
+            <p>
+              <b>{{ $t('label.notes') }}:</b><br />{{ business.gsx$notes.$t }}
+            </p>
+          </template>
+          <p class="updated">Details last updated: {{ business.gsx$lastupdate.$t }}</p>
         </div>
       </div>
     </div>
@@ -51,8 +66,13 @@
 </template>
 
 <script>
+import OpeningHours from './OpeningHours.vue'
+
 export default {
   name: 'BusinessDetails',
+  components: {
+    OpeningHours
+  },
   data() {
     return {}
   },
@@ -80,14 +100,6 @@ export default {
           }
           return 'fas fa-tractor'
         default:
-        //           { value: 'none', text: this.$tc('label.selectacategory', 1) },
-        // { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
-        // { value: 'meal', text: this.$tc('category.meal', 2) },
-        // { value: 'family', text: this.$tc('category.family', 2) },
-        // { value: 'farm', text: this.$tc('category.farm', 2) },
-        // { value: 'grocery', text: this.$tc('category.grocery', 2) },
-        // { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
-        // { value: 'pet', text: this.$tc('category.petsupplies', 2) }
       }
 
       var cuisine = business.gsx$cuisine.$t
@@ -133,6 +145,10 @@ export default {
 </script>
 
 <style scoped>
+.business-details {
+  max-height: calc(100vh - 273px);
+  overflow-y: auto;
+}
 .backtolist {
   font-size: 0.8rem;
 }
@@ -152,14 +168,14 @@ export default {
   margin-left: 54px;
   width: 208px;
 }
-.metaData {
-  margin-top: 0.375rem;
-  display: block;
-}
 
 .green {
   font-size: 0.8rem;
   color: #666;
+}
+
+.updated {
+  color: #aaa;
 }
 
 .title i {
@@ -171,6 +187,6 @@ export default {
 
 .green > div {
   /* display: inline-block; */
-  width: 260px;
+  width: 243px;
 }
 </style>
