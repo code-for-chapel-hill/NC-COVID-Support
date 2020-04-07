@@ -39,6 +39,13 @@ import AboutUsModal from './components/AboutUs.vue'
 
 import { spreadsheetUrl, weekdays, dayFilters } from './constants'
 
+function extend(obj, src) {
+  for (var key in src) {
+    if (src.hasOwnProperty(key)) obj[key] = src[key]
+  }
+  return obj
+}
+
 export default {
   name: 'app',
   props: {
@@ -93,13 +100,13 @@ export default {
       this.locationData = val
       this.showList = false
       this.isFilterOpen = true
-      var proName = this.filteredMarkers[val.locValue].gsx$provideraddloc.$t
-        ? ', ' + this.filteredMarkers[val.locValue].gsx$provideraddloc.$t
+      var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
+        ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         : ''
 
       window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
         event_category: 'View details - (' + this.language.name + ')',
-        event_label: this.filteredMarkers[val.locValue].gsx$providername.$t + proName
+        event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
       })
     }
   },
@@ -117,7 +124,15 @@ export default {
 
       const dayFilter = dayFilters[this.day]
 
-      return markers.filter((c) => c[dayFilter].$t !== '0')
+      var open = markers.filter((c) => c[dayFilter].$t !== '0')
+      var closed = markers.filter((c) => c[dayFilter].$t == '0')
+
+      var retList = extend(
+        open.map((marker) => ({ marker, oc: true })),
+        closed.map((marker) => ({ marker, oc: false }))
+      )
+
+      return retList
     }
   }
 }

@@ -10,16 +10,23 @@
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
         <span class="resultTitle">
-          {{ item.gsx$providername.$t }}
+          {{ item.marker.gsx$providername.$t }}
         </span>
         <span class="resultAddress">
-          <span v-if="!!item.gsx$cuisine.$t">{{ item.gsx$cuisine.$t }}<br /></span>
-          <template v-if="!!item.gsx$provideraddloc.$t">{{ item.gsx$provideraddloc.$t }}, </template>{{ item.gsx$address.$t }},
-          {{ item.gsx$city.$t }}
+          <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
+          <template v-if="!!item.marker.gsx$provideraddloc.$t">{{ item.marker.gsx$provideraddloc.$t }}, </template
+          >{{ item.marker.gsx$address.$t }},
+          {{ item.marker.gsx$city.$t }}
         </span>
-        <template v-if="item.gsx$curbside.$t == 1"><i class="fas fa-car" /></template>
-        <template v-if="item.gsx$orderonline.$t == 1"><i class="fas fa-mouse" /></template>
-        <template v-if="item.gsx$delivery.$t == 1"><i class="fas fa-shipping-fast" /></template>
+        <template v-if="item.marker.gsx$curbside.$t == 1"
+          ><span :title="$t('label.curbsidepickup')"><i class="fas fa-car" /></span
+        ></template>
+        <template v-if="item.marker.gsx$orderonline.$t == 1"
+          ><span :title="$t('label.orderonline')"><i class="fas fa-mouse" /></span
+        ></template>
+        <template v-if="item.marker.gsx$delivery.$t == 1"
+          ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
+        ></template>
       </div>
     </div>
   </div>

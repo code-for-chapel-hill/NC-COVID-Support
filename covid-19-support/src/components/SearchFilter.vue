@@ -69,7 +69,10 @@ export default {
   },
   computed: {
     currentBusiness() {
-      return '0' + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
+      if (this.location == null) {
+        return
+      }
+      return 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
     },
     needOptions() {
       return [
@@ -101,10 +104,7 @@ export default {
     }
   },
   watch: {
-    day: function (val) {
-      if (this.locationData.locValue > 0 && this.filteredMarkers[this.locationData.locValue].gsx$[val] !== 0) {
-        return
-      }
+    day: function () {
       this.locationData = null
       this.showListing = true
     },
