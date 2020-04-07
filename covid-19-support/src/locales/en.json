@@ -1,105 +1,105 @@
 {
-	"about": {
-		"close": "Close",
-		"contact": "Contact Us",
-		"contactus": {
-			"email": "email",
-			"info": "This page is powered by the {0} of {1}. For questions, please contact us via email at {2}."
-		},
-		"devhelp": {
-			"conduct": "Code of Conduct",
-			"devnote": "Developers - find our {0} and {1} on GitHub.",
-			"dupsite": "Alternatively, you can duplicate a site for your state.",
-			"info": "This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
-			"source": "source code",
-			"step1": "Reach out to local government and business associations to gather information.",
-			"step2": "Organize resource information using our spreadsheet template.",
-			"step3": "Email us at {0} when you are ready to join the NC site."
-		},
-		"getinvolved": "Get Involved",
-		"info": "Our database of resources benefits from information collected by these organizations:",
-		"linktext": "About us",
-		"orgs": {
-			"bureau": "Chapel Hill/Orange County Visitors Bureau",
-			"cfa": "Code for America",
-			"chb": "Chapel Hill Brigade",
-			"farmstewards": "Carolina Farm Stewardship Association",
-			"localistnc": "#LocalListNC",
-			"partnership": "Chapel Hill Downtown Partnership"
-		},
-		"partners": "Info Sources",
-		"title": "About this site"
-	},
-	"category": {
-		"childcare": "Child care",
-		"family": "Prepared family meal|Prepared family meals",
-		"farm": "Farm or Farmer Market|Farms & Farmers' Markets",
-		"grocery": "Grocery|Groceries",
-		"meal": "Free meal|Free meals",
-		"petsupplies": "Pet Supplies",
-		"pharmacy": "Pharmacy|Pharmacies",
-		"restaurant": "Restaurant|Restaurants",
-		"school": "School meal|School meals"
-	},
-	"dayofweek": {
-		"friday": "Friday",
-		"monday": "Monday",
-		"saturday": "Saturday",
-		"sunday": "Sunday",
-		"thursday": "Thursday",
-		"tuesday": "Tuesday",
-		"wednesday": "Wednesday"
-	},
-	"label": {
-		"address": "Address",
-		"backtolist": "Back to list",
-		"close": "Close",
-		"closed": "Closed",
-		"curbsidepickup": "Curbside pick-up",
-		"delivery": "Delivery",
-		"discounts": "Medical worker discount|Medical worker discounts",
-		"email": "Email",
-		"email_lowercase": "email",
-		"farmersmarket": "Farmers Market|Farmers Markets",
-		"freegrocery": "Free grocery location|Free grocery locations",
-		"freemeals": "Free meal location|Free meal locations",
-		"freeproduce": "Free produce location|Free produce locations",
-		"instructions": "Instructions",
-		"mealsforstudents": "Meals for students",
-		"mustpreorder": "Must pre-order",
-		"normalhours": "Normal hours",
-		"notes": "Notes",
-		"offers": "Offers",
-		"onfarmpickup": "On-farm pick-up",
-		"openinghours": "Hours",
-		"opentopublic": "Meals open to public",
-		"orderonline": "Order & pay online",
-		"phone": "Phone",
-		"selectacategory": "Select a category...",
-		"seniorhours": "Senior hours",
-		"seniorshopping": "Senior shopping hours",
-		"website": "Website"
-	},
-	"languages": {
-		"ar": "Arabic",
-		"en": "English",
-		"es": "Spanish",
-		"fr": "French",
-		"ja": "Japanese",
-		"ko": "Korean",
-		"ms": "Burmese",
-		"zh": "Simplified Chinese"
-	},
-	"sidebar": {
-		"info-about-us": "Currently, this site supports Orange County, NC. With",
-		"info-end-text": ", we can expand our coverage.",
-		"info-link-text": "your help",
-		"shopsafe": "Please, SHOP SAFE!",
-		"sixfeet": "Stay 6 ft. apart when shopping.",
-		"stayhome": "If you are sick, stay home.",
-		"washhands": "Wash your hands often.",
-		"what-do-you-need": "What do you need?",
-		"when-do-you-need-it": "When do you need it?"
-	},
-	"title": "NC COVID Support"
+  "about": {
+    "close": "Close",
+    "contact": "Contact Us",
+    "contactus": {
+      "email": "email",
+      "info": "This page is powered by the {0} of {1}. For questions, please contact us via email at {2}."
+    },
+    "devhelp": {
+      "conduct": "Code of Conduct",
+      "devnote": "Developers - find our {0} and {1} on GitHub.",
+      "dupsite": "Alternatively, you can duplicate a site for your state.",
+      "info": "This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
+      "source": "source code",
+      "step1": "Reach out to local government and business associations to gather information.",
+      "step2": "Organize resource information using our spreadsheet template.",
+      "step3": "Email us at {0} when you are ready to join the NC site."
+    },
+    "getinvolved": "Get Involved",
+    "info": "Our database of resources benefits from information collected by these organizations:",
+    "linktext": "About us",
+    "orgs": {
+      "bureau": "Chapel Hill/Orange County Visitors Bureau",
+      "cfa": "Code for America",
+      "chb": "Chapel Hill Brigade",
+      "farmstewards": "Carolina Farm Stewardship Association",
+      "localistnc": "#LocalListNC",
+      "partnership": "Chapel Hill Downtown Partnership"
+    },
+    "partners": "Info Sources",
+    "title": "About this site"
+  },
+  "category": {
+    "childcare": "Child care",
+    "family": "Prepared family meal|Prepared family meals",
+    "farm": "Farm or Farmer Market|Farms & Farmers' Markets",
+    "grocery": "Grocery|Groceries",
+    "meal": "Free meal|Free meals",
+    "petsupplies": "Pet Supplies",
+    "pharmacy": "Pharmacy|Pharmacies",
+    "restaurant": "Restaurant|Restaurants",
+    "school": "School meal|School meals"
+  },
+  "dayofweek": {
+    "friday": "Friday",
+    "monday": "Monday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "thursday": "Thursday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday"
+  },
+  "label": {
+    "address": "Address",
+    "backtolist": "Back to list",
+    "close": "Close",
+    "closed": "Closed",
+    "curbsidepickup": "Curbside pick-up",
+    "delivery": "Delivery",
+    "discounts": "Medical worker discount|Medical worker discounts",
+    "email": "Email",
+    "email_lowercase": "email",
+    "farmersmarket": "Farmers Market|Farmers Markets",
+    "freegrocery": "Free grocery location|Free grocery locations",
+    "freemeals": "Free meal location|Free meal locations",
+    "freeproduce": "Free produce location|Free produce locations",
+    "instructions": "Instructions",
+    "mealsforstudents": "Meals for students",
+    "mustpreorder": "Must pre-order",
+    "normalhours": "Normal hours",
+    "notes": "Notes",
+    "offers": "Offers",
+    "onfarmpickup": "On-farm pick-up",
+    "openinghours": "Hours",
+    "opentopublic": "Meals open to public",
+    "orderonline": "Order & pay online",
+    "phone": "Phone",
+    "selectacategory": "Select a category...",
+    "seniorhours": "Senior hours",
+    "seniorshopping": "Senior shopping hours",
+    "website": "Website"
+  },
+  "languages": {
+    "ar": "Arabic",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ms": "Burmese",
+    "zh": "Simplified Chinese"
+  },
+  "sidebar": {
+    "info-about-us": "Currently, this site supports Orange County, NC. With",
+    "info-end-text": ", we can expand our coverage.",
+    "info-link-text": "your help",
+    "shopsafe": "Please, SHOP SAFE!",
+    "sixfeet": "Stay 6 ft. apart when shopping.",
+    "stayhome": "If you are sick, stay home.",
+    "washhands": "Wash your hands often.",
+    "what-do-you-need": "What do you need?",
+    "when-do-you-need-it": "When do you need it?"
+  },
+  "title": "NC COVID Support"
 }
