@@ -16,57 +16,14 @@
         <v-marker-cluster ref="marks" :options="clusterOptions">
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
-            :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
-            :icon="selectedIcon(index === location.locValue)"
+            :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
+            :icon="selectedIcon(index === location.locValue, item.oc)"
             v-for="(item, index) in filteredMarkers"
             v-bind:key="index"
+            :label="'Testing'"
             @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
-          />
+          ></l-marker>
         </v-marker-cluster>
-        <!-- 
-          index === location.locValue
-
-        <l-marker
-          :ref="'mapmark' + index"
-          :lat-lng="latLng(item.gsx$lat.$t, item.gsx$lon.$t)"
-          v-for="(item, index) in filteredMarkers"
-          v-bind:key="index"
-          @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
-        >
-          <l-popup>
-            <div>
-              <a v-bind:href="item.gsx$weblink.$t">{{ item.gsx$providername.$t }}</a>
-              <p v-show="showParagraph">
-                <b>{{ $t('label.address') }}:</b>
-                <span v-if="!!item.gsx$provideraddloc.$t">{{ item.gsx$provideraddloc.$t }}, </span>{{ item.gsx$address.$t }},
-                {{ item.gsx$city.$t }}, {{ item.gsx$state.$t }} {{ item.gsx$zip.$t }}<br />
-                <span v-if="!!item.gsx$contact.$t"
-                  ><b>{{ $t('label.phone') }}:</b> {{ item.gsx$contact.$t }}<br
-                /></span>
-                <span v-if="!!item.gsx$instructions.$t || !!item.gsx$offers.$t"><hr /></span>
-                <span v-if="!!item.gsx$instructions.$t"
-                  ><b>{{ $t('label.instructions') }}:</b><br />{{ item.gsx$instructions.$t }}</span
-                >
-                <span v-if="!!item.gsx$instructions.$t && !!item.gsx$offers.$t"><br /></span>
-                <span v-if="!!item.gsx$offers.$t"
-                  ><b>{{ $t('label.offers') }}:</b><br />{{ item.gsx$offers.$t }}</span
-                >
-              </p>
-            </div>
-          </l-popup>
-        </l-marker> -->
-        <!--<l-marker :lat-lng="withTooltip">
-                <l-tooltip :options="{ permanent: true, interactive: true }">
-                    <div @click="innerClick">
-                        I am a tooltip
-                        <p v-show="showParagraph">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                            sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-                            Donec finibus semper metus id malesuada.
-                        </p>
-                    </div>
-                </l-tooltip>
-            </l-marker>-->
       </l-map>
     </div>
   </b-container>
@@ -94,21 +51,13 @@ export default {
   mounted() {
     this.editZoomControl()
   },
-  updated: function () {
-    this.$nextTick(function () {
-      // eslint-disable-next-line no-console
-      // console.log('Updated Yay!')
-      // var bounds = latLng.latLngBounds(this.$refs.mar)
-      // this.$refs.covidMap.mapObject.fitBounds(bounds)
-    })
-  },
   methods: {
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
     latLng,
-    selectedIcon(selected) {
+    selectedIcon(selected, isOpen) {
       if (selected) {
         return icon({
           iconUrl: require('../images/Red.png'),
@@ -118,10 +67,15 @@ export default {
           iconAnchor: [12.5, 40]
         })
       }
-
+      var iconColor
+      if (isOpen) {
+        iconColor = 'Blue'
+      } else {
+        iconColor = 'Grey'
+      }
       return icon({
-        iconUrl: require('../images/Blue.png'),
-        iconRetinaUrl: require('../images/Blue2x.png'),
+        iconUrl: require('../images/' + iconColor + '.png'),
+        iconRetinaUrl: require('../images/' + iconColor + '2x.png'),
         shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconSize: [25, 41],
         iconAnchor: [12.5, 41]
@@ -161,7 +115,7 @@ export default {
         return
       }
       var item = this.filteredMarkers[locationVal.locValue]
-      this.$refs.covidMap.mapObject.setView(latLng(item.gsx$lat.$t, item.gsx$lon.$t), 16, { duration: 1 })
+      this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
     }
   }
 }

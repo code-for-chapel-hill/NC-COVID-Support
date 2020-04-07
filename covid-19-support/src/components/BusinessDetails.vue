@@ -11,54 +11,77 @@
         <!-- <i class="fas" :class="icon" /> -->
         <div>
           <div class="title">
-            <i :class="businessIcon(business)"></i>
+            <i :class="businessIcon(business.marker)"></i>
             <div class="busName">
-              <h5>{{ business.gsx$providername.$t }}</h5>
-              <template v-if="!!business.gsx$cuisine.$t">{{ business.gsx$cuisine.$t }}</template>
+              <h5>{{ business.marker.gsx$providername.$t }}</h5>
+              <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
             </div>
           </div>
-
           <p>
             <b>{{ $t('label.address') }}:</b><br />
-            <span v-if="!!business.gsx$provideraddloc.$t">{{ business.gsx$provideraddloc.$t }}, </span>{{ business.gsx$address.$t }},
-            {{ business.gsx$city.$t }}, {{ business.gsx$state.$t }} {{ business.gsx$zip.$t }}
+            <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}, </span
+            >{{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
+            {{ business.marker.gsx$zip.$t }}
           </p>
-          <template v-if="!!business.gsx$contact.$t">
-            <p>
-              <b><i class="fas fa-phone-alt"></i></b> <a :href="'tel:' + business.gsx$contact.$t">{{ business.gsx$contact.$t }}</a>
-            </p>
-          </template>
-          <template v-if="!!business.gsx$weblink.$t">
-            <p>
-              <b><i class="fas fa-globe"></i></b> <a :href="business.gsx$weblink.$t">{{ getDomain(business.gsx$weblink.$t) }}</a>
-            </p>
-          </template>
-          <template v-if="!!business.gsx$email.$t">
-            <p>
-              <b><i class="far fa-envelope"></i></b> <a :href="'mailto:' + business.gsx$email.$t">{{ business.gsx$email.$t }}</a>
-            </p>
-          </template>
 
-          <opening-hours :business="business" :title="$t('label.openinghours')"></opening-hours>
+          <p>
+            <icon-list-item v-if="business.marker.gsx$discountmedical.$t == 1" icon="fas fa-user-md" :title="$tc('label.discounts', 1)" />
+            <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fas fa-user-friends" :title="$tc('category.family', 2)" />
+            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fas fa-school" :title="$tc('label.mealsforstudents', 1)" />
+            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.opentopublic', 1)" />
+            <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fas fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
+            <icon-list-item
+              v-if="business.marker.gsx$freegroceries.$t == 1"
+              icon="fas fa-shopping-basket"
+              :title="$tc('label.freegrocery', 1)"
+            />
+            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fas fa-car" :title="$tc('label.curbsidepickup', 1)" />
+            <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fas fa-car-side" :title="$t('label.drivethru')" />
+            <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fas fa-mouse" :title="$t('label.orderonline')" />
+            <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
+          </p>
+          <p>
+            <icon-list-item
+              v-if="!!business.marker.gsx$contact.$t"
+              icon="fas fa-phone-alt"
+              :title="business.marker.gsx$contact.$t"
+              :link="'tel:' + business.marker.gsx$contact.$t"
+            />
 
-          <opening-hours :business="business" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
+            <icon-list-item
+              v-if="!!business.marker.gsx$weblink.$t"
+              icon="fas fa-globe"
+              :title="getDomain(business.marker.gsx$weblink.$t)"
+              :link="business.marker.gsx$weblink.$t"
+            />
 
-          <template v-if="!!business.gsx$instructions.$t">
+            <icon-list-item
+              v-if="!!business.marker.gsx$email.$t"
+              icon="fas fa-envelope"
+              :title="getDomain(business.marker.gsx$email.$t)"
+              :link="'mailto:' + business.marker.gsx$email.$t"
+            />
+          </p>
+          <opening-hours :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
+
+          <opening-hours :business="business.marker" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
+
+          <template v-if="!!business.marker.gsx$instructions.$t">
             <p>
-              <b>{{ $t('label.instructions') }}:</b><br />{{ business.gsx$instructions.$t }}
+              <b>{{ $t('label.instructions') }}:</b><br />{{ business.marker.gsx$instructions.$t }}
             </p>
           </template>
-          <template v-if="!!business.gsx$offers.$t">
+          <template v-if="!!business.marker.gsx$offers.$t">
             <p>
-              <b>{{ $t('label.offers') }}:</b><br />{{ business.gsx$offers.$t }}
+              <b>{{ $t('label.offers') }}:</b><br />{{ business.marker.gsx$offers.$t }}
             </p>
           </template>
-          <template v-if="!!business.gsx$notes.$t">
+          <template v-if="!!business.marker.gsx$notes.$t">
             <p>
-              <b>{{ $t('label.notes') }}:</b><br />{{ business.gsx$notes.$t }}
+              <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.gsx$notes.$t }}
             </p>
           </template>
-          <p class="updated">Details last updated: {{ business.gsx$lastupdate.$t }}</p>
+          <p class="updated">Details last updated: {{ business.marker.gsx$lastupdate.$t }}</p>
         </div>
       </div>
     </div>
@@ -67,11 +90,12 @@
 
 <script>
 import OpeningHours from './OpeningHours.vue'
-
+import IconListItem from './IconListItem.vue'
 export default {
   name: 'BusinessDetails',
   components: {
-    OpeningHours
+    OpeningHours,
+    IconListItem
   },
   data() {
     return {}
