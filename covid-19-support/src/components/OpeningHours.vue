@@ -36,7 +36,6 @@ export default {
       if (this.senior) {
         seniorDayFilters.forEach((attr, index) => {
           var dayName = this.$t(`dayofweek.${weekdays[index].day}`)
-
           switch (this.business[attr].$t.length) {
             case 0:
               // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
@@ -65,12 +64,13 @@ export default {
               // cnt++
               break
             case 1:
-              if (this.business[attr].$t == '0') {
+              if (this.business[attr].$t == 0) {
                 myDays.push({ name: dayName, val: this.$t('label.closed'), class: 'closed' })
               } else {
                 // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
                 // cnt++
               }
+              cnt++
               break
             default:
               myDays.push({ name: dayName, val: this.business[attr].$t })

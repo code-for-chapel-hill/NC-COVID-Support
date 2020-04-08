@@ -41,7 +41,7 @@ import { spreadsheetUrl, weekdays, dayFilters } from './constants'
 
 function extend(obj, src) {
   for (var key in src) {
-    if (src.hasOwnProperty(key)) obj[key] = src[key]
+    obj.push(src[key])
   }
   return obj
 }
@@ -76,15 +76,23 @@ export default {
     }
   },
   methods: {
+    getDay: function (day) {
+      if (day == 0) {
+        return 6
+      } else {
+        return day - 1
+      }
+    },
     needSelected: function (val) {
       this.need = val
       window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     daySelected: function (val) {
       this.day = val
+      // console.log("val:" + val + " getDay:" + this.getDay(val) + " - " + weekdays[this.getDay(val)].day)
       window.gtag('event', 'When do you need it?', {
         event_category: 'Search - (' + this.language.name + ')',
-        event_label: weekdays[val].day
+        event_label: weekdays[this.getDay(val)].day
       })
     },
     changeLanguage: function (item) {
@@ -117,12 +125,12 @@ export default {
       var markers
 
       if (this.need == 'family') {
-        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t === 'active')
+        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t !== '0')
       } else {
-        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t === 'active')
+        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t !== '0')
       }
 
-      const dayFilter = dayFilters[this.day]
+      const dayFilter = dayFilters[this.getDay(this.day)]
 
       var open = markers.filter((c) => c[dayFilter].$t !== '0')
       var closed = markers.filter((c) => c[dayFilter].$t == '0')
@@ -130,7 +138,19 @@ export default {
       var retList = extend(
         open.map((marker) => ({ marker, oc: true })),
         closed.map((marker) => ({ marker, oc: false }))
-      )
+      ).sort(function (a, b) {
+        var nameA = a.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
+        var nameB = b.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1
+        }
+        if (nameA > nameB) {
+          return 1
+        }
+
+        // names must be equal
+        return 0
+      })
 
       return retList
     }
