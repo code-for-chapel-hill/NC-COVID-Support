@@ -5,13 +5,12 @@
         v-for="(item, index) in filteredMarkers"
         v-bind:key="index"
         class="resultItem"
-        :class="{ selected: index == location.locValue }"
+        :class="{ selected: index == location.locValue, closedOne: item.oc == false }"
         :ref="'result' + index"
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
-        <span class="resultTitle">
-          {{ item.marker.gsx$providername.$t }}
-        </span>
+        <span class="resultTitle">{{ item.marker.gsx$providername.$t }} </span>
+        <div v-if="!item.oc" class="closed">Closed on {{ getDay }}</div>
         <span class="resultAddress">
           <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
           <template v-if="!!item.marker.gsx$provideraddloc.$t">{{ item.marker.gsx$provideraddloc.$t }}, </template
@@ -33,6 +32,9 @@
 </template>
 
 <script>
+import IconListItem from './IconListItem.vue'
+import { weekdaysJs } from '../constants'
+
 export default {
   name: 'ResultsList',
   data() {
@@ -40,9 +42,18 @@ export default {
       selected: false
     }
   },
+  components: {
+    IconListItem
+  },
+  computed: {
+    getDay: function () {
+      return this.$t(`dayofweek.${weekdaysJs[this.day].day}`)
+    }
+  },
   props: {
     filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean }
+    location: { locValue: Number, isSetByMap: Boolean },
+    day: Number
   },
   watch: {
     location: function (locationVal) {
@@ -63,26 +74,29 @@ export default {
 .resultItem {
   padding: 10px;
   display: block;
-  height: 100px;
+  min-height: 100px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   background: #fff;
+  font-size: 0.8rem;
 }
 .resultItem:hover {
   background: #f8f9fa !important;
   cursor: pointer;
 }
 
-.resultItem.selected {
+/* .resultItem.selected {
   background: #dffafe !important;
-}
+} */
 
 .resultItem a {
   color: #000;
 }
 
-.resultItem i {
+.resultItem > span > i {
   margin-right: 8px;
   color: #63a2e7;
+  font-size: 1rem;
+  margin-top: 6px;
 }
 
 .resultTitle {
@@ -92,5 +106,8 @@ export default {
   font-size: 0.8rem;
   display: block;
   width: 17rem;
+}
+.closedOne {
+  /* background: #f9f9f9 !important; */
 }
 </style>

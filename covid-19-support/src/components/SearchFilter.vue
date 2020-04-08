@@ -36,7 +36,7 @@
       @close-details="closeDetails"
     ></BusinessDetails>
 
-    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" v-if="showListing" />
+    <results-list :filteredMarkers="filteredMarkers" :location="location" @location-selected="passLocation" v-if="showListing" :day="day" />
   </div>
 </template>
 

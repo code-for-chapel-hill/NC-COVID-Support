@@ -20,7 +20,6 @@
             :icon="selectedIcon(index === location.locValue, item.oc)"
             v-for="(item, index) in filteredMarkers"
             v-bind:key="index"
-            :label="'Testing'"
             @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
