@@ -1,5 +1,5 @@
 <template>
-  <div class="valuebox" :class="{ selected: selected }">
+  <div class="valuebox poppins" :class="{ selected: selected }">
     <span class="number">{{ content.value }}</span>
     <span class="title">{{ content.title }}</span>
     <i class="fas" v-bind:class="content.icon"></i>
