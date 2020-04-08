@@ -11,6 +11,19 @@
         @update:center="(val) => (center = val)"
         @update:zoom="(val) => (zoom = val)"
       >
+        <l-control position="topright">
+          <div class="mapkey" :class="{ 'show-key': showKey }">
+            <div class="title-block">
+              <h6 class="title">{{ $t('label.mapkey') }}</h6>
+              <i @click="showKey = !showKey" class="fas fa-info-circle" />
+            </div>
+            <div class="keys" :class="{ 'show-key': showKey }">
+              <icon-list-item :image="require('../images/Blue.png')" title="Open" link="" />
+              <icon-list-item :image="require('../images/Grey.png')" title="Closed (on the current selected day)" link="" />
+              <icon-list-item :image="require('../images/Red.png')" title="Selected" link="" />
+            </div>
+          </div>
+        </l-control>
         <l-tile-layer :url="url" :attribution="attribution" />
 
         <v-marker-cluster ref="marks" :options="clusterOptions">
@@ -29,10 +42,11 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from 'vue2-leaflet'
+import { LMap, LTileLayer, LMarker, LPopup, LTooltip, LControl } from 'vue2-leaflet'
 import { latLng, Icon, icon } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '../constants'
+import IconListItem from './IconListItem.vue'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -43,9 +57,33 @@ Icon.Default.mergeOptions({
 
 export default {
   name: 'ResourceMap',
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+    LPopup,
+    LTooltip,
+    LControl,
+    'v-marker-cluster': Vue2LeafletMarkerCluster,
+    IconListItem
+  },
   props: {
     filteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean }
+  },
+  data() {
+    return {
+      center: latLng(35.91371, -79.057919),
+      zoom: 10,
+      url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
+      showParagraph: true,
+      mapOptions: { zoomSnap: 0.5, setView: true },
+      showMap: true,
+      attribution,
+      locationData: location,
+      clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
+      showKey: false
+    }
   },
   mounted() {
     this.editZoomControl()
@@ -85,28 +123,6 @@ export default {
     // eslint-disable-next-line no-console
     // ready: (e) => console.log('ready', e)
   },
-  data() {
-    return {
-      center: latLng(35.91371, -79.057919),
-      zoom: 10,
-      url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
-      showParagraph: true,
-      mapOptions: { zoomSnap: 0.5, setView: true },
-      showMap: true,
-      attribution,
-      locationData: location,
-      clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 }
-    }
-  },
-  computed: {},
-  components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-    LPopup,
-    LTooltip,
-    'v-marker-cluster': Vue2LeafletMarkerCluster
-  },
   watch: {
     // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
     location: function (locationVal) {
@@ -142,5 +158,47 @@ export default {
 
 .noselection.bv-example-row {
   height: 100%;
+}
+
+.mapkey {
+  padding: 16px;
+}
+.mapkey.show-key {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mapkey i {
+  font-size: 2rem;
+  opacity: 0.4;
+  color: #000;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.mapkey.show-key i {
+  opacity: 1;
+}
+
+.title-block {
+  width: 100%;
+  text-align: right;
+}
+
+.mapkey .title {
+  vertical-align: middle;
+  margin: 0 8px;
+  display: none;
+}
+
+.keys {
+  display: none;
+}
+
+.show-key {
+  display: block;
+}
+.mapkey.show-key .title {
+  display: inline;
 }
 </style>

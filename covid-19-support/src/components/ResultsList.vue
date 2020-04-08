@@ -94,7 +94,7 @@ export default {
 
 .resultItem > span > i {
   margin-right: 8px;
-  color: #63a2e7;
+  color: #2eb7cb;
   font-size: 1rem;
   margin-top: 6px;
 }

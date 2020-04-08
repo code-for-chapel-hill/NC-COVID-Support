@@ -73,4 +73,8 @@ export default {
     font-size: 1.25rem !important;
   }
 }
+
+#topnav.bg-info {
+  background: #374a91 !important;
+}
 </style>

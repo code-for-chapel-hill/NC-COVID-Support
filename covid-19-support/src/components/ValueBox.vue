@@ -93,10 +93,10 @@ export default {
   }
 }
 .valuebox.bg-blue {
-  background-color: #63a2e7 !important;
+  background-color: #2eb7cb !important;
 }
 .valuebox.bg-green {
-  background-color: #75c759 !important;
+  background-color: #566ca9 !important;
 }
 /* .valuebox.bg-green:hover {
   background-color: #52aa36 !important;

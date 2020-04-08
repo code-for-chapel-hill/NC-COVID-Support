@@ -204,7 +204,7 @@ export default {
 
 .title i {
   font-size: 3rem;
-  color: #75c759;
+  color: #ee8842;
   margin: 7px 10px 7px 0;
   float: left;
 }
