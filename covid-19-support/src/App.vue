@@ -165,6 +165,16 @@ body,
   height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+}
+
 #search-filter-wrapper,
 #page-content-wrapper {
   padding-top: 56px;
