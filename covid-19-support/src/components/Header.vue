@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info" id="topnav">
     <b-navbar-brand href="#">
-      {{ $t('title') }}
+      <img :src="require('../images/main-darkBG.svg')" :alt="$t('title')" class="logo" />
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -61,6 +61,7 @@ export default {
 .navbar-brand {
   margin-right: 2px !important;
   font-size: 0.95rem !important;
+  padding: 0.2rem 0 !important;
 }
 
 .language {
@@ -76,5 +77,14 @@ export default {
 
 #topnav.bg-info {
   background: #374a91 !important;
+}
+
+.logo {
+  width: 268px;
+  height: 52px;
+}
+
+.navbar {
+  padding: 0 1rem !important;
 }
 </style>

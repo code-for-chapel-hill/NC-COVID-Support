@@ -6,11 +6,11 @@
 
     <div class="list-group list-group-flush">
       <div class="list-group-item list-group-item-action bg-light">
-        {{ $t('sidebar.what-do-you-need') }}
+        <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
       <div class="list-group-item list-group-item-action bg-light">
-        {{ $t('sidebar.when-do-you-need-it') }}
+        <h6>{{ $t('sidebar.when-do-you-need-it') }}</h6>
         <b-form-select :value="day" :options="dayOptions" @change="(opt) => $emit('day-selected', opt)" />
       </div>
     </div>
@@ -21,7 +21,7 @@
     </InfoPanel>
 
     <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
-      <b>{{ $t('sidebar.shopsafe') }}</b>
+      <b class="poppins">{{ $t('sidebar.shopsafe') }}</b>
       <br />
       (1) {{ $t('sidebar.stayhome') }}<br />
       (2) {{ $t('sidebar.sixfeet') }}<br />
