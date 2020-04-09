@@ -4,6 +4,7 @@ on:
   push:
     tags-ignore:
       - 'v*'
+
 jobs:
   test:
     name: Test
