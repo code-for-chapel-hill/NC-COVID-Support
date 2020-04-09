@@ -124,6 +124,10 @@ export default {
 </script>
 
 <style scoped>
+.custom-select {
+  font-size: 0.8rem;
+}
+
 #search-filter-wrapper {
   margin-left: -300px;
   -webkit-transition: margin 0.25s ease-out;
@@ -156,7 +160,7 @@ export default {
 }
 
 .list-group.need-day-group {
-  padding: 1rem 0 !important;
+  padding: 1rem 0 0 0 !important;
 }
 
 .list-group-flush.need-day-group .list-group-item:first-child {

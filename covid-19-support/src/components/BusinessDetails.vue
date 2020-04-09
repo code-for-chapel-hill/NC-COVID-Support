@@ -170,7 +170,7 @@ export default {
 
 <style scoped>
 .business-details {
-  max-height: calc(100vh - 263px);
+  max-height: calc(100vh - 237px);
   overflow-y: auto;
 }
 .backtolist {

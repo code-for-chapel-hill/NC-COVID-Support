@@ -64,6 +64,7 @@ export default {
   margin-right: 2px !important;
   font-size: 0.95rem !important;
   padding: 0.2rem 0 !important;
+  font-weight: 600;
 }
 
 .language {
