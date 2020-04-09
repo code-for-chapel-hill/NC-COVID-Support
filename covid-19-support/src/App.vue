@@ -173,6 +173,7 @@ h5,
 h6,
 .navbar-brand,
 .poppins {
+  font-weight: 600 !important;
   font-family: 'Poppins', sans-serif;
 }
 

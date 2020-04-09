@@ -68,7 +68,7 @@ export default {
 
 <style>
 .resultList {
-  max-height: calc(100vh - 320px);
+  max-height: calc(100vh - 294px);
   overflow-y: auto;
 }
 .resultItem {
