@@ -124,7 +124,6 @@ export default {
 </script>
 
 <style scoped>
-
 .custom-select {
   font-size: 0.8rem;
 }
