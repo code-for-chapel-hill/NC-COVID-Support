@@ -7,7 +7,7 @@
       <tr v-for="(item, index) in days" :key="index">
         <!-- <i class="fas" :class="icon" /> -->
         <td class="oh-name">{{ item.name }}</td>
-        <td :class="item.class">{{ item.val }}</td>
+        <td :class="item.class"><span v-html="item.val"></span></td>
       </tr>
     </table>
   </div>
@@ -50,7 +50,7 @@ export default {
               // }
               break
             default:
-              myDays.push({ name: dayName, val: this.business[attr].$t })
+              myDays.push({ name: dayName, val: this.business[attr].$t.replace(',', '<br/>') })
               cnt++
               break
           }
@@ -73,7 +73,7 @@ export default {
               cnt++
               break
             default:
-              myDays.push({ name: dayName, val: this.business[attr].$t })
+              myDays.push({ name: dayName, val: this.business[attr].$t.replace(',', '<br/>') })
               cnt++
               break
           }
@@ -96,6 +96,7 @@ export default {
 }
 .oh-name {
   padding-right: 20px;
+  vertical-align: top;
 }
 .closed {
   color: #ff2c1c;

@@ -12,6 +12,14 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-item right @click="$bvModal.show('about-us')">
+          <b-nav-form>
+            <b-button size="sm" class="my-2 my-sm-0" type="button" @click="$bvModal.show('about-us')"
+              ><i class="fas fa-plus-square" aria-hidden="true" /> {{ $t('about.devhelp.addbusiness') }}</b-button
+            >
+          </b-nav-form>
+        </b-nav-item>
+
+        <b-nav-item right @click="$bvModal.show('about-us')">
           {{ $t('about.linktext') }}
         </b-nav-item>
         <b-nav-item-dropdown right>
