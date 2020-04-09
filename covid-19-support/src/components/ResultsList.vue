@@ -9,7 +9,7 @@
         :ref="'result' + index"
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
-        <h5 class="resultTitle">{{ item.marker.gsx$providername.$t }} </h5>
+        <h5 class="resultTitle">{{ item.marker.gsx$providername.$t }}</h5>
         <div v-if="!item.oc" class="closed">Closed on {{ getDay }}</div>
         <span class="resultAddress">
           <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
@@ -68,7 +68,7 @@ export default {
 
 <style>
 .resultList {
-  max-height: calc(100vh - 333px);
+  max-height: calc(100vh - 335px);
   overflow-y: auto;
 }
 .resultItem {
