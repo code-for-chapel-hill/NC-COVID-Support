@@ -10,11 +10,13 @@
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
         <h5 class="resultTitle">{{ item.marker.gsx$providername.$t }}</h5>
+        <template v-if="!!item.marker.gsx$provideraddloc.$t"
+          ><div class="addloc">{{ item.marker.gsx$provideraddloc.$t }}</div></template
+        >
         <div v-if="!item.oc" class="closed">Closed on {{ getDay }}</div>
         <span class="resultAddress">
           <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
-          <template v-if="!!item.marker.gsx$provideraddloc.$t">{{ item.marker.gsx$provideraddloc.$t }}, </template
-          >{{ item.marker.gsx$address.$t }},
+          {{ item.marker.gsx$address.$t }},
           {{ item.marker.gsx$city.$t }}
         </span>
         <template v-if="item.marker.gsx$discountmedical.$t == 1"
@@ -82,6 +84,9 @@ export default {
 </script>
 
 <style>
+.addloc {
+  margin-bottom: 8px;
+}
 .resultList {
   max-height: calc(100vh - 294px);
   overflow-y: auto;
@@ -117,6 +122,7 @@ export default {
 
 .resultTitle {
   font-size: 0.9rem;
+  margin-bottom: 0;
 }
 .resultAddress {
   font-size: 0.8rem;
