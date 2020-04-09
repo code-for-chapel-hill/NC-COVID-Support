@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     tags-ignore:
-    - v*
+      - 'v*'
 jobs:
   test:
     name: Test

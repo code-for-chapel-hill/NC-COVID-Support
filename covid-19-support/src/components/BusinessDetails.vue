@@ -14,13 +14,13 @@
             <i :class="businessIcon(business.marker)"></i>
             <div class="busName">
               <h5>{{ business.marker.gsx$providername.$t }}</h5>
+              <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
               <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
             </div>
           </div>
           <p>
             <b>{{ $t('label.address') }}:</b><br />
-            <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}, </span
-            >{{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
+            {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
             {{ business.marker.gsx$zip.$t }}
           </p>
 
