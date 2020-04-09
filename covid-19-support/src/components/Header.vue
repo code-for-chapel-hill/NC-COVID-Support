@@ -1,7 +1,9 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info" id="topnav">
     <b-navbar-brand href="#">
-      <img :src="require('../images/main-darkBG.svg')" :alt="$t('title')" class="logo" />
+      <i18n path="title" tag="span" class="pagetitle">
+        <span class="ncblue">NC</span>
+      </i18n>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -79,12 +81,11 @@ export default {
   background: #374a91 !important;
 }
 
-.logo {
-  width: 268px;
-  height: 52px;
-}
-
 .navbar {
   padding: 0 1rem !important;
+}
+
+.ncblue {
+  color: #46c4d7;
 }
 </style>
