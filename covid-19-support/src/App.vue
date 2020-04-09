@@ -177,6 +177,25 @@ h6,
   font-family: 'Poppins', sans-serif;
 }
 
+button.btn-secondary,
+button.btn-secondary:focus {
+  background-color: rgba(238, 136, 66, 1);
+  border-color: rgba(238, 136, 66, 1);
+}
+button.btn-secondary:hover {
+  background-color: rgba(238, 136, 66, 0.8);
+  border-color: rgba(238, 136, 66, 0.8);
+}
+
+.navbar-dark .navbar-nav .nav-item.addbus .nav-link,
+.navbar-dark .navbar-nav .nav-item.addbus .nav-link:focus {
+  color: rgba(237, 201, 167, 1) !important;
+}
+
+.navbar-dark .navbar-nav .nav-item.addbus .nav-link:hover {
+  color: rgba(238, 136, 66, 1) !important;
+}
+
 #search-filter-wrapper,
 #page-content-wrapper {
   padding-top: 41px;

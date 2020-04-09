@@ -18,9 +18,9 @@
               <i @click="showKey = !showKey" class="fas fa-info-circle" />
             </div>
             <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" title="Open" link="" />
-              <icon-list-item :image="require('../images/Grey.png')" title="Closed (on the current selected day)" link="" />
-              <icon-list-item :image="require('../images/Red.png')" title="Selected" link="" />
+              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
+              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
+              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
             </div>
           </div>
         </l-control>
