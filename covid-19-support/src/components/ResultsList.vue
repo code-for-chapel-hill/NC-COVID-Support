@@ -68,7 +68,7 @@ export default {
 
 <style>
 .resultList {
-  max-height: calc(100vh - 335px);
+  max-height: calc(100vh - 320px);
   overflow-y: auto;
 }
 .resultItem {
@@ -78,6 +78,7 @@ export default {
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   background: #fff;
   font-size: 0.8rem;
+  max-width: 282px;
 }
 .resultItem:hover {
   background: #f8f9fa !important;
@@ -100,7 +101,7 @@ export default {
 }
 
 .resultTitle {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
 }
 .resultAddress {
   font-size: 0.8rem;

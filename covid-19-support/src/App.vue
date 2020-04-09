@@ -178,7 +178,7 @@ h6,
 
 #search-filter-wrapper,
 #page-content-wrapper {
-  padding-top: 56px;
+  padding-top: 41px;
   box-sizing: border-box;
 }
 
