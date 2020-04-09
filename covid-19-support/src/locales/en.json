@@ -7,14 +7,17 @@
       "info": "This page is powered by the {0} of {1}. For questions, please contact us via email at {2}."
     },
     "devhelp": {
+      "addbusiness": "add a business",
+      "addinfo": "Use our online forms to {0} or {1}.",
+      "ambassadorinfo": "Help us expand coverage across North Carolina. Ambassadors will work with local government and business associations to bring NC COVID Support to their community. Email us at {0} for tools and resources to get started.",
+      "becomeambassador": "Become a community ambassador",
       "conduct": "Code of Conduct",
       "devnote": "Developers - find our {0} and {1} on GitHub.",
-      "dupsite": "Alternatively, you can duplicate a site for your state.",
-      "info": "This is an open-source project. You can build a database for your community and join our site or make your own in just 3 steps! No engineering skills needed.",
+      "dupsite": "Use our code to build a site for your state or region:",
+      "info": "This is an open-source project, built to share and expand to other communities.",
       "source": "source code",
-      "step1": "Reach out to local government and business associations to gather information.",
-      "step2": "Organize resource information using our spreadsheet template.",
-      "step3": "Email us at {0} when you are ready to join the NC site."
+      "support": "Support your neighbors and local businesses - help us grow!",
+      "updatebusiness": "update an existing entry"
     },
     "getinvolved": "Get Involved",
     "info": "Our database of resources benefits from information collected by these organizations:",
@@ -67,6 +70,7 @@
     "freemeals": "Free meal location|Free meal locations",
     "freeproduce": "Free produce location|Free produce locations",
     "instructions": "Instructions",
+    "mapkey": "Map Key",
     "mealsforstudents": "Meals for students",
     "mustpreorder": "Must pre-order",
     "normalhours": "Normal hours",
@@ -80,8 +84,7 @@
     "selectacategory": "Select a category...",
     "seniorhours": "Senior hours",
     "seniorshopping": "Senior shopping hours",
-    "website": "Website",
-    "mapkey": "Map Key"
+    "website": "Website"
   },
   "languages": {
     "ar": "Arabic",

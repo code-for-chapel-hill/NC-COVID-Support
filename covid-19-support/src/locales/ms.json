@@ -7,14 +7,17 @@
       "info": "Halaman ini dikuasakan oleh {0} dari {1}. Untuk pertanyaan, sila hubungi kami melalui e-mel di {2}."
     },
     "devhelp": {
+      "addbusiness": "tambah perniagaan",
+      "addinfo": "Gunakan borang dalam talian kami untuk {0} atau {1}.",
+      "ambassadorinfo": "Bantu kami mengembangkan liputan di seluruh North Carolina. Duta akan bekerjasama dengan kerajaan tempatan dan persatuan perniagaan untuk membawa NC COVID Support kepada komuniti mereka. Kirimkan kami di {0} untuk alat dan sumber untuk bermula.",
+      "becomeambassador": "Menjadi duta komuniti",
       "conduct": "Tatakelakuan",
       "devnote": "Pemaju - cari {0} dan {1} pada GitHub.",
       "dupsite": "Sebagai alternatif, anda boleh menduplikasi tapak untuk keadaan anda.",
-      "info": "Ini adalah projek sumber terbuka. Anda boleh membina pangkalan data untuk komuniti anda dan menyertai laman web kami atau membuat sendiri dalam hanya 3 langkah! Tiada kemahiran kejuruteraan diperlukan.",
+      "info": "Ini adalah projek sumber terbuka, dibina untuk berkongsi dan mengembangkan kepada komuniti lain.",
       "source": "kod sumber",
-      "step1": "Jangkau kepada persatuan kerajaan dan persatuan perniagaan untuk mengumpulkan maklumat.",
-      "step2": "Atur maklumat sumber menggunakan templat hamparan kami.",
-      "step3": "E-mel kami di {0} apabila anda sudah bersedia untuk menyertai tapak NC."
+      "support": "Menyokong jiran anda dan perniagaan tempatan - membantu kami berkembang!",
+      "updatebusiness": "kemas kini kemasukan yang sedia ada"
     },
     "getinvolved": "Melibatkan diri",
     "info": "Pangkalan data kami mendapat manfaat daripada maklumat yang dikumpulkan oleh organisasi-organisasi ini:",
@@ -67,6 +70,7 @@
     "freemeals": "Lokasi makanan percuma | Lokasi makan percuma",
     "freeproduce": "Lokasi menghasilkan percuma | Lokasi menghasilkan percuma",
     "instructions": "Arahan",
+    "mapkey": "",
     "mealsforstudents": "Makanan untuk pelajar",
     "mustpreorder": "Mesti prapesan",
     "normalhours": "Jam biasa",

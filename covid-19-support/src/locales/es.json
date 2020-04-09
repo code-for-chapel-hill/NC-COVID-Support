@@ -7,14 +7,17 @@
       "info": "Esta página funciona con {0} de {1}. Para preguntas, contáctenos por correo electrónico al {2}."
     },
     "devhelp": {
+      "addbusiness": "agregar un negocio",
+      "addinfo": "Utilice nuestros formularios en línea para {0} o {1}.",
+      "ambassadorinfo": "Ayúdenos a ampliar la cobertura en Carolina del Norte. Los embajadores trabajarán con el gobierno local y las asociaciones empresariales para brindar el apoyo de NC COVID a su comunidad. Envíenos un correo electrónico a {0} para obtener herramientas y recursos para comenzar.",
+      "becomeambassador": "Conviértete en embajador de la comunidad",
       "conduct": "Código de Conducta",
       "devnote": "Desarrolladores: encuentre nuestros {0} y {1} en GitHub.",
       "dupsite": "Alternativamente, puede duplicar un sitio para su estado.",
-      "info": "Este es un proyecto de código abierto. ¡Puede crear una base de datos para su comunidad y unirse a nuestro sitio o crear la suya propia en solo 3 pasos! No se necesitan habilidades de ingeniería.",
+      "info": "Este es un proyecto de código abierto, creado para compartir y expandirse a otras comunidades.",
       "source": "codigo fuente",
-      "step1": "Póngase en contacto con el gobierno local y las asociaciones empresariales para recopilar información.",
-      "step2": "Organice la información de recursos utilizando nuestra plantilla de hoja de cálculo.",
-      "step3": "Envíenos un correo electrónico a {0} cuando esté listo para unirse al sitio de Carolina del Norte."
+      "support": "Apoye a sus vecinos y negocios locales: ¡ayúdenos a crecer!",
+      "updatebusiness": "actualizar una entrada existente"
     },
     "getinvolved": "Involucrarse",
     "info": "Nuestra base de datos de recursos se beneficia de la información recopilada por estas organizaciones:",
@@ -67,6 +70,7 @@
     "freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
     "freeproduce": "Lugar de producción gratuito|Lugares de producción gratuito",
     "instructions": "Instrucciones",
+    "mapkey": "",
     "mealsforstudents": "Comidas para estudiantes",
     "mustpreorder": "Debe pre-ordenar",
     "normalhours": "Horas normales",
