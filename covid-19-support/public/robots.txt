@@ -1,0 +1,4 @@
+# NC COVID Support Robots txt file
+
+User-agent: *
+Sitemap: 

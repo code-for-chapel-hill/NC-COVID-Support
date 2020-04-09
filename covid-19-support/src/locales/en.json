@@ -33,10 +33,10 @@
   "category": {
     "childcare": "Child care",
     "family": "Prepared family meal|Prepared family meals",
-    "farm": "Farm or Farmer Market|Farms & Farmers' Markets",
+    "farm": "Farm or farmer market|Farms & farmers' markets",
     "grocery": "Grocery|Groceries",
     "meal": "Free meal|Free meals",
-    "petsupplies": "Pet Supplies",
+    "petsupplies": "Pet supplies",
     "pharmacy": "Pharmacy|Pharmacies",
     "restaurant": "Restaurant|Restaurants",
     "school": "School meal|School meals"
@@ -62,7 +62,7 @@
     "drivethru": "Drive thru",
     "email": "Email",
     "email_lowercase": "email",
-    "farmersmarket": "Farmers Market|Farmers Markets",
+    "farmersmarket": "Farmers' market|Farmers' markets",
     "freegrocery": "Free grocery location|Free grocery locations",
     "freemeals": "Free meal location|Free meal locations",
     "freeproduce": "Free produce location|Free produce locations",
