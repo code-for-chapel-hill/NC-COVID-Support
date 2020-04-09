@@ -4,7 +4,7 @@
       <i class="fas fa-caret-down" />
     </div>
 
-    <div class="list-group list-group-flush">
+    <div class="list-group list-group-flush need-day-group">
       <div class="list-group-item list-group-item-action bg-light">
         <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
@@ -145,11 +145,22 @@ export default {
 
 .list-group {
   width: 300px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.125);
+  /* border-bottom: solid 1px rgba(0, 0, 0, 0.125); */
+  padding: 0;
 }
 
 .list-group-item {
   border: none !important;
+  padding: 0 1.25rem;
+  border-bottom: none;
+}
+
+.list-group.need-day-group {
+  padding: 1rem 0 !important;
+}
+
+.list-group-flush.need-day-group .list-group-item:first-child {
+  padding-bottom: 1rem !important;
 }
 
 .side-nav {
