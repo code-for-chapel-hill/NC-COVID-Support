@@ -88,12 +88,16 @@ This is currently the only project folder in the solution, if you are not using 
 
 ## Getting started
 
+### Getting the master branch to build
+
 #### Download the source code
-Follow the instructions above for setting up your environment, then using your favourite GIT client clone this repository to a folder on your machine, then from a command or terminal window, navigate to the 'src' folder and run **`npm install`** to download the dependencies. 
+Follow the instructions above for setting up your environment, fork this project into your own GitHub repo, then using your favourite GIT client clone your new repository to a folder on your machine, then from a command or terminal window, navigate to the 'src' folder and run **`npm install`** to download the dependencies. 
 
 #### Build the client side project using the Development Mode
 Once completed. you can run **`npm run serve'** to build the solution and for a development web server to start and automatically open the main Index.html page, if you make any changes to the client side files the website running in your browser should automatically update.
 
+### Branch before you start making changes
+Please create clean branches from the Master branch before you start working on any changes, this will help ensure your code merges in cleanly to the main repository. If you are working on one of the GitHub issues, please name your branch using the following format: **`Issue-XX-Short-Description`**
 
 #### Where do I put things?
 
@@ -107,3 +111,25 @@ The `/covid-19-support` directory is where all the client side development files
     / components -- ( This is where we put VueJS Single File Components )
     / locales -- The i18n Translation files       
 ```
+
+## How to contribute your changes back into the core project
+#### Clean up your code
+Before trying to submit a pull request ( to merge your code changes back into the main project ) please run the following command to ensure your code has been re-formatted to follow the Prettier code style rules: **`npm run format`** as mentioned above.
+
+#### Commit your code to your LOCAL repository
+Commit your changes back to your local repository, at this stage do NOT push the changes back to GitHub!
+
+#### Check your master branch is still up to date
+You need to make sure your master branch is still up to date and that your branch will still merge cleanly, in case other changes have happened to the main repository before you finished your changes. If you don't know how to add a second source repository to your Git client, you should be able to find this out by doing a quick web search.
+
+#### Rebase your branch (if needed)
+Assuming you have added the main project as a secondary source, if you do a fetch, you will see if the main master is the same as your local version, if not, the best thing to do is to Rebase your branch on the main master branch, which doing this, you will need to fix any conflicts that occur.
+
+#### Double check everything still works
+Once complete, check that your project still runs and your changes are working, re-run the **`npm run format`** command and commit your changes, you are now read to push your code up!
+
+#### Push your code up to GitHub
+Now you have made sure your branch is up to date you should be able to push your changes from your local repository up to your GitHub repository.
+
+#### Pull Request Time!
+You've made it, the final step, you just need to jump onto GitHub and submit a pull request, please tag the Issue number with a comment like " this should close issue #xxxx " as this will automatically close the issue when your pull request is successfully merged.
