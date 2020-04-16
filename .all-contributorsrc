@@ -53,6 +53,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jasonajones73",
+      "name": "Jason Jones",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23062043?v=4",
+      "profile": "http://jasonajones.netlify.com",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
