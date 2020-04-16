@@ -1,36 +1,12 @@
 # NC COVID Support Project
-
-<!-- markdownlint-disable -->
-<table>
-<tr>
-<td>
-<!-- markdownlint-enable -->
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+![GitHub issues](https://img.shields.io/github/issues-raw/code-for-chapel-hill/NC-COVID-Support?style=flat)
+![Deployment](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Deployment/badge.svg?style=flat)
+![Release date](https://img.shields.io/github/release/code-for-chapel-hill/NC-COVID-Support?style=flat)
 
-<!-- markdownlint-disable -->
-</td>
-<td>
-<!-- markdownlint-enable -->
-
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-<!-- markdownlint-disable -->
-</td>
-<td>
-<!-- markdownlint-enable -->
-
-![Deployment](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Deployment/badge.svg)
-
-<!-- markdownlint-disable -->
-</td>
-<tr>
-</table>
-<!-- markdownlint-enable -->
 
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
