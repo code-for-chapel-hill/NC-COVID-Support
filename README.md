@@ -1,7 +1,37 @@
 # NC COVID Support Project
+
+<!-- markdownlint-disable -->
+<table>
+<tr>
+<td>
+<!-- markdownlint-enable -->
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<!-- markdownlint-disable -->
+</td>
+<td>
+<!-- markdownlint-enable -->
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+<!-- markdownlint-disable -->
+</td>
+<td>
+<!-- markdownlint-enable -->
+
+![Deployment](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Deployment/badge.svg)
+
+<!-- markdownlint-disable -->
+</td>
+<tr>
+</table>
+<!-- markdownlint-enable -->
+
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
@@ -10,19 +40,19 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 
 ## This project is
 
-* A mobile-friendly website with an interactive map and table of local resources.
-* A tool to help our communities and neighbors navigate the COVID crisis.
-* A collaborative effort connected to local officials and support organizations.
-* An open project that can be quickly adapted to other locations & future needs.
+- A mobile-friendly website with an interactive map and table of local resources.
+- A tool to help our communities and neighbors navigate the COVID crisis.
+- A collaborative effort connected to local officials and support organizations.
+- An open project that can be quickly adapted to other locations & future needs.
 
 ## The types of resource questions we want to answer
 
-* Where can I find a free meal?
-* Where can I find free diapers/toilet paper/personal care items?
-* Where can I find a drive-up pharmacy?
-* Where can I find a market with senior/vulnerable shopping hours?
-* Where can I find a pet store with a drive-up option?
-* Which businesses offer discounts for medical workers?
+- Where can I find a free meal?
+- Where can I find free diapers/toilet paper/personal care items?
+- Where can I find a drive-up pharmacy?
+- Where can I find a market with senior/vulnerable shopping hours?
+- Where can I find a pet store with a drive-up option?
+- Which businesses offer discounts for medical workers?
 
 ## Authors
 
@@ -36,9 +66,9 @@ It is great that you are interested in helping to contribute to our project, ple
 
 Please follow our social media accounts and help us to spread the word about the site.
 
-* Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
-* Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
-* Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
+- Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
+- Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
+- Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
 
 ## Contributors ✨
 
@@ -55,6 +85,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
