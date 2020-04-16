@@ -35,6 +35,15 @@
         "projectManagement",
         "question"
       ]
+    },
+    {
+      "login": "charliekenney23",
+      "name": "Charlie Kenney",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23623237?v=4",
+      "profile": "https://ch4z.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
