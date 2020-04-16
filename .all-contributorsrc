@@ -64,6 +64,16 @@
         "ideas",
         "maintenance"
       ]
+    },
+    {
+      "login": "amkitt",
+      "name": "Allison Kittinger",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24195503?v=4",
+      "profile": "https://github.com/amkitt",
+      "contributions": [
+        "translation",
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
