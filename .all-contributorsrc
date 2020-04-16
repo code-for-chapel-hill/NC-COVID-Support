@@ -21,6 +21,20 @@
         "translation",
         "tutorial"
       ]
+    },
+    {
+      "login": "KM-Hanson",
+      "name": "KM-Hanson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/58799043?v=4",
+      "profile": "https://github.com/KM-Hanson",
+      "contributions": [
+        "business",
+        "content",
+        "doc",
+        "ideas",
+        "projectManagement",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
