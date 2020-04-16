@@ -1,4 +1,7 @@
 # NC COVID Support Project
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
@@ -36,3 +39,22 @@ Please follow our social media accounts and help us to spread the word about the
 * Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
 * Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
 * Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.vizioz.com"><img src="https://avatars0.githubusercontent.com/u/4398217?v=4" width="100px;" alt=""/><br /><sub><b>Chris Houston</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Tests">⚠️</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Code">💻</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Documentation">📖</a> <a href="#design-readingdancer" title="Design">🎨</a> <a href="#ideas-readingdancer" title="Ideas, Planning, & Feedback">🤔</a> <a href="#platform-readingdancer" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/pulls?q=is%3Apr+reviewed-by%3Areadingdancer" title="Reviewed Pull Requests">👀</a> <a href="#translation-readingdancer" title="Translation">🌍</a> <a href="#tutorial-readingdancer" title="Tutorials">✅</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
