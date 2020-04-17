@@ -11,6 +11,7 @@
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
+## Link to a Google Sheets template for the data: [Database template](https://docs.google.com/spreadsheets/d/11aMYTpt0YrEaPyOI9OSZgQ6lloBnS0mctlHK8u96TTo/edit?usp=sharing)
 
 ![The NC COVID Support Website](covid-19-support/src/images/NCCOVID.png)
 
