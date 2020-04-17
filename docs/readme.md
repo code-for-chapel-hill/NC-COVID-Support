@@ -11,9 +11,8 @@
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
-## Link to a Google Sheets template for the data: [Database template](https://docs.google.com/spreadsheets/d/11aMYTpt0YrEaPyOI9OSZgQ6lloBnS0mctlHK8u96TTo/edit?usp=sharing)
 
-![The NC COVID Support Website](covid-19-support/src/images/NCCOVID.png)
+![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
 ## This project is
 
@@ -37,7 +36,19 @@ This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhil
 
 ## How to contribute
 
-It is great that you are interested in helping to contribute to our project, please take a look at our [How to Contribute](/contributing.md) page for more details.
+There are two areas we need help, one is with the ongoing software development of this project and the other is with the task of collating and adding accurate up to date data for the site.
+
+### Contribution to the project code
+
+It is great that you are interested in helping to contribute to our project, please take a look at our [How to Contribute](contributing.md) page for more details.
+
+### Become a Content Editor
+
+We are always looking for people to join our content data team, as our site grows in popularity so does the number of listings that we need to manage. For more information visit out [Content Editors](content-editors.md) page.
+
+## Replicating the project
+
+When we first started this project, we hoped that other areas would be interested in replicating our site for their area and working together to build an even better platform. Visit our [Replicating the site](replicating-the-site.md) page for more information.
 
 ## Find us on Social Media
 
