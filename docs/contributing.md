@@ -10,11 +10,11 @@ The following is a set of guidelines, to help you contribute to the NC COVID Sup
 
 We are a friendly group and are happy with whatever contributions you might be able to make.
 
-**Code of conduct**
+## Code of conduct
 
 This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [contact@nccovidsupport.org](mailto:contact@nccovidsupport.org).
 
-**Table of contents**
+## Table of contents
 
 [Contributing code changes](#contributing-code-changes)
 
