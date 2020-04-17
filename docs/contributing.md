@@ -26,6 +26,8 @@ This project and everyone participating in it, is governed by our [Code of Condu
 [Reviews](#reviews)
 
 - [Our current PR process](#our-current-pr-process)
+- [Making changes after the PR is open](#making-changes-after-the-pr-is-open)
+- [Keeping your NC COVID Support fork in sync with the main repository](#keeping-your-nc-covid-support-fork-in-sync-with-the-main-repository)
 - [Style guidelines](#style-guidelines)
 
 [How to get started with our code](#How-to-get-started-with-our-code)
@@ -41,6 +43,8 @@ This project and everyone participating in it, is governed by our [Code of Condu
 - [Download the source code](#download-the-source-code)
 - [Build the client side project using the Development Mode](#build-the-client-side-project-using-the-development-mode)
 - [Where do I put things](#where-do-i-put-things)
+
+[Other ways to contribute](#other-ways-to-contribute)
 
 ## Contributing code changes
 
@@ -108,6 +112,33 @@ We can now start reviewing your proposed changes and give you feedback on them. 
 - An in-depth reply will be added within 72 hours
 - The PR will be either merged or rejected within at most 1 week
 - Sometimes it is difficult to meet these timelines and we'll talk to you if this is the case.
+
+### Making changes after the PR is open
+
+If you make changes to your PR, please push them to the same branch in your fork again, the pull request automatically updates with the additional commit(s) so we can review it again. If all is well, we'll merge the code :)
+
+### Keeping your NC COVID Support fork in sync with the main repository
+
+We recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
+
+If you have submitted a pull request weeks ago and want to work on something new, make sure you have got the latest code to build against.
+
+To sync your fork with the original one, you'll have to add the upstream url. You only have to do this once:
+
+```
+git remote add upstream https://github.com/code-for-chapel-hill/NC-COVID-Support.git
+```
+
+Then when you want to get the changes from the main repository:
+
+```
+git fetch upstream
+git rebase upstream/master
+```
+
+In this command we're syncing with the `master` branch, but you can of course choose another one if needed.
+
+(More info on how this works: [http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated](http://robots.thoughtbot.com/post/5133345960/keeping-a-git-fork-updated))
 
 ### Style guidelines
 
@@ -210,3 +241,9 @@ The `/covid-19-support` directory is where all the client side development files
     / components -- ( This is where we put VueJS Single File Components )
     / locales -- The i18n Translation files
 ```
+
+## Other ways to contribute
+
+We welcome all kinds of contributions to our repository. If you don't feel you'd like to make code changes you can use your experience to improving this documentation, or you can join our [content editing team](content-editors.md) to help add more content to the [NC COVID Support](https://nccovidsupport.org) site.
+
+We also encourage you to feel free to comment on others' pull requests and issues. If you see something on our [issue tracker](https://github.com/code-for-chapel-hill/NC-COVID-Support/issues) or [pull requests](https://github.com/code-for-chapel-hill/NC-COVID-Support/pulls) you feel you can add to, please don't be shy.
