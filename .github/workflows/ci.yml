@@ -1,13 +1,13 @@
 # This is a workflow to for CI testing the COVID project
 
-name: "Continuous Integration"
+name: Continuous Integration
 
 # Controls when the action will run.
 # Triggers the workflow on push events but ignores all tags beginning with "v*"
 on:
-  push:
-    tags-ignore:
-      - 'v*'
+  pull_request:
+    branches:
+    - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
