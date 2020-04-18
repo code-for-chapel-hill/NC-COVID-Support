@@ -61,11 +61,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #topnav {
   position: absolute;
   width: 100%;
   z-index: 1038;
+
+  &.bg-info {
+    background: #374a91 !important;
+  }
 }
 
 .navbar-brand {
@@ -84,10 +88,6 @@ export default {
     margin-right: 2px !important;
     font-size: 1.25rem !important;
   }
-}
-
-#topnav.bg-info {
-  background: #374a91 !important;
 }
 
 .navbar {

@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .valuebox {
   height: 50px;
   padding: 0 8px;
@@ -75,9 +75,6 @@ export default {
   }
 }
 
-.number {
-  font-size: 2em;
-}
 .valuebox i.fas {
   font-size: 2em;
   opacity: 0.1;

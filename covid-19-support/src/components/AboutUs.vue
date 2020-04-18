@@ -61,3 +61,17 @@ export default {
   name: 'about-us-modal'
 }
 </script>
+
+<style lang="scss">
+@media (max-width: 991px) {
+  #about-us > .modal-dialog {
+    justify-content: normal;
+    max-width: 100%;
+
+    & > .modal-content {
+      min-height: 100vh;
+      height: 100vh;
+    }
+  }
+}
+</style>
