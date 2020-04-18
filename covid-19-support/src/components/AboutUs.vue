@@ -1,9 +1,9 @@
 <template>
-  <b-modal id="about-us" size="lg" centered scrollable>
+  <b-modal id="about-us" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
     <template v-slot:modal-title>
       {{ $t('about.title') }}
     </template>
-    <b-card no-body>
+    <b-card class="h-100" no-body>
       <b-tabs card>
         <b-tab :title="$t('about.getinvolved')">
           <p>{{ $t('about.devhelp.info') }}</p>
