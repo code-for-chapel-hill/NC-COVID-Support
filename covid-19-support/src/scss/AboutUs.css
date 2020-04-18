@@ -1,5 +1,11 @@
 @media (max-width: 991px) {
   #about-us > .modal-dialog {
+    justify-content: normal;
     max-width: 100%;
+  }
+
+  #about-us > .modal-dialog > .modal-content {
+    min-height: 100vh;
+    height: 100vh;
   }
 }
