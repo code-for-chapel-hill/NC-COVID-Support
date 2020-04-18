@@ -45,22 +45,25 @@ export default {
 }
 </script>
 
-<style>
-.iconListItem div {
-  display: inline-block;
-  line-height: 1.2rem;
-  vertical-align: middle;
-  margin: 0.25rem 0;
+<style lang="scss">
+.iconListItem {
+  div {
+    display: inline-block;
+    line-height: 1.2rem;
+    vertical-align: middle;
+    margin: 0.25rem 0;
+  }
+  a {
+    color: #ee8842 !important;
+  }
 }
+
 .ilIcon {
   font-size: 1.2rem;
   width: 33px;
 }
+
 .ilTitle {
   width: 210px;
-}
-
-.iconListItem a {
-  color: #ee8842 !important;
 }
 </style>

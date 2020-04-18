@@ -168,24 +168,34 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .business-details {
   max-height: calc(100vh - 237px);
   overflow-y: auto;
 }
 .backtolist {
   font-size: 0.8rem;
+
+  i {
+    margin-right: 0.375rem;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    cursor: pointer;
+  }
 }
-.backtolist i {
-  margin-right: 0.375rem;
-}
-.backtolist:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
-  cursor: pointer;
-}
+
 .title {
   margin: 0 0 0.75rem 0;
   display: inline-block;
+
+  i {
+    font-size: 3rem;
+    color: #ee8842;
+    margin: 7px 10px 7px 0;
+    float: left;
+  }
 }
 
 .busName {
@@ -196,21 +206,13 @@ export default {
 .green {
   font-size: 0.8rem;
   color: #666;
+
+  & > div {
+    width: 243px;
+  }
 }
 
 .updated {
   color: #aaa;
-}
-
-.title i {
-  font-size: 3rem;
-  color: #ee8842;
-  margin: 7px 10px 7px 0;
-  float: left;
-}
-
-.green > div {
-  /* display: inline-block; */
-  width: 243px;
 }
 </style>

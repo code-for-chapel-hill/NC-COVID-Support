@@ -83,7 +83,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .addloc {
   margin-bottom: 8px;
 }
@@ -99,25 +99,22 @@ export default {
   background: #fff;
   font-size: 0.8rem;
   max-width: 282px;
-}
-.resultItem:hover {
-  background: #f8f9fa !important;
-  cursor: pointer;
-}
 
-/* .resultItem.selected {
-  background: #dffafe !important;
-} */
+  &:hover {
+    background: #f8f9fa !important;
+    cursor: pointer;
+  }
 
-.resultItem a {
-  color: #000;
-}
+  a {
+    color: #000;
+  }
 
-.resultItem > span > i {
-  margin-right: 8px;
-  color: #2eb7cb;
-  font-size: 1rem;
-  margin-top: 6px;
+  & > span > i {
+    margin-right: 8px;
+    color: #2eb7cb;
+    font-size: 1rem;
+    margin-top: 6px;
+  }
 }
 
 .resultTitle {

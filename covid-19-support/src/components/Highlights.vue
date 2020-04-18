@@ -151,15 +151,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .highlights {
   margin: 4px !important;
   transition: height 0.25s ease-out;
   height: 116px;
-}
 
-.highlights div.col-md-3 {
-  padding: 0 !important;
+  div.col-md-3 {
+    padding: 0 !important;
+  }
 }
 
 @media (min-width: 768px) {

@@ -136,7 +136,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .map {
   width: auto;
   height: 100%;
@@ -162,22 +162,23 @@ export default {
 
 .mapkey {
   padding: 16px;
-}
-.mapkey.show-key {
-  background-color: #f8f9fa !important;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
 
-.mapkey i {
-  font-size: 2rem;
-  opacity: 0.4;
-  color: #000;
-  cursor: pointer;
-  vertical-align: middle;
-}
+  &.show-key {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
 
-.mapkey.show-key i {
-  opacity: 1;
+  i {
+    font-size: 2rem;
+    opacity: 0.4;
+    color: #000;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  &.show-key i {
+    opacity: 1;
+  }
 }
 
 .title-block {
