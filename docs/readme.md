@@ -4,6 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 ![GitHub issues](https://img.shields.io/github/issues-raw/code-for-chapel-hill/NC-COVID-Support?style=flat)
+![Continuous Integration](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Continuous%20Integration/badge.svg)
 ![Deployment](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Deployment/badge.svg?style=flat)
 ![Release date](https://img.shields.io/github/release/code-for-chapel-hill/NC-COVID-Support?style=flat)
 
