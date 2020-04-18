@@ -100,9 +100,11 @@
     "zh": "简体中文"
   },
   "sidebar": {
+    "close-panel": "关闭搜索面板",
     "info-about-us": "当前，此站点支持北卡罗来纳州奥兰治县。用",
     "info-end-text": "，我们可以扩大覆盖范围。",
     "info-link-text": "你的帮助",
+    "open-panel": "打开搜索面板",
     "shopsafe": "请安全！",
     "sixfeet": "购物时，相隔6英尺。",
     "stayhome": "如果您生病了，请待在家里。",

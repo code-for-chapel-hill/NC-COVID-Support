@@ -100,9 +100,11 @@
     "zh": "Simplified Chinese"
   },
   "sidebar": {
+    "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports Orange County, NC. With",
     "info-end-text": ", we can expand our coverage.",
     "info-link-text": "your help",
+    "open-panel": "Open search panel",
     "shopsafe": "Please, SHOP SAFE!",
     "sixfeet": "Stay 6 ft. apart when shopping.",
     "stayhome": "If you are sick, stay home.",

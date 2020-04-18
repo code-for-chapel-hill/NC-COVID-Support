@@ -100,9 +100,11 @@
     "zh": "Chinois simplifié"
   },
   "sidebar": {
+    "close-panel": "Fermer le panneau de recherche",
     "info-about-us": "Actuellement, ce site prend en charge Orange County, NC. Avec",
     "info-end-text": ", nous pouvons étendre notre couverture.",
     "info-link-text": "ton aide",
+    "open-panel": "Ouvrir le panneau de recherche",
     "shopsafe": "S'il vous plaît, achetez en toute sécurité!",
     "sixfeet": "Restez à 6 pieds de distance lorsque vous magasinez.",
     "stayhome": "Si vous êtes malade, restez à la maison.",

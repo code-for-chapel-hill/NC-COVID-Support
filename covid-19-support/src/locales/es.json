@@ -100,9 +100,11 @@
     "zh": "Chino simplificado"
   },
   "sidebar": {
+    "close-panel": "Cerrar panel de búsqueda",
     "info-about-us": "Actualmente, este sitio admite el Condado de Orange, Carolina del Norte. Con",
     "info-end-text": ", podemos ampliar nuestra cobertura.",
     "info-link-text": "tu ayuda",
+    "open-panel": "Abrir panel de búsqueda",
     "shopsafe": "Por favor, ¡TIENDA SEGURO!",
     "sixfeet": "Manténgase a 6 pies de distancia cuando vaya de compras.",
     "stayhome": "Si está enfermo, quédese en casa.",
