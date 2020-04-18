@@ -1,6 +1,6 @@
 # NC COVID Support Project
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 ![GitHub issues](https://img.shields.io/github/issues-raw/code-for-chapel-hill/NC-COVID-Support?style=flat)
@@ -73,6 +73,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://ch4z.io"><img src="https://avatars3.githubusercontent.com/u/23623237?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Kenney</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=charliekenney23" title="Code">💻</a></td>
     <td align="center"><a href="http://jasonajones.netlify.com"><img src="https://avatars3.githubusercontent.com/u/23062043?v=4" width="100px;" alt=""/><br /><sub><b>Jason Jones</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=jasonajones73" title="Code">💻</a> <a href="#ideas-jasonajones73" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jasonajones73" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/amkitt"><img src="https://avatars3.githubusercontent.com/u/24195503?v=4" width="100px;" alt=""/><br /><sub><b>Allison Kittinger</b></sub></a><br /><a href="#translation-amkitt" title="Translation">🌍</a> <a href="#content-amkitt" title="Content">🖋</a></td>
+    <td align="center"><a href="http://pinedesk.biz"><img src="https://avatars3.githubusercontent.com/u/30856?v=4" width="100px;" alt=""/><br /><sub><b>Dane Summers</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=dsummersl" title="Code">💻</a></td>
   </tr>
 </table>
 
