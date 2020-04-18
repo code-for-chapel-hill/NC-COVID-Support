@@ -1,0 +1,62 @@
+html,
+body,
+#wrapper {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.poppins {
+  font-weight: 600 !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+button.btn-secondary {
+  &,
+  &:focus {
+    background-color: rgba(238, 136, 66, 1);
+    border-color: rgba(238, 136, 66, 1);
+  }
+  &:hover {
+    background-color: rgba(238, 136, 66, 0.8);
+    border-color: rgba(238, 136, 66, 0.8);
+  }
+}
+
+.navbar-dark .navbar-nav .nav-item.addbus .nav-link {
+  &,
+  &:focus {
+    color: rgba(237, 201, 167, 1) !important;
+  }
+
+  &:hover {
+    color: rgba(238, 136, 66, 1) !important;
+  }
+}
+
+#search-filter-wrapper,
+#page-content-wrapper {
+  padding-top: 41px;
+  box-sizing: border-box;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#wrapper.toggled #search-filter-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #page-content-wrapper {
+    min-width: 0;
+  }
+}

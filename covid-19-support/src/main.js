@@ -11,7 +11,8 @@ import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 // Customize styling for components:
-import './scss/AboutUs.css'
+import './scss/Main.scss'
+import './scss/AboutUs.scss'
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
