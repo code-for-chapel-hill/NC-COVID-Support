@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light border-right" id="search-filter-wrapper">
-    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')" v-b-tooltip.hover.right :title="tabtitle">
+    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')">
       <i class="fas fa-caret-down" />
     </div>
 
