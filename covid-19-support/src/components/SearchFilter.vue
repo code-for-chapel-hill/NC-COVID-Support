@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light border-right" id="search-filter-wrapper">
-    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')">
+    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')" v-b-tooltip.hover.right :title="tabtitle">
       <i class="fas fa-caret-down" />
     </div>
 
@@ -91,6 +91,9 @@ export default {
         value: i.pos,
         text: this.$t(`dayofweek.${i.day}`)
       }))
+    },
+    tabtitle() {
+      return this.isFilterOpen ? this.$t('sidebar.close-panel') : this.$t('sidebar.open-panel')
     }
   },
   methods: {
@@ -173,7 +176,7 @@ export default {
 
 .tab {
   font-size: 0.8rem;
-  width: 20px;
+  width: 30px;
   height: 60px;
   position: absolute;
   top: 169px;
@@ -182,11 +185,11 @@ export default {
   background: #fff;
   transition: left 0.25s ease-out;
   cursor: pointer;
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.4);
 }
 
 #wrapper.toggled .tab {
-  box-shadow: 12px 0px 14px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 12px 0px 14px 0px rgba(0, 0, 0, 0.4);
   left: 300px;
 }
 
@@ -195,10 +198,10 @@ export default {
 }
 .tab i {
   font-size: 1.5rem;
-  color: #b5bfca;
+  color: #ee8842;
   transform: rotate(-90deg);
   margin-top: 18px;
-  margin-left: 2px;
+  margin-left: 7px;
 }
 
 @media (min-width: 768px) {
