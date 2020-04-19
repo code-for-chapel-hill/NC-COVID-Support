@@ -38,6 +38,12 @@ export default {
     padding: 20px;
   }
 }
+
+.number {
+  position: relative;
+  top: 14px;
+}
+
 .number,
 .title {
   color: #fff;
@@ -49,7 +55,7 @@ export default {
   line-height: 1.1rem;
   margin-top: 8px;
   margin-right: 24px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 @media (min-width: 768px) {
   .title {
