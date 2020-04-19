@@ -105,7 +105,10 @@ export default {
       }
     },
     boxSelected: function (content) {
-      this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
+		this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
+	},
+    isAnyDaySelected(day) {
+      return day > 6
     },
     needSelected: function (val) {
       this.need = val
@@ -155,6 +158,7 @@ export default {
         markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1')
       }
 
+<<<<<<< HEAD
       // Filter out the boolean items
       this.highlightFilters.forEach((element) => {
         if (booleanFilters.includes(element)) {
@@ -165,7 +169,17 @@ export default {
       const dayFilter = dayFilters[this.getDay(this.day)]
 
       var open = markers.filter((c) => c[dayFilter].$t !== '0')
+=======
+      var today = new Date().getDay()
+      var dayFilter = dayFilters[this.getDay(today)]
+>>>>>>> Search Filter: Add "Any" option as a day selection
       var closed = markers.filter((c) => c[dayFilter].$t == '0')
+      var open = markers.filter((c) => !closed.includes(c))
+      if (!this.isAnyDaySelected(this.day)) {
+        dayFilter = dayFilters[this.getDay(this.day)]
+        open = markers.filter((c) => c[dayFilter].$t !== '0')
+        closed = markers.filter((c) => c[dayFilter].$t == '0')
+      }
 
       var retList = extend(
         open.map((marker) => ({ marker, oc: true })),

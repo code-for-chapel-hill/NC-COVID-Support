@@ -51,7 +51,8 @@
     "sunday": "Sunday",
     "thursday": "Thursday",
     "tuesday": "Tuesday",
-    "wednesday": "Wednesday"
+    "wednesday": "Wednesday",
+    "any": "Any"
   },
   "label": {
     "address": "Address",

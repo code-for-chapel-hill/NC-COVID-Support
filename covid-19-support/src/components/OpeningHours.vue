@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { dayFilters, seniorDayFilters, weekdays } from '../constants'
+import { dayFilters, seniorDayFilters, weekdayHours } from '../constants'
 export default {
   name: 'OpeningHours',
   data() {
@@ -35,7 +35,7 @@ export default {
 
       if (this.senior) {
         seniorDayFilters.forEach((attr, index) => {
-          var dayName = this.$t(`dayofweek.${weekdays[index].day}`)
+          var dayName = this.$t(`dayofweek.${weekdayHours[index].day}`)
           switch (this.business[attr].$t.length) {
             case 0:
               // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
@@ -57,7 +57,7 @@ export default {
         })
       } else {
         dayFilters.forEach((attr, index) => {
-          var dayName = this.$t(`dayofweek.${weekdays[index].day}`)
+          var dayName = this.$t(`dayofweek.${weekdayHours[index].day}`)
           switch (this.business[attr].$t.length) {
             case 0:
               // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
