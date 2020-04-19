@@ -132,7 +132,7 @@ export default {
 }
 
 #search-filter-wrapper {
-  margin-left: -300px;
+  margin-left: -290px;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -151,7 +151,7 @@ export default {
 }
 
 .list-group {
-  width: 300px;
+  width: 290px;
   /* border-bottom: solid 1px rgba(0, 0, 0, 0.125); */
   padding: 0;
 }
@@ -190,7 +190,7 @@ export default {
 
 #wrapper.toggled .tab {
   box-shadow: 12px 0px 14px 0px rgba(0, 0, 0, 0.4);
-  left: 300px;
+  left: 290px;
 }
 
 #wrapper.toggled .tab i {
