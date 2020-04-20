@@ -83,6 +83,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fredlawl",
+      "name": "Frederick",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2502213?v=4",
+      "profile": "https://github.com/fredlawl",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
