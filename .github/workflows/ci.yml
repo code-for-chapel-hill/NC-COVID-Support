@@ -41,6 +41,11 @@ jobs:
         working-directory: covid-19-support
 
       # Runs the build "smoke test"
-      - name: smoke-test
+      - name: Smoke test
         run: npm run build
+        working-directory: covid-19-support
+
+      # Runs the unit tests
+      - name: Unit tests
+        run: npm run test:unit
         working-directory: covid-19-support

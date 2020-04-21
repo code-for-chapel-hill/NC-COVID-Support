@@ -38,7 +38,6 @@ export default {
       const label = `label.${labelId}`
       return {
         icon,
-        color: '',
         value: count,
         title: pluralize ? this.$tc(label, count) : this.$t(label)
       }

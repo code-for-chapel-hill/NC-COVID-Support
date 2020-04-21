@@ -1,5 +1,5 @@
 <template>
-  <div class="valuebox poppins" :class="{ selected: selected }">
+  <div class="valuebox poppins" :class="{ selected: selected }" @click="selected = !selected">
     <span class="number">{{ content.value }}</span>
     <span class="title">{{ content.title }}</span>
     <i class="fas" v-bind:class="content.icon"></i>
@@ -18,8 +18,7 @@ export default {
     content: {
       title: { type: String },
       value: { type: Number },
-      icon: { type: String },
-      color: { type: String }
+      icon: { type: String }
     }
   }
 }
