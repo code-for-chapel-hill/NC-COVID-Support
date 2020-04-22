@@ -1,5 +1,5 @@
 <template>
-  <div class="valuebox poppins" :class="{ selected: selected }" @click="selected = !selected">
+  <div class="valuebox poppins" :class="{ selected: content.selected }" @click="$emit('box-selected', { need: content.need })">
     <span class="number">{{ content.value }}</span>
     <span class="title">{{ content.title }}</span>
     <i class="fas" v-bind:class="content.icon" v-if="content.icon != ''"></i>
@@ -9,16 +9,13 @@
 <script>
 export default {
   name: 'ValueBox',
-  data() {
-    return {
-      selected: false
-    }
-  },
   props: {
     content: {
-      title: { type: String },
-      value: { type: Number },
-      icon: { type: String }
+      title: String,
+      value: Number,
+      icon: String,
+      need: String,
+      selected: Boolean
     }
   }
 }

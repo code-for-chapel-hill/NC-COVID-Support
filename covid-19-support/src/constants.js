@@ -25,3 +25,21 @@ export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyrigh
 
 export const dayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$${attr}`)
 export const seniorDayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$sp${attr}`)
+
+export const booleanFilters = [
+  'in-storepickup',
+  'curbside',
+  'specialhours',
+  'mealstudent',
+  'mealpublic',
+  'familymeal',
+  'orderonline',
+  'payonline',
+  'mustpreorder',
+  'discountmedical',
+  'delivery',
+  'freeproduce',
+  'freegroceries',
+  'farmpick-up',
+  'farmersmarket'
+]

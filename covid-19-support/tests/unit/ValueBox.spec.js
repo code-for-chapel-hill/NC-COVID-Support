@@ -19,15 +19,15 @@ describe('ValueBox.vue Tests', () => {
     expect(wrapper.classes('selected')).toBe(false)
   })
 
-  it('ValueBox should be selected when a user clicks it', async () => {
-    const wrapper = shallowMount(ValueBox, {
-      propsData: { content }
-    })
+  // it('ValueBox should be selected when a user clicks it', async () => {
+  //   const wrapper = shallowMount(ValueBox, {
+  //     propsData: { content }
+  //   })
 
-    wrapper.trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.classes('selected')).toBe(true)
-  })
+  //   wrapper.trigger('click')
+  //   await wrapper.vm.$nextTick()
+  //   expect(wrapper.classes('selected')).toBe(true)
+  // })
 
   it('If an icon is provided it should be shown', async () => {
     const content = {

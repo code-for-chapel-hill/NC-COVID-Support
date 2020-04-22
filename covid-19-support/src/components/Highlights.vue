@@ -1,16 +1,16 @@
 <template>
   <div class="row highlights" v-if="valueBoxes[0] != null">
     <div class="col-6 col-md-3 order-md-1">
-      <value-box :content="valueBoxes[0]" class="bg-blue" />
+      <value-box :content="valueBoxes[0]" class="bg-blue" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-2">
-      <value-box :content="valueBoxes[1]" class="bg-green" />
+      <value-box :content="valueBoxes[1]" class="bg-green" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-4">
-      <value-box :content="valueBoxes[2]" class="bg-green" />
+      <value-box :content="valueBoxes[2]" class="bg-green" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-3">
-      <value-box :content="valueBoxes[3]" class="bg-blue" />
+      <value-box :content="valueBoxes[3]" class="bg-blue" @box-selected="boxSelected" />
     </div>
   </div>
 </template>
@@ -31,15 +31,23 @@ export default {
   },
   props: {
     need: String,
-    filteredMarkers: Array
+    filteredMarkers: Array,
+    highlightFilters: Array
   },
   methods: {
+    boxSelected: function (content) {
+      this.$emit('box-selected', content)
+    },
     buildBoxValue(labelId, icon, count, pluralize = false) {
       const label = `label.${labelId}`
+      var selected = this.highlightFilters !== undefined ? this.highlightFilters.includes(labelId) : ''
+
       return {
         icon,
         value: count,
-        title: pluralize ? this.$tc(label, count) : this.$t(label)
+        title: pluralize ? this.$tc(label, count) : this.$t(label),
+        need: labelId,
+        selected: selected
       }
     }
   },
@@ -94,34 +102,34 @@ export default {
       return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
-      return this.buildBoxValue('curbsidepickup', 'fa-car', this.countCurbside, true)
+      return this.buildBoxValue('curbside', 'fa-car', this.countCurbside, true)
     },
     deliveryValueBox() {
       return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
     },
     onFarmPickupValueBox() {
-      return this.buildBoxValue('onfarmpickup', 'fa-tractor', this.countFarmPickUp, true)
+      return this.buildBoxValue('farmpick-up', 'fa-tractor', this.countFarmPickUp, true)
     },
     farmersMarketValueBox() {
       return this.buildBoxValue('farmersmarket', 'fa-store', this.countFarmersMarket, true)
     },
     seniorShoppingValueBox() {
-      return this.buildBoxValue('seniorshopping', 'fa-history', this.countSenior)
+      return this.buildBoxValue('specialhours', 'fa-history', this.countSenior)
     },
     medicalDiscountsValueBox() {
-      return this.buildBoxValue('discounts', 'fa-user-md', this.countDiscountMedical, true)
+      return this.buildBoxValue('discountmedical', 'fa-user-md', this.countDiscountMedical, true)
     },
     openToPublicValueBox() {
-      return this.buildBoxValue('opentopublic', 'fa-users', this.countPublicMeal, true)
+      return this.buildBoxValue('mealpublic', 'fa-users', this.countPublicMeal, true)
     },
     freeStudentMealsValueBox() {
-      return this.buildBoxValue('mealsforstudents', 'fa-school', this.countFreeStudentMeal, true)
+      return this.buildBoxValue('mealstudent', 'fa-school', this.countFreeStudentMeal, true)
     },
     freeProduceValueBox() {
       return this.buildBoxValue('freeproduce', 'fa-apple-alt', this.countProduce, true)
     },
     freeGroceryValueBox() {
-      return this.buildBoxValue('freegrocery', 'fa-shopping-basket', this.countGroceries, true)
+      return this.buildBoxValue('freegroceries', 'fa-shopping-basket', this.countGroceries, true)
     },
     mustPreOrderValueBox() {
       return this.buildBoxValue('mustpreorder', 'fa-phone', this.countMustPreOrder, true)
@@ -143,7 +151,7 @@ export default {
         case 'pet':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         default:
-          return [null, null, null, null]
+          return [null, null, null, null, null]
       }
     }
   }
