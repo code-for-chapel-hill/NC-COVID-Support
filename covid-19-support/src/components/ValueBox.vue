@@ -52,6 +52,7 @@ export default {
   margin-top: 8px;
   margin-right: 24px;
   font-size: 0.8rem;
+  z-index: 3;
 }
 @media (min-width: 768px) {
   .title {
@@ -84,6 +85,7 @@ export default {
     position: absolute;
     right: 13px;
     top: 13px;
+    z-index: 2;
   }
 
   &.bg-blue {
@@ -105,7 +107,7 @@ export default {
   &.selected {
     background: #52aa36;
     i {
-      opacity: 1;
+      opacity: 0.5;
     }
   }
 }
