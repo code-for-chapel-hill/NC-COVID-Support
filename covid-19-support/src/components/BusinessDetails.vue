@@ -25,17 +25,21 @@
           </p>
 
           <p>
-            <icon-list-item v-if="business.marker.gsx$discountmedical.$t == 1" icon="fas fa-user-md" :title="$tc('label.discounts', 1)" />
+            <icon-list-item
+              v-if="business.marker.gsx$discountmedical.$t == 1"
+              icon="fas fa-user-md"
+              :title="$tc('label.discountmedical', 1)"
+            />
             <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fas fa-user-friends" :title="$tc('category.family', 2)" />
-            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fas fa-school" :title="$tc('label.mealsforstudents', 1)" />
-            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.opentopublic', 1)" />
+            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fas fa-school" :title="$tc('label.mealstudent', 1)" />
+            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.mealpublic', 1)" />
             <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fas fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
             <icon-list-item
               v-if="business.marker.gsx$freegroceries.$t == 1"
               icon="fas fa-shopping-basket"
-              :title="$tc('label.freegrocery', 1)"
+              :title="$tc('label.freegroceries', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fas fa-car" :title="$tc('label.curbsidepickup', 1)" />
+            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fas fa-car" :title="$tc('label.curbside', 1)" />
             <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fas fa-car-side" :title="$t('label.drivethru')" />
             <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fas fa-mouse" :title="$t('label.orderonline')" />
             <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
