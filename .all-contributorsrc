@@ -102,6 +102,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "mitomon",
+      "name": "mitomon",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11986108?v=4",
+      "profile": "https://github.com/mitomon",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
