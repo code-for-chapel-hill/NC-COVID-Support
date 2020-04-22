@@ -20,22 +20,22 @@
           {{ item.marker.gsx$city.$t }}
         </span>
         <template v-if="item.marker.gsx$discountmedical.$t == 1"
-          ><span :title="$tc('label.discounts', 1)"><i class="fas fa-user-md" /></span
+          ><span :title="$tc('label.discountmedical', 1)"><i class="fas fa-user-md" /></span
         ></template>
         <template v-if="item.marker.gsx$familymeal.$t == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
         <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.mealsforstudents', 1)"><i class="fas fa-school" /></span
+          ><span :title="$tc('label.mealstudent', 1)"><i class="fas fa-school" /></span
         ></template>
         <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.opentopublic', 1)"><i class="fas fa-users" /></span
+          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
         ></template>
         <template v-if="item.marker.gsx$drivethru.$t == 1"
           ><span :title="$t('label.drivethru')"><i class="fas fa-car-side" /></span
         ></template>
         <template v-if="item.marker.gsx$curbside.$t == 1"
-          ><span :title="$tc('label.curbsidepickup', 1)"><i class="fas fa-car" /></span
+          ><span :title="$tc('label.curbside', 1)"><i class="fas fa-car" /></span
         ></template>
         <template v-if="item.marker.gsx$orderonline.$t == 1"
           ><span :title="$t('label.orderonline')"><i class="fas fa-mouse" /></span
