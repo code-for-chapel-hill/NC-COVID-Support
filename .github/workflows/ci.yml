@@ -35,6 +35,11 @@ jobs:
         run: npm install
         working-directory: covid-19-support
 
+      # Runs the unit tests
+      - name: Unit tests
+        run: npm run test:unit
+        working-directory: covid-19-support
+
       # Runs the linter
       - name: lint
         run: npm run lint
@@ -43,9 +48,4 @@ jobs:
       # Runs the build "smoke test"
       - name: Smoke test
         run: npm run build
-        working-directory: covid-19-support
-
-      # Runs the unit tests
-      - name: Unit tests
-        run: npm run test:unit
         working-directory: covid-19-support

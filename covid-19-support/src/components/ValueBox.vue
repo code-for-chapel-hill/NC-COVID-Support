@@ -80,13 +80,39 @@ export default {
   }
 }
 
-.valuebox i.fas {
-  font-size: 2em;
-  opacity: 0.1;
-  position: absolute;
-  right: 13px;
-  top: 13px;
+.valuebox {
+  i.fas {
+    font-size: 2em;
+    opacity: 0.1;
+    position: absolute;
+    right: 13px;
+    top: 13px;
+  }
+
+  &.bg-blue {
+    background-color: #2eb7cb;
+  }
+
+  &.bg-green {
+    background-color: #566ca9;
+  }
+
+  &:hover {
+    // background-color: #52aa36 !important;
+    i {
+      opacity: 0.3;
+    }
+    cursor: pointer;
+  }
+
+  &.selected {
+    background: #52aa36;
+    i {
+      opacity: 1;
+    }
+  }
 }
+
 @media (min-width: 768px) {
   .valuebox i.fas {
     font-size: 4.5em;
@@ -94,21 +120,4 @@ export default {
     top: 24px;
   }
 }
-.valuebox.bg-blue {
-  background-color: #2eb7cb !important;
-}
-.valuebox.bg-green {
-  background-color: #566ca9 !important;
-}
-/* .valuebox.bg-green:hover {
-  background-color: #52aa36 !important;
-  cursor: pointer;
-}
-.valuebox.bg-blue:hover {
-  background-color: #4189da !important;
-  cursor: pointer;
-}
-.valuebox.selected i {
-  opacity: 0.3;
-} */
 </style>
