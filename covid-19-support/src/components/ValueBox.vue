@@ -2,7 +2,7 @@
   <div class="valuebox poppins" :class="{ selected: selected }" @click="selected = !selected">
     <span class="number">{{ content.value }}</span>
     <span class="title">{{ content.title }}</span>
-    <i class="fas" v-bind:class="content.icon"></i>
+    <i class="fas" v-bind:class="content.icon" v-if="content.icon != ''"></i>
   </div>
 </template>
 
