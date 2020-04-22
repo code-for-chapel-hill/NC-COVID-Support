@@ -1,4 +1,4 @@
-// ValueBox.test.js
+// ValueBox.spec.js
 
 // Import the `shallowMount()` method from the test utils
 // and the component you want to test
@@ -27,5 +27,31 @@ describe('ValueBox.vue Tests', () => {
     wrapper.trigger('click')
     await wrapper.vm.$nextTick()
     expect(wrapper.classes('selected')).toBe(true)
+  })
+
+  it('If an icon is provided it should be shown', async () => {
+    const content = {
+      title: 'test title',
+      value: '12',
+      icon: 'fa-mobile'
+    }
+    const wrapper = shallowMount(ValueBox, {
+      propsData: { content }
+    })
+
+    expect(wrapper.contains('i')).toBe(true)
+  })
+
+  it('If no icon is provided it should not be shown', async () => {
+    const content = {
+      title: 'test title',
+      value: '12',
+      icon: ''
+    }
+    const wrapper = shallowMount(ValueBox, {
+      propsData: { content }
+    })
+
+    expect(wrapper.contains('i')).toBe(false)
   })
 })

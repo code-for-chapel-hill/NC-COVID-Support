@@ -125,9 +125,9 @@ export default {
       var markers
 
       if (this.need == 'family') {
-        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t !== '0')
+        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t == '1')
       } else {
-        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t !== '0')
+        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1')
       }
 
       const dayFilter = dayFilters[this.getDay(this.day)]
