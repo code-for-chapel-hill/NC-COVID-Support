@@ -124,7 +124,7 @@ export default {
 .resultAddress {
   font-size: 0.8rem;
   display: block;
-  width: 17rem;
+  max-width: 262px;
 }
 .closedOne {
   /* background: #f9f9f9 !important; */
