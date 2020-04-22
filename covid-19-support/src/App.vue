@@ -109,11 +109,12 @@ export default {
     },
     needSelected: function (val) {
       this.need = val
+      this.highlightFilters = []
       window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     daySelected: function (val) {
       this.day = val
-      // console.log("val:" + val + " getDay:" + this.getDay(val) + " - " + weekdays[this.getDay(val)].day)
+      this.highlightFilters = []
       window.gtag('event', 'When do you need it?', {
         event_category: 'Search - (' + this.language.name + ')',
         event_label: weekdays[this.getDay(val)].day

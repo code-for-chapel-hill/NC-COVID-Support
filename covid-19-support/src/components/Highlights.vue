@@ -19,10 +19,10 @@
 import ValueBox from './ValueBox.vue'
 
 export const countFeature = (filteredMarkers = [], feature) =>
-  (filteredMarkers || []).reduce((total, c) => (c.marker.gsx$accesstype.$t.indexOf(feature) > -1 ? total + 1 : total), 0)
+  (filteredMarkers || []).reduce((total, c) => (c.marker.gsx$accesstype.$t.indexOf(feature) && c.oc > -1 ? total + 1 : total), 0)
 
 export const countBoolean = (filteredMarkers, fieldName) =>
-  (filteredMarkers || []).reduce((total, c) => (c.marker['gsx$' + fieldName].$t == '1' ? total + 1 : total), 0)
+  (filteredMarkers || []).reduce((total, c) => (c.marker['gsx$' + fieldName].$t == '1' && c.oc ? total + 1 : total), 0)
 
 export default {
   name: 'Highlights',
