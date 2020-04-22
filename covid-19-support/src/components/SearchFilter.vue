@@ -139,6 +139,7 @@ export default {
   transition: margin 0.25s ease-out;
   z-index: 1035;
   max-height: 100vh;
+  max-width: 290px;
 }
 
 #wrapper.toggled #search-filter-wrapper {

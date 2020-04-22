@@ -161,12 +161,18 @@ export default {
 <style lang="scss">
 .highlights {
   margin: 4px !important;
+
   transition: height 0.25s ease-out;
   height: 116px;
 
   div.col-md-3 {
     padding: 0 !important;
   }
+}
+
+#wrapper.toggled .highlights {
+  transition: margin-left 0.25s ease-out;
+  margin-left: 294px !important;
 }
 
 @media (min-width: 768px) {
