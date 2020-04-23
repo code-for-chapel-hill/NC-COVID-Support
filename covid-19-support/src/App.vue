@@ -107,6 +107,9 @@ export default {
     boxSelected: function (content) {
       this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
     },
+    isAnyDaySelected(day) {
+      return day > 6
+    },
     needSelected: function (val) {
       this.need = val
       this.highlightFilters = []
@@ -162,8 +165,13 @@ export default {
         }
       })
 
-      const dayFilter = dayFilters[this.getDay(this.day)]
+      var today = new Date().getDay()
+      var selectedDay = today
+      if (!this.isAnyDaySelected(this.day)) {
+        selectedDay = this.day
+      }
 
+      const dayFilter = dayFilters[this.getDay(selectedDay)]
       var open = markers.filter((c) => c[dayFilter].$t !== '0')
       var closed = markers.filter((c) => c[dayFilter].$t == '0')
 

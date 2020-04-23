@@ -1,4 +1,5 @@
 export const weekdays = [
+  { day: 'any', pos: 7 },
   { day: 'monday', pos: 1 },
   { day: 'tuesday', pos: 2 },
   { day: 'wednesday', pos: 3 },
@@ -16,6 +17,16 @@ export const weekdaysJs = [
   { day: 'thursday' },
   { day: 'friday' },
   { day: 'saturday' }
+]
+
+export const weekdayHours = [
+  { day: 'monday' },
+  { day: 'tuesday' },
+  { day: 'wednesday' },
+  { day: 'thursday' },
+  { day: 'friday' },
+  { day: 'saturday' },
+  { day: 'sunday' }
 ]
 
 export const spreadsheetUrl =

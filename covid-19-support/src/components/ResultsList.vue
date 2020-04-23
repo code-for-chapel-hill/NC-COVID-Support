@@ -13,7 +13,7 @@
         <template v-if="!!item.marker.gsx$provideraddloc.$t"
           ><div class="addloc">{{ item.marker.gsx$provideraddloc.$t }}</div></template
         >
-        <div v-if="!item.oc" class="closed">Closed on {{ getDay }}</div>
+        <div v-if="!item.oc" class="closed">{{ getClosedMessage() }}</div>
         <span class="resultAddress">
           <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
           {{ item.marker.gsx$address.$t }},
@@ -56,21 +56,17 @@ export default {
   name: 'ResultsList',
   data() {
     return {
-      selected: false
+      selected: false,
+      today: new Date().getDay()
     }
   },
   components: {
     IconListItem
   },
-  computed: {
-    getDay: function () {
-      return this.$t(`dayofweek.${weekdaysJs[this.day].day}`)
-    }
-  },
   props: {
     filteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean },
-    day: Number
+    selectedDay: Number
   },
   watch: {
     location: function (locationVal) {
@@ -78,6 +74,15 @@ export default {
         var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
         this.$refs['results'].scrollTo(0, top)
       }
+    }
+  },
+  methods: {
+    getClosedMessage: function () {
+      if (this.selectedDay > 6) {
+        return this.$t(`label.closed-today`)
+      }
+
+      return `${this.$t('label.closed-on')} ${this.$t(`dayofweek.${weekdaysJs[this.selectedDay].day}`)}`
     }
   }
 }
