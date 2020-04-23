@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip, LControl } from 'vue2-leaflet'
+import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '../constants'
@@ -62,8 +62,6 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    LPopup,
-    LTooltip,
     LControl,
     'v-marker-cluster': Vue2LeafletMarkerCluster,
     IconListItem

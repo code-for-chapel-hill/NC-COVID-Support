@@ -172,7 +172,9 @@ export default {
 
 #wrapper.toggled .highlights {
   transition: margin-left 0.25s ease-out;
-  margin-left: 294px !important;
+  @media (min-width: 768px) {
+    margin-left: 294px !important;
+  }
 }
 
 @media (min-width: 768px) {
