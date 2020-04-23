@@ -97,7 +97,6 @@ export default {
     latLng,
     selectedIcon(selected, item) {
       const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
       const iconClasses = businessIcon(item.marker)
       if (selected) {
         markerColor = '#ff3d3d'
