@@ -48,12 +48,12 @@ export default {
   align-items: center;
   display: flex;
   height: 50px;
+  line-height: 1.2rem;
+  font-size: 1rem;
 }
 .title {
   position: absolute;
-  line-height: 1rem;
   margin-right: 24px;
-  font-size: 0.7rem;
   z-index: 3;
   left: 26px;
 }
@@ -69,8 +69,8 @@ export default {
 }
 @media (min-width: 768px) {
   .title {
-    line-height: 1rem;
-    font-size: 0.8rem;
+    line-height: 1.3rem;
+    font-size: 1.1rem;
     left: 18px !important;
     bottom: 10px;
   }
@@ -78,7 +78,7 @@ export default {
     font-size: 2em;
     display: inline-block;
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 18px !important;
   }
 }
