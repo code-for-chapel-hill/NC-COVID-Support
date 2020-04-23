@@ -30,7 +30,7 @@
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
             :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
-            :icon="selectedIcon(index === location.locValue, item.oc)"
+            :icon="selectedIcon(index === location.locValue, item)"
             v-for="(item, index) in filteredMarkers"
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
@@ -43,10 +43,11 @@
 
 <script>
 import { LMap, LTileLayer, LMarker, LPopup, LTooltip, LControl } from 'vue2-leaflet'
-import { latLng, Icon, icon } from 'leaflet'
+import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '../constants'
 import IconListItem from './IconListItem.vue'
+import { businessIcon } from '../utilities'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -94,28 +95,19 @@ export default {
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
     latLng,
-    selectedIcon(selected, isOpen) {
+    selectedIcon(selected, item) {
+      const isOpen = item.oc
+      let markerColor = isOpen ? '#566ca9' : '#999'
+      const iconClasses = businessIcon(item.marker)
       if (selected) {
-        return icon({
-          iconUrl: require('../images/Red.png'),
-          iconRetinaUrl: require('../images/Red2x.png'),
-          shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-          iconSize: [25, 40],
-          iconAnchor: [12.5, 40]
-        })
+        markerColor = '#ff3d3d'
       }
-      var iconColor
-      if (isOpen) {
-        iconColor = 'Blue'
-      } else {
-        iconColor = 'Grey'
-      }
-      return icon({
-        iconUrl: require('../images/' + iconColor + '.png'),
-        iconRetinaUrl: require('../images/' + iconColor + '2x.png'),
-        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-        iconSize: [25, 41],
-        iconAnchor: [12.5, 41]
+
+      return ExtraMarkers.icon({
+        markerColor,
+        icon: iconClasses,
+        prefix: 'fa',
+        svg: true
       })
     }
     // eslint-disable-next-line no-console
