@@ -20,7 +20,7 @@
         <highlights
           :need="need"
           :class="{ toggled: isFilterOpen }"
-          :filteredMarkers="filteredMarkers"
+          :filteredMarkers="highlightFilteredMarkers"
           :highlightFilters="highlightFilters"
           @box-selected="boxSelected"
         />
@@ -193,6 +193,17 @@ export default {
       })
 
       return retList
+    },
+    highlightFilteredMarkers() {
+      if (!this.isAnyDaySelected(this.day)) {
+        return this.filteredMarkers
+      }
+
+      return this.filteredMarkers.map((m) => {
+        let obj = Object.assign({}, m)
+        obj.oc = true
+        return obj
+      })
     }
   }
 }
