@@ -43,7 +43,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 
-import { spreadsheetUrl, weekdays, dayFilters, booleanFilters } from './constants'
+import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -88,7 +88,7 @@ export default {
     return {
       entries: null,
       need: 'none',
-      day: new Date().getDay(),
+      day: dayAny,
       isFilterOpen: true,
       language: { name: 'English', iso: 'en' },
       locationData: { locValue: null, isSetByMap: false },
@@ -108,7 +108,7 @@ export default {
       this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
     },
     isAnyDaySelected(day) {
-      return day > 6
+      return day >= dayAny
     },
     needSelected: function (val) {
       this.need = val
