@@ -1,5 +1,7 @@
+export const dayAny = 7
+
 export const weekdays = [
-  { day: 'any', pos: 7 },
+  { day: 'any', pos: dayAny },
   { day: 'monday', pos: 1 },
   { day: 'tuesday', pos: 2 },
   { day: 'wednesday', pos: 3 },
