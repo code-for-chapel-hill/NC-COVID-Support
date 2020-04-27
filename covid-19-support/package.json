@@ -59,6 +59,9 @@
         "files": [
           "**/tests/unit/**/*.spec.{j,t}s?(x)"
         ],
+        "excludedFiles": [
+          "src/ExtraMarkers/**/*.*"
+        ],
         "env": {
           "jest": true
         }

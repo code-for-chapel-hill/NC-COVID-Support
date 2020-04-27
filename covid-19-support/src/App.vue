@@ -85,8 +85,7 @@ export default {
     Highlights,
     SearchFilter,
     ResourceMap,
-    AboutUsModal,
-    latLng
+    AboutUsModal
   },
   data() {
     return {
