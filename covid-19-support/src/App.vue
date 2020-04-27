@@ -8,6 +8,7 @@
         :need="need"
         :day="day"
         :filteredMarkers="filteredMarkers"
+        :highlightFilteredMarkers="highlightFilteredMarkers"
         :location="locationData"
         :show-list="showList"
         @location-selected="passLocation"
@@ -30,6 +31,7 @@
           :class="{ noselection: need == 'none' }"
           :location="locationData"
           @location-selected="passLocation"
+          @bounds="boundsUpdated"
         />
       </div>
     </div>
@@ -42,6 +44,7 @@ import SearchFilter from './components/SearchFilter.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
+import { latLng } from 'leaflet'
 
 import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
@@ -82,7 +85,8 @@ export default {
     Highlights,
     SearchFilter,
     ResourceMap,
-    AboutUsModal
+    AboutUsModal,
+    latLng
   },
   data() {
     return {
@@ -93,10 +97,14 @@ export default {
       language: { name: 'English', iso: 'en' },
       locationData: { locValue: null, isSetByMap: false },
       showList: false,
-      highlightFilters: []
+      highlightFilters: [],
+      bounds: null
     }
   },
   methods: {
+    boundsUpdated: function (bounds) {
+      this.bounds = bounds
+    },
     getDay: function (day) {
       if (day == 0) {
         return 6
@@ -195,11 +203,16 @@ export default {
       return retList
     },
     highlightFilteredMarkers() {
+      var contained = [] //makers in map boundingbox
+      this.filteredMarkers.forEach((m) => {
+        if (this.bounds.contains(latLng(m.marker.gsx$lat.$t, m.marker.gsx$lon.$t))) contained.push(m)
+      })
+
       if (!this.isAnyDaySelected(this.day)) {
-        return this.filteredMarkers
+        return contained
       }
 
-      return this.filteredMarkers.map((m) => {
+      return contained.map((m) => {
         let obj = Object.assign({}, m)
         obj.oc = true
         return obj

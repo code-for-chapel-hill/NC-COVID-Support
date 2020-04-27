@@ -10,6 +10,7 @@
         style="height: 100%; width: 100%;"
         @update:center="(val) => (center = val)"
         @update:zoom="(val) => (zoom = val)"
+        @update:bounds="boundsUpdated"
       >
         <l-control position="topright">
           <div class="mapkey" :class="{ 'show-key': showKey }">
@@ -86,8 +87,14 @@ export default {
   },
   mounted() {
     this.editZoomControl()
+    this.$nextTick(() => {
+      this.$emit('bounds', this.$refs.covidMap.mapObject.getBounds())
+    })
   },
   methods: {
+    boundsUpdated(bounds) {
+      this.$emit('bounds', bounds)
+    },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
       zoomControl.className = 'leaflet-bottom leaflet-right'
@@ -100,13 +107,17 @@ export default {
       if (selected) {
         markerColor = '#ff3d3d'
       }
-
-      return ExtraMarkers.icon({
+      var markerIcon = ExtraMarkers.icon({
         markerColor,
         icon: iconClasses,
         prefix: 'fa',
         svg: true
+        // ,
+        // name: item.marker.gsx$providername.$t,
+        // nameClasses: 'markerName'
       })
+      console.log(markerIcon)
+      return markerIcon
     }
     // eslint-disable-next-line no-console
     // click: (e) => console.log('clusterclick', e),

@@ -4,8 +4,8 @@ import i18n from './i18n'
 
 import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 
-import 'leaflet-extra-markers/dist/css/leaflet.extra-markers.min.css'
-import 'leaflet-extra-markers/dist/js/leaflet.extra-markers.js'
+import './ExtraMarkers/css/leaflet.extra-markers.min.css'
+import './ExtraMarkers/js/leaflet.extra-markers.js'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
