@@ -124,6 +124,7 @@ export default {
 .business-details {
   max-height: calc(100vh - 237px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .backtolist {
   font-size: 0.8rem;

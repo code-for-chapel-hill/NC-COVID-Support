@@ -15,10 +15,12 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        endOfLine: 'auto'
+        endOfLine: 'auto',
+        excludeFiles: ['**/src/ExtraMarkers/**/*.*']
       }
     ]
   },
+  ignorePatterns: ['**/src/ExtraMarkers/'],
   overrides: [
     {
       files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],

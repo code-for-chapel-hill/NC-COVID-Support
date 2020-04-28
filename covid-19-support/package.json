@@ -18,7 +18,6 @@
     "bootstrap": "4.4.1",
     "bootstrap-vue": "2.8.0",
     "leaflet": "1.6.0",
-    "leaflet-extra-markers": "^1.2.1",
     "leaflet.markercluster": "^1.4.1",
     "vue": "2.6.11",
     "vue-cli-plugin-i18n": "^0.6.1",
@@ -59,6 +58,9 @@
       {
         "files": [
           "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "excludedFiles": [
+          "src/ExtraMarkers/**/*.*"
         ],
         "env": {
           "jest": true

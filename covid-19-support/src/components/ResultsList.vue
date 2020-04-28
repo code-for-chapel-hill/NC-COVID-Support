@@ -49,7 +49,6 @@
 </template>
 
 <script>
-import IconListItem from './IconListItem.vue'
 import { weekdaysJs } from '../constants'
 
 export default {
@@ -60,9 +59,7 @@ export default {
       today: new Date().getDay()
     }
   },
-  components: {
-    IconListItem
-  },
+  components: {},
   props: {
     filteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean },

@@ -37,7 +37,7 @@
     ></BusinessDetails>
 
     <results-list
-      :filteredMarkers="filteredMarkers"
+      :filteredMarkers="highlightFilteredMarkers"
       :location="location"
       @location-selected="passLocation"
       v-if="showListing"
@@ -70,6 +70,7 @@ export default {
     need: String,
     day: Number,
     filteredMarkers: Array,
+    highlightFilteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean },
     showList: Boolean
   },
