@@ -116,7 +116,6 @@ export default {
         // name: item.marker.gsx$providername.$t,
         // nameClasses: 'markerName'
       })
-      console.log(markerIcon)
       return markerIcon
     }
     // eslint-disable-next-line no-console

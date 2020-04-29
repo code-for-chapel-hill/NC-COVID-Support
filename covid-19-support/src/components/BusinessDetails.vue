@@ -53,6 +53,13 @@
             />
 
             <icon-list-item
+              v-if="!!business.marker.gsx$contactspanish.$t"
+              icon="fas fa-phone-alt"
+              :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
+              :link="'tel:' + business.marker.gsx$contactspanish.$t"
+            />
+
+            <icon-list-item
               v-if="!!business.marker.gsx$weblink.$t"
               icon="fas fa-globe"
               :title="getDomain(business.marker.gsx$weblink.$t)"
