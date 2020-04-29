@@ -102,10 +102,16 @@ export default {
 
   &.bg-blue {
     background-color: #2eb7cb;
+      @media (prefers-color-scheme: dark) {
+        background-color: #1b6c79;
+      }
   }
 
   &.bg-green {
     background-color: #566ca9;
+      @media (prefers-color-scheme: dark) {
+        background-color: #344268;
+      }
   }
 
   &:hover {

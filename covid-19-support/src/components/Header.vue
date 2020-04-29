@@ -69,6 +69,9 @@ export default {
 
   &.bg-info {
     background: #374a91 !important;
+    @media (prefers-color-scheme: dark) {
+      background: #112262 !important;
+    }
   }
 }
 

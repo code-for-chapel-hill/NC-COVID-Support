@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-light border-right" id="search-filter-wrapper">
-    <div class="tab bg-light border-right border-top border-bottom" @click="$emit('toggle')">
+  <div class="bg-dialogs border-right" id="search-filter-wrapper">
+    <div class="tab bg-dialogs border-right border-top border-bottom" @click="$emit('toggle')">
       <i class="fas fa-caret-down" />
     </div>
 
     <div class="list-group list-group-flush need-day-group">
-      <div class="list-group-item list-group-item-action bg-light">
+      <div class="list-group-item list-group-item-action bg-dialogs">
         <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
-      <div class="list-group-item list-group-item-action bg-light">
+      <div class="list-group-item list-group-item-action bg-dialogs">
         <h6>{{ $t('sidebar.when-do-you-need-it') }}</h6>
         <b-form-select :value="day" :options="dayOptions" @change="(opt) => $emit('day-selected', opt)" />
       </div>
@@ -133,7 +133,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .custom-select {
   font-size: 0.8rem;
 }
@@ -151,6 +151,18 @@ export default {
 
 #wrapper.toggled #search-filter-wrapper {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.tab,
+#wrapper.toggled .tab {
+  z-index: 0;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.4);
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
+  }
 }
 
 .sidebar-heading {
@@ -193,11 +205,9 @@ export default {
   background: #fff;
   transition: left 0.25s ease-out;
   cursor: pointer;
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.4);
 }
 
 #wrapper.toggled .tab {
-  box-shadow: 12px 0px 14px 0px rgba(0, 0, 0, 0.4);
   left: 290px;
 }
 

@@ -1,13 +1,13 @@
 <template>
   <span>
     <div class="list-group list-group-flush">
-      <div class="list-group-item list-group-item-action bg-light backtolist" @click="$emit('close-details')">
+      <div class="list-group-item list-group-item-action bg-dialogs backtolist" @click="$emit('close-details')">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
       </div>
     </div>
     <div class="list-group list-group-flush business-details">
-      <div class="list-group-item list-group-item-action bg-light" :class="infotype">
+      <div class="list-group-item list-group-item-action bg-dialogs" :class="infotype">
         <!-- <i class="fas" :class="icon" /> -->
         <div>
           <div class="title">
