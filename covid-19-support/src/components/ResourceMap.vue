@@ -8,7 +8,7 @@
         :center="center"
         :options="mapOptions"
         style="height: 100%; width: 100%;"
-        @update:center="(val) => (center = val)"
+        @update:center="centerUpdated"
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"
       >
@@ -25,7 +25,7 @@
             </div>
           </div>
         </l-control>
-        <l-tile-layer :url="url" :attribution="attribution" />
+        <l-tile-layer :url="mapUrl" :attribution="attribution" />
 
         <v-marker-cluster ref="marks" :options="clusterOptions">
           <!-- @clusterclick="click()" @ready="ready" -->
@@ -69,13 +69,13 @@ export default {
   },
   props: {
     filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean }
+    location: { locValue: Number, isSetByMap: Boolean },
+    mapUrl: String
   },
   data() {
     return {
       center: latLng(35.91371, -79.057919),
       zoom: 10,
-      url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
@@ -92,6 +92,10 @@ export default {
     })
   },
   methods: {
+    centerUpdated(center) {
+      this.center = center
+      this.$emit('center', center)
+    },
     boundsUpdated(bounds) {
       this.$emit('bounds', bounds)
     },

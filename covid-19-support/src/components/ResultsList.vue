@@ -86,6 +86,10 @@ export default {
 </script>
 
 <style lang="scss">
+.resultWrapper {
+  scrollbar-color: red yellow;
+}
+
 .addloc {
   margin-bottom: 8px;
 }
@@ -98,13 +102,20 @@ export default {
   display: block;
   min-height: 100px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
-  background: #fff;
   font-size: 0.8rem;
   max-width: 282px;
+  background: #fff;
+
+  @media (prefers-color-scheme: dark) {
+    background: #1d1d1d;
+  }
 
   &:hover {
-    background: #f8f9fa !important;
+    background: #f8f9fa;
     cursor: pointer;
+    @media (prefers-color-scheme: dark) {
+      background: #111;
+    }
   }
 
   a {

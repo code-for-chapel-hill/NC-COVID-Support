@@ -32,6 +32,8 @@
           :location="locationData"
           @location-selected="passLocation"
           @bounds="boundsUpdated"
+          @center="centerUpdated"
+          :mapUrl="mapUrl"
         />
       </div>
     </div>
@@ -45,6 +47,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 import { latLng } from 'leaflet'
+import { haversineDistance, sortByDistance } from './utilities'
 
 import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
@@ -88,6 +91,7 @@ export default {
     AboutUsModal
   },
   data() {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     return {
       entries: null,
       need: 'none',
@@ -97,10 +101,28 @@ export default {
       locationData: { locValue: null, isSetByMap: false },
       showList: false,
       highlightFilters: [],
-      bounds: null
+      bounds: null,
+      centroid: [35.91371, -79.057919],
+      darkModeMediaQuery: darkModeMediaQuery,
+      darkMode: darkModeMediaQuery.matches,
+      mapUrl: ''
     }
   },
+  mounted() {
+    this.mapUrl = this.darkMode
+      ? 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png'
+      : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+    this.darkModeMediaQuery.addListener((e) => {
+      this.darkMode = e.matches
+      this.mapUrl = this.darkMode
+        ? 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png'
+        : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+    })
+  },
   methods: {
+    centerUpdated(center) {
+      this.centroid = [center.lat, center.lng]
+    },
     boundsUpdated: function (bounds) {
       this.bounds = bounds
     },
@@ -183,21 +205,17 @@ export default {
       var closed = markers.filter((c) => c[dayFilter].$t == '0')
 
       var retList = extend(
-        open.map((marker) => ({ marker, oc: true })),
-        closed.map((marker) => ({ marker, oc: false }))
-      ).sort(function (a, b) {
-        var nameA = a.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
-        var nameB = b.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
-        if (nameA < nameB) {
-          return -1
-        }
-        if (nameA > nameB) {
-          return 1
-        }
-
-        // names must be equal
-        return 0
-      })
+        open.map((marker) => ({
+          marker,
+          oc: true,
+          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+        })),
+        closed.map((marker) => ({
+          marker,
+          oc: false,
+          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+        }))
+      ).sort(sortByDistance)
 
       return retList
     },

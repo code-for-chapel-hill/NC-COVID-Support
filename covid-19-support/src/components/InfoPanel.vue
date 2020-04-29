@@ -1,6 +1,6 @@
 <template>
   <div class="list-group list-group-flush">
-    <div class="list-group-item list-group-item-action bg-light" :class="infotype">
+    <div class="list-group-item list-group-item-action bg-dialogs" :class="infotype">
       <i class="fas" :class="icon" />
       <div>
         <slot></slot>
@@ -22,11 +22,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .note,
 .handwash {
   font-size: 0.8rem;
-  color: #666;
 }
 
 .note i,
@@ -38,7 +37,10 @@ export default {
 }
 
 .handwash i {
-  color: #ff2c1c;
+  color: #ff2b1c;
+  @media (prefers-color-scheme: dark) {
+    color: #e42619 !important;
+  }
 }
 
 .note div,
