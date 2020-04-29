@@ -2,7 +2,7 @@ html,
 body {
   overflow: hidden;
   height: 100%;
-  @media (prefers-color-scheme: dark) { 
+  @media (prefers-color-scheme: dark) {
     background-color: #000;
   }
 }
@@ -26,16 +26,19 @@ h6,
   color: #666;
   background-color: #f8f9fa !important;
   @media (prefers-color-scheme: dark) {
+    color: #ccc !important;
+    background-color: #242323 !important;
+    &:hover {
       color: #ccc !important;
-      background-color: #242323 !important;
-      &:hover {
-        color: #ccc !important;
-      }
+    }
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .border-left, .border-right, .border-top, .border-bottom {
+  .border-left,
+  .border-right,
+  .border-top,
+  .border-bottom {
     border-color: #3d3d3d !important;
   }
 
@@ -43,7 +46,7 @@ h6,
     background-color: #444;
     border: 1px solid #676a6d;
     color: #ccc;
-    }
+  }
 }
 
 button.btn-secondary {
