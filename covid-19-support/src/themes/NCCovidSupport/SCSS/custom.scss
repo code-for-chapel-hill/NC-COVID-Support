@@ -17,8 +17,8 @@
 
 $font-family-base: 'Poppins', $font-family-sans-serif;
 
-$blue:  #374a91;
-$orange:  #fd7e14;
+$blue: #374a91;
+$orange: #fd7e14;
 $red: #ff2b1c;
 $teal: #2eb7cb;
 $yellow: #ffb71c;
@@ -27,12 +27,12 @@ $warning: $yellow;
 $danger: $red;
 // 46c4d7
 $theme-colors: (
-  "primary": $blue,
-  "secondary": $gray-100,
-  "buttons": $orange,
-  "warning": $warning,
-  "danger": $danger,
-  "secondaryDark": $gray-800
+  'primary': $blue,
+  'secondary': $gray-100,
+  'buttons': $orange,
+  'warning': $warning,
+  'danger': $danger,
+  'secondaryDark': $gray-800
 );
 
 $navbar-padding-x: 1rem;
@@ -58,10 +58,10 @@ $bv-enable-table-stacked: false;
   }
 
   .bg-primary {
-    background-color: theme-color-level("primary", 5) !important;
+    background-color: theme-color-level('primary', 5) !important;
   }
   .bg-secondary {
-    background-color: theme-color-level("secondary", 8) !important;
+    background-color: theme-color-level('secondary', 8) !important;
   }
 
   .btn-buttons {
@@ -73,4 +73,3 @@ $bv-enable-table-stacked: false;
     color: $gray-300;
   }
 }
-
