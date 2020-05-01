@@ -42,7 +42,8 @@
     "petsupplies": "Pet supplies",
     "pharmacy": "Pharmacy|Pharmacies",
     "restaurant": "Restaurant|Restaurants",
-    "school": "School meal|School meals"
+    "school": "School meal|School meals",
+    "food-bev": "Speciality food & beverage"
   },
   "dayofweek": {
     "any": "Any",
