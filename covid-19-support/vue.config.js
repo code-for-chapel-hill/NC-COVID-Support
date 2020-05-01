@@ -24,8 +24,9 @@ module.exports = {
        @import "~bootstrap/scss/variables";
        @import "~bootstrap/scss/mixins";
        @import './src/scss/Mixins.scss';
-       @import "./src/themes/${process.env.VUE_APP_THEME !== undefined ? process.env.VUE_APP_THEME : "NCCovidSupport"}/SCSS/custom.scss";
-      `}
+       @import "./src/themes/${process.env.VUE_APP_THEME !== undefined ? process.env.VUE_APP_THEME : 'NCCovidSupport'}/SCSS/custom.scss";
+      `
+      }
     }
   }
 }
