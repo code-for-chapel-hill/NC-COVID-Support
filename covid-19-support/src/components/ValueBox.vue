@@ -1,5 +1,5 @@
 <template>
-  <div class="valuebox poppins" :class="{ selected: content.selected }" @click="$emit('box-selected', { need: content.need })">
+  <div class="valuebox themeFont" :class="{ selected: content.selected }" @click="$emit('box-selected', { need: content.need })">
     <div class="number">{{ content.value }}</div>
     <div class="title" :class="{ ten: content.value > 9, hundred: content.value > 99, thousand: content.value > 999 }">
       {{ content.title }}

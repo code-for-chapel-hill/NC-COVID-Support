@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info" id="topnav">
+  <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <b-navbar-brand href="#">
       <i18n path="title" tag="span" class="pagetitle">
         <span class="ncblue">NC</span>
@@ -11,9 +11,9 @@
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item right @click="$bvModal.show('about-us')">
+        <b-nav-item right>
           <b-nav-form>
-            <b-button size="sm" class="my-2 my-sm-0" type="button" @click="$bvModal.show('about-us')"
+            <b-button size="sm" class="my-2 my-sm-0" variant="buttons" type="button" @click="$bvModal.show('about-us')"
               ><i class="fas fa-plus-square" aria-hidden="true" /> {{ $t('about.devhelp.addbusiness') }}</b-button
             >
           </b-nav-form>
@@ -66,13 +66,6 @@ export default {
   position: absolute;
   width: 100%;
   z-index: 1038;
-
-  &.bg-info {
-    background: #374a91 !important;
-    @media (prefers-color-scheme: dark) {
-      background: #112262 !important;
-    }
-  }
 }
 
 .navbar-brand {
@@ -93,11 +86,7 @@ export default {
   }
 }
 
-.navbar {
-  padding: 0 1rem !important;
-}
-
 .ncblue {
-  color: #46c4d7;
+  color: $teal;
 }
 </style>

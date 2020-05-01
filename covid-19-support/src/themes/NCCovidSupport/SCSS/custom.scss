@@ -1,0 +1,75 @@
+// File: custom.scss
+// This file is where you should override any of the site's SCSS for your specific brand site.
+// Please make sure that if you add new functionality to the core project that no core SCSS is
+// added to your custom.scss file, or this will break the functionality for others.
+
+// More information about creating themes can be found here:
+// https://bootstrap-vue.org/docs/reference/theming
+
+// To find out more about how you can customize bootstrap features take a look at:
+// https://getbootstrap.com/docs/4.4/getting-started/theming/
+
+// To see a list of variables you can customize for Bootstrap
+// covid-19-support\node_modules\bootstrap\scss\_variables.scss
+
+// To see a list of variables you can customize for Bootstrap Vue
+// covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
+
+$font-family-base: 'Poppins', $font-family-sans-serif;
+
+$blue: #374a91;
+$orange: #fd7e14;
+$red: #ff2b1c;
+$teal: #2eb7cb;
+$yellow: #ffb71c;
+
+$warning: $yellow;
+$danger: $red;
+// 46c4d7
+$theme-colors: (
+  'primary': $blue,
+  'secondary': $gray-100,
+  'buttons': $orange,
+  'warning': $warning,
+  'danger': $danger,
+  'secondaryDark': $gray-800
+);
+
+$navbar-padding-x: 1rem;
+$navbar-padding-y: 0;
+
+// Define your Bootstrap variable overrides here
+//  $enable-shadows: true;
+//  $enable-gradients: true;
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 456px,
+//   md: 789px,
+//   lg: 999px,
+//   xl: 1234px
+// );
+$bv-enable-table-stacked: false;
+
+@include list-group-item-variant('sideNav', theme-color('secondary'), theme-color('secondaryDark'));
+@media (prefers-color-scheme: dark) {
+  @include list-group-item-variant('sideNav', theme-color('secondaryDark'), theme-color('secondary'));
+  .bg-secondary {
+    background-color: theme-color-level('secondary', 8) !important;
+  }
+
+  .bg-primary {
+    background-color: theme-color-level('primary', 5) !important;
+  }
+  .bg-secondary {
+    background-color: theme-color-level('secondary', 8) !important;
+  }
+
+  .btn-buttons {
+    @include button-variant($gray-500, $gray-500);
+  }
+
+  .modal-content {
+    background: $gray-900;
+    color: $gray-300;
+  }
+}
