@@ -1,12 +1,12 @@
 <template>
-  <div class="list-group list-group-flush">
-    <div class="list-group-item list-group-item-action bg-dialogs" :class="infotype">
+  <b-list-group class="list-group list-group-flush">
+    <b-list-group-item variant="sideNav" :class="infotype">
       <i class="fas" :class="icon" />
       <div>
         <slot></slot>
       </div>
-    </div>
-  </div>
+    </b-list-group-item>
+  </b-list-group>
 </template>
 
 <script>
@@ -31,15 +31,18 @@ export default {
 .note i,
 .handwash i {
   font-size: 3rem;
-  color: #ffb71c;
+  color: theme-color('warning');
+  @media (prefers-color-scheme: dark) {
+    color: theme-color-level(warning, 5);
+  }
   margin: 7px 10px 0 0;
   float: left;
 }
 
 .handwash i {
-  color: #ff2b1c;
+  color: theme-color('danger');
   @media (prefers-color-scheme: dark) {
-    color: #e42619 !important;
+    color: theme-color-level('danger', 5);
   }
 }
 

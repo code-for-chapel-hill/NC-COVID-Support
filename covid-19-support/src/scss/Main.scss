@@ -17,22 +17,21 @@ h4,
 h5,
 h6,
 .navbar-brand,
-.poppins {
+.themeFont {
   font-weight: 600 !important;
-  font-family: 'Poppins', sans-serif;
 }
 
-.bg-dialogs {
-  color: #666;
-  background-color: #f8f9fa !important;
-  @media (prefers-color-scheme: dark) {
-    color: #ccc !important;
-    background-color: #242323 !important;
-    &:hover {
-      color: #ccc !important;
-    }
-  }
-}
+// .bg-dialogs {
+//   color: #666;
+//   background-color: theme-color('secondary');
+//   @media (prefers-color-scheme: dark) {
+//     // color: #ccc !important;
+//     background-color: theme-color-('secondary');
+//     &:hover {
+//       // color: #ccc !important;
+//     }
+//   }
+// }
 
 @media (prefers-color-scheme: dark) {
   .border-left,
@@ -49,28 +48,28 @@ h6,
   }
 }
 
-button.btn-secondary {
-  &,
-  &:focus {
-    background-color: rgba(238, 136, 66, 1);
-    border-color: rgba(238, 136, 66, 1);
-  }
-  &:hover {
-    background-color: rgba(238, 136, 66, 0.8);
-    border-color: rgba(238, 136, 66, 0.8);
-  }
-}
+// button.btn-secondary {
+//   &,
+//   &:focus {
+//     background-color: rgba(238, 136, 66, 1);
+//     border-color: rgba(238, 136, 66, 1);
+//   }
+//   &:hover {
+//     background-color: rgba(238, 136, 66, 0.8);
+//     border-color: rgba(238, 136, 66, 0.8);
+//   }
+// }
 
-.navbar-dark .navbar-nav .nav-item.addbus .nav-link {
-  &,
-  &:focus {
-    color: rgba(237, 201, 167, 1) !important;
-  }
+// .navbar-dark .navbar-nav .nav-item.addbus .nav-link {
+//   &,
+//   &:focus {
+//     color: rgba(237, 201, 167, 1) !important;
+//   }
 
-  &:hover {
-    color: rgba(238, 136, 66, 1) !important;
-  }
-}
+//   &:hover {
+//     color: rgba(238, 136, 66, 1) !important;
+//   }
+// }
 
 #search-filter-wrapper,
 #page-content-wrapper {

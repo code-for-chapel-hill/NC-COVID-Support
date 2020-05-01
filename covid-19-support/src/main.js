@@ -1,20 +1,35 @@
+// *** NOTES ***
+// The following files are included globally in the vue.config.js file so that
+// we are able to use the SASS variables in the main CSS file and the component files.
+// ./node_modules/bootstrap/scss/_functions.scss - The Bootstrap Functions
+// ~bootstrap/scss/variables - The default Bootstrap Variables
+// ~bootstrap/scss/mixins - The Bootstrap Minins
+// ./src/themes/${process.env.VUE_APP_THEME}/SCSS/custom.scss - Our "theme" SCSS
+
 import Vue from 'vue'
-import App from './App.vue'
+import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 import i18n from './i18n'
 
-import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
+import App from './App.vue'
+
+// The following line imports our custom SCSS file, inside that file
+// the main Bootstrap SCSS and BootstrapVue SCSS are imported.
+// import('./themes/' + process.env.VUE_APP_THEME + '/SCSS/custom.scss')
 
 import './ExtraMarkers/css/leaflet.extra-markers.min.css'
 import './ExtraMarkers/js/leaflet.extra-markers.min.js'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
-// Customize styling for components:
+// REQUIRED - Importing Bootstrap and BootstrapVue
+import './scss/bootstrap.scss'
+
+// REQUIRED - Importing our Main CSS file
 import './scss/Main.scss'
+
+// General style overrides and custom classes
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
