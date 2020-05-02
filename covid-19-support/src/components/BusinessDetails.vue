@@ -134,7 +134,11 @@ export default {
         '+' +
         encodeURI(this.business.marker.gsx$address.$t) +
         '+' +
-        encodeURI(this.business.marker.gsx$city.$t)
+        encodeURI(this.business.marker.gsx$city.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$state.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$zip.$t)
 
       return url.replace(/%20/g, '+').toLowerCase()
     }
