@@ -33,6 +33,8 @@ jobs:
     
     # Run the production build
     - run: npm run build
+      env:
+        VUE_APP_THEME: ${{ secrets.VUE_APP_THEME }}
       working-directory: covid-19-support
 
     - name: Deploy 🚀

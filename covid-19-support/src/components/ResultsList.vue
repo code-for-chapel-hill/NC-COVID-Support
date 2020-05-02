@@ -87,7 +87,7 @@ export default {
 
 <style lang="scss">
 .resultWrapper {
-  scrollbar-color: red yellow;
+  scrollbar-color: $gray-900 $gray-700;
 }
 
 .addloc {
@@ -107,14 +107,15 @@ export default {
   background: #fff;
 
   @media (prefers-color-scheme: dark) {
-    background: #1d1d1d;
+    color: $gray-100;
+    background: $gray-800;
   }
 
   &:hover {
     background: #f8f9fa;
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
-      background: #111;
+      background: $gray-900;
     }
   }
 

@@ -1,13 +1,13 @@
 <template>
   <span>
-    <div class="list-group list-group-flush">
-      <div class="list-group-item list-group-item-action bg-dialogs backtolist" @click="$emit('close-details')">
+    <b-list-group class="list-group-flush">
+      <b-list-group-item variant="sideNav" button class="backtolist" @click="$emit('close-details')">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
-      </div>
-    </div>
-    <div class="list-group list-group-flush business-details">
-      <div class="list-group-item list-group-item-action bg-dialogs" :class="infotype">
+      </b-list-group-item>
+    </b-list-group>
+    <b-list-group class="list-group-flush business-details">
+      <b-list-group-item variant="sideNav" :class="infotype">
         <!-- <i class="fas" :class="icon" /> -->
         <div>
           <div class="title">
@@ -94,8 +94,8 @@
           </template>
           <p class="updated">Details last updated: {{ business.marker.gsx$lastupdate.$t }}</p>
         </div>
-      </div>
-    </div>
+      </b-list-group-item>
+    </b-list-group>
   </span>
 </template>
 
@@ -140,10 +140,10 @@ export default {
     margin-right: 0.375rem;
   }
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.05) !important;
-    cursor: pointer;
-  }
+  // &:hover {
+  //   background: rgba(0, 0, 0, 0.05) !important;
+  //   cursor: pointer;
+  // }
 }
 
 .title {
@@ -165,7 +165,7 @@ export default {
 
 .green {
   font-size: 0.8rem;
-  color: #666;
+  // color: #666;
 
   & > div {
     width: 243px;
