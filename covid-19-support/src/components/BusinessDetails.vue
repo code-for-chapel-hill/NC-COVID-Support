@@ -21,7 +21,10 @@
           <p>
             <b>{{ $t('label.address') }}:</b><br />
             {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
-            {{ business.marker.gsx$zip.$t }}
+            {{ business.marker.gsx$zip.$t }}<br />
+            <a :href="'https://www.google.com/maps/search/?api=1&query=' + businessGoogleMapsUrl">
+              View on Google Maps
+            </a>
           </p>
 
           <p>
@@ -123,6 +126,18 @@ export default {
       return urlParts[0]
     },
     businessIcon: businessIcon
+  },
+  computed: {
+    businessGoogleMapsUrl() {
+      var url =
+        encodeURI(this.business.marker.gsx$providername.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$address.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$city.$t)
+
+      return url.replace(/%20/g, '+').toLowerCase()
+    }
   }
 }
 </script>
@@ -174,5 +189,9 @@ export default {
 
 .updated {
   color: #aaa;
+}
+
+a {
+  color: #ee8842 !important;
 }
 </style>
