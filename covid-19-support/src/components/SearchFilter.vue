@@ -90,6 +90,7 @@ export default {
         { value: 'farm', text: this.$tc('category.farm', 2) },
         { value: 'grocery', text: this.$tc('category.grocery', 2) },
         { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
+        { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
         { value: 'pet', text: this.$tc('category.petsupplies', 2) }
       ]
     },
