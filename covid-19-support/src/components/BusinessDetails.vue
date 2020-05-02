@@ -130,7 +130,9 @@ export default {
   computed: {
     businessGoogleMapsUrl() {
       var url =
-        encodeURI(this.business.marker.gsx$providername.$t) +
+        (this.business.marker.gsx$provideraddloc.$t
+          ? encodeURI(this.business.marker.gsx$provideraddloc.$t)
+          : encodeURI(this.business.marker.gsx$providername.$t)) +
         '+' +
         encodeURI(this.business.marker.gsx$address.$t) +
         '+' +
