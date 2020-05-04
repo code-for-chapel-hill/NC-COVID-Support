@@ -12,7 +12,7 @@ module.exports = {
     resolve: {
       alias: {
         // create alias for white label SCSS variable files
-        vueAppTheme: '../themes/' + process.env.VUE_APP_THEME
+        vueAppTheme: './src/themes/' + process.env.VUE_APP_THEME + '/'
       }
     }
   },
