@@ -12,10 +12,6 @@ import i18n from './i18n'
 
 import App from './App.vue'
 
-// The following line imports our custom SCSS file, inside that file
-// the main Bootstrap SCSS and BootstrapVue SCSS are imported.
-// import('./themes/' + process.env.VUE_APP_THEME + '/SCSS/custom.scss')
-
 import './ExtraMarkers/css/leaflet.extra-markers.min.css'
 import './ExtraMarkers/js/leaflet.extra-markers.min.js'
 

@@ -30,6 +30,7 @@
           :filteredMarkers="filteredMarkers"
           :class="{ noselection: need == 'none' }"
           :location="locationData"
+          :attribution="attribution"
           @location-selected="passLocation"
           @bounds="boundsUpdated"
           @center="centerUpdated"
@@ -49,7 +50,9 @@ import AboutUsModal from './components/AboutUs.vue'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
-import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
+import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
+
+import { theme } from './themes/NCCovidSupport/theme.config'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -105,21 +108,22 @@ export default {
       centroid: [35.91371, -79.057919],
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
-      mapUrl: ''
+      mapUrl: '',
+      attribution: null
     }
   },
   mounted() {
-    this.mapUrl = this.darkMode
-      ? 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png'
-      : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+    this.setDarkMode(this.darkMode)
     this.darkModeMediaQuery.addListener((e) => {
       this.darkMode = e.matches
-      this.mapUrl = this.darkMode
-        ? 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png'
-        : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
+      this.setDarkMode(this.darkMode)
     })
   },
   methods: {
+    setDarkMode(darkMode) {
+      this.mapUrl = darkMode ? theme.maps.dark.url : theme.maps.normal.url
+      this.attribution = darkMode ? theme.maps.dark.attribution : theme.maps.normal.attribution
+    },
     centerUpdated(center) {
       this.centroid = [center.lat, center.lng]
     },
@@ -157,7 +161,7 @@ export default {
       this.$root.updateLang(item.iso)
     },
     async fetchData() {
-      const res = await fetch(spreadsheetUrl)
+      const res = await fetch(theme.data.spreadsheetUrl)
       const entries = await res.json()
       this.entries = entries.feed.entry
     },

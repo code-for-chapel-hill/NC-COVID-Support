@@ -46,7 +46,6 @@
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
-import { openStreetMapAttribution as attribution } from '../constants'
 import IconListItem from './IconListItem.vue'
 import { businessIcon } from '../utilities'
 
@@ -70,7 +69,8 @@ export default {
   props: {
     filteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean },
-    mapUrl: String
+    mapUrl: String,
+    attribution: String
   },
   data() {
     return {
@@ -79,7 +79,6 @@ export default {
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
-      attribution,
       locationData: location,
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
@@ -133,8 +132,8 @@ export default {
       if (locationVal.isSetByMap) {
         return
       }
-      var item = this.filteredMarkers[locationVal.locValue]
-      this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
+      // var item = this.filteredMarkers[locationVal.locValue]
+      // this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
     }
   }
 }
