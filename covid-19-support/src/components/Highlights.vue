@@ -138,6 +138,8 @@ export default {
       switch (this.need) {
         case 'grocery':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
+        case 'food_bev':
+          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
         case 'restaurant':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         case 'family': // Family Meal Kits
