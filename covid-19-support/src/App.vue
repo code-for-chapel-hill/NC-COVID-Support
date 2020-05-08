@@ -101,7 +101,7 @@ export default {
       day: dayAny,
       isFilterOpen: true,
       language: { name: 'English', iso: 'en' },
-      locationData: { locValue: null, isSetByMap: false },
+      locationData: { locValue: null, locId: null, currentBusiness: null, isSetByMap: false },
       showList: false,
       highlightFilters: [],
       bounds: null,
@@ -163,9 +163,17 @@ export default {
     async fetchData() {
       const res = await fetch(theme.data.spreadsheetUrl)
       const entries = await res.json()
+
+      // if (entries !== null) {
+      //   entries.forEach(c => {
+      //     c
+      //   });
+      // }
+
       this.entries = entries.feed.entry
     },
     passLocation: function (val) {
+      val.currentBusiness = this.filteredMarkers[val.locValue]
       this.locationData = val
       this.showList = false
       this.isFilterOpen = true

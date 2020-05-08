@@ -31,10 +31,10 @@
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
             :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
-            :icon="selectedIcon(index === location.locValue, item)"
+            :icon="selectedIcon(location.currentBusiness !== null && item.marker.id.$t === location.currentBusiness.marker.id.$t, item)"
             v-for="(item, index) in filteredMarkers"
             v-bind:key="index"
-            @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
+            @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
       </l-map>
@@ -68,7 +68,7 @@ export default {
   },
   props: {
     filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
+    location: { locValue: Number, currentBusiness: Object, isSetByMap: Boolean },
     mapUrl: String,
     attribution: String
   },
@@ -133,7 +133,13 @@ export default {
         return
       }
       // var item = this.filteredMarkers[locationVal.locValue]
-      // this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
+      if (locationVal.currentBusiness !== null && this.$refs.covidMap.mapObject.getZoom() < 17) {
+        this.$refs.covidMap.mapObject.setView(
+          latLng(locationVal.currentBusiness.marker.gsx$lat.$t, locationVal.currentBusiness.marker.gsx$lon.$t),
+          17,
+          { duration: 1 }
+        )
+      }
     }
   }
 }

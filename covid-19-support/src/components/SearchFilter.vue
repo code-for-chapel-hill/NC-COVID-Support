@@ -15,7 +15,7 @@
       </b-list-group-item>
     </b-list-group>
 
-    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showListing">
+    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
       {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
       >{{ $t('sidebar.info-end-text') }}
     </InfoPanel>
@@ -31,8 +31,8 @@
     <BusinessDetails
       :infotype="'green'"
       :icon="'fa-tractor'"
-      :business="currentBusiness"
-      v-if="currentBusiness != null && showListing != true"
+      :business="location.currentBusiness"
+      v-if="location.currentBusiness != null && showListing != true"
       @close-details="closeDetails"
     ></BusinessDetails>
 
@@ -71,16 +71,16 @@ export default {
     day: Number,
     filteredMarkers: Array,
     highlightFilteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
+    location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean
   },
   computed: {
-    currentBusiness() {
-      if (this.location == null) {
-        return
-      }
-      return 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
-    },
+    // currentBusiness() {
+    //   if (this.location == null) {
+    //     return
+    //   }
+    //   return 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
+    // },
     needOptions() {
       return [
         { value: 'none', text: this.$tc('label.selectacategory', 1) },
