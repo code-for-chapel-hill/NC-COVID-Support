@@ -4,16 +4,14 @@ about: To-do tasks for COVID community resource tool development
 title: ''
 labels: help wanted
 assignees: ''
-
 ---
 
-**Need work on an existing feature? **
-(a) Describe the outcome needed/goal of the feature.
+** Description of the new functionality **
 
-(b) What do we need to code next?
+** What we need to code **
 
-**Describe alternatives you've considered**
+** Alternative solutions (if available) **
 A clear and concise description of any alternative solutions or features you've considered.
 
-**Additional context**
+** Additional context **
 Add any other context or screenshots about the feature request here.
