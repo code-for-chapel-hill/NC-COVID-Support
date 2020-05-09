@@ -238,8 +238,18 @@ The `/covid-19-support` directory is where all the client side development files
 / node_modules -- The Node JS package repository folder
 / public -- The source Index.html file and any non-compiled files like Robots.txt / Favicon.ico etc.
 / src
-    / components -- ( This is where we put VueJS Single File Components )
+    / components -- This is where we put VueJS Single File Components
+    / images -- These should be images that are generic and used across ALL skinned versions of the NC Covid Support site
     / locales -- The i18n Translation files
+    / scss - The main SCSS files
+    / themes - This is where all Theme specific code and media should exist
+        / NCCovidSupport - The main NC Covid Support theme
+            / images - Any images used by this theme
+            / scss - Any theme SCSS
+    / tests - All code tests
+        / unit - Our unit tests
+        / e2e - Any end to end tests
+    / docs - All the documentation files used to drive the GitHub pages documentation    
 ```
 
 ## Other ways to contribute
