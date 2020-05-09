@@ -246,10 +246,10 @@ The `/covid-19-support` directory is where all the client side development files
         / NCCovidSupport - The main NC Covid Support theme
             / images - Any images used by this theme
             / scss - Any theme SCSS
-    / tests - All code tests
-        / unit - Our unit tests
-        / e2e - Any end to end tests
-    / docs - All the documentation files used to drive the GitHub pages documentation    
+/ tests - All code tests
+    / unit - Our unit tests
+    / e2e - Any end to end tests
+/ docs - All the documentation files used to drive the GitHub pages documentation    
 ```
 
 ## Other ways to contribute
