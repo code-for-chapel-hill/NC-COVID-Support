@@ -1,0 +1,122 @@
+{
+  "files": [
+    "docs/readme.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "readingdancer",
+      "name": "Chris Houston",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4398217?v=4",
+      "profile": "https://www.vizioz.com",
+      "contributions": [
+        "test",
+        "code",
+        "doc",
+        "design",
+        "ideas",
+        "platform",
+        "review",
+        "translation",
+        "tutorial"
+      ]
+    },
+    {
+      "login": "KM-Hanson",
+      "name": "KM-Hanson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/58799043?v=4",
+      "profile": "https://github.com/KM-Hanson",
+      "contributions": [
+        "business",
+        "content",
+        "doc",
+        "ideas",
+        "projectManagement",
+        "question"
+      ]
+    },
+    {
+      "login": "suddengenesis",
+      "name": "Adam Singer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24510849?v=4",
+      "profile": "http://suddengenesis.net",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "charliekenney23",
+      "name": "Charlie Kenney",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23623237?v=4",
+      "profile": "https://ch4z.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jasonajones73",
+      "name": "Jason Jones",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23062043?v=4",
+      "profile": "http://jasonajones.netlify.com",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "amkitt",
+      "name": "Allison Kittinger",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24195503?v=4",
+      "profile": "https://github.com/amkitt",
+      "contributions": [
+        "translation",
+        "content"
+      ]
+    },
+    {
+      "login": "dsummersl",
+      "name": "Dane Summers",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30856?v=4",
+      "profile": "http://pinedesk.biz",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fredlawl",
+      "name": "Frederick",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2502213?v=4",
+      "profile": "https://github.com/fredlawl",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "zhanknight",
+      "name": "zhanknight",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20487008?v=4",
+      "profile": "https://github.com/zhanknight",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "mitomon",
+      "name": "mitomon",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11986108?v=4",
+      "profile": "https://github.com/mitomon",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "NC-COVID-Support",
+  "projectOwner": "code-for-chapel-hill",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

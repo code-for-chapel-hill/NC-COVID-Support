@@ -1,0 +1,51 @@
+# This is a workflow to for CI testing the COVID project
+
+name: Continuous Integration
+
+# Controls when the action will run.
+# Triggers the workflow on push events but ignores all tags beginning with "v*"
+on:
+  pull_request:
+    branches:
+    - master
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "test"
+  test:
+    name: Test
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # Setup NodeJS
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      # Install all the packages
+      - name: install
+        run: npm install
+        working-directory: covid-19-support
+
+      # Runs the unit tests
+      - name: Unit tests
+        run: npm run test:unit
+        working-directory: covid-19-support
+
+      # Runs the linter
+      - name: lint
+        run: npm run lint
+        working-directory: covid-19-support
+
+      # Runs the build "smoke test"
+      - name: Smoke test
+        run: npm run build
+        working-directory: covid-19-support
