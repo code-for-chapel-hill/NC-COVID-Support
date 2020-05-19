@@ -74,7 +74,7 @@ The short version goes like this:
 
 - **Switch to the correct branch** - switch to the `master` branch
 
-- **Build** - build your fork of NC COVID Support locally as described in [building from source code](BUILD.md)
+- **Build** - build your fork of NC COVID Support locally as described in [Getting started](#Getting-started)
 
 - **Create a new branch** - it would help us if you can always name your branch after the issue you're fixing and follow the format: `issue-12345`. In this case you would be working on issue `12345`.
 
