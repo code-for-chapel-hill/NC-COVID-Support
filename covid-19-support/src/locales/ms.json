@@ -6,6 +6,8 @@
       "email": "E-mel",
       "info": "Halaman ini dikuasakan oleh {0} dari {1}. Untuk pertanyaan, sila hubungi kami melalui e-mel di {2}."
     },
+    "datahead": "CATATAN PADA PERKONGSIAN DATA",
+    "dataprivacy": "Maklumat mengenai NC COVID Support telah dikumpulkan dari sumber web awam oleh sukarelawan atau dimasukkan oleh pemilik perniagaan / penyedia sumber. Data disediakan untuk membantu orang ramai, perniagaan tempatan, rakan kongsi pemerintah, dan bukan keuntungan semasa pandemik COVID-19. Data tersebut tidak boleh digunakan untuk usaha komersial atau tujuan lain tanpa kebenaran jelas dari NC COVID Support.",
     "devhelp": {
       "addbusiness": "tambah perniagaan",
       "addinfo": "Gunakan borang dalam talian kami untuk {0} atau {1}.",
@@ -37,6 +39,7 @@
     "childcare": "Penjagaan kanak-kanak",
     "family": "Hidangan keluarga yang disediakan | Makanan keluarga yang disediakan",
     "farm": "Pasar Ladang atau Petani | Pasaran Ladang & Petani",
+    "food_bev": "",
     "grocery": "Runcit | Groceries",
     "meal": "Makanan percuma | Makanan percuma",
     "petsupplies": "Bekalan Haiwan Peliharaan",

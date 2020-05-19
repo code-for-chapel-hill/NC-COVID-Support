@@ -6,6 +6,8 @@
       "email": "Email",
       "info": "Esta página funciona con {0} de {1}. Para preguntas, contáctenos por correo electrónico al {2}."
     },
+    "datahead": "NOTA SOBRE COMPARTIR DATOS",
+    "dataprivacy": "La información sobre NC COVID Support ha sido recopilada de fuentes web públicas por voluntarios o ingresada por propietarios de negocios / proveedores de recursos. Los datos se proporcionan para ayudar al público, las empresas locales, los socios gubernamentales y las organizaciones sin fines de lucro durante la pandemia de COVID-19. Los datos no deben usarse para empresas comerciales u otros fines sin el permiso expreso del Soporte de NC COVID.",
     "devhelp": {
       "addbusiness": "agregar un negocio",
       "addinfo": "Utilice nuestros formularios en línea para {0} o {1}.",
@@ -37,6 +39,7 @@
     "childcare": "Cuidado de los niños",
     "family": "Comida familiar preparada | Comida familiar preparada",
     "farm": "Granja o Mercado de Granjeros | Granjas y Mercados de Agricultores",
+    "food_bev": "",
     "grocery": "Comestibles",
     "meal": "Comida gratis | Comidas gratis",
     "petsupplies": "Suministros de mascotas",
