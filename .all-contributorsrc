@@ -111,6 +111,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "eparadise",
+      "name": "Eliza Paradise",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/43389857?v=4",
+      "profile": "https://github.com/eparadise",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
