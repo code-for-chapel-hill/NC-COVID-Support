@@ -1,3 +1,15 @@
+const themePath = './src/themes/' + process.env.VUE_APP_THEME + '/'
+const themeContent = require(`${themePath}theme.content.js`)
+
+const mapEnvVariables = {
+  BASE_URL: process.env.BASE_URL,
+  GA_ID: process.env.GA_ID,
+  FB_ID: process.env.FB_ID,
+  VUE_APP_THEME: process.env.VUE_APP_THEME
+}
+
+const themeMeta = Object.assign(mapEnvVariables, themeContent)
+
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'AmericanDemoTheme' ? '/NC-COVID-Support/' : '/',
   pluginOptions: {
@@ -8,11 +20,17 @@ module.exports = {
       enableInSFC: true
     }
   },
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].theme = themeMeta
+      return args
+    })
+  },
   configureWebpack: {
     resolve: {
       alias: {
         // create alias for white label SCSS variable files
-        vueAppTheme: './src/themes/' + process.env.VUE_APP_THEME + '/'
+        vueAppTheme: themePath
       }
     }
   },
