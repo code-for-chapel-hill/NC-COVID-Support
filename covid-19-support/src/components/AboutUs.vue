@@ -5,7 +5,7 @@
     </template>
     <b-card class="h-100" no-body>
       <b-tabs card>
-        <b-tab :title="$t('about.getinvolved')">
+        <b-tab class="mt-3 mx-auto" :title="$t('about.getinvolved')">
           <p>{{ $t('about.devhelp.info') }}</p>
           <b>{{ $t('about.devhelp.support') }}</b>
           <i18n path="about.devhelp.addinfo" tag="p">
@@ -23,7 +23,7 @@
           </i18n>
         </b-tab>
 
-        <b-tab :title="$t('about.partners')">
+        <b-tab class="mt-3 mx-auto" :title="$t('about.partners')">
           <p>{{ $t('about.info') }}</p>
           <ul>
             <li>
@@ -43,7 +43,7 @@
           <p>{{ $t('about.dataprivacy') }}</p>
         </b-tab>
 
-        <b-tab :title="$t('about.contact')">
+        <b-tab class="mt-3 mx-auto" :title="$t('about.contact')">
           <i18n path="about.contactus.info" tag="p">
             <a href="https://www.meetup.com/Triangle-Code-for-America/">{{ $t('about.orgs.chb') }}</a>
             <a href="https://www.codeforamerica.org/">{{ $t('about.orgs.cfa') }}</a>
