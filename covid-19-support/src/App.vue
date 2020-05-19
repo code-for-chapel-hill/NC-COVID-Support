@@ -52,7 +52,7 @@ import { haversineDistance, sortByDistance } from './utilities'
 
 import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
-import { theme } from './themes/NCCovidSupport/theme.config'
+import { theme } from 'theme.config'
 
 function extend(obj, src) {
   for (var key in src) {

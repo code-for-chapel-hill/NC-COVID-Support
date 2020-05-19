@@ -1,3 +1,9 @@
+const path = require('path')
+
+if (process.env.VUE_APP_THEME == null) {
+  throw new Error('Please provide VUE_APP_THEME environment variable')
+}
+
 const themePath = './src/themes/' + process.env.VUE_APP_THEME + '/'
 const themeContent = require(`${themePath}theme.content.js`)
 
@@ -29,8 +35,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        // create alias for white label SCSS variable files
-        vueAppTheme: themePath
+        ['theme.config$']: path.resolve(__dirname, themePath + '/theme.config.js')
       }
     }
   },
