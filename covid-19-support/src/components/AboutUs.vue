@@ -39,6 +39,8 @@
               <a href="https://www.carolinafarmstewards.org/on-farm-pickups/">{{ $t('about.orgs.farmstewards') }}</a>
             </li>
           </ul>
+          <b>{{ $t('about.datahead') }}</b>
+          <p>{{ $t('about.dataprivacy') }}</p>
         </b-tab>
 
         <b-tab :title="$t('about.contact')">
