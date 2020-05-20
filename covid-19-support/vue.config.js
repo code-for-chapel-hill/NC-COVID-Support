@@ -35,7 +35,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        ['theme.config$']: path.resolve(__dirname, themePath + '/theme.config.js')
+        ['theme.config$']: path.resolve(__dirname, themePath + '/theme.config.js'),
+        ['theme.header$']: path.resolve(__dirname, themePath + '/components/theme.header.vue')
       }
     }
   },

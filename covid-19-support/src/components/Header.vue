@@ -1,9 +1,7 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <b-navbar-brand href="#">
-      <i18n path="title" tag="span" class="pagetitle">
-        <span class="ncblue">NC</span>
-      </i18n>
+      <slot></slot>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
