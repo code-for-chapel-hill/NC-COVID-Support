@@ -45,7 +45,10 @@
       </l-map>
       <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
         {{ errorMessage }}
-        <b-link :href="locationHelpUrl">Learn more</b-link>
+
+        <b-link :href="locationHelpUrl">
+          <i18n path="label.locationhelplinktext" tag="span"></i18n>
+        </b-link>
       </b-alert>
     </div>
   </b-container>
