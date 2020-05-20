@@ -1,4 +1,10 @@
 export const theme = {
+  settings: {
+    initialMapCenter: {
+      lat: 35.91371,
+      lng: -79.057919
+    }
+  },
   data: {
     spreadsheetUrl: 'https://spreadsheets.google.com/feeds/list/1uBmMediCrxYl5qWqapbj4SOFTEXHoipE2oibMa2GTFo/1/public/values?alt=json'
   },
