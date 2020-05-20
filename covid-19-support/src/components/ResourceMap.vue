@@ -43,7 +43,7 @@
           </button>
         </l-control>
       </l-map>
-      <b-alert class="location-alert center-block" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
+      <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
         {{ errorMessage }}
         <b-link :href="locationHelpUrl">Learn more</b-link>
       </b-alert>
@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { BAlert, BLink } from 'bootstrap-vue'
+import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import IconListItem from './IconListItem.vue'
@@ -127,8 +127,10 @@ export default {
         }
       })
       map.on('locationerror', (err) => {
-        this.showError = true
-        this.errorMessage = err.message
+        if (err.message) {
+          this.showError = true
+          this.errorMessage = err.message
+        }
       })
     },
     editZoomControl() {
