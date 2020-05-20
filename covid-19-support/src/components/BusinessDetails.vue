@@ -92,7 +92,9 @@
               <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.gsx$notes.$t }}
             </p>
           </template>
-          <p class="updated">Details last updated: {{ business.marker.gsx$lastupdate.$t }}</p>
+          <p class="updated" v-if="getLastUpdatedDate != 'Invalid Date'">
+            {{ $t('label.details-last-updated') }}: {{ getLastUpdatedDate }}
+          </p>
         </div>
       </b-list-group-item>
     </b-list-group>
@@ -123,6 +125,11 @@ export default {
       return urlParts[0]
     },
     businessIcon: businessIcon
+  },
+  computed: {
+    getLastUpdatedDate: function () {
+      return new Date(Date.parse(this.business.marker.gsx$lastupdate.$t)).toLocaleDateString()
+    }
   }
 }
 </script>

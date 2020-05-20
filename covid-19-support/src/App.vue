@@ -126,7 +126,7 @@ export default {
       this.attribution = darkMode ? theme.maps.dark.attribution : theme.maps.normal.attribution
     },
     centerUpdated(center) {
-      this.centroid = [center.lat, center.lng]
+      this.centroid = { lat: center.lat, lng: center.lng }
     },
     boundsUpdated: function (bounds) {
       this.bounds = bounds
@@ -221,12 +221,12 @@ export default {
         open.map((marker) => ({
           marker,
           oc: true,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance([this.centroid.lat, this.centroid.lng], [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
         })),
         closed.map((marker) => ({
           marker,
           oc: false,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance([this.centroid.lat, this.centroid.lng], [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
         }))
       ).sort(sortByDistance)
 
