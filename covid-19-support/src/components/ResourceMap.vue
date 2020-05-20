@@ -19,9 +19,9 @@
               <i @click="showKey = !showKey" class="fas fa-info-circle" />
             </div>
             <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
-              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
-              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
+              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link />
+              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link />
+              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link />
             </div>
           </div>
         </l-control>
@@ -37,6 +37,11 @@
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
+        <l-control position="bottomleft">
+          <button @click="getUserLocation">
+            <i class="fas fa-location-arrow"></i>
+          </button>
+        </l-control>
       </l-map>
     </div>
   </b-container>
@@ -98,6 +103,20 @@ export default {
     },
     boundsUpdated(bounds) {
       this.$emit('bounds', bounds)
+    },
+    getUserLocation() {
+      /* disable-eslint */
+      var map = this.$refs.covidMap.mapObject
+      map.locate({ setView: true })
+      map.on('locationfound', (locationEvent) => {
+        console.log({ loc: locationEvent })
+        if (locationEvent.latitude && locationEvent.longitude) {
+          this.centerUpdated(latLng(locationEvent.latitude, locationEvent.longitude))
+          map.zoom = 15
+        } else {
+          console.log(`Unable to get geolocation data`)
+        }
+      })
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
