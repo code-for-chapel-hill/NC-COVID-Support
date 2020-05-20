@@ -43,12 +43,17 @@
           </button>
         </l-control>
       </l-map>
+      <b-alert class="location-alert center-block" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
+        {{ errorMessage }}
+        <b-link :href="locationHelpUrl">Learn more</b-link>
+      </b-alert>
     </div>
   </b-container>
 </template>
 
 <script>
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
+import { BAlert, BLink } from 'bootstrap-vue'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import IconListItem from './IconListItem.vue'
@@ -64,6 +69,8 @@ Icon.Default.mergeOptions({
 export default {
   name: 'ResourceMap',
   components: {
+    BAlert,
+    BLink,
     LMap,
     LTileLayer,
     LMarker,
@@ -82,6 +89,9 @@ export default {
       center: latLng(35.91371, -79.057919),
       zoom: 10,
       showParagraph: true,
+      showError: false,
+      errorMessage: '',
+      locationHelpUrl: 'https://support.google.com/maps/answer/2839911?hl=en&authuser=0&visit_id=1589939482955-302781235128857673&rd=1',
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       locationData: location,
@@ -103,17 +113,22 @@ export default {
     boundsUpdated(bounds) {
       this.$emit('bounds', bounds)
     },
+    resetError() {
+      this.showError = false
+      this.errorMessage = ''
+    },
     getUserLocation() {
       var map = this.$refs.covidMap.mapObject
-      map.locate({ setView: true })
+      map.locate({ setView: true, enableHighAccuracy: true })
       map.on('locationfound', (locationEvent) => {
-        console.log({ loc: locationEvent })
         if (locationEvent.latitude && locationEvent.longitude) {
-          this.centerUpdated(latLng(locationEvent.latitude, locationEvent.longitude))
-          map.zoom = 15
-        } else {
-          console.log(`Unable to get geolocation data`)
+          this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
+          this.centerUpdated(this.userLocationData)
         }
+      })
+      map.on('locationerror', (err) => {
+        this.showError = true
+        this.errorMessage = err.message
       })
     },
     editZoomControl() {
@@ -228,5 +243,12 @@ export default {
 }
 .mapkey.show-key .title {
   display: inline;
+}
+.location-alert {
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 175px);
+  width: 350px;
+  z-index: 1000;
 }
 </style>
