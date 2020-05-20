@@ -70,11 +70,12 @@ export default {
     filteredMarkers: Array,
     location: { locValue: Number, currentBusiness: Object, isSetByMap: Boolean },
     mapUrl: String,
-    attribution: String
+    attribution: String,
+    centroid: { lat: Number, lng: Number }
   },
   data() {
     return {
-      center: latLng(35.91371, -79.057919),
+      center: latLng(this.centroid.lat, this.centroid.lng),
       zoom: 10,
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },

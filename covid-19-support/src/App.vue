@@ -35,6 +35,7 @@
           @bounds="boundsUpdated"
           @center="centerUpdated"
           :mapUrl="mapUrl"
+          :centroid="centroid"
         />
       </div>
     </div>
@@ -105,7 +106,7 @@ export default {
       showList: false,
       highlightFilters: [],
       bounds: null,
-      centroid: [35.91371, -79.057919],
+      centroid: { lat: theme.settings.initialMapCenter.lat, lng: theme.settings.initialMapCenter.lng },
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
