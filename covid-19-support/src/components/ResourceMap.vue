@@ -105,7 +105,6 @@ export default {
       this.$emit('bounds', bounds)
     },
     getUserLocation() {
-      /* disable-eslint */
       var map = this.$refs.covidMap.mapObject
       map.locate({ setView: true })
       map.on('locationfound', (locationEvent) => {
