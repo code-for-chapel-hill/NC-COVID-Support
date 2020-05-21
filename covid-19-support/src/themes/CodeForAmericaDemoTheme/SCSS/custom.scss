@@ -16,7 +16,7 @@
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
 
 $font-family-base: 'Poppins', $font-family-sans-serif;
-$body-color: #fff;
+//$body-color: #fff;
 
 $blue: #0052a5;
 $orange: #fd7e14;
@@ -30,6 +30,7 @@ $danger: $red;
 $theme-colors: (
   'primary': $red,
   'secondary': $blue,
+  'tertiary': $blue,
   'buttons': $white,
   'warning': $warning,
   'danger': $danger,
@@ -60,6 +61,9 @@ $bv-enable-table-stacked: false;
   }
   .bg-secondary {
     background-color: theme-color-level('secondary', 8) !important;
+  }
+  .bg-tertiary{
+    background-color: theme-color-level('tertiary', 8) !important;
   }
 
   .btn-buttons {

@@ -29,6 +29,7 @@ $danger: $red;
 $theme-colors: (
   'primary': $blue,
   'secondary': $gray-100,
+  'tertiary': $teal,
   'buttons': $orange,
   'warning': $warning,
   'danger': $danger,
@@ -62,6 +63,9 @@ $bv-enable-table-stacked: false;
   }
   .bg-secondary {
     background-color: theme-color-level('secondary', 8) !important;
+  }
+  .bg-tertiary{
+    background-color: theme-color-level('tertiary', 8) !important;
   }
 
   .btn-buttons {
