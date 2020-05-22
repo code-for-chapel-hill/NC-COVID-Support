@@ -44,7 +44,7 @@ export default {
 
 .number,
 .title {
-  color: #fff;
+  //color: #fff;
   align-items: center;
   display: flex;
   height: 50px;

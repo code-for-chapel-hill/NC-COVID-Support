@@ -163,7 +163,6 @@ export default {
 <style lang="scss">
 .highlights {
   margin: 4px !important;
-
   transition: height 0.25s ease-out;
   height: 116px;
 

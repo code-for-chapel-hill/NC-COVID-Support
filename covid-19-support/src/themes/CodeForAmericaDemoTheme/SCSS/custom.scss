@@ -14,6 +14,7 @@
 
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
+@import "node_modules/bootstrap/scss/_functions.scss";
 
 $font-family-base: 'Poppins', $font-family-sans-serif;
 //$body-color: #fff;
@@ -26,6 +27,10 @@ $yellow: #ffb71c;
 
 $warning: $yellow;
 $danger: $red;
+
+$yiq-text-dark: black !default;
+$yiq-text-light: white !default;
+$yiq-contrasted-threshold: 150 !default;
 // 46c4d7
 $theme-colors: (
   'primary': $red,
@@ -59,16 +64,20 @@ $bv-enable-table-stacked: false;
 
   .bg-primary {
     background-color: theme-color-level('primary', 5) !important;
+    color: color-yiq(theme-color-level('primary', 5)) !important;
   }
   .bg-secondary {
     background-color: theme-color-level('secondary', 8) !important;
+    color: color-yiq(theme-color-level('secondary', 8)) !important;
   }
   .bg-tertiary {
     background-color: theme-color-level('tertiary', 8) !important;
+    color: color-yiq(theme-color-level('tertiary', 8)) !important;
   }
 
   .bg-quatenary {
     background-color: theme-color-level('quatenary', 8) !important;
+    color: color-yiq(theme-color-level('quatenary', 8)) !important;
   }
 
   .btn-buttons {
