@@ -56,7 +56,7 @@ import { haversineDistance, sortByDistance } from './utilities'
 import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
 import { theme } from 'theme.config'
-import { ThemeHeader } from 'theme.header'
+import ThemeHeader from 'theme.header'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -91,11 +91,12 @@ export default {
     this.fetchData()
   },
   components: {
+    AboutUsModal,
     AppHeader,
     Highlights,
-    SearchFilter,
     ResourceMap,
-    AboutUsModal
+    SearchFilter,
+    ThemeHeader
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
