@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "lint": "eslint src && prettier --check .",
     "serve": "cross-env vue-cli-service serve",
-    "serve-demo": "cross-env VUE_APP_THEME=AmericanDemoTheme vue-cli-service serve",
+    "serve-demo": "cross-env VUE_APP_THEME=CodeForAmericaDemoTheme vue-cli-service serve",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
