@@ -30,7 +30,8 @@ $danger: $red;
 $theme-colors: (
   'primary': $red,
   'secondary': $blue,
-  'tertiary': $blue,
+  'tertiary': $white,
+  'quatenary': $red,
   'buttons': $white,
   'warning': $warning,
   'danger': $danger,
@@ -64,6 +65,10 @@ $bv-enable-table-stacked: false;
   }
   .bg-tertiary {
     background-color: theme-color-level('tertiary', 8) !important;
+  }
+
+  .bg-quatenary {
+    background-color: theme-color-level('quatenary', 8) !important;
   }
 
   .btn-buttons {

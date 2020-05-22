@@ -22,6 +22,7 @@ $orange: #fd7e14;
 $red: #ff2b1c;
 $teal: #2eb7cb;
 $yellow: #ffb71c;
+$lightblue: #546cac;
 
 $warning: $yellow;
 $danger: $red;
@@ -30,6 +31,7 @@ $theme-colors: (
   'primary': $blue,
   'secondary': $gray-100,
   'tertiary': $teal,
+  'quatenary': $lightblue,
   'buttons': $orange,
   'warning': $warning,
   'danger': $danger,
@@ -66,6 +68,10 @@ $bv-enable-table-stacked: false;
   }
   .bg-tertiary {
     background-color: theme-color-level('tertiary', 8) !important;
+  }
+
+  .bg-quatenary {
+    background-color: theme-color-level('quatenary', 8) !important;
   }
 
   .btn-buttons {

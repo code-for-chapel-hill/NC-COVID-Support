@@ -125,7 +125,7 @@ export default {
 
   & > span > i {
     margin-right: 8px;
-    color: #2eb7cb;
+    color: theme-color('tertiary');
     font-size: 1rem;
     margin-top: 6px;
   }

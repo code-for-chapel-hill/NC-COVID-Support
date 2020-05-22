@@ -4,10 +4,10 @@
       <value-box :content="valueBoxes[0]" class="bg-tertiary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-2">
-      <value-box :content="valueBoxes[1]" class="bg-primary" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[1]" class="bg-quatenary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-4">
-      <value-box :content="valueBoxes[2]" class="bg-primary" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[2]" class="bg-quatenary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-3">
       <value-box :content="valueBoxes[3]" class="bg-tertiary" @box-selected="boxSelected" />
