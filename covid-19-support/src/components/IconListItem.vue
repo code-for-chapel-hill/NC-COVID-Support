@@ -54,7 +54,10 @@ export default {
     margin: 0.25rem 0;
   }
   a {
-    color: #ee8842 !important;
+    color: theme-color('warning');
+    @media (prefers-color-scheme: dark) {
+      color: theme-color-level(warning, 5);
+    }
   }
 }
 

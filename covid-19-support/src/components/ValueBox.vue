@@ -44,7 +44,7 @@ export default {
 
 .number,
 .title {
-  color: #fff;
+  //color: #fff;
   align-items: center;
   display: flex;
   height: 50px;
@@ -123,7 +123,7 @@ export default {
   }
 
   &.selected {
-    background: #52aa36;
+    background: theme-color('success') !important;
     i {
       opacity: 0.5;
     }

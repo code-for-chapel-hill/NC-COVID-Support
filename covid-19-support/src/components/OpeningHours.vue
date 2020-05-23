@@ -90,7 +90,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .openhours {
   margin-bottom: 10px;
 }
@@ -99,6 +99,9 @@ export default {
   vertical-align: top;
 }
 .closed {
-  color: #ff2c1c;
+  color: theme-color('danger');
+  @media (prefers-color-scheme: dark) {
+    color: theme-color-level('danger', 5);
+  }
 }
 </style>
