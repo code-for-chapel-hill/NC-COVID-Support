@@ -22,29 +22,29 @@ $body-bg: #eee;
 $body-color: #111;
 
 $blue: #0052a5;
+$darkblue: #031e3b;
 $orange: #fd7e14;
 $red: #e0162b;
 $green: #52aa36;
 $teal: $blue;
 $yellow: #ffb71c;
+$lightorange:  #ee8842;
 
 $warning: $yellow;
 $danger: $red;
 
-$yiq-text-dark: black !default;
-$yiq-text-light: white !default;
-$yiq-contrasted-threshold: 150 !default;
 // 46c4d7
 $theme-colors: (
   'primary': $red,
   'secondary': $blue,
   'tertiary': $white,
   'quaternary': $red,
+  'quinary': $lightorange,
   'buttons': $white,
   'success': $green,
   'warning': $warning,
   'danger': $danger,
-  'secondaryDark': $gray-800
+  'secondaryDark': $darkblue
 );
 
 $navbar-padding-x: 1rem;
@@ -62,27 +62,23 @@ $navbar-padding-y: 0;
 // );
 $bv-enable-table-stacked: false;
 
-@include list-group-item-variant('sideNav', $blue, $white);
+@include list-group-item-variant('sideNav', theme-color('secondary'), $white);
 @media (prefers-color-scheme: dark) {
-  @include list-group-item-variant('sideNav', theme-color-level('secondary', 8), $gray-500);
+  @include list-group-item-variant('sideNav', theme-color('secondaryDark'), $gray-500);
 
-  // .bg-primary {
-  //   background-color: theme-color-level('primary', 5) !important;
-  //   color: color-yiq(theme-color-level('primary', 5)) !important;
-  // }
-  // .bg-secondary {
-  //   background-color: theme-color-level('secondary', 8) !important;
-  //   color: color-yiq(theme-color-level('secondary', 8)) !important;
-  // }
-  // .bg-tertiary {
-  //   background-color: theme-color-level('tertiary', 8) !important;
-  //   color: color-yiq(theme-color-level('tertiary', 8)) !important;
-  // }
+  .bg-primary {
+    background-color: theme-color-level('primary', 5) !important;
+  }
+  .bg-secondary {
+    background-color: theme-color-level('secondary', 8) !important;
+  }
+  .bg-tertiary {
+    background-color: theme-color-level('tertiary', 5) !important;
+  }
 
-  // .bg-quaternary {
-  //   background-color: theme-color-level('quaternary', 8) !important;
-  //   color: color-yiq(theme-color-level('quaternary', 8)) !important;
-  // }
+  .bg-quaternary {
+    background-color: theme-color-level('quaternary', 5) !important;
+  }
 
   .btn-buttons {
     @include button-variant($gray-500, $gray-500);
