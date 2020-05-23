@@ -58,10 +58,13 @@ $navbar-padding-y: 0;
 // );
 $bv-enable-table-stacked: false;
 
-.bg-tertiary, .bg-quaternary {color: #fff;
-i {
-  color: #000;
-}}
+.bg-tertiary,
+.bg-quaternary {
+  color: #fff;
+  i {
+    color: #000;
+  }
+}
 
 @include list-group-item-variant('sideNav', theme-color('secondary'), theme-color('secondaryDark'));
 @media (prefers-color-scheme: dark) {
