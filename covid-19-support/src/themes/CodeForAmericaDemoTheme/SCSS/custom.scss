@@ -14,14 +14,17 @@
 
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
-@import "node_modules/bootstrap/scss/_functions.scss";
+@import 'node_modules/bootstrap/scss/_functions.scss';
 
 $font-family-base: 'Poppins', $font-family-sans-serif;
-//$body-color: #fff;
+
+$body-bg: #eee;
+$body-color: #111;
 
 $blue: #0052a5;
 $orange: #fd7e14;
 $red: #e0162b;
+$green: #52aa36;
 $teal: $blue;
 $yellow: #ffb71c;
 
@@ -36,8 +39,9 @@ $theme-colors: (
   'primary': $red,
   'secondary': $blue,
   'tertiary': $white,
-  'quatenary': $red,
+  'quaternary': $red,
   'buttons': $white,
+  'success': $green,
   'warning': $warning,
   'danger': $danger,
   'secondaryDark': $gray-800
@@ -62,23 +66,23 @@ $bv-enable-table-stacked: false;
 @media (prefers-color-scheme: dark) {
   @include list-group-item-variant('sideNav', theme-color-level('secondary', 8), $gray-500);
 
-  .bg-primary {
-    background-color: theme-color-level('primary', 5) !important;
-    color: color-yiq(theme-color-level('primary', 5)) !important;
-  }
-  .bg-secondary {
-    background-color: theme-color-level('secondary', 8) !important;
-    color: color-yiq(theme-color-level('secondary', 8)) !important;
-  }
-  .bg-tertiary {
-    background-color: theme-color-level('tertiary', 8) !important;
-    color: color-yiq(theme-color-level('tertiary', 8)) !important;
-  }
+  // .bg-primary {
+  //   background-color: theme-color-level('primary', 5) !important;
+  //   color: color-yiq(theme-color-level('primary', 5)) !important;
+  // }
+  // .bg-secondary {
+  //   background-color: theme-color-level('secondary', 8) !important;
+  //   color: color-yiq(theme-color-level('secondary', 8)) !important;
+  // }
+  // .bg-tertiary {
+  //   background-color: theme-color-level('tertiary', 8) !important;
+  //   color: color-yiq(theme-color-level('tertiary', 8)) !important;
+  // }
 
-  .bg-quatenary {
-    background-color: theme-color-level('quatenary', 8) !important;
-    color: color-yiq(theme-color-level('quatenary', 8)) !important;
-  }
+  // .bg-quaternary {
+  //   background-color: theme-color-level('quaternary', 8) !important;
+  //   color: color-yiq(theme-color-level('quaternary', 8)) !important;
+  // }
 
   .btn-buttons {
     @include button-variant($gray-500, $gray-500);
