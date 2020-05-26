@@ -184,6 +184,9 @@ export default {
     color: #000;
     cursor: pointer;
     vertical-align: middle;
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
   }
 
   &.show-key i {
