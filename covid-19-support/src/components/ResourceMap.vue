@@ -106,10 +106,10 @@ export default {
     latLng,
     selectedIcon(selected, item) {
       const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
+      let markerColor = isOpen ? '.markeropen' : '.markerclosed'
       const iconClasses = businessIcon(item.marker)
       if (selected) {
-        markerColor = '#ff3d3d'
+        markerColor = '.markerselected'
       }
       var markerIcon = ExtraMarkers.icon({
         markerColor,
@@ -164,6 +164,18 @@ export default {
   .bv-example-row {
     height: calc(100% - 116px);
   }
+}
+
+.markerselected {
+  color: $markerselected;
+}
+
+.markeropen {
+  color: $markeropen;
+}
+
+.markerclosed {
+  color: $markerclosed;
 }
 
 .noselection.bv-example-row {
