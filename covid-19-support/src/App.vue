@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage" />
+    <app-header :language="language.name" @language-selected="changeLanguage">
+      <theme-header></theme-header>
+    </app-header>
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <search-filter
@@ -35,6 +37,7 @@
           @bounds="boundsUpdated"
           @center="centerUpdated"
           :mapUrl="mapUrl"
+          :centroid="centroid"
         />
       </div>
     </div>
@@ -52,7 +55,8 @@ import { haversineDistance, sortByDistance } from './utilities'
 
 import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
-import { theme } from './themes/NCCovidSupport/theme.config'
+import { theme } from 'theme.config'
+import ThemeHeader from 'theme.header'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -87,11 +91,12 @@ export default {
     this.fetchData()
   },
   components: {
+    AboutUsModal,
     AppHeader,
     Highlights,
-    SearchFilter,
     ResourceMap,
-    AboutUsModal
+    SearchFilter,
+    ThemeHeader
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -105,7 +110,7 @@ export default {
       showList: false,
       highlightFilters: [],
       bounds: null,
-      centroid: [35.91371, -79.057919],
+      centroid: { lat: theme.settings.initialMapCenter.lat, lng: theme.settings.initialMapCenter.lng },
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
@@ -125,7 +130,7 @@ export default {
       this.attribution = darkMode ? theme.maps.dark.attribution : theme.maps.normal.attribution
     },
     centerUpdated(center) {
-      this.centroid = [center.lat, center.lng]
+      this.centroid = { lat: center.lat, lng: center.lng }
     },
     boundsUpdated: function (bounds) {
       this.bounds = bounds
@@ -220,12 +225,12 @@ export default {
         open.map((marker) => ({
           marker,
           oc: true,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance([this.centroid.lat, this.centroid.lng], [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
         })),
         closed.map((marker) => ({
           marker,
           oc: false,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance([this.centroid.lat, this.centroid.lng], [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
         }))
       ).sort(sortByDistance)
 

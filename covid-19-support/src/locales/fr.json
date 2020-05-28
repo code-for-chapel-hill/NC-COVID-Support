@@ -6,6 +6,8 @@
       "email": "email",
       "info": "Cette page est alimentée par le {0} de {1}. Pour toute question, veuillez nous contacter par e-mail au {2}."
     },
+    "datahead": "NOTE SUR LE PARTAGE DES DONNÉES",
+    "dataprivacy": "Les informations sur NC COVID Support ont été collectées à partir de sources Web publiques par des bénévoles ou saisies par des propriétaires d'entreprises / fournisseurs de ressources. Les données sont fournies pour aider le public, les entreprises locales, les partenaires gouvernementaux et les organisations à but non lucratif pendant la pandémie de COVID-19. Les données ne doivent pas être utilisées à des fins commerciales ou à d'autres fins sans l'autorisation expresse du support NC COVID.",
     "devhelp": {
       "addbusiness": "Ajouter une entreprise",
       "addinfo": "Utilisez nos formulaires en ligne pour {0} ou {1}.",
@@ -37,6 +39,7 @@
     "childcare": "Garde d'enfants",
     "family": "Plats préparés en famille | Plats préparés en famille",
     "farm": "Marché fermier ou fermier | Fermes et marchés fermiers",
+    "food_bev": "",
     "grocery": "Épicerie | Épicerie",
     "meal": "Repas gratuit | Repas gratuits",
     "petsupplies": "Fournitures pour animaux",
@@ -65,6 +68,7 @@
     "closedonday": "Fermé (le jour sélectionné)",
     "curbside": "Enterprise avec ramassage en bordure de rue|Enterprises avec ramassage en bordure de rue",
     "delivery": "Livraison",
+    "details-last-updated": "Dernière mise à jour des détails",
     "discountmedical": "Réduction pour les travailleurs médicaux|Réductions pour les travailleurs médicaux",
     "discounts": "",
     "drivethru": "Drive-thru",

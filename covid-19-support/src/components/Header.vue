@@ -1,9 +1,7 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <b-navbar-brand href="#">
-      <i18n path="title" tag="span" class="pagetitle">
-        <span class="ncblue">NC</span>
-      </i18n>
+      <slot></slot>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -77,6 +75,24 @@ export default {
 
 .language {
   padding: 0 5px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  @media (prefers-color-scheme: dark) {
+    background-color: $modal-bg-dark;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu a {
+  @media (prefers-color-scheme: dark) {
+    color: $modal-body-dark;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu a:hover {
+  @media (prefers-color-scheme: dark) {
+    background-color: $hover-color-dark;
+  }
 }
 
 @media (min-width: 768px) {

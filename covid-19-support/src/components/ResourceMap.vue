@@ -70,11 +70,12 @@ export default {
     filteredMarkers: Array,
     location: { locValue: Number, currentBusiness: Object, isSetByMap: Boolean },
     mapUrl: String,
-    attribution: String
+    attribution: String,
+    centroid: { lat: Number, lng: Number }
   },
   data() {
     return {
-      center: latLng(35.91371, -79.057919),
+      center: latLng(this.centroid.lat, this.centroid.lng),
       zoom: 10,
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },
@@ -105,13 +106,13 @@ export default {
     latLng,
     selectedIcon(selected, item) {
       const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
+      let markerColor = isOpen ? 'markeropen' : 'markerclosed'
       const iconClasses = businessIcon(item.marker)
       if (selected) {
-        markerColor = '#ff3d3d'
+        markerColor = 'markerselected'
       }
       var markerIcon = ExtraMarkers.icon({
-        markerColor,
+        className: markerColor,
         icon: iconClasses,
         prefix: 'fa',
         svg: true
@@ -145,7 +146,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .map {
   width: auto;
   height: 100%;
@@ -163,6 +164,18 @@ export default {
   .bv-example-row {
     height: calc(100% - 116px);
   }
+}
+
+.markerselected svg path {
+  fill: $marker-selected;
+}
+
+div.markeropen svg path {
+  fill: $marker-open;
+}
+
+.markerclosed svg path {
+  fill: $marker-closed;
 }
 
 .noselection.bv-example-row {
@@ -183,6 +196,9 @@ export default {
     color: #000;
     cursor: pointer;
     vertical-align: middle;
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
   }
 
   &.show-key i {

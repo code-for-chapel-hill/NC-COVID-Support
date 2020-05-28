@@ -6,6 +6,8 @@
       "email": "email",
       "info": "This page is powered by the {0} of {1}. For questions, please contact us via email at {2}."
     },
+    "datahead": "NOTE ON DATA SHARING",
+    "dataprivacy": "The information on NC COVID Support has been gathered from public web sources by volunteers or entered by business owners/resource providers. The data are provided to assist the public, local businesses, government partners, and non-profits during the COVID-19 pandemic. The data should not be used for commercial ventures or other purposes without the express permission of NC COVID Support.",
     "devhelp": {
       "addbusiness": "add a business",
       "addinfo": "Use our online forms to {0} or {1}.",
@@ -37,13 +39,13 @@
     "childcare": "Child care",
     "family": "Prepared family meal|Prepared family meals",
     "farm": "Farm or farmer market|Farms & farmers' markets",
+    "food_bev": "Speciality food & beverage",
     "grocery": "Grocery|Groceries",
     "meal": "Free meal|Free meals",
     "petsupplies": "Pet supplies",
     "pharmacy": "Pharmacy|Pharmacies",
     "restaurant": "Restaurant|Restaurants",
-    "school": "School meal|School meals",
-    "food_bev": "Speciality food & beverage"
+    "school": "School meal|School meals"
   },
   "dayofweek": {
     "any": "Any",
@@ -66,6 +68,7 @@
     "closedonday": "Closed (on the current selected day)",
     "curbside": "Curbside pick-up",
     "delivery": "Delivery",
+    "details-last-updated": "Details last updated",
     "discountmedical": "Medical worker discount|Medical worker discounts",
     "discounts": "",
     "drivethru": "Drive thru",
