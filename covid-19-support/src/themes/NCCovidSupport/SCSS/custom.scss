@@ -20,13 +20,21 @@ $font-family-base: 'Poppins', $font-family-sans-serif;
 $body-bg: #fff;
 $body-color: #111;
 
+$modal-bg-dark: $gray-900;
+$modal-body-dark: $gray-300;
+$hover-color-dark: $gray-600;
+
 $blue: #374a91;
 $orange: #fd7e14;
 $green: #52aa36;
 $red: #ff2b1c;
 $teal: #2eb7cb;
 $yellow: #ffb71c;
-$lightblue: #546cac;
+$light-blue: #546cac;
+$light-orange: #ee8842;
+$marker-open: #566ca9 !default;
+$marker-closed: #999 !default;
+$marker-selected: #ff3d3d !default;
 
 $warning: $yellow;
 $danger: $red;
@@ -35,7 +43,8 @@ $theme-colors: (
   'primary': $blue,
   'secondary': $gray-100,
   'tertiary': $teal,
-  'quaternary': $lightblue,
+  'quaternary': $light-blue,
+  'quinary': $light-orange,
   'buttons': $orange,
   'success': $green,
   'warning': $warning,
@@ -80,11 +89,11 @@ $bv-enable-table-stacked: false;
     background-color: theme-color-level('secondary', 8) !important;
   }
   .bg-tertiary {
-    background-color: theme-color-level('tertiary', 8) !important;
+    background-color: theme-color-level('tertiary', 5) !important;
   }
 
   .bg-quaternary {
-    background-color: theme-color-level('quaternary', 8) !important;
+    background-color: theme-color-level('quaternary', 5) !important;
   }
 
   .btn-buttons {
@@ -92,7 +101,7 @@ $bv-enable-table-stacked: false;
   }
 
   .modal-content {
-    background: $gray-900;
-    color: $gray-300;
+    background: $modal-bg-dark;
+    color: $modal-body-dark;
   }
 }

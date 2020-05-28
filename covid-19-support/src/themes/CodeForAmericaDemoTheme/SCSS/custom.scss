@@ -14,37 +14,42 @@
 
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
-@import 'node_modules/bootstrap/scss/_functions.scss';
-
 $font-family-base: 'Poppins', $font-family-sans-serif;
 
 $body-bg: #eee;
 $body-color: #111;
 
+$modal-bg-dark: #222;
+$modal-body-dark: #eee;
+$hover-color-dark: $gray-500;
+
 $blue: #0052a5;
+$dark-blue: #031e3b;
 $orange: #fd7e14;
 $red: #e0162b;
 $green: #52aa36;
 $teal: $blue;
 $yellow: #ffb71c;
+$light-orange: #ee8842;
+$marker-open: #566ca9 !default;
+$marker-closed: #999 !default;
+$marker-selected: #ff3d3d !default;
 
 $warning: $yellow;
 $danger: $red;
 
-$yiq-text-dark: black !default;
-$yiq-text-light: white !default;
-$yiq-contrasted-threshold: 150 !default;
 // 46c4d7
 $theme-colors: (
   'primary': $red,
   'secondary': $blue,
   'tertiary': $white,
   'quaternary': $red,
+  'quinary': $light-orange,
   'buttons': $white,
   'success': $green,
   'warning': $warning,
   'danger': $danger,
-  'secondaryDark': $gray-800
+  'secondaryDark': $dark-blue
 );
 
 $navbar-padding-x: 1rem;
@@ -62,33 +67,30 @@ $navbar-padding-y: 0;
 // );
 $bv-enable-table-stacked: false;
 
-@include list-group-item-variant('sideNav', $blue, $white);
+@include list-group-item-variant('sideNav', theme-color('secondary'), $white);
 @media (prefers-color-scheme: dark) {
-  @include list-group-item-variant('sideNav', theme-color-level('secondary', 8), $gray-500);
+  @include list-group-item-variant('sideNav', theme-color('secondaryDark'), $gray-500);
 
-  // .bg-primary {
-  //   background-color: theme-color-level('primary', 5) !important;
-  //   color: color-yiq(theme-color-level('primary', 5)) !important;
-  // }
-  // .bg-secondary {
-  //   background-color: theme-color-level('secondary', 8) !important;
-  //   color: color-yiq(theme-color-level('secondary', 8)) !important;
-  // }
-  // .bg-tertiary {
-  //   background-color: theme-color-level('tertiary', 8) !important;
-  //   color: color-yiq(theme-color-level('tertiary', 8)) !important;
-  // }
+  .bg-primary {
+    background-color: theme-color-level('primary', 5) !important;
+  }
+  .bg-secondary {
+    background-color: theme-color-level('secondary', 8) !important;
+  }
+  .bg-tertiary {
+    background-color: theme-color-level('tertiary', 5) !important;
+  }
 
-  // .bg-quaternary {
-  //   background-color: theme-color-level('quaternary', 8) !important;
-  //   color: color-yiq(theme-color-level('quaternary', 8)) !important;
-  // }
+  .bg-quaternary {
+    background-color: theme-color-level('quaternary', 5) !important;
+  }
 
   .btn-buttons {
     @include button-variant($gray-500, $gray-500);
   }
 
   .modal-content {
-    background: #222;
+    background: $modal-bg-dark;
+    color: $modal-body-dark;
   }
 }

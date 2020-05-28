@@ -106,15 +106,15 @@ export default {
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   max-width: 282px;
-  background: #fff;
+  //background: #fff;
 
   @media (prefers-color-scheme: dark) {
-    color: $gray-100;
-    background: $gray-800;
+    //color: $gray-100;
+    //background: $gray-800;
   }
 
   a {
-    color: #000;
+    //color: #000;
   }
 
   & > span > i {

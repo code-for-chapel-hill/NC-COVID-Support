@@ -159,9 +159,12 @@ export default {
 
   i {
     font-size: 3rem;
-    color: #ee8842;
+    color: theme-color('quinary');
     margin: 7px 10px 7px 0;
     float: left;
+    @media (prefers-color-scheme: dark) {
+      color: theme-color-level('quinary', 5);
+    }
   }
 }
 
