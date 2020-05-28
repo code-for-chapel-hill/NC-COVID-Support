@@ -89,6 +89,10 @@ export default {
   }
 }
 
+.btn-buttons {
+  color: $button-text !important;
+}
+
 .navbar-nav > li > .dropdown-menu a:hover {
   @media (prefers-color-scheme: dark) {
     background-color: $hover-color-dark;
