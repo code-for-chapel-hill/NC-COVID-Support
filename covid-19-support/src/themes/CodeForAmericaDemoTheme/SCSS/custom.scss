@@ -59,6 +59,11 @@ $nav-dropdown-bg-dark: theme-color-level('primary', 6);
 $nav-dropdown-bg-hover: theme-color-level('primary', -4);
 $nav-dropdown-bg-hover-dark: theme-color-level('primary', 8);
 
+$map-key-bg: #f8f9fa;
+$map-key-bg-dark: #222;
+$map-key: color-yiq($map-key-bg);
+$map-key-dark: color-yiq($map-key);
+
 $navbar-padding-x: 1rem;
 $navbar-padding-y: 0;
 

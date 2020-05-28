@@ -186,8 +186,13 @@ div.markeropen svg path {
   padding: 16px;
 
   &.show-key {
-    background-color: #f8f9fa !important;
+    background-color: $map-key-bg !important;
+    color: $map-key;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    @media (prefers-color-scheme: dark) {
+      background-color: $map-key-bg-dark !important;
+      color: $map-key-dark;
+    }
   }
 
   i {
