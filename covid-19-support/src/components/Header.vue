@@ -10,11 +10,9 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-item right>
-          <b-nav-form>
-            <b-button size="sm" class="my-2 my-sm-0" variant="buttons" type="button" @click="$bvModal.show('about-us')"
-              ><i class="fas fa-plus-square" aria-hidden="true" /> {{ $t('about.devhelp.addbusiness') }}</b-button
-            >
-          </b-nav-form>
+          <b-button size="sm" class="my-2 my-sm-0" variant="buttons" type="button" @click="$bvModal.show('about-us')"
+            ><i class="fas fa-plus-square" aria-hidden="true" /> {{ $t('about.devhelp.addbusiness') }}</b-button
+          >
         </b-nav-item>
 
         <b-nav-item right @click="$bvModal.show('about-us')">
@@ -73,29 +71,49 @@ export default {
   font-weight: 600;
 }
 
+.add-business {
+  float: right;
+}
+
 .language {
   padding: 0 5px;
 }
 
+.navbar-nav {
+  margin-bottom: 16px !important;
+}
+
+.nav-item {
+  margin: auto 0;
+  text-align: right;
+}
+
 .navbar-nav > li > .dropdown-menu {
+  background-color: $nav-dropdown-bg;
+  text-align: right;
   @media (prefers-color-scheme: dark) {
-    background-color: $modal-bg-dark;
+    background-color: $nav-dropdown-bg-dark;
   }
 }
 
 .navbar-nav > li > .dropdown-menu a {
+  color: $nav-dropdown;
   @media (prefers-color-scheme: dark) {
-    color: $modal-body-dark;
+    color: $nav-dropdown-dark;
   }
 }
 
 .navbar-nav > li > .dropdown-menu a:hover {
+  background-color: $nav-dropdown-bg-hover;
   @media (prefers-color-scheme: dark) {
-    background-color: $hover-color-dark;
+    background-color: $nav-dropdown-bg-hover-dark;
   }
 }
 
 @media (min-width: 768px) {
+  .navbar-nav {
+    margin-bottom: 0 !important;
+  }
   .navbar-brand {
     margin-right: 2px !important;
     font-size: 1.25rem !important;
