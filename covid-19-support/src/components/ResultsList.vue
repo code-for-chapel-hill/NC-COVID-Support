@@ -108,14 +108,14 @@ export default {
   max-width: 282px;
   //background: #fff;
 
-  @media (prefers-color-scheme: dark) {
-    //color: $gray-100;
-    //background: $gray-800;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   //color: $gray-100;
+  //   //background: $gray-800;
+  // }
 
-  a {
-    //color: #000;
-  }
+  // a {
+  //   //color: #000;
+  // }
 
   & > span > i {
     margin-right: 8px;
@@ -134,7 +134,7 @@ export default {
   display: block;
   max-width: 262px;
 }
-.closedOne {
-  /* background: #f9f9f9 !important; */
-}
+// .closedOne {
+//   /* background: #f9f9f9 !important; */
+// }
 </style>

@@ -227,4 +227,8 @@ div.markeropen svg path {
 .mapkey.show-key .title {
   display: inline;
 }
+
+.leaflet-bottom .leaflet-control-zoom {
+  margin-bottom: 26px !important;
+}
 </style>
