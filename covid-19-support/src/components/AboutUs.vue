@@ -36,7 +36,7 @@
               <a href="https://locallistnc.com/">{{ $t('about.orgs.localistnc') }}</a>
             </li>
             <li>
-              <a href="https://www.carolinafarmstewards.org/on-farm-pickups/">{{ $t('about.orgs.farmstewards') }}</a>
+              <a href="https://visitpittsboro.com/">{{ $t('about.orgs.pittsboro-siler') }}</a>
             </li>
           </ul>
           <b>{{ $t('about.datahead') }}</b>

@@ -28,9 +28,9 @@
       "bureau": "Chapel Hill/Orange County Visitors Bureau",
       "cfa": "Code for America",
       "chb": "Chapel Hill Brigade",
-      "farmstewards": "Carolina Farm Stewardship Association",
       "localistnc": "#LocalListNC",
-      "partnership": "Chapel Hill Downtown Partnership"
+      "partnership": "Chapel Hill Downtown Partnership",
+      "pittsboro-siler": "Pittsboro-Siler City Convention & Visitors Bureau"
     },
     "partners": "Info Sources",
     "title": "About this site"
@@ -109,7 +109,7 @@
   },
   "sidebar": {
     "close-panel": "Close search panel",
-    "info-about-us": "Currently, this site supports Orange County, NC. With",
+    "info-about-us": "Currently, this site supports Chatham County and Orange County, NC. With",
     "info-end-text": ", we can expand our coverage.",
     "info-link-text": "your help",
     "open-panel": "Open search panel",
