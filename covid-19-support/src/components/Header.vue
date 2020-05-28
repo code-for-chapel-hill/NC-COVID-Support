@@ -77,6 +77,24 @@ export default {
   padding: 0 5px;
 }
 
+.navbar-nav > li > .dropdown-menu {
+  @media (prefers-color-scheme: dark) {
+    background-color: $modal-bg-dark;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu a {
+  @media (prefers-color-scheme: dark) {
+    color: $modal-body-dark;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu a:hover {
+  @media (prefers-color-scheme: dark) {
+    background-color: $hover-color-dark;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar-brand {
     margin-right: 2px !important;

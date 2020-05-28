@@ -106,13 +106,13 @@ export default {
     latLng,
     selectedIcon(selected, item) {
       const isOpen = item.oc
-      let markerColor = isOpen ? '.markeropen' : '.markerclosed'
+      let markerColor = isOpen ? 'markeropen' : 'markerclosed'
       const iconClasses = businessIcon(item.marker)
       if (selected) {
-        markerColor = '.markerselected'
+        markerColor = 'markerselected'
       }
       var markerIcon = ExtraMarkers.icon({
-        markerColor,
+        className: markerColor,
         icon: iconClasses,
         prefix: 'fa',
         svg: true
@@ -146,7 +146,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .map {
   width: auto;
   height: 100%;
@@ -166,16 +166,16 @@ export default {
   }
 }
 
-.markerselected {
-  color: $markerselected;
+.markerselected svg path {
+  fill: $marker-selected;
 }
 
-.markeropen {
-  color: $markeropen;
+div.markeropen svg path {
+  fill: $marker-open;
 }
 
-.markerclosed {
-  color: $markerclosed;
+.markerclosed svg path {
+  fill: $marker-closed;
 }
 
 .noselection.bv-example-row {

@@ -14,24 +14,26 @@
 
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
-@import 'node_modules/bootstrap/scss/_functions.scss';
-
 $font-family-base: 'Poppins', $font-family-sans-serif;
 
 $body-bg: #eee;
 $body-color: #111;
 
+$modal-bg-dark: #222;
+$modal-body-dark: #eee;
+$hover-color-dark: $gray-500;
+
 $blue: #0052a5;
-$darkblue: #031e3b;
+$dark-blue: #031e3b;
 $orange: #fd7e14;
 $red: #e0162b;
 $green: #52aa36;
 $teal: $blue;
 $yellow: #ffb71c;
-$lightorange:  #ee8842;
-$markeropen: #566ca9;
-$markerclosed: #999;
-$markerselected: #ff3d3d;
+$light-orange: #ee8842;
+$marker-open: #566ca9 !default;
+$marker-closed: #999 !default;
+$marker-selected: #ff3d3d !default;
 
 $warning: $yellow;
 $danger: $red;
@@ -42,12 +44,12 @@ $theme-colors: (
   'secondary': $blue,
   'tertiary': $white,
   'quaternary': $red,
-  'quinary': $lightorange,
+  'quinary': $light-orange,
   'buttons': $white,
   'success': $green,
   'warning': $warning,
   'danger': $danger,
-  'secondaryDark': $darkblue
+  'secondaryDark': $dark-blue
 );
 
 $navbar-padding-x: 1rem;
@@ -66,7 +68,7 @@ $navbar-padding-y: 0;
 $bv-enable-table-stacked: false;
 
 @include list-group-item-variant('sideNav', theme-color('secondary'), $white);
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {  
   @include list-group-item-variant('sideNav', theme-color('secondaryDark'), $gray-500);
 
   .bg-primary {
@@ -88,6 +90,7 @@ $bv-enable-table-stacked: false;
   }
 
   .modal-content {
-    background: #222;
+    background: $modal-bg-dark;
+    color: $modal-body-dark;
   }
 }
