@@ -28,9 +28,9 @@
       "bureau": "Bureau des visiteurs de Chapel Hill / Orange County",
       "cfa": "Code pour l'Amérique",
       "chb": "Brigade de Chapel Hill",
-      "farmstewards": "Association de gestion agricole de la Caroline",
       "localistnc": "#LocalListNC",
-      "partnership": "Partenariat du centre-ville de Chapel Hill"
+      "partnership": "Partenariat du centre-ville de Chapel Hill",
+      "pittsboro-siler": "Bureau des congrès et des visiteurs de Pittsboro-Siler City"
     },
     "partners": "Sources d'informations",
     "title": "A propos de ce site"
@@ -109,7 +109,7 @@
   },
   "sidebar": {
     "close-panel": "Fermer le panneau de recherche",
-    "info-about-us": "Actuellement, ce site prend en charge Orange County, NC. Avec",
+    "info-about-us": "Actuellement, ce site prend en charge le comté de Chatham et le comté d'Orange, NC. Avec",
     "info-end-text": ", nous pouvons étendre notre couverture.",
     "info-link-text": "ton aide",
     "open-panel": "Ouvrir le panneau de recherche",
