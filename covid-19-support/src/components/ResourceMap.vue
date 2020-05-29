@@ -237,6 +237,7 @@ export default {
       height: 100vh;
     }
   }
+}
 .markerselected svg path {
   fill: $marker-selected;
 }
@@ -309,7 +310,7 @@ div.markeropen svg path {
   left: calc(50% - 175px);
   width: 350px;
   z-index: 1000;
-
+}
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
 }
