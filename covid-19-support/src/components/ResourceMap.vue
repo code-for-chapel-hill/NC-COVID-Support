@@ -19,21 +19,9 @@
               <i @click="showKey = !showKey" class="fas fa-info-circle" />
             </div>
             <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item
-                :image="require('../images/Blue.png')"
-                :title="$t('label.open')"
-                link
-              />
-              <icon-list-item
-                :image="require('../images/Grey.png')"
-                :title="$t('label.closedonday')"
-                link
-              />
-              <icon-list-item
-                :image="require('../images/Red.png')"
-                :title="$t('label.selected')"
-                link
-              />
+              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link />
+              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link />
+              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link />
             </div>
           </div>
         </l-control>
@@ -61,27 +49,13 @@
             <i class="fas fa-location-arrow"></i>
           </button>
         </l-control>
-        <b-alert
-          class="location-alert"
-          :show="showError"
-          dismissible
-          @dismissed="resetError"
-          fade
-          variant="warning"
-        >
+        <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
           {{ errorMessage }}
           <b-link @click="$bvModal.show('location-error')">
             <i18n path="label.locationhelplinktext" tag="span" />
           </b-link>
         </b-alert>
-        <b-modal
-          id="location-error"
-          size="xl"
-          dialog-class="m-0 m-md-auto"
-          centered
-          scrollable
-          hide-header-close
-        >
+        <b-modal id="location-error" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
           <template v-slot:modal-title>Location Help</template>
           <i18n path="locationhelp" tag="span" />
           <template v-slot:modal-footer>
