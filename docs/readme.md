@@ -15,14 +15,14 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 
 ![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
-## This project is
+## ABOUT PROJECT:
 
 - A mobile-friendly website with an interactive map and table of local resources.
 - A tool to help our communities and neighbors navigate the COVID crisis.
 - A collaborative effort connected to local officials and support organizations.
 - An open project that can be quickly adapted to other locations & future needs.
 
-## The types of resource questions we want to answer
+## COMMON QUESTIONS WE WISH TO ADDRESS:
 
 - Where can I find a free meal?
 - Where can I find free diapers/toilet paper/personal care items?
@@ -31,37 +31,39 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 - Where can I find a pet store with a drive-up option?
 - Which businesses offer discounts for medical workers?
 
-## Authors
+## AUTHORS:
 
 This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhill.com/) with input from our local town and county officials.
 
-## How to contribute
+## WHAT TO CONTRIBUTE:
 
-There are two areas we need help, one is with the ongoing software development of this project and the other is with the task of collating and adding accurate up to date data for the site.
+Need help in two areas: 
+1) the ongoing software development of this project.
+2) the task of collecting and adding accurate up to date data for the site.
 
-### Contribution to the project code
+### CONTRIBUTION GUIDELINES:
 
 It is great that you are interested in helping to contribute to our project, please take a look at our [How to Contribute](contributing.md) page for more details.
 
-### Become a Content Editor
+### BECOME A CODE EDITOR:
 
 We are always looking for people to join our content data team, as our site grows in popularity so does the number of listings that we need to manage. For more information visit out [Content Editors](content-editors.md) page.
 
-## Replicating the project
+## REPLICATION OF CODE:
 
-When we first started this project, we hoped that other areas would be interested in replicating our site for their area and working together to build an even better platform. Visit our [Replicating the site](replicating-the-site.md) page for more information.
+When we first began this project, we hoped that other areas would be interested in replicating our site for their area and working together to build an even better platform. Visit our [Replicating the site](replicating-the-site.md) page for more information.
 
-## Find us on Social Media
+## OUR SOCIAL MEDIA HANDLES:
 
-Please follow our social media accounts and help us to spread the word about the site.
+Please follow our social media accounts and help us spread the word about the site.
 
 - Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
 - Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
 - Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
 
-## Contributors ✨
+## CONTRIBUTORS: ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Grateful to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
