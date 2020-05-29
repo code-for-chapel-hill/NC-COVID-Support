@@ -36,26 +36,39 @@
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
+          <l-marker
+            key="userLocation"
+            name="Your Location"
+            :lat-lng="userLocationData"
+            v-if="userLocationData"
+            :icon="userIcon()"
+          ></l-marker>
         </v-marker-cluster>
         <l-control position="bottomleft">
           <button @click="getUserLocation">
             <i class="fas fa-location-arrow"></i>
           </button>
         </l-control>
+        <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
+          {{ errorMessage }}
+          <b-link @click="$bvModal.show('location-error')">
+            <i18n path="label.locationhelplinktext" tag="span" />
+          </b-link>
+        </b-alert>
+        <b-modal id="location-error" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
+          <template v-slot:modal-title>Location Help</template>
+          <i18n path="locationhelp" tag="span" />
+          <template v-slot:modal-footer>
+            <b-button @click="$bvModal.hide('location-error')" right>{{ $t('label.close') }}</b-button>
+          </template>
+        </b-modal>
       </l-map>
-      <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
-        {{ errorMessage }}
-
-        <b-link :href="locationHelpUrl">
-          <i18n path="label.locationhelplinktext" tag="span"></i18n>
-        </b-link>
-      </b-alert>
     </div>
   </b-container>
 </template>
 
 <script>
-import { BAlert, BLink } from 'bootstrap-vue'
+import { BAlert, BModal } from 'bootstrap-vue'
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
@@ -73,7 +86,7 @@ export default {
   name: 'ResourceMap',
   components: {
     BAlert,
-    BLink,
+    BModal,
     LMap,
     LTileLayer,
     LMarker,
@@ -95,7 +108,7 @@ export default {
       showParagraph: true,
       showError: false,
       errorMessage: '',
-      locationHelpUrl: 'https://support.google.com/maps/answer/2839911?hl=en&authuser=0&visit_id=1589939482955-302781235128857673&rd=1',
+      userLocationData: false,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       locationData: location,
@@ -120,6 +133,15 @@ export default {
     resetError() {
       this.showError = false
       this.errorMessage = ''
+    },
+    userIcon() {
+      const icon = ExtraMarkers.icon({
+        markerColor: 'cyan',
+        icon: 'fas fa-home',
+        prefix: 'fa',
+        svg: true
+      })
+      return icon
     },
     getUserLocation() {
       var map = this.$refs.covidMap.mapObject
@@ -158,6 +180,7 @@ export default {
         // name: item.marker.gsx$providername.$t,
         // nameClasses: 'markerName'
       })
+
       return markerIcon
     }
     // eslint-disable-next-line no-console
@@ -201,6 +224,18 @@ export default {
 @media (min-width: 768px) {
   .bv-example-row {
     height: calc(100% - 116px);
+  }
+}
+
+@media (max-width: 991px) {
+  #location-error > .modal-dialog {
+    justify-content: normal;
+    max-width: 100%;
+
+    & > .modal-content {
+      min-height: 100vh;
+      height: 100vh;
+    }
   }
 }
 

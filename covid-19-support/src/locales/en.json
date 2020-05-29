@@ -108,6 +108,7 @@
     "ms": "Burmese",
     "zh": "Simplified Chinese"
   },
+  "locationhelp": "Please make sure your device location is enabled",
   "sidebar": {
     "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports Orange County, NC. With",
