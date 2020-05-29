@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage" />
+    <app-header :language="language.name" @language-selected="changeLanguage">
+      <theme-header></theme-header>
+    </app-header>
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <search-filter
@@ -54,6 +56,7 @@ import { haversineDistance, sortByDistance } from './utilities'
 import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 
 import { theme } from 'theme.config'
+import ThemeHeader from 'theme.header'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -88,11 +91,12 @@ export default {
     this.fetchData()
   },
   components: {
+    AboutUsModal,
     AppHeader,
     Highlights,
-    SearchFilter,
     ResourceMap,
-    AboutUsModal
+    SearchFilter,
+    ThemeHeader
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

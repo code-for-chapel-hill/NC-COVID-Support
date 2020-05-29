@@ -28,9 +28,9 @@
       "bureau": "Chapel Hill / Biro Pelawat Orange County",
       "cfa": "Kod untuk Amerika",
       "chb": "Briged Hill Chapel",
-      "farmstewards": "Persatuan Pengawasan Ladang Carolina",
       "localistnc": "#LocalListNC",
-      "partnership": "Perkongsian Downtown Chapel Hill"
+      "partnership": "Perkongsian Downtown Chapel Hill",
+      "pittsboro-siler": "Biro Konvensyen & Pelawat Pittsboro-Siler City"
     },
     "partners": "Sumber Maklumat",
     "title": "Mengenai laman web ini"
@@ -110,7 +110,7 @@
   },
   "sidebar": {
     "close-panel": "Tutup panel carian",
-    "info-about-us": "Pada masa ini, laman web ini menyokong Orange County, NC. Dengan",
+    "info-about-us": "Pada masa ini, laman web ini menyokong Chatham County dan Orange County, NC. Dengan",
     "info-end-text": ", kami boleh mengembangkan liputan kami.",
     "info-link-text": "pertolongan anda",
     "open-panel": "Buka panel carian",

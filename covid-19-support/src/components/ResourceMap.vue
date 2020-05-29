@@ -19,9 +19,21 @@
               <i @click="showKey = !showKey" class="fas fa-info-circle" />
             </div>
             <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link />
-              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link />
-              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link />
+              <icon-list-item
+                :image="require('../images/Blue.png')"
+                :title="$t('label.open')"
+                link
+              />
+              <icon-list-item
+                :image="require('../images/Grey.png')"
+                :title="$t('label.closedonday')"
+                link
+              />
+              <icon-list-item
+                :image="require('../images/Red.png')"
+                :title="$t('label.selected')"
+                link
+              />
             </div>
           </div>
         </l-control>
@@ -49,13 +61,27 @@
             <i class="fas fa-location-arrow"></i>
           </button>
         </l-control>
-        <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
+        <b-alert
+          class="location-alert"
+          :show="showError"
+          dismissible
+          @dismissed="resetError"
+          fade
+          variant="warning"
+        >
           {{ errorMessage }}
           <b-link @click="$bvModal.show('location-error')">
             <i18n path="label.locationhelplinktext" tag="span" />
           </b-link>
         </b-alert>
-        <b-modal id="location-error" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
+        <b-modal
+          id="location-error"
+          size="xl"
+          dialog-class="m-0 m-md-auto"
+          centered
+          scrollable
+          hide-header-close
+        >
           <template v-slot:modal-title>Location Help</template>
           <i18n path="locationhelp" tag="span" />
           <template v-slot:modal-footer>
@@ -166,13 +192,13 @@ export default {
     latLng,
     selectedIcon(selected, item) {
       const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
+      let markerColor = isOpen ? 'markeropen' : 'markerclosed'
       const iconClasses = businessIcon(item.marker)
       if (selected) {
-        markerColor = '#ff3d3d'
+        markerColor = 'markerselected'
       }
       var markerIcon = ExtraMarkers.icon({
-        markerColor,
+        className: markerColor,
         icon: iconClasses,
         prefix: 'fa',
         svg: true
@@ -207,7 +233,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .map {
   width: auto;
   height: 100%;
@@ -237,6 +263,16 @@ export default {
       height: 100vh;
     }
   }
+.markerselected svg path {
+  fill: $marker-selected;
+}
+
+div.markeropen svg path {
+  fill: $marker-open;
+}
+
+.markerclosed svg path {
+  fill: $marker-closed;
 }
 
 .noselection.bv-example-row {
@@ -247,8 +283,13 @@ export default {
   padding: 16px;
 
   &.show-key {
-    background-color: #f8f9fa !important;
+    background-color: $map-key-bg !important;
+    color: $map-key;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    @media (prefers-color-scheme: dark) {
+      background-color: $map-key-bg-dark !important;
+      color: $map-key-dark;
+    }
   }
 
   i {
@@ -257,6 +298,9 @@ export default {
     color: #000;
     cursor: pointer;
     vertical-align: middle;
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
   }
 
   &.show-key i {
@@ -291,5 +335,8 @@ export default {
   left: calc(50% - 175px);
   width: 350px;
   z-index: 1000;
+
+.leaflet-bottom .leaflet-control-zoom {
+  margin-bottom: 26px !important;
 }
 </style>

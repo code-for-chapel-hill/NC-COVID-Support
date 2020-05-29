@@ -1,7 +1,9 @@
 <template>
   <div class="resultWrapper">
-    <div ref="results" class="resultList">
-      <div
+    <b-list-group ref="results" class="resultList list-group-flush">
+      <b-list-group-item
+        action
+        variant="sideNav"
         v-for="(item, index) in filteredMarkers"
         v-bind:key="index"
         class="resultItem"
@@ -16,7 +18,7 @@
         <div v-if="!item.oc" class="closed">{{ getClosedMessage() }}</div>
         <span class="resultAddress">
           <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
-          {{ item.marker.gsx$address.$t }},
+          {{ item.marker.gsx$address.$t }}{{ item.marker.gsx$address.$t !== '' ? ',' : '' }}
           {{ item.marker.gsx$city.$t }}
         </span>
         <template v-if="item.marker.gsx$discountmedical.$t == 1"
@@ -43,8 +45,8 @@
         <template v-if="item.marker.gsx$delivery.$t == 1"
           ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
         ></template>
-      </div>
-    </div>
+      </b-list-group-item>
+    </b-list-group>
   </div>
 </template>
 
@@ -94,8 +96,8 @@ export default {
   margin-bottom: 8px;
 }
 .resultList {
-  max-height: calc(100vh - 294px);
-  overflow-y: auto;
+  max-height: calc(100vh - 286px);
+  overflow-y: overlay;
 }
 .resultItem {
   padding: 10px;
@@ -104,28 +106,20 @@ export default {
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   max-width: 282px;
-  background: #fff;
+  //background: #fff;
 
-  @media (prefers-color-scheme: dark) {
-    color: $gray-100;
-    background: $gray-800;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   //color: $gray-100;
+  //   //background: $gray-800;
+  // }
 
-  &:hover {
-    background: #f8f9fa;
-    cursor: pointer;
-    @media (prefers-color-scheme: dark) {
-      background: $gray-900;
-    }
-  }
-
-  a {
-    color: #000;
-  }
+  // a {
+  //   //color: #000;
+  // }
 
   & > span > i {
     margin-right: 8px;
-    color: #2eb7cb;
+    color: theme-color('tertiary');
     font-size: 1rem;
     margin-top: 6px;
   }
@@ -140,7 +134,7 @@ export default {
   display: block;
   max-width: 262px;
 }
-.closedOne {
-  /* background: #f9f9f9 !important; */
-}
+// .closedOne {
+//   /* background: #f9f9f9 !important; */
+// }
 </style>

@@ -53,6 +53,13 @@ export function businessIcon(business) {
   }
 }
 
+export function getAddress(marker) {
+  var address = marker.gsx$address !== undefined && marker.gsx$address.$t !== '' ? marker.gsx$address.$t + ', ' : ''
+  address = address + (marker.gsx$city !== undefined && marker.gsx$city.$t !== '' ? marker.gsx$city.$t + ', ' : '')
+  address = address + (marker.gsx$state !== undefined && marker.gsx$state.$t !== '' ? marker.gsx$state.$t + ' ' : '')
+  return address + (marker.gsx$zip !== undefined && marker.gsx$zip.$t !== '' ? marker.gsx$zip.$t : '')
+}
+
 // See: https://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javascript
 
 /**

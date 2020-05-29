@@ -8,7 +8,6 @@
     </b-list-group>
     <b-list-group class="list-group-flush business-details">
       <b-list-group-item variant="sideNav" :class="infotype">
-        <!-- <i class="fas" :class="icon" /> -->
         <div>
           <div class="title">
             <i :class="businessIcon(business.marker)"></i>
@@ -18,15 +17,13 @@
               <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
             </div>
           </div>
-          <p>
+          <p v-if="getAddress(business.marker) !== ''">
             <b>{{ $t('label.address') }}:</b><br />
-            {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
-            {{ business.marker.gsx$zip.$t }}
+            {{ getAddress(business.marker) }}
           </p>
-
           <p>
             <icon-list-item
-              v-if="business.marker.gsx$discountmedical.$t == 1"
+              v-if="business.marker.gsx$discountmedical != undefined && business.marker.gsx$discountmedical.$t == 1"
               icon="fas fa-user-md"
               :title="$tc('label.discountmedical', 1)"
             />
@@ -35,7 +32,7 @@
             <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.mealpublic', 1)" />
             <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fas fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
             <icon-list-item
-              v-if="business.marker.gsx$freegroceries.$t == 1"
+              v-if="business.marker.gsx$freegroceries != undefined && business.marker.gsx$freegroceries.$t == 1"
               icon="fas fa-shopping-basket"
               :title="$tc('label.freegroceries', 1)"
             />
@@ -44,54 +41,56 @@
             <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fas fa-mouse" :title="$t('label.orderonline')" />
             <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
           </p>
+
           <p>
             <icon-list-item
-              v-if="!!business.marker.gsx$contact.$t"
+              v-if="business.marker.gsx$contact !== undefined && !!business.marker.gsx$contact.$t"
               icon="fas fa-phone-alt"
               :title="business.marker.gsx$contact.$t"
               :link="'tel:' + business.marker.gsx$contact.$t"
             />
 
             <icon-list-item
-              v-if="!!business.marker.gsx$contactspanish.$t"
+              v-if="business.marker.gsx$contactspanish !== undefined && !!business.marker.gsx$contactspanish.$t"
               icon="fas fa-phone-alt"
               :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
               :link="'tel:' + business.marker.gsx$contactspanish.$t"
             />
 
             <icon-list-item
-              v-if="!!business.marker.gsx$weblink.$t"
+              v-if="business.marker.gsx$weblink !== undefined && !!business.marker.gsx$weblink.$t"
               icon="fas fa-globe"
               :title="getDomain(business.marker.gsx$weblink.$t)"
               :link="business.marker.gsx$weblink.$t"
             />
 
             <icon-list-item
-              v-if="!!business.marker.gsx$email.$t"
+              v-if="business.marker.gsx$email !== undefined && !!business.marker.gsx$email.$t"
               icon="fas fa-envelope"
               :title="getDomain(business.marker.gsx$email.$t)"
               :link="'mailto:' + business.marker.gsx$email.$t"
             />
           </p>
-          <opening-hours :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
 
+          <opening-hours :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
           <opening-hours :business="business.marker" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
 
-          <template v-if="!!business.marker.gsx$instructions.$t">
+          <template v-if="business.marker.gsx$instructions !== undefined && !!business.marker.gsx$instructions.$t">
             <p>
               <b>{{ $t('label.instructions') }}:</b><br />{{ business.marker.gsx$instructions.$t }}
             </p>
           </template>
-          <template v-if="!!business.marker.gsx$offers.$t">
+          <template v-if="business.marker.gsx$offers !== undefined && !!business.marker.gsx$offers.$t">
             <p>
               <b>{{ $t('label.offers') }}:</b><br />{{ business.marker.gsx$offers.$t }}
             </p>
           </template>
-          <template v-if="!!business.marker.gsx$notes.$t">
+          <template v-if="business.marker.gsx$notes !== undefined && !!business.marker.gsx$notes.$t">
             <p>
               <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.gsx$notes.$t }}
             </p>
           </template>
+
           <p class="updated" v-if="getLastUpdatedDate != 'Invalid Date'">
             {{ $t('label.details-last-updated') }}: {{ getLastUpdatedDate }}
           </p>
@@ -104,7 +103,7 @@
 <script>
 import OpeningHours from './OpeningHours.vue'
 import IconListItem from './IconListItem.vue'
-import { businessIcon } from '../utilities'
+import { businessIcon, getAddress } from '../utilities'
 export default {
   name: 'BusinessDetails',
   components: {
@@ -124,7 +123,8 @@ export default {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
     },
-    businessIcon: businessIcon
+    businessIcon: businessIcon,
+    getAddress: getAddress
   },
   computed: {
     getLastUpdatedDate: function () {
@@ -159,9 +159,12 @@ export default {
 
   i {
     font-size: 3rem;
-    color: #ee8842;
+    color: theme-color('quinary');
     margin: 7px 10px 7px 0;
     float: left;
+    @media (prefers-color-scheme: dark) {
+      color: theme-color-level('quinary', 5);
+    }
   }
 }
 

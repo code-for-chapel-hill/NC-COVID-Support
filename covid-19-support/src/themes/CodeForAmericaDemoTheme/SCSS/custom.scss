@@ -14,27 +14,55 @@
 
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
-
 $font-family-base: 'Poppins', $font-family-sans-serif;
-$body-color: #fff;
 
 $blue: #0052a5;
+$dark-blue: #031e3b;
 $orange: #fd7e14;
 $red: #e0162b;
+$green: #52aa36;
 $teal: $blue;
 $yellow: #ffb71c;
+$light-orange: #ee8842;
+$marker-open: #566ca9 !default;
+$marker-closed: #999 !default;
+$marker-selected: #ff3d3d !default;
 
 $warning: $yellow;
 $danger: $red;
+
 // 46c4d7
 $theme-colors: (
   'primary': $red,
   'secondary': $blue,
+  'tertiary': $white,
+  'quaternary': $red,
+  'quinary': $light-orange,
   'buttons': $white,
+  'success': $green,
   'warning': $warning,
   'danger': $danger,
-  'secondaryDark': $gray-800
+  'secondaryDark': $dark-blue
 );
+
+$body-bg: #eee;
+$body-color: #111;
+
+$modal-bg-dark: #222;
+$modal-body-dark: #eee;
+$hover-color-dark: $gray-500;
+
+$nav-dropdown: $white;
+$nav-dropdown-dark: rgba(255, 255, 255, 0.8);
+$nav-dropdown-bg: theme-color-level('primary', -2);
+$nav-dropdown-bg-dark: theme-color-level('primary', 6);
+$nav-dropdown-bg-hover: theme-color-level('primary', -4);
+$nav-dropdown-bg-hover-dark: theme-color-level('primary', 8);
+
+$map-key-bg: #f8f9fa;
+$map-key-bg-dark: #222;
+$map-key: color-yiq($map-key-bg);
+$map-key-dark: color-yiq($map-key);
 
 $navbar-padding-x: 1rem;
 $navbar-padding-y: 0;
@@ -51,9 +79,9 @@ $navbar-padding-y: 0;
 // );
 $bv-enable-table-stacked: false;
 
-@include list-group-item-variant('sideNav', $blue, $white);
+@include list-group-item-variant('sideNav', theme-color('secondary'), $white);
 @media (prefers-color-scheme: dark) {
-  @include list-group-item-variant('sideNav', theme-color-level('secondary', 8), $gray-500);
+  @include list-group-item-variant('sideNav', theme-color('secondaryDark'), $gray-500);
 
   .bg-primary {
     background-color: theme-color-level('primary', 5) !important;
@@ -61,12 +89,20 @@ $bv-enable-table-stacked: false;
   .bg-secondary {
     background-color: theme-color-level('secondary', 8) !important;
   }
+  .bg-tertiary {
+    background-color: theme-color-level('tertiary', 5) !important;
+  }
+
+  .bg-quaternary {
+    background-color: theme-color-level('quaternary', 5) !important;
+  }
 
   .btn-buttons {
     @include button-variant($gray-500, $gray-500);
   }
 
   .modal-content {
-    background: #222;
+    background: $modal-bg-dark;
+    color: $modal-body-dark;
   }
 }
