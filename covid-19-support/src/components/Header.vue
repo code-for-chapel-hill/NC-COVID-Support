@@ -109,7 +109,9 @@ export default {
 }
 
 .btn-buttons {
-  color: $button-text !important;
+  @media (prefers-color-scheme: light) {
+    color: $button-text !important;
+  }
 }
 
 .navbar-nav > li > .dropdown-menu a:hover {
