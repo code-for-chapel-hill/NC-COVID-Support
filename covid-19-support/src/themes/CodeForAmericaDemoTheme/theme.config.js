@@ -1,5 +1,4 @@
 export const theme = {
-  
   settings: {
     initialMapCenter: {
       lat: 39.8283,
