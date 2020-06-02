@@ -7,7 +7,7 @@
     <b-list-group class="need-day-group">
       <b-list-group-item variant="sideNav" class="need-type">
         <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
-        <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
+        <b-form-select :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
       </b-list-group-item>
       <b-list-group-item variant="sideNav">
         <h6>{{ $t('sidebar.when-do-you-need-it') }}</h6>
@@ -81,6 +81,32 @@ export default {
     //   }
     //   return 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
     // },
+    needOptionGroups() {
+      const categories = this.getNeedCategories().categories
+      const needOptions = [{ value: 'none', text: this.$tc('label.selectacategory', 1) }]
+      categories.forEach((category) => {
+        if (category.subcategories != undefined) {
+          const label = category.name
+          const myOptions = []
+          category.subcategories.forEach((subcategory) => {
+            myOptions.push({
+              text: subcategory.name,
+              value: subcategory.code
+            })
+          })
+          needOptions.push({
+            label: label,
+            options: myOptions
+          })
+        } else {
+          needOptions.push({
+            text: category.name,
+            value: category.code
+          })
+        }
+      })
+      return needOptions
+    },
     needOptions() {
       return [
         { value: 'none', text: this.$tc('label.selectacategory', 1) },
@@ -105,6 +131,60 @@ export default {
     }
   },
   methods: {
+    getNeedCategories() {
+      return {
+        categories: [
+          {
+            code: 'food',
+            id: 1001,
+            name: 'Food Resources',
+            subcategories: [
+              {
+                code: 'restaurant',
+                id: 1002,
+                name: 'Restaurants'
+              },
+              {
+                code: 'food_bev',
+                id: 1003,
+                name: 'Specialty Food & Beverage'
+              },
+              {
+                code: 'meal',
+                id: 1004,
+                name: 'Free meals'
+              },
+              {
+                code: 'grocery',
+                id: 1005,
+                name: 'Groceries'
+              },
+              {
+                code: 'family',
+                id: 1006,
+                name: 'Prepared Family Meals'
+              }
+            ]
+          },
+          {
+            code: 'farm',
+            id: 1007,
+            name: 'Farms & Farm Markets'
+          },
+          {
+            code: 'pharmacy',
+            id: 1008,
+            name: 'Pharmacy'
+          },
+          {
+            code: 'pet',
+            id: 1009,
+            name: 'Pet Supplies'
+          }
+        ],
+        regions: ['Orange']
+      }
+    },
     closeDetails: function () {
       this.showListing = true
     },
