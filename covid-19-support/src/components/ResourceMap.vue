@@ -41,7 +41,9 @@
             name="Your Location"
             :lat-lng="userLocationData"
             v-if="userLocationData"
-            :color="circle.color"
+            :color="circle.border"
+            :fillColor="circle.fill"
+            :fillOpacity="0.9"
             :radius="circleRadius()"
           ></l-circle-marker>
         </v-marker-cluster>
@@ -105,7 +107,8 @@ export default {
       locationData: location,
       accuracy: 0,
       circle: {
-        color: 'blue'
+        border: 'blue',
+        fill: 'white'
       },
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
