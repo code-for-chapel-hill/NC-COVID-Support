@@ -41,8 +41,20 @@
             v-if="userLocationData"
             :color="circle.border"
             :fillColor="circle.fill"
+            :fillOpacity="0.15"
+            :radius="accuracyRadius()"
+            :weight="1"
+          ></l-circle-marker>
+          <l-circle-marker
+            key="userLocation"
+            name="Your Location"
+            :lat-lng="userLocationData"
+            v-if="userLocationData"
+            :color="circle.border"
+            :fillColor="circle.fill"
             :fillOpacity="1.0"
             :radius="circleRadius()"
+            :weight="1"
           ></l-circle-marker>
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
@@ -105,8 +117,8 @@ export default {
       locationData: location,
       accuracy: 0,
       circle: {
-        border: 'blue',
-        fill: 'white'
+        border: 'white',
+        fill: 'blue'
       },
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
@@ -195,10 +207,14 @@ export default {
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
     circleRadius() {
-      var radius = this.accuracy - 10
+      var radius = 8 // this.accuracy - 10
       if (radius <= 5) {
         radius = 5
       }
+      return radius
+    },
+    accuracyRadius() {
+      var radius = this.accuracy
       return radius
     },
     latLng,
