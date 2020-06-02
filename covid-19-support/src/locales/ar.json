@@ -36,16 +36,16 @@
     "title": "عن هذا الموقع"
   },
   "category": {
-    "childcare": "رعاية الطفل",
-    "family": "وجبة عائلية جاهزة",
-    "farm": "سوق المزارع أو المزارع | أسواق المزارع والمزارعين",
+    "childcare": "",
+    "family": "",
+    "farm": "",
     "food_bev": "",
-    "grocery": "بقالة |",
-    "meal": "وجبة مجانية | وجبات مجانية",
-    "pet": "مستلزمات الحيوانات الأليفة",
-    "pharmacy": "الصيدلية |",
-    "restaurant": "المطاعم |",
-    "school": "وجبة مدرسية |"
+    "grocery": "",
+    "meal": "",
+    "pet": "",
+    "pharmacy": "",
+    "restaurant": "",
+    "school": ""
   },
   "dayofweek": {
     "any": "أي",
