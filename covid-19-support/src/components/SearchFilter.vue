@@ -145,31 +145,31 @@ export default {
                 name: 'Restaurants'
               },
               {
-                code: 'food_bev',
-                id: 1003,
-                name: 'Specialty Food & Beverage'
-              },
-              {
                 code: 'meal',
                 id: 1004,
                 name: 'Free meals'
               },
               {
+                code: 'family',
+                id: 1006,
+                name: 'Prepared family meals'
+              },
+              {
+                code: 'food_bev',
+                id: 1003,
+                name: 'Specialty food & beverage'
+              },
+              {
                 code: 'grocery',
                 id: 1005,
                 name: 'Groceries'
-              },
-              {
-                code: 'family',
-                id: 1006,
-                name: 'Prepared Family Meals'
               }
             ]
           },
           {
             code: 'farm',
             id: 1007,
-            name: 'Farms & Farm Markets'
+            name: 'Farms & farmers markets'
           },
           {
             code: 'pharmacy',
@@ -179,7 +179,7 @@ export default {
           {
             code: 'pet',
             id: 1009,
-            name: 'Pet Supplies'
+            name: 'Pet supplies'
           }
         ],
         regions: ['Orange']
