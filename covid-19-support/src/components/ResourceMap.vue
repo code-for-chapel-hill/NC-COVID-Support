@@ -291,7 +291,7 @@ export default {
   height: calc(100% - 124px);
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .bv-example-row {
     height: calc(100% - 116px);
   }

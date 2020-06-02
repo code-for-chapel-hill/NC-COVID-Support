@@ -23,18 +23,10 @@
         <b-nav-item right @click="$bvModal.show('about-us')">
           {{ $t('about.linktext') }}
         </b-nav-item>
-        <b-nav-item :href="socialMedia.facebook">
-          <i class="fab fa-facebook-square"></i>
+        <b-nav-item :href="item.url" v-for="(item, index) in socialMedia" v-bind:key="index">
+          <i :class="'fab fa-' + item.icon"></i> <span class="sm-name">{{ item.name }}</span>
         </b-nav-item>
-        <b-nav-item :href="'https://twitter.com/' + socialMedia.twitter">
-          <i class="fab fa-twitter"></i>
-        </b-nav-item>
-        <b-nav-item :href="'https://instagram.com/' + socialMedia.instagram">
-          <i class="fab fa-instagram"></i>
-        </b-nav-item>
-        <b-nav-item :href="socialMedia.github">
-          <i class="fab fa-github"></i>
-        </b-nav-item>
+
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
             <i class="fas fa-globe-americas" aria-hidden="true" />
@@ -56,7 +48,7 @@ export default {
   name: 'app-header',
   props: {
     language: String,
-    socialMedia: Object
+    socialMedia: Array
   },
   data() {
     return {
@@ -146,5 +138,12 @@ export default {
 
 .ncblue {
   color: $teal;
+}
+
+.sm-name {
+  display: inline;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
 }
 </style>
