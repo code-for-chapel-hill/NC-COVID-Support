@@ -3,7 +3,8 @@ export const theme = {
     initialMapCenter: {
       lat: 35.91371,
       lng: -79.057919
-    }
+    },
+    initialMapZoom: 10
   },
   data: {
     spreadsheetUrl: 'https://spreadsheets.google.com/feeds/list/1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0/1/public/values?alt=json'

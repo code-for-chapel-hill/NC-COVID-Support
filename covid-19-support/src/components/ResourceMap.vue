@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       center: latLng(this.centroid.lat, this.centroid.lng),
-      zoom: 10,
+      zoom: this.centroid.zoom,
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
