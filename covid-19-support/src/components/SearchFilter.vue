@@ -7,7 +7,7 @@
     <b-list-group class="need-day-group">
       <b-list-group-item variant="sideNav" class="need-type">
         <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
-        <b-form-select :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
+        <b-form-select class="custom-select" :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
       </b-list-group-item>
       <b-list-group-item variant="sideNav">
         <h6>{{ $t('sidebar.when-do-you-need-it') }}</h6>
@@ -250,6 +250,10 @@ export default {
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
   }
+}
+
+.custom-select {
+  cursor: pointer;
 }
 
 .sidebar-heading {
