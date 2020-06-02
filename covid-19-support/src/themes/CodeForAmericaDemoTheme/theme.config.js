@@ -1,9 +1,10 @@
 export const theme = {
   settings: {
     initialMapCenter: {
-      lat: 35.91371,
-      lng: -79.057919
-    }
+      lat: 39.8283,
+      lng: -98.5795
+    },
+    initialMapZoom: 5
   },
   data: {
     spreadsheetUrl: 'https://spreadsheets.google.com/feeds/list/14XnTyhSqfRT7xh7QA4F9ydTU9x6wGiRiKMSieT5sG4o/1/public/values?alt=json'

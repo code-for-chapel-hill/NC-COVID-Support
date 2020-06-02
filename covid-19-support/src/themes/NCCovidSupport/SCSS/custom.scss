@@ -46,12 +46,14 @@ $theme-colors: (
   'secondaryDark': $gray-800
 );
 
-$body-bg: #eee;
+$body-bg: $white;
 $body-color: #111;
 
-$modal-bg-dark: #222;
-$modal-body-dark: #eee;
-$hover-color-dark: $gray-500;
+$modal-bg-dark: $gray-900;
+$modal-body-dark: $gray-300;
+$hover-color-dark: $gray-600;
+$button-text: $white;
+$button-text-dark: $gray-500;
 
 $nav-dropdown: $white;
 $nav-dropdown-dark: rgba(255, 255, 255, 0.8);

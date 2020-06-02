@@ -3,6 +3,7 @@
     <template v-if="link != ''">
       <div class="iconListItem">
         <div class="ilIcon">
+          <div class="leafletIcon" v-if="leafletIcon" v-html="generateIcon"></div>
           <i class="fas" v-bind:class="icon" v-if="icon != ''"></i>
           <img :src="image" v-if="icon == null || icon == ''" />
         </div>
@@ -17,6 +18,7 @@
     <template v-else>
       <div class="iconListItem">
         <div class="ilIcon">
+          <div class="leafletIcon" v-if="leafletIcon" v-html="generateIcon"></div>
           <i class="fas" v-bind:class="icon" v-if="icon != ''"></i>
           <img :src="image" v-if="icon == null || icon == ''" />
         </div>
@@ -37,10 +39,16 @@ export default {
     }
   },
   props: {
+    leafletIcon: {},
     title: { type: String },
     link: { type: String },
     icon: { type: String },
     image: { type: String }
+  },
+  computed: {
+    generateIcon() {
+      return this.leafletIcon.createIcon().outerHTML
+    }
   }
 }
 </script>
@@ -57,6 +65,17 @@ export default {
     color: theme-color('warning');
     @media (prefers-color-scheme: dark) {
       color: theme-color-level(warning, 5);
+    }
+  }
+
+  .leafletIcon {
+    margin: 0 0 0 0 !important;
+
+    & .leaflet-marker-icon {
+      position: static;
+      margin: 0 0 0 0 !important;
+      width: 32px !important;
+      height: 44px !important;
     }
   }
 }
