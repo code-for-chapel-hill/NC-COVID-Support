@@ -45,7 +45,7 @@
             :radius="circleRadius()"
           ></l-circle-marker>
         </v-marker-cluster>
-        <l-control position="bottomleft">
+        <l-control position="bottomright" class="user-location-button">
           <button @click="getUserLocation">
             <i class="fas fa-location-arrow"></i>
           </button>
@@ -352,5 +352,9 @@ div.markeropen svg path {
 }
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
+}
+
+.user-location-button {
+  bottom: 68px !important;
 }
 </style>
