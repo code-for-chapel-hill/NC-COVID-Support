@@ -43,7 +43,7 @@
             v-if="userLocationData"
             :color="circle.border"
             :fillColor="circle.fill"
-            :fillOpacity="0.9"
+            :fillOpacity="1.0"
             :radius="circleRadius()"
           ></l-circle-marker>
         </v-marker-cluster>
