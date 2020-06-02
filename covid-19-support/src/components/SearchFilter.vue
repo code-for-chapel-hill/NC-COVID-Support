@@ -219,6 +219,7 @@ export default {
 <style lang="scss" scoped>
 .custom-select {
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 #search-filter-wrapper {
@@ -250,10 +251,6 @@ export default {
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
   }
-}
-
-.custom-select {
-  cursor: pointer;
 }
 
 .sidebar-heading {
