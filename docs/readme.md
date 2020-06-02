@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -85,6 +85,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/mitomon"><img src="https://avatars3.githubusercontent.com/u/11986108?v=4" width="100px;" alt=""/><br /><sub><b>mitomon</b></sub></a><br /><a href="#translation-mitomon" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/eparadise"><img src="https://avatars2.githubusercontent.com/u/43389857?v=4" width="100px;" alt=""/><br /><sub><b>Eliza Paradise</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=eparadise" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cw2908"><img src="https://avatars2.githubusercontent.com/u/9000855?v=4" width="100px;" alt=""/><br /><sub><b>Chris W</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=cw2908" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/codetheorem"><img src="https://avatars3.githubusercontent.com/u/54779517?v=4" width="100px;" alt=""/><br /><sub><b>Hrishikesh Agarwal</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=codetheorem" title="Code">💻</a></td>
   </tr>
 </table>
 
