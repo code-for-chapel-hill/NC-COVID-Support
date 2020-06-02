@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "Penjagaan kanak-kanak",
-    "family": "Hidangan keluarga yang disediakan | Makanan keluarga yang disediakan",
-    "farm": "Pasar Ladang atau Petani | Pasaran Ladang & Petani",
+    "family": "Makanan keluarga yang disediakan",
+    "farm": "Pasaran Ladang & Petani",
     "food_bev": "",
-    "grocery": "Runcit | Groceries",
-    "meal": "Makanan percuma | Makanan percuma",
-    "petsupplies": "Bekalan Haiwan Peliharaan",
-    "pharmacy": "Farmasi | Farmasi",
-    "restaurant": "Restoran | Restoran",
-    "school": "Makan sekolah | Makanan sekolah"
+    "grocery": "Groceries",
+    "meal": "Makanan percuma",
+    "pet": "Bekalan Haiwan Peliharaan",
+    "pharmacy": "Farmasi",
+    "restaurant": "Restoran",
+    "school": "Makanan sekolah"
   },
   "dayofweek": {
     "any": "Sebarang",

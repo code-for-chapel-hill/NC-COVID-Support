@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "Child care",
-    "family": "Prepared family meal|Prepared family meals",
-    "farm": "Farm or farmer market|Farms & farmers' markets",
-    "food_bev": "Speciality food & beverage",
-    "grocery": "Grocery|Groceries",
-    "meal": "Free meal|Free meals",
-    "petsupplies": "Pet supplies",
-    "pharmacy": "Pharmacy|Pharmacies",
-    "restaurant": "Restaurant|Restaurants",
-    "school": "School meal|School meals"
+    "family": "Prepared family meals",
+    "farm": "Farms & farmers' markets",
+    "food_bev": "Specialty food & beverage",
+    "grocery": "Groceries",
+    "meal": "Free meals",
+    "pet": "Pet supplies",
+    "pharmacy": "Pharmacy",
+    "restaurant": "Restaurants",
+    "school": "School meals"
   },
   "dayofweek": {
     "any": "Any",

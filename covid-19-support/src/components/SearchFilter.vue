@@ -89,8 +89,9 @@ export default {
           const label = category.name
           const myOptions = []
           category.subcategories.forEach((subcategory) => {
+            const text = 'category.' + subcategory.code
             myOptions.push({
-              text: subcategory.name,
+              text: this.$t(text),
               value: subcategory.code
             })
           })
@@ -99,8 +100,9 @@ export default {
             options: myOptions
           })
         } else {
+          const text = 'category.' + category.code
           needOptions.push({
-            text: category.name,
+            text: this.$t(text),
             value: category.code
           })
         }
@@ -109,7 +111,7 @@ export default {
     },
     needOptions() {
       return [
-        { value: 'none', text: this.$tc('label.selectacategory', 1) },
+        { value: 'selectacategory', text: this.$tc('label.selectacategory', 1) },
         { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
         { value: 'meal', text: this.$tc('category.meal', 2) },
         { value: 'family', text: this.$tc('category.family', 2) },
@@ -117,7 +119,7 @@ export default {
         { value: 'grocery', text: this.$tc('category.grocery', 2) },
         { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
         { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
-        { value: 'pet', text: this.$tc('category.petsupplies', 2) }
+        { value: 'pet', text: this.$t('category.pet') }
       ]
     },
     dayOptions() {
