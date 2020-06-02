@@ -2,9 +2,10 @@ export const theme = {
   
   settings: {
     initialMapCenter: {
-      lat: 35.91371,
-      lng: -79.057919
-    }
+      lat: 39.8283,
+      lng: -98.5795
+    },
+    initialMapZoom: 5
   },
   socialMedia: {
     twitter: 'nccovidsupport',

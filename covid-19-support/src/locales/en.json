@@ -80,6 +80,7 @@
     "freemeals": "Free meal location|Free meal locations",
     "freeproduce": "Free produce location|Free produce locations",
     "instructions": "Instructions",
+    "locationhelplinktext": "Learn more",
     "mapkey": "Map Key",
     "mealpublic": "Meals open to public",
     "mealstudent": "Meals for students",
@@ -107,6 +108,7 @@
     "ms": "Burmese",
     "zh": "Simplified Chinese"
   },
+  "locationhelp": "Please make sure your device location is enabled",
   "sidebar": {
     "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports Chatham County and Orange County, NC. With",
