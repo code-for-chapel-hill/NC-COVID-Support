@@ -110,7 +110,11 @@ export default {
       showList: false,
       highlightFilters: [],
       bounds: null,
-      centroid: { lat: theme.settings.initialMapCenter.lat, lng: theme.settings.initialMapCenter.lng },
+      centroid: {
+        lat: theme.settings.initialMapCenter.lat,
+        lng: theme.settings.initialMapCenter.lng,
+        zoom: theme.settings.initialMapZoom
+      },
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
