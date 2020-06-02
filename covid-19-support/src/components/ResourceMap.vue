@@ -24,7 +24,22 @@
           </div>
         </l-control>
         <l-tile-layer :url="mapUrl" :attribution="attribution" />
-
+        <l-circle
+          name="Accuracy"
+          :lat-lng="userLocationData"
+          v-if="userLocationData"
+          :radius="accuracyRadius()"
+          :weight="1"
+          :class-name="'locAccuracy'"
+        ></l-circle>
+        <l-circle-marker
+          name="Your Location"
+          :lat-lng="userLocationData"
+          v-if="userLocationData"
+          :radius="circleRadius()"
+          :weight="1"
+          :class-name="'locMarker'"
+        ></l-circle-marker>
         <v-marker-cluster ref="marks" :options="clusterOptions">
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
@@ -34,28 +49,6 @@
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
-          <l-circle-marker
-            key="userLocation"
-            name="Your Location"
-            :lat-lng="userLocationData"
-            v-if="userLocationData"
-            :color="circle.border"
-            :fillColor="circle.fill"
-            :fillOpacity="0.15"
-            :radius="accuracyRadius()"
-            :weight="1"
-          ></l-circle-marker>
-          <l-circle-marker
-            key="userLocation"
-            name="Your Location"
-            :lat-lng="userLocationData"
-            v-if="userLocationData"
-            :color="circle.border"
-            :fillColor="circle.fill"
-            :fillOpacity="1.0"
-            :radius="circleRadius()"
-            :weight="1"
-          ></l-circle-marker>
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
           <button @click="getUserLocation">
@@ -72,7 +65,7 @@
 
 <script>
 import { BAlert } from 'bootstrap-vue'
-import { LMap, LTileLayer, LMarker, LControl, LCircleMarker } from 'vue2-leaflet'
+import { LMap, LTileLayer, LMarker, LControl, LCircle, LCircleMarker } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import IconListItem from './IconListItem.vue'
@@ -93,6 +86,7 @@ export default {
     LTileLayer,
     LMarker,
     LControl,
+    LCircle,
     LCircleMarker,
     'v-marker-cluster': Vue2LeafletMarkerCluster,
     IconListItem
@@ -118,7 +112,7 @@ export default {
       accuracy: 0,
       circle: {
         border: 'white',
-        fill: 'blue'
+        fill: '#f00'
       },
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
@@ -207,7 +201,7 @@ export default {
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
     circleRadius() {
-      var radius = 8 // this.accuracy - 10
+      var radius = 8
       if (radius <= 5) {
         radius = 5
       }
@@ -269,6 +263,20 @@ export default {
   padding: 0;
   /* margin-left: 8px;
     margin-right: 8px; */
+}
+
+.locAccuracy {
+  color: $map-accuracy-outline;
+  fill: $map-accuracy;
+  fill-opacity: 0.15;
+  cursor: grab !important;
+}
+
+.locMarker {
+  color: $map-location-outline;
+  fill: $map-location;
+  fill-opacity: 1;
+  cursor: grab !important;
 }
 
 .alert-warning {
