@@ -36,40 +36,31 @@
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
-          <l-marker
+          <l-circle-marker
             key="userLocation"
             name="Your Location"
             :lat-lng="userLocationData"
             v-if="userLocationData"
-            :icon="userIcon()"
-          ></l-marker>
+            :color="circle.color"
+            :radius="circleRadius()"
+          ></l-circle-marker>
         </v-marker-cluster>
         <l-control position="bottomleft">
           <button @click="getUserLocation">
             <i class="fas fa-location-arrow"></i>
           </button>
         </l-control>
-        <b-alert class="location-alert" :show="showError" dismissible @dismissed="resetError" fade variant="warning">
+        <b-alert variant="warning" class="location-alert" :show="showError" dismissible @dismissed="resetError" fade>
           {{ errorMessage }}
-          <b-link @click="$bvModal.show('location-error')">
-            <i18n path="label.locationhelplinktext" tag="span" />
-          </b-link>
         </b-alert>
-        <b-modal id="location-error" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
-          <template v-slot:modal-title>Location Help</template>
-          <i18n path="locationhelp" tag="span" />
-          <template v-slot:modal-footer>
-            <b-button @click="$bvModal.hide('location-error')" right>{{ $t('label.close') }}</b-button>
-          </template>
-        </b-modal>
       </l-map>
     </div>
   </b-container>
 </template>
 
 <script>
-import { BAlert, BModal } from 'bootstrap-vue'
-import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
+import { BAlert } from 'bootstrap-vue'
+import { LMap, LTileLayer, LMarker, LControl, LCircleMarker } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import IconListItem from './IconListItem.vue'
@@ -86,11 +77,11 @@ export default {
   name: 'ResourceMap',
   components: {
     BAlert,
-    BModal,
     LMap,
     LTileLayer,
     LMarker,
     LControl,
+    LCircleMarker,
     'v-marker-cluster': Vue2LeafletMarkerCluster,
     IconListItem
   },
@@ -112,6 +103,10 @@ export default {
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       locationData: location,
+      accuracy: 0,
+      circle: {
+        color: 'blue'
+      },
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
     }
@@ -136,7 +131,7 @@ export default {
     },
     userIcon() {
       const icon = ExtraMarkers.icon({
-        markerColor: 'cyan',
+        markerColor: 'usermarker',
         icon: 'fas fa-home',
         prefix: 'fa',
         svg: true
@@ -150,18 +145,27 @@ export default {
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
           this.centerUpdated(this.userLocationData)
+          this.accuracy = locationEvent.accuracy
         }
       })
       map.on('locationerror', (err) => {
         if (err.message) {
           this.showError = true
           this.errorMessage = err.message
+          this.errorMessage += ' Please check your browser settings and ensure you have given our site permission to view your location.'
         }
       })
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
       zoomControl.className = 'leaflet-bottom leaflet-right'
+    },
+    circleRadius() {
+      var radius = this.accuracy - 10
+      if (radius <= 5) {
+        radius = 5
+      }
+      return radius
     },
     latLng,
     selectedIcon(selected, item) {
@@ -217,6 +221,14 @@ export default {
     margin-right: 8px; */
 }
 
+.alert-warning {
+  @media (prefers-color-scheme: dark) {
+    background-color: theme-color-level('warning', 2) !important;
+    color: theme-color-level('warning', 8) !important;
+    border-color: theme-color-level('warning', 2) !important;
+  }
+}
+
 .bv-example-row {
   height: calc(100% - 124px);
 }
@@ -227,17 +239,6 @@ export default {
   }
 }
 
-@media (max-width: 991px) {
-  #location-error > .modal-dialog {
-    justify-content: normal;
-    max-width: 100%;
-
-    & > .modal-content {
-      min-height: 100vh;
-      height: 100vh;
-    }
-  }
-}
 .markerselected svg path {
   fill: $marker-selected;
 }
@@ -248,6 +249,10 @@ div.markeropen svg path {
 
 .markerclosed svg path {
   fill: $marker-closed;
+}
+
+.usermarker {
+  background-color: $user-marker;
 }
 
 .noselection.bv-example-row {
