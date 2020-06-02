@@ -34,14 +34,33 @@
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
+          <l-circle-marker
+            key="userLocation"
+            name="Your Location"
+            :lat-lng="userLocationData"
+            v-if="userLocationData"
+            :color="circle.border"
+            :fillColor="circle.fill"
+            :fillOpacity="1.0"
+            :radius="circleRadius()"
+          ></l-circle-marker>
         </v-marker-cluster>
+        <l-control position="bottomright" class="user-location-button">
+          <button @click="getUserLocation">
+            <i class="fas fa-location-arrow"></i>
+          </button>
+        </l-control>
+        <b-alert variant="warning" class="location-alert" :show="showError" dismissible @dismissed="resetError" fade>
+          {{ errorMessage }}
+        </b-alert>
       </l-map>
     </div>
   </b-container>
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
+import { BAlert } from 'bootstrap-vue'
+import { LMap, LTileLayer, LMarker, LControl, LCircleMarker } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import IconListItem from './IconListItem.vue'
@@ -57,10 +76,12 @@ Icon.Default.mergeOptions({
 export default {
   name: 'ResourceMap',
   components: {
+    BAlert,
     LMap,
     LTileLayer,
     LMarker,
     LControl,
+    LCircleMarker,
     'v-marker-cluster': Vue2LeafletMarkerCluster,
     IconListItem
   },
@@ -76,9 +97,17 @@ export default {
       center: latLng(this.centroid.lat, this.centroid.lng),
       zoom: this.centroid.zoom,
       showParagraph: true,
+      showError: false,
+      errorMessage: '',
+      userLocationData: false,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
       locationData: location,
+      accuracy: 0,
+      circle: {
+        border: 'blue',
+        fill: 'white'
+      },
       clusterOptions: { spiderfyOnMaxZoom: true, maxClusterRadius: 40, disableClusteringAtZoom: 16 },
       showKey: false
     }
@@ -130,9 +159,47 @@ export default {
     boundsUpdated(bounds) {
       this.$emit('bounds', bounds)
     },
+    resetError() {
+      this.showError = false
+      this.errorMessage = ''
+    },
+    userIcon() {
+      const icon = ExtraMarkers.icon({
+        markerColor: 'usermarker',
+        icon: 'fas fa-home',
+        prefix: 'fa',
+        svg: true
+      })
+      return icon
+    },
+    getUserLocation() {
+      var map = this.$refs.covidMap.mapObject
+      map.locate({ setView: true, enableHighAccuracy: true })
+      map.on('locationfound', (locationEvent) => {
+        if (locationEvent.latitude && locationEvent.longitude) {
+          this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
+          this.centerUpdated(this.userLocationData)
+          this.accuracy = locationEvent.accuracy
+        }
+      })
+      map.on('locationerror', (err) => {
+        if (err.message) {
+          this.showError = true
+          this.errorMessage = err.message
+          this.errorMessage += ' Please check your browser settings and ensure you have given our site permission to view your location.'
+        }
+      })
+    },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
       zoomControl.className = 'leaflet-bottom leaflet-right'
+    },
+    circleRadius() {
+      var radius = this.accuracy - 10
+      if (radius <= 5) {
+        radius = 5
+      }
+      return radius
     },
     latLng,
     selectedIcon(selected, item) {
@@ -151,6 +218,7 @@ export default {
         // name: item.marker.gsx$providername.$t,
         // nameClasses: 'markerName'
       })
+
       return markerIcon
     }
     // eslint-disable-next-line no-console
@@ -187,6 +255,14 @@ export default {
     margin-right: 8px; */
 }
 
+.alert-warning {
+  @media (prefers-color-scheme: dark) {
+    background-color: theme-color-level('warning', 2) !important;
+    color: theme-color-level('warning', 8) !important;
+    border-color: theme-color-level('warning', 2) !important;
+  }
+}
+
 .bv-example-row {
   height: calc(100% - 124px);
 }
@@ -207,6 +283,10 @@ div.markeropen svg path {
 
 .markerclosed svg path {
   fill: $marker-closed;
+}
+
+.usermarker {
+  background-color: $user-marker;
 }
 
 .noselection.bv-example-row {
@@ -263,8 +343,18 @@ div.markeropen svg path {
 .mapkey.show-key .title {
   display: inline;
 }
-
+.location-alert {
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 175px);
+  width: 350px;
+  z-index: 1000;
+}
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
+}
+
+.user-location-button {
+  bottom: 68px !important;
 }
 </style>
