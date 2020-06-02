@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage">
+    <app-header :language="language.name" @language-selected="changeLanguage" :socialMedia="socialMediaico">
       <theme-header></theme-header>
     </app-header>
     <about-us-modal />
@@ -114,7 +114,8 @@ export default {
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
-      attribution: null
+      attribution: null,
+      socialMediaico: theme.socialMedia
     }
   },
   mounted() {

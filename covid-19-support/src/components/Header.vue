@@ -18,19 +18,17 @@
         <b-nav-item right @click="$bvModal.show('about-us')">
           {{ $t('about.linktext') }}
         </b-nav-item>
-        <b-nav-item right class="icons">
-          <b-link href="https://www.facebook.com/nccovidsupport">
-            <i class="fab fa-facebook-square"></i>
-          </b-link>
-          <b-link href="https://twitter.com/nccovidsupport">
-            <i class="fab fa-twitter"></i>
-          </b-link>
-          <b-link href="https://instagram.com/nccovidsupport">
-            <i class="fab fa-instagram"></i>
-          </b-link>
-          <b-link href="https://github.com/code-for-chapel-hill/NC-COVID-Support">
-            <i class="fab fa-github"></i>
-          </b-link>
+        <b-nav-item :href="socialMedia.facebook">
+          <i class="fab fa-facebook-square"></i>
+        </b-nav-item>
+        <b-nav-item :href="'https://twitter.com/' + socialMedia.twitter">
+          <i class="fab fa-twitter"></i>
+        </b-nav-item>
+        <b-nav-item :href="'https://instagram.com/' + socialMedia.instagram">
+          <i class="fab fa-instagram"></i>
+        </b-nav-item>
+        <b-nav-item :href="socialMedia.github">
+          <i class="fab fa-github"></i>
         </b-nav-item>
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
@@ -52,7 +50,8 @@
 export default {
   name: 'app-header',
   props: {
-    language: String
+    language: String,
+    socialMedia: Object
   },
   data() {
     return {
@@ -136,15 +135,5 @@ export default {
 
 .ncblue {
   color: $teal;
-}
-
-.icons a {
-  color: rgba(255, 255, 255, 0.5);
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.icons a:hover {
-  color: rgba(255, 255, 255, 0.75);
 }
 </style>

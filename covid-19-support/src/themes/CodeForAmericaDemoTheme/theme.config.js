@@ -1,9 +1,16 @@
 export const theme = {
+  
   settings: {
     initialMapCenter: {
       lat: 35.91371,
       lng: -79.057919
     }
+  },
+  socialMedia: {
+    twitter: 'nccovidsupport',
+    instagram: 'nccovidsupport',
+    facebook: 'https://www.facebook.com/nccovidsupport',
+    github: 'https://github.com/code-for-chapel-hill/NC-COVID-Support'
   },
   data: {
     spreadsheetUrl: 'https://spreadsheets.google.com/feeds/list/14XnTyhSqfRT7xh7QA4F9ydTU9x6wGiRiKMSieT5sG4o/1/public/values?alt=json'
