@@ -18,10 +18,8 @@
               <h6 class="title">{{ $t('label.mapkey') }}</h6>
               <i @click="showKey = !showKey" class="fas fa-info-circle" />
             </div>
-            <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
-              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
-              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
+            <div class="keys" :class="{ 'show-key': showKey }" v-for="item in mapKey" v-bind:key="item.title">
+              <icon-list-item :leaflet-icon="item.icon" :title="item.title" link="" />
             </div>
           </div>
         </l-control>
@@ -90,6 +88,39 @@ export default {
     this.$nextTick(() => {
       this.$emit('bounds', this.$refs.covidMap.mapObject.getBounds())
     })
+  },
+  computed: {
+    mapKey() {
+      return [
+        {
+          title: this.$t('label.open'),
+          icon: ExtraMarkers.icon({
+            className: 'markeropen',
+            icon: 'na',
+            prefix: 'fa',
+            svg: true
+          })
+        },
+        {
+          title: this.$t('label.closedonday'),
+          icon: ExtraMarkers.icon({
+            className: 'markerclosed',
+            icon: 'na',
+            prefix: 'fa',
+            svg: true
+          })
+        },
+        {
+          title: this.$t('label.selected'),
+          icon: ExtraMarkers.icon({
+            className: 'markerselected',
+            icon: 'na',
+            prefix: 'fa',
+            svg: true
+          })
+        }
+      ]
+    }
   },
   methods: {
     centerUpdated(center) {
