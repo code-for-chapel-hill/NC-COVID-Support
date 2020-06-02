@@ -6,6 +6,13 @@ export const theme = {
     },
     initialMapZoom: 5
   },
+  socialMedia: [
+    {
+      name: 'GitHub',
+      icon: 'github',
+      url: 'https://github.com/readingdancer/NC-COVID-Support'
+    }
+  ],
   data: {
     spreadsheetUrl: 'https://spreadsheets.google.com/feeds/list/14XnTyhSqfRT7xh7QA4F9ydTU9x6wGiRiKMSieT5sG4o/1/public/values?alt=json'
   },
