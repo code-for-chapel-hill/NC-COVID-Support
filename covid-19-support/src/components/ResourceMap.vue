@@ -393,17 +393,27 @@ div.markeropen svg path {
 }
 .user-location-button {
   bottom: 68px !important;
+  right: 2px !important;
+  @media (min-width: 768px) {
+    right: 0px !important;
+  }
 }
 .user-location-link {
-  border-radius: 4px;
+  border-radius: 2.5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   display: block;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 26px;
-  height: 26px;
-  line-height: 26px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  @media (min-width: 768px) {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 4px;
+  }
   text-align: center;
   color: #000 !important;
   &:hover {
