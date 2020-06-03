@@ -401,9 +401,14 @@ div.markeropen svg path {
   display: block;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 26px;
-  height: 26px;
-  line-height: 26px;
+  width: 31px;
+  height: 31px;
+  line-height: 31px;
+  @media (min-width: 768px) {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+  }
   text-align: center;
   color: #000 !important;
   &:hover {
