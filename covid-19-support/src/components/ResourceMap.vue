@@ -393,6 +393,10 @@ div.markeropen svg path {
 }
 .user-location-button {
   bottom: 68px !important;
+  right: 1px !important;
+  @media (min-width: 768px) {
+    right: 0px !important;
+  }
 }
 .user-location-link {
   border-radius: 4px;
