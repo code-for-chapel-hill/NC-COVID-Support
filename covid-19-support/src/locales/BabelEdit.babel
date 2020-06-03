@@ -1433,12 +1433,16 @@
                         </translations>
                     </concept_node>
                     <concept_node>
-                        <name>petsupplies</name>
+                        <name>pet</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
                         <comment></comment>
                         <default_text></default_text>
                         <translations>
+                            <translation>
+                                <language>ar-AE</language>
+                                <approved>false</approved>
+                            </translation>
                             <translation>
                                 <language>en-US</language>
                                 <approved>false</approved>
@@ -1452,23 +1456,19 @@
                                 <approved>false</approved>
                             </translation>
                             <translation>
-                                <language>ko-KR</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
-                                <language>zh-CN</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
                                 <language>ja-JP</language>
                                 <approved>false</approved>
                             </translation>
                             <translation>
-                                <language>ar-AE</language>
+                                <language>ko-KR</language>
                                 <approved>false</approved>
                             </translation>
                             <translation>
                                 <language>ms-MY</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -3868,6 +3868,47 @@
                     </concept_node>
                 </children>
             </folder_node>
+            <concept_node>
+                <name>locationhelp</name>
+                <definition_loaded>false</definition_loaded>
+                <description></description>
+                <comment></comment>
+                <default_text></default_text>
+                <translations>
+                    <translation>
+                        <language>ar-AE</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>en-US</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>es-ES</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>fr-FR</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ja-JP</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ko-KR</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ms-MY</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>zh-CN</language>
+                        <approved>false</approved>
+                    </translation>
+                </translations>
+            </concept_node>
             <folder_node>
                 <name>sidebar</name>
                 <children>
