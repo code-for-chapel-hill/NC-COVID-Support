@@ -51,9 +51,9 @@
           ></l-marker>
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
-          <button @click="getUserLocation">
+          <a href="#" @click="getUserLocation" class="user-location-link" ref="useLocation">
             <i class="fas fa-location-arrow"></i>
-          </button>
+          </a>
         </l-control>
         <b-alert variant="warning" class="location-alert" :show="showError" dismissible @dismissed="resetError" fade>
           {{ errorMessage }}
@@ -180,19 +180,21 @@ export default {
     },
     getUserLocation() {
       var map = this.$refs.covidMap.mapObject
-      map.locate({ setView: true, enableHighAccuracy: true })
+      map.locate({ setView: true, enableHighAccuracy: true, watch: true, maximumAge: 60000 })
       map.on('locationfound', (locationEvent) => {
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
           this.centerUpdated(this.userLocationData)
           this.accuracy = locationEvent.accuracy
+          this.$refs.useLocation.classList.add('active')
         }
       })
       map.on('locationerror', (err) => {
-        if (err.message) {
+        if (err.message && err.code != err.TIMEOUT) {
           this.showError = true
           this.errorMessage = err.message
           this.errorMessage += ' Please check your browser settings and ensure you have given our site permission to view your location.'
+          this.$refs.useLocation.classList.add('disabled')
         }
       })
     },
@@ -380,5 +382,27 @@ div.markeropen svg path {
 
 .user-location-button {
   bottom: 68px !important;
+}
+.user-location-link {
+  border-radius: 4px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+  background-color: $white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  color: #000 !important;
+  &:hover {
+    background-color: #f4f4f4;
+  }
+  &.active {
+    color: theme-color('primary') !important;
+  }
+  &.disabled {
+    color: theme-color('#bbb') !important;
+  }
 }
 </style>

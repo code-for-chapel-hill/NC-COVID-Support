@@ -68,7 +68,7 @@ $map-key: color-yiq($map-key-bg);
 $map-key-dark: color-yiq($map-key);
 
 // Used for the location of the user
-$map-location: $blue;
+$map-location: theme-color('tertiary');
 $map-location-outline: $white;
 
 // Used to show the possible inaccuracy of the users location
