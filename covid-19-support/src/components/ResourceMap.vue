@@ -184,7 +184,7 @@ export default {
       map.on('locationfound', (locationEvent) => {
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
-          this.centerUpdated(this.userLocationData)
+          // this.centerUpdated(this.userLocationData)
           this.accuracy = locationEvent.accuracy
           this.$refs.useLocation.classList.add('active')
         }
@@ -379,24 +379,48 @@ div.markeropen svg path {
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
 }
-
+.leaflet-control-zoom a:hover {
+  background-color: #f4f4f4 !important;
+  @media (prefers-color-scheme: dark) {
+    background-color: $gray-300 !important;
+  }
+}
+.leaflet-control-zoom a.leaflet-disabled {
+  background-color: #f4f4f4 !important;
+  @media (prefers-color-scheme: dark) {
+    background-color: $gray-300 !important;
+  }
+}
 .user-location-button {
   bottom: 68px !important;
+  right: 2px !important;
+  @media (min-width: 768px) {
+    right: 0px !important;
+  }
 }
 .user-location-link {
-  border-radius: 4px;
+  border-radius: 2.5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   display: block;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 26px;
-  height: 26px;
-  line-height: 26px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  @media (min-width: 768px) {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 4px;
+  }
   text-align: center;
   color: #000 !important;
   &:hover {
     background-color: #f4f4f4;
+    @media (prefers-color-scheme: dark) {
+      background-color: $gray-300 !important;
+    }
   }
   &.active {
     color: theme-color('primary') !important;
