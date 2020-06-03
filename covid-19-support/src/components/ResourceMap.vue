@@ -184,7 +184,7 @@ export default {
       map.on('locationfound', (locationEvent) => {
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
-          this.centerUpdated(this.userLocationData)
+          // this.centerUpdated(this.userLocationData)
           this.accuracy = locationEvent.accuracy
           this.$refs.useLocation.classList.add('active')
         }
