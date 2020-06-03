@@ -379,7 +379,18 @@ div.markeropen svg path {
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
 }
-
+.leaflet-control-zoom a:hover {
+  background-color: #f4f4f4 !important;
+  @media (prefers-color-scheme: dark) {
+    background-color: $gray-300 !important;
+  }
+}
+.leaflet-control-zoom a.leaflet-disabled {
+  background-color: #f4f4f4 !important;
+  @media (prefers-color-scheme: dark) {
+    background-color: $gray-300 !important;
+  }
+}
 .user-location-button {
   bottom: 68px !important;
 }
@@ -397,6 +408,9 @@ div.markeropen svg path {
   color: #000 !important;
   &:hover {
     background-color: #f4f4f4;
+    @media (prefers-color-scheme: dark) {
+      background-color: $gray-300 !important;
+    }
   }
   &.active {
     color: theme-color('primary') !important;
