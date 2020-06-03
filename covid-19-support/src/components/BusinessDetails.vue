@@ -66,21 +66,21 @@
 
             <icon-list-item
               v-if="business.marker.gsx$twitter !== undefined && !!business.marker.gsx$twitter.$t"
-              icon="fab fa-twitter"
+              icon="fa fa-twitter"
               :title="getDomain(business.marker.gsx$twitter.$t)"
               :link="'https://www.twitter.com/' + business.marker.gsx$twitter.$t"
             />
 
             <icon-list-item
               v-if="business.marker.gsx$instagram !== undefined && !!business.marker.gsx$instagram.$t"
-              icon="fab fa-instagram"
+              icon="fa fa-instagram"
               :title="getDomain(business.marker.gsx$instagram.$t)"
               :link="'https://www.instagram.com/' + business.marker.gsx$instagram.$t"
             />
 
             <icon-list-item
               v-if="business.marker.gsx$facebook !== undefined && !!business.marker.gsx$facebook.$t"
-              icon="fab fa-facebook-square"
+              icon="fa fa-facebook-square"
               :title="getDomain(business.marker.gsx$facebook.$t)"
               :link="business.marker.gsx$facebook.$t"
             />
