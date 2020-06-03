@@ -399,7 +399,7 @@ div.markeropen svg path {
   }
 }
 .user-location-link {
-  border-radius: 4px;
+  border-radius: 2.5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   display: block;
@@ -412,6 +412,7 @@ div.markeropen svg path {
     width: 26px;
     height: 26px;
     line-height: 26px;
+    border-radius: 4px;
   }
   text-align: center;
   color: #000 !important;
