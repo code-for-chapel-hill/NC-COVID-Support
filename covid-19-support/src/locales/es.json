@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "Cuidado de los niños",
-    "family": "Comida familiar preparada | Comida familiar preparada",
-    "farm": "Granja o Mercado de Granjeros | Granjas y Mercados de Agricultores",
+    "family": "Comida familiar preparada",
+    "farm": "Granjas y Mercados de Agricultores",
     "food_bev": "",
     "grocery": "Comestibles",
-    "meal": "Comida gratis | Comidas gratis",
-    "petsupplies": "Suministros de mascotas",
-    "pharmacy": "Farmacia | Farmacias",
-    "restaurant": "Restaurante | Restaurantes",
-    "school": "Comida escolar | Comidas escolares"
+    "meal": "Comidas gratis",
+    "pet": "Suministros de mascotas",
+    "pharmacy": "Farmacia",
+    "restaurant": "Restaurantes",
+    "school": "Comidas escolares"
   },
   "dayofweek": {
     "any": "Alguna",
@@ -108,6 +108,7 @@
     "ms": "birmano",
     "zh": "Chino simplificado"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "Cerrar panel de búsqueda",
     "info-about-us": "Actualmente, este sitio admite el condado de Chatham y el condado de Orange, Carolina del Norte. Con",

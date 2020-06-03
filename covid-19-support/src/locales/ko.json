@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "육아",
-    "family": "가족 음식 세트 | 가족 음식 세트",
-    "farm": "농장 & 시장 | 농장 & 시장",
+    "family": "가족 음식 세트",
+    "farm": "농장 & 시장",
     "food_bev": "",
-    "grocery": "식료품 | 식료품 점",
-    "meal": "무료 식사 | 무료 식사",
-    "petsupplies": "애완 용품",
-    "pharmacy": "약국 | 약국",
-    "restaurant": "식당 | 레스토랑",
-    "school": "학교 급식 | 학교 급식"
+    "grocery": "식료품 점",
+    "meal": "무료 식사",
+    "pet": "애완 용품",
+    "pharmacy": "약국",
+    "restaurant": "레스토랑",
+    "school": "학교 급식"
   },
   "dayofweek": {
     "any": "어떤",
@@ -108,6 +108,7 @@
     "ms": "버마어",
     "zh": "중국어"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "검색 창 닫기",
     "info-about-us": "현재이 사이트는 채텀 카운티와 노스 캐롤라이나 주 오렌지 카운티를 지원합니다. 와",

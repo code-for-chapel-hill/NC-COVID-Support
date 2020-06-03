@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "Garde d'enfants",
-    "family": "Plats préparés en famille | Plats préparés en famille",
-    "farm": "Marché fermier ou fermier | Fermes et marchés fermiers",
+    "family": "Plats préparés en famille",
+    "farm": "Fermes et marchés fermiers",
     "food_bev": "",
-    "grocery": "Épicerie | Épicerie",
-    "meal": "Repas gratuit | Repas gratuits",
-    "petsupplies": "Fournitures pour animaux",
-    "pharmacy": "Pharmacie | Pharmacies",
-    "restaurant": "Restaurant | Restaurants",
-    "school": "Repas scolaire | Repas scolaires"
+    "grocery": "Épicerie",
+    "meal": "Repas gratuits",
+    "pet": "Fournitures pour animaux",
+    "pharmacy": "Pharmacie",
+    "restaurant": "Restaurants",
+    "school": "Repas scolaires"
   },
   "dayofweek": {
     "any": "Tout",
@@ -108,6 +108,7 @@
     "ms": "birman",
     "zh": "Chinois simplifié"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "Fermer le panneau de recherche",
     "info-about-us": "Actuellement, ce site prend en charge le comté de Chatham et le comté d'Orange, NC. Avec",

@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "育児",
-    "family": "家族の食事の準備|家族の食事の準備",
-    "farm": "農場または農民市場|農場および農民市場",
+    "family": "家族の食事の準備",
+    "farm": "農場および農民市場",
     "food_bev": "",
-    "grocery": "食料品|食料品",
-    "meal": "無料の食事|無料の食事",
-    "petsupplies": "ペット用品",
-    "pharmacy": "薬局|薬局",
+    "grocery": "食料品",
+    "meal": "無料の食事",
+    "pet": "ペット用品",
+    "pharmacy": "薬局",
     "restaurant": "レストラン|レストラン",
-    "school": "学校給食|学校給食"
+    "school": "学校給食"
   },
   "dayofweek": {
     "any": "どれか",
@@ -108,6 +108,7 @@
     "ms": "ビルマ語",
     "zh": "簡体字中国語"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "検索パネルを閉じる",
     "info-about-us": "現在、このサイトはノースカロライナ州チャタム郡とオレンジ郡をサポートしています。と",

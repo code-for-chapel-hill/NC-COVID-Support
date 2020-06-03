@@ -37,15 +37,15 @@
   },
   "category": {
     "childcare": "育儿",
-    "family": "家庭准备饭|家庭准备饭",
-    "farm": "农场或农贸市场|农场与农贸市场",
+    "family": "家庭准备饭",
+    "farm": "农场与农贸市场",
     "food_bev": "",
-    "grocery": "杂货|杂货",
-    "meal": "免费餐|免费餐",
-    "petsupplies": "宠物用品",
-    "pharmacy": "药房|药房",
-    "restaurant": "餐厅|餐厅",
-    "school": "学校餐|学校餐"
+    "grocery": "杂货",
+    "meal": "免费餐",
+    "pet": "宠物用品",
+    "pharmacy": "药房",
+    "restaurant": "餐厅",
+    "school": "学校餐"
   },
   "dayofweek": {
     "any": "任何",
@@ -108,6 +108,7 @@
     "ms": "缅甸语",
     "zh": "简体中文"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "关闭搜索面板",
     "info-about-us": "当前，此站点支持查塔姆县和北卡罗来纳州奥兰治县。用",
