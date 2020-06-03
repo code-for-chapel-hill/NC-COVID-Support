@@ -393,7 +393,7 @@ div.markeropen svg path {
 }
 .user-location-button {
   bottom: 68px !important;
-  right: 1px !important;
+  right: 2px !important;
   @media (min-width: 768px) {
     right: 0px !important;
   }
@@ -405,9 +405,9 @@ div.markeropen svg path {
   display: block;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 31px;
-  height: 31px;
-  line-height: 31px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
   @media (min-width: 768px) {
     width: 26px;
     height: 26px;
