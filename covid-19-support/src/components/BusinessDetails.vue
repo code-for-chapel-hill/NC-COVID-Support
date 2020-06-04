@@ -65,6 +65,27 @@
             />
 
             <icon-list-item
+              v-if="business.marker.gsx$twitter !== undefined && !!business.marker.gsx$twitter.$t"
+              icon="fa fa-twitter"
+              :title="'@' + business.marker.gsx$twitter.$t"
+              :link="'https://www.twitter.com/' + business.marker.gsx$twitter.$t"
+            />
+
+            <icon-list-item
+              v-if="business.marker.gsx$instagram !== undefined && !!business.marker.gsx$instagram.$t"
+              icon="fa fa-instagram"
+              :title="'@' + business.marker.gsx$instagram.$t"
+              :link="'https://www.instagram.com/' + business.marker.gsx$instagram.$t"
+            />
+
+            <icon-list-item
+              v-if="business.marker.gsx$facebook !== undefined && !!business.marker.gsx$facebook.$t"
+              icon="fa fa-facebook-square"
+              :title="'Facebook'"
+              :link="business.marker.gsx$facebook.$t"
+            />
+
+            <icon-list-item
               v-if="business.marker.gsx$email !== undefined && !!business.marker.gsx$email.$t"
               icon="fas fa-envelope"
               :title="getDomain(business.marker.gsx$email.$t)"
