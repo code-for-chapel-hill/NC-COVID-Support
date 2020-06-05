@@ -102,7 +102,6 @@ export default {
 .resultItem {
   padding: 10px;
   display: block;
-  min-height: 100px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   max-width: 282px;
