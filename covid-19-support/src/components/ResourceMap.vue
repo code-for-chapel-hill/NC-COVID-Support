@@ -52,7 +52,7 @@
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
           <a href="#" @click="getUserLocation" class="user-location-link" ref="useLocation">
-            <i class="fas fa-location-arrow"></i>
+            <i class="fas fa-location-arrow" :class="{ active: usingLocation }"></i>
           </a>
         </l-control>
         <b-alert variant="warning" class="location-alert" :show="showError" dismissible @dismissed="resetError" fade>
@@ -105,6 +105,7 @@ export default {
       showParagraph: true,
       showError: false,
       errorMessage: '',
+      usingLocation: false,
       userLocationData: false,
       mapOptions: { zoomSnap: 0.5, setView: true },
       showMap: true,
@@ -122,6 +123,12 @@ export default {
     this.editZoomControl()
     this.$nextTick(() => {
       this.$emit('bounds', this.$refs.covidMap.mapObject.getBounds())
+      var self = this
+      navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
+        if (permissionStatus.state === 'granted') {
+          self.getUserLocation()
+        }
+      })
     })
   },
   computed: {
@@ -179,9 +186,17 @@ export default {
       return icon
     },
     getUserLocation() {
+      if (this.usingLocation) {
+        this.usingLocation = false
+        return
+      }
+      console.log('Go find the user')
+
+      this.usingLocation = true
       var map = this.$refs.covidMap.mapObject
       map.locate({ setView: true, enableHighAccuracy: true, watch: true, maximumAge: 60000 })
       map.on('locationfound', (locationEvent) => {
+        console.log('Location Updated')
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
           // this.centerUpdated(this.userLocationData)
@@ -190,11 +205,16 @@ export default {
         }
       })
       map.on('locationerror', (err) => {
-        if (err.message && err.code != err.TIMEOUT) {
+        console.log(err)
+        if (err.message && err.code != 3) {
           this.showError = true
           this.errorMessage = err.message
           this.errorMessage += ' Please check your browser settings and ensure you have given our site permission to view your location.'
           this.$refs.useLocation.classList.add('disabled')
+        }
+        if (err.code == 3) {
+          console.log('Location Timed Out')
+          this.usingLocation = false
         }
       })
     },
@@ -203,14 +223,14 @@ export default {
       zoomControl.className = 'leaflet-bottom leaflet-right'
     },
     circleRadius() {
-      var radius = 8
-      if (radius <= 5) {
-        radius = 5
-      }
+      var radius = 5
       return radius
     },
     accuracyRadius() {
       var radius = this.accuracy
+      if (radius > 200) {
+        radius = 200
+      }
       return radius
     },
     latLng,
