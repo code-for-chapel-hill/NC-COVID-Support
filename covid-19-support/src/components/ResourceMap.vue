@@ -41,7 +41,6 @@
           :class-name="'locMarker'"
         ></l-circle-marker>
         <v-marker-cluster ref="marks" :options="clusterOptions">
-          <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
             :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
             :icon="selectedIcon(location.currentBusiness !== null && item.marker.id.$t === location.currentBusiness.marker.id.$t, item)"
@@ -190,22 +189,18 @@ export default {
         this.usingLocation = false
         return
       }
-      console.log('Go find the user')
 
       this.usingLocation = true
       var map = this.$refs.covidMap.mapObject
       map.locate({ setView: true, enableHighAccuracy: true, watch: true, maximumAge: 60000 })
       map.on('locationfound', (locationEvent) => {
-        console.log('Location Updated')
         if (locationEvent.latitude && locationEvent.longitude) {
           this.userLocationData = latLng(locationEvent.latitude, locationEvent.longitude)
-          // this.centerUpdated(this.userLocationData)
           this.accuracy = locationEvent.accuracy
           this.$refs.useLocation.classList.add('active')
         }
       })
       map.on('locationerror', (err) => {
-        console.log(err)
         if (err.message && err.code != 3) {
           this.showError = true
           this.errorMessage = err.message
@@ -213,7 +208,6 @@ export default {
           this.$refs.useLocation.classList.add('disabled')
         }
         if (err.code == 3) {
-          console.log('Location Timed Out')
           this.usingLocation = false
         }
       })
@@ -246,25 +240,16 @@ export default {
         icon: iconClasses,
         prefix: 'fa',
         svg: true
-        // ,
-        // name: item.marker.gsx$providername.$t,
-        // nameClasses: 'markerName'
       })
 
       return markerIcon
     }
-    // eslint-disable-next-line no-console
-    // click: (e) => console.log('clusterclick', e),
-    // eslint-disable-next-line no-console
-    // ready: (e) => console.log('ready', e)
   },
   watch: {
-    // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
     location: function (locationVal) {
       if (locationVal.isSetByMap) {
         return
       }
-      // var item = this.filteredMarkers[locationVal.locValue]
       if (locationVal.currentBusiness !== null && this.$refs.covidMap.mapObject.getZoom() < 17) {
         this.$refs.covidMap.mapObject.setView(
           latLng(locationVal.currentBusiness.marker.gsx$lat.$t, locationVal.currentBusiness.marker.gsx$lon.$t),
@@ -283,8 +268,6 @@ export default {
   height: 100%;
   top: 0;
   padding: 0;
-  /* margin-left: 8px;
-    margin-right: 8px; */
 }
 
 .locAccuracy {
