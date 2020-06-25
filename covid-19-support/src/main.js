@@ -7,7 +7,18 @@
 // ./src/themes/${process.env.VUE_APP_THEME}/SCSS/custom.scss - Our "theme" SCSS
 
 import Vue from 'vue'
-import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
+import {
+  LayoutPlugin,
+  NavbarPlugin,
+  SidebarPlugin,
+  ModalPlugin,
+  DropdownPlugin,
+  ButtonPlugin,
+  AlertPlugin,
+  ListGroupPlugin,
+  FormSelectPlugin
+} from 'bootstrap-vue'
+
 import i18n from './i18n'
 
 import App from './App.vue'
@@ -28,7 +39,16 @@ import './scss/Main.scss'
 // General style overrides and custom classes
 
 // Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(LayoutPlugin)
+Vue.use(NavbarPlugin)
+Vue.use(SidebarPlugin)
+Vue.use(ModalPlugin)
+Vue.use(DropdownPlugin)
+Vue.use(ButtonPlugin)
+Vue.use(AlertPlugin)
+Vue.use(ListGroupPlugin)
+Vue.use(FormSelectPlugin)
+//Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 // Vue.use(IconsPlugin)
 
