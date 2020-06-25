@@ -7,12 +7,12 @@
     "name": "Code for Chapel Hill Brigade"
   },
   "scripts": {
-    "build": "vue-cli-service build",
-    "format": "prettier --write .",
-    "lint": "eslint src && prettier --check .",
     "serve": "cross-env vue-cli-service serve",
-    "serve-demo": "cross-env VUE_APP_THEME=CodeForAmericaDemoTheme vue-cli-service serve",
-    "test:unit": "vue-cli-service test:unit"
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "eslint src && prettier --check .",
+    "format": "prettier --write .",
+    "serve-demo": "cross-env VUE_APP_THEME=CodeForAmericaDemoTheme vue-cli-service serve"
   },
   "dependencies": {
     "@kazupon/vue-i18n-loader": "^0.5.0",
@@ -27,6 +27,8 @@
     "vue2-leaflet-markercluster": "^3.1.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@fullhuman/vue-cli-plugin-purgecss": "~2.2.0",
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-plugin-unit-jest": "^4.3.1",

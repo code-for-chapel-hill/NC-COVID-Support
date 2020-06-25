@@ -1,4 +1,5 @@
 const path = require('path')
+const IN_PRODUCTION = process.env.NODE_ENV === 'production'
 
 if (process.env.VUE_APP_THEME == null) {
   throw new Error('Please provide VUE_APP_THEME environment variable')
@@ -17,7 +18,7 @@ const mapEnvVariables = {
 const themeMeta = Object.assign(mapEnvVariables, themeContent)
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'CodeForAmericaDemoTheme' ? '/NC-COVID-Support/' : '/',
+  publicPath: IN_PRODUCTION && process.env.VUE_APP_THEME === 'CodeForAmericaDemoTheme' ? '/NC-COVID-Support/' : '/',
   pluginOptions: {
     i18n: {
       locale: 'en',
@@ -50,6 +51,25 @@ module.exports = {
        @import './src/scss/Mixins.scss';
        @import "./src/themes/${process.env.VUE_APP_THEME !== undefined ? process.env.VUE_APP_THEME : 'NCCovidSupport'}/SCSS/custom.scss";
       `
+      },
+      postcss: {
+        plugins: [
+          IN_PRODUCTION &&
+            require('@fullhuman/postcss-purgecss')({
+              content: [`./public/**/*.html`, `./src/**/*.vue`],
+              defaultExtractor(content) {
+                const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
+                return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+              },
+              whitelist: [],
+              whitelistPatterns: [
+                /-(leave|enter|appear)(|-(to|from|active))$/,
+                /^(?!(|.*?:)cursor-move).+-move$/,
+                /^router-link(|-exact)-active$/,
+                /data-v-.*/
+              ]
+            })
+        ]
       }
     }
   }
