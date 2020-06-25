@@ -66,7 +66,9 @@ module.exports = {
                 /-(leave|enter|appear)(|-(to|from|active))$/,
                 /^(?!(|.*?:)cursor-move).+-move$/,
                 /^router-link(|-exact)-active$/,
-                /data-v-.*/
+                /data-v-.*/,
+                /leaflet/,
+                /marker/
               ]
             })
         ]
