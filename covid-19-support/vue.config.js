@@ -68,7 +68,9 @@ module.exports = {
                 /^router-link(|-exact)-active$/,
                 /data-v-.*/,
                 /leaflet/,
-                /marker/
+                /marker/,
+                /list-group-item-sideNav/,
+                /need-type/
               ]
             })
         ]
