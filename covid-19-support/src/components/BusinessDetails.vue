@@ -20,6 +20,7 @@
           <p v-if="getAddress(business.marker) !== ''">
             <b>{{ $t('label.address') }}:</b><br />
             {{ getAddress(business.marker) }}
+            <icon-list-item icon="fa fa-directions" :title="$t('getdirections')" :link="directionsLink(addressURL(business.marker))" />
           </p>
           <p>
             <icon-list-item
@@ -143,6 +144,17 @@ export default {
     getDomain: function (url) {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
+    },
+    addressURL: function (marker) {
+      var address = marker.gsx$address.$t
+      address = address.replace(/\s/g, '%20')
+      var city = marker.gsx$city.$t.replace(/\s/g, '%20')
+      var state = marker.gsx$state.$t.replace(/\s/g, '%20')
+      address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
+      return address
+    },
+    directionsLink: function (address) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
     },
     businessIcon: businessIcon,
     getAddress: getAddress

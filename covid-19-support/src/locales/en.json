@@ -122,5 +122,6 @@
     "what-do-you-need": "What do you need?",
     "when-do-you-need-it": "When do you need it?"
   },
-  "title": "{0} COVID Support"
+  "title": "{0} COVID Support",
+  "getdirections": "Get directions"
 }
