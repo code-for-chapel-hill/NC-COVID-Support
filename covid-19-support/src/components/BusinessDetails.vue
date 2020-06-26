@@ -26,7 +26,7 @@
             <icon-list-item v-if="directionsBool" class="directionsOptions">
               <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
               <icon-list-item icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(addressURL(business.marker))" />
-              <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(addressURL(business.marker))" />
+              <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
             </icon-list-item>
           </div>
           <p>
@@ -163,13 +163,15 @@ export default {
       return address
     },
     appleDirectionsLink: function (address) {
-      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+      return 'http://maps.apple.com/?daddr=' + address
     },
     googleDirectionsLink: function (address) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + address
     },
-    wazeDirectionsLink: function (address) {
-      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+    wazeDirectionsLink: function (marker) {
+      const lat = marker.gsx$lat.$t
+      const long = marker.gsx$lon.$t
+      return 'https://www.waze.com/ul?ll=' + lat + '%2C' + long + '&navigate=yes'
     },
     getDirections() {
       this.directionsBool = !this.directionsBool
