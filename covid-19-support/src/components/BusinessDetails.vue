@@ -20,53 +20,54 @@
           <div v-if="getAddress(business.marker) !== ''">
             <b>{{ $t('label.address') }}:</b><br />
             {{ getAddress(business.marker) }}<br />
-            <i class="fas fa-directions fa-lg" id="share-icon" aria-hidden="true" />
-            <b-button variant="link" class="directions-button" @click="getDirections()">{{ $t('getdirections') }}</b-button>
-            <p v-if="directionsBool" class="directionsOptions">
+
+            <span @click="getDirections()"><icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" /></span>
+
+            <icon-list-item v-if="directionsBool" class="directionsOptions">
               <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
-              <icon-list-item icon="fa fa-apple" title="Apple Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
-              <icon-list-item icon="fa fa-waze" title="Waze" :link="googleDirectionsLink(addressURL(business.marker))" fab="true" />
-            </p>
+              <icon-list-item icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(addressURL(business.marker))" />
+              <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(addressURL(business.marker))" />
+            </icon-list-item>
           </div>
           <p>
             <icon-list-item
               v-if="business.marker.gsx$discountmedical != undefined && business.marker.gsx$discountmedical.$t == 1"
-              icon="fas fa-user-md"
+              icon="fa-user-md"
               :title="$tc('label.discountmedical', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fas fa-user-friends" :title="$tc('category.family', 2)" />
-            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fas fa-school" :title="$tc('label.mealstudent', 1)" />
-            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.mealpublic', 1)" />
-            <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fas fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
+            <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fa-user-friends" :title="$tc('category.family', 2)" />
+            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fa-school" :title="$tc('label.mealstudent', 1)" />
+            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fa-users" :title="$tc('label.mealpublic', 1)" />
+            <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
             <icon-list-item
               v-if="business.marker.gsx$freegroceries != undefined && business.marker.gsx$freegroceries.$t == 1"
-              icon="fas fa-shopping-basket"
+              icon="fa-shopping-basket"
               :title="$tc('label.freegroceries', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fas fa-car" :title="$tc('label.curbside', 1)" />
-            <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fas fa-car-side" :title="$t('label.drivethru')" />
-            <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fas fa-mouse" :title="$t('label.orderonline')" />
-            <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
+            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fa-car" :title="$tc('label.curbside', 1)" />
+            <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fa-car-side" :title="$t('label.drivethru')" />
+            <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fa-mouse" :title="$t('label.orderonline')" />
+            <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fa-shipping-fast" :title="$t('label.delivery')" />
           </p>
 
           <p>
             <icon-list-item
               v-if="business.marker.gsx$contact !== undefined && !!business.marker.gsx$contact.$t"
-              icon="fas fa-phone-alt"
+              icon="fa-phone-alt"
               :title="business.marker.gsx$contact.$t"
               :link="'tel:' + business.marker.gsx$contact.$t"
             />
 
             <icon-list-item
               v-if="business.marker.gsx$contactspanish !== undefined && !!business.marker.gsx$contactspanish.$t"
-              icon="fas fa-phone-alt"
+              icon="fa-phone-alt"
               :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
               :link="'tel:' + business.marker.gsx$contactspanish.$t"
             />
 
             <icon-list-item
               v-if="business.marker.gsx$weblink !== undefined && !!business.marker.gsx$weblink.$t"
-              icon="fas fa-globe"
+              icon="fa-globe"
               :title="getDomain(business.marker.gsx$weblink.$t)"
               :link="business.marker.gsx$weblink.$t"
             />
@@ -94,7 +95,7 @@
 
             <icon-list-item
               v-if="business.marker.gsx$email !== undefined && !!business.marker.gsx$email.$t"
-              icon="fas fa-envelope"
+              icon="fa-envelope"
               :title="getDomain(business.marker.gsx$email.$t)"
               :link="'mailto:' + business.marker.gsx$email.$t"
             />
@@ -161,7 +162,13 @@ export default {
       address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
       return address
     },
+    appleDirectionsLink: function (address) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+    },
     googleDirectionsLink: function (address) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+    },
+    wazeDirectionsLink: function (address) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + address
     },
     getDirections() {
@@ -230,12 +237,7 @@ export default {
   color: #aaa;
 }
 
-.directions-button {
-  font-size: 0.8rem;
-  padding: 0.375rem 1rem;
-  color: theme-color('warning');
-  @media (prefers-color-scheme: dark) {
-    color: theme-color-level(warning, 5);
-  }
+.directionsOptions {
+  background: #fff;
 }
 </style>
