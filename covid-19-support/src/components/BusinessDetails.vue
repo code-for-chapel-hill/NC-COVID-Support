@@ -240,6 +240,9 @@ export default {
 }
 
 .directionsOptions {
-  background: #fff;
+  background: $directions-background;
+  @media (prefers-color-scheme: dark) {
+    background: $directions-background-dark;
+  }
 }
 </style>
