@@ -17,11 +17,17 @@
               <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
             </div>
           </div>
-          <p v-if="getAddress(business.marker) !== ''">
+          <div v-if="getAddress(business.marker) !== ''">
             <b>{{ $t('label.address') }}:</b><br />
-            {{ getAddress(business.marker) }}
-            <icon-list-item icon="fa fa-directions" :title="$t('getdirections')" :link="directionsLink(addressURL(business.marker))" />
-          </p>
+            {{ getAddress(business.marker) }}<br />
+            <i class="fas fa-directions fa-lg" id="share-icon" aria-hidden="true" />
+            <b-button variant="link" class="directions-button" @click="getDirections()">{{ $t('getdirections') }}</b-button>
+            <p v-if="directionsBool" class="directionsOptions">
+              <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
+              <icon-list-item icon="fa fa-apple" title="Apple Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
+              <icon-list-item icon="fa fa-waze" title="Waze" :link="googleDirectionsLink(addressURL(business.marker))" fab="true" />
+            </p>
+          </div>
           <p>
             <icon-list-item
               v-if="business.marker.gsx$discountmedical != undefined && business.marker.gsx$discountmedical.$t == 1"
@@ -133,7 +139,9 @@ export default {
     IconListItem
   },
   data() {
-    return {}
+    return {
+      directionsBool: false
+    }
   },
   props: {
     infotype: { type: String },
@@ -153,8 +161,11 @@ export default {
       address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
       return address
     },
-    directionsLink: function (address) {
+    googleDirectionsLink: function (address) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+    },
+    getDirections() {
+      this.directionsBool = !this.directionsBool
     },
     businessIcon: businessIcon,
     getAddress: getAddress
@@ -217,5 +228,14 @@ export default {
 
 .updated {
   color: #aaa;
+}
+
+.directions-button {
+  font-size: 0.8rem;
+  padding: 0.375rem 1rem;
+  color: theme-color('warning');
+  @media (prefers-color-scheme: dark) {
+    color: theme-color-level(warning, 5);
+  }
 }
 </style>
