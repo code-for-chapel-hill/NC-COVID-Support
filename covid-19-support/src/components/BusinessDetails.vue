@@ -22,7 +22,6 @@
             {{ getAddress(business.marker) }}<br />
 
             <span @click="getDirections()"><icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" /></span>
-
             <icon-list-item v-if="directionsBool" class="directionsOptions">
               <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
               <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
@@ -182,7 +181,10 @@ export default {
       return new Date(Date.parse(this.business.marker.gsx$lastupdate.$t)).toLocaleDateString()
     },
     iOS() {
-      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+      return /iPad|iPhone|iPod|Mac OS/.test(navigator.userAgent)
+    },
+    agent() {
+      return navigator.userAgent
     }
   }
 }
