@@ -24,8 +24,8 @@
             <span @click="getDirections()"><icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" /></span>
 
             <icon-list-item v-if="directionsBool" class="directionsOptions">
-              <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(addressURL(business.marker))" />
-              <icon-list-item icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(addressURL(business.marker))" />
+              <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
+              <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
               <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
             </icon-list-item>
           </div>
@@ -154,7 +154,7 @@ export default {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
     },
-    addressURL: function (marker) {
+    addressUrl: function (marker) {
       var address = marker.gsx$address.$t
       address = address.replace(/\s/g, '%20')
       var city = marker.gsx$city.$t.replace(/\s/g, '%20')
@@ -162,16 +162,14 @@ export default {
       address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
       return address
     },
-    appleDirectionsLink: function (address) {
-      return 'http://maps.apple.com/?daddr=' + address
+    appleDirectionsLink: function (marker) {
+      return 'http://maps.apple.com/?q=' + marker.gsx$address.$t + '&ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t
     },
-    googleDirectionsLink: function (address) {
-      return 'https://www.google.com/maps/dir/?api=1&destination=' + address
+    googleDirectionsLink: function (marker) {
+      return 'https://www.google.com/maps/dir/?api=1&destination=' + this.addressUrl(marker)
     },
     wazeDirectionsLink: function (marker) {
-      const lat = marker.gsx$lat.$t
-      const long = marker.gsx$lon.$t
-      return 'https://www.waze.com/ul?ll=' + lat + '%2C' + long + '&navigate=yes'
+      return 'https://www.waze.com/ul?ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t + '&navigate=yes'
     },
     getDirections() {
       this.directionsBool = !this.directionsBool
@@ -182,6 +180,9 @@ export default {
   computed: {
     getLastUpdatedDate: function () {
       return new Date(Date.parse(this.business.marker.gsx$lastupdate.$t)).toLocaleDateString()
+    },
+    iOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
     }
   }
 }

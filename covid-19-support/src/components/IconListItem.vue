@@ -45,7 +45,7 @@ export default {
     }
   },
   props: {
-    leafletIcon: { type: String },
+    leafletIcon: { type: Object },
     title: { type: String },
     link: { type: String },
     icon: { type: String },
