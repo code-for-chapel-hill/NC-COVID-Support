@@ -148,6 +148,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "glitchedmob",
+      "name": "Levi Zitting",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9029666?v=4",
+      "profile": "http://levizitting.com/",
+      "contributions": [
+        "code",
+        "ideas",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
