@@ -16,7 +16,8 @@ import {
   ButtonPlugin,
   AlertPlugin,
   ListGroupPlugin,
-  FormSelectPlugin
+  FormSelectPlugin,
+  TabsPlugin
 } from 'bootstrap-vue'
 
 import i18n from './i18n'
@@ -48,6 +49,7 @@ Vue.use(ButtonPlugin)
 Vue.use(AlertPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(FormSelectPlugin)
+Vue.use(TabsPlugin)
 //Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 // Vue.use(IconsPlugin)
