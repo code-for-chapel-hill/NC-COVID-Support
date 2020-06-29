@@ -150,6 +150,8 @@ This section details how to setup your local development environment and talks a
 
 ### Frontend packages used
 
+These are the frontend packages used by our site. If you follow all instructions for configuring your local environment, they will automatically be installed. Use these links to learn more about each library and to access relevant documentation.
+
 VueJS - The Progressive JavaScript Framework - https://vuejs.org/
 
 Vue I18n - Internationalization Plugin - https://kazupon.github.io/vue-i18n/
