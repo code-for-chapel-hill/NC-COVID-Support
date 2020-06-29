@@ -251,7 +251,7 @@ The `/covid-19-support` directory is where all the client side development files
 / tests - All code tests
     / unit - Our unit tests
     / e2e - Any end to end tests
-/ docs - All the documentation files used to drive the GitHub pages documentation    
+/ docs - All the documentation files used to drive the GitHub pages documentation
 ```
 
 ## Other ways to contribute
