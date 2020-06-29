@@ -17,7 +17,7 @@ const mapEnvVariables = {
 const themeMeta = Object.assign(mapEnvVariables, themeContent)
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'AmericanDemoTheme' ? '/NC-COVID-Support/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'CodeForAmericaDemoTheme' ? '/NC-COVID-Support/' : '/',
   pluginOptions: {
     i18n: {
       locale: 'en',
@@ -35,7 +35,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        ['theme.config$']: path.resolve(__dirname, themePath + '/theme.config.js')
+        ['theme.config$']: path.resolve(__dirname, themePath + '/theme.config.js'),
+        ['theme.header$']: path.resolve(__dirname, themePath + '/components/theme.header.vue')
       }
     }
   },

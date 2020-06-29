@@ -19,9 +19,16 @@ $font-family-base: 'Poppins', $font-family-sans-serif;
 
 $blue: #374a91;
 $orange: #fd7e14;
+$green: #52aa36;
 $red: #ff2b1c;
 $teal: #2eb7cb;
 $yellow: #ffb71c;
+$light-blue: #546cac;
+$light-orange: #ee8842;
+$marker-open: #566ca9 !default;
+$marker-closed: #999 !default;
+$marker-selected: #ff3d3d !default;
+$user-marker: $pink !default;
 
 $warning: $yellow;
 $danger: $red;
@@ -29,14 +36,50 @@ $danger: $red;
 $theme-colors: (
   'primary': $blue,
   'secondary': $gray-100,
+  'tertiary': $teal,
+  'quaternary': $light-blue,
+  'quinary': $light-orange,
   'buttons': $orange,
+  'success': $green,
   'warning': $warning,
   'danger': $danger,
   'secondaryDark': $gray-800
 );
 
+$body-bg: $white;
+$body-color: #111;
+
+$modal-bg-dark: $gray-900;
+$modal-body-dark: $gray-300;
+$hover-color-dark: $gray-600;
+$button-text: $white;
+$button-text-dark: $gray-500;
+
+$nav-dropdown: $white;
+$nav-dropdown-dark: rgba(255, 255, 255, 0.8);
+$nav-dropdown-bg: theme-color-level('primary', -2);
+$nav-dropdown-bg-dark: theme-color-level('primary', 6);
+$nav-dropdown-bg-hover: theme-color-level('primary', -4);
+$nav-dropdown-bg-hover-dark: theme-color-level('primary', 8);
+
+$map-key-bg: #f8f9fa;
+$map-key-bg-dark: theme-color('secondaryDark');
+$map-key: color-yiq($map-key-bg);
+$map-key-dark: color-yiq($map-key);
+
+// Used for the location of the user
+$map-location: theme-color('tertiary');
+$map-location-outline: $white;
+
+// Used to show the possible inaccuracy of the users location
+$map-accuracy: $blue;
+$map-accuracy-outline: $white;
+
 $navbar-padding-x: 1rem;
 $navbar-padding-y: 0;
+
+$directions-background: #fff;
+$directions-background-dark: $gray-900;
 
 // Define your Bootstrap variable overrides here
 //  $enable-shadows: true;
@@ -49,6 +92,14 @@ $navbar-padding-y: 0;
 //   xl: 1234px
 // );
 $bv-enable-table-stacked: false;
+
+.bg-tertiary,
+.bg-quaternary {
+  color: #fff;
+  i {
+    color: #000;
+  }
+}
 
 @include list-group-item-variant('sideNav', theme-color('secondary'), theme-color('secondaryDark'));
 @media (prefers-color-scheme: dark) {
@@ -63,13 +114,20 @@ $bv-enable-table-stacked: false;
   .bg-secondary {
     background-color: theme-color-level('secondary', 8) !important;
   }
+  .bg-tertiary {
+    background-color: theme-color-level('tertiary', 5) !important;
+  }
+
+  .bg-quaternary {
+    background-color: theme-color-level('quaternary', 5) !important;
+  }
 
   .btn-buttons {
     @include button-variant($gray-500, $gray-500);
   }
 
   .modal-content {
-    background: $gray-900;
-    color: $gray-300;
+    background: $modal-bg-dark;
+    color: $modal-body-dark;
   }
 }

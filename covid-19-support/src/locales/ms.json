@@ -28,24 +28,24 @@
       "bureau": "Chapel Hill / Biro Pelawat Orange County",
       "cfa": "Kod untuk Amerika",
       "chb": "Briged Hill Chapel",
-      "farmstewards": "Persatuan Pengawasan Ladang Carolina",
       "localistnc": "#LocalListNC",
-      "partnership": "Perkongsian Downtown Chapel Hill"
+      "partnership": "Perkongsian Downtown Chapel Hill",
+      "pittsboro-siler": "Biro Konvensyen & Pelawat Pittsboro-Siler City"
     },
     "partners": "Sumber Maklumat",
     "title": "Mengenai laman web ini"
   },
   "category": {
     "childcare": "Penjagaan kanak-kanak",
-    "family": "Hidangan keluarga yang disediakan | Makanan keluarga yang disediakan",
-    "farm": "Pasar Ladang atau Petani | Pasaran Ladang & Petani",
-    "food_bev": "",
-    "grocery": "Runcit | Groceries",
-    "meal": "Makanan percuma | Makanan percuma",
-    "petsupplies": "Bekalan Haiwan Peliharaan",
-    "pharmacy": "Farmasi | Farmasi",
-    "restaurant": "Restoran | Restoran",
-    "school": "Makan sekolah | Makanan sekolah"
+    "family": "Makanan keluarga yang disediakan",
+    "farm": "Pasaran Ladang & Petani",
+    "food_bev": "Makanan & minuman khas",
+    "grocery": "Groceries",
+    "meal": "Makanan percuma",
+    "pet": "Bekalan Haiwan Peliharaan",
+    "pharmacy": "Farmasi",
+    "restaurant": "Restoran",
+    "school": "Makanan sekolah"
   },
   "dayofweek": {
     "any": "Sebarang",
@@ -68,6 +68,7 @@
     "closedonday": "Ditutup (pada hari yang dipilih semasa)",
     "curbside": "Pengambilan Curbside",
     "delivery": "penghantaran",
+    "details-last-updated": "Butiran terakhir dikemas kini",
     "discountmedical": "Diskaun pekerja perubatan | diskaun pekerja perubatan |",
     "discounts": "",
     "drivethru": "Pandu lalu",
@@ -79,6 +80,7 @@
     "freemeals": "Lokasi makanan percuma | Lokasi makan percuma",
     "freeproduce": "Lokasi menghasilkan percuma | Lokasi menghasilkan percuma",
     "instructions": "Arahan",
+    "locationhelplinktext": "Ketahui lebih lanjut",
     "mapkey": "Kunci Peta",
     "mealpublic": "Makanan dibuka untuk orang ramai",
     "mealstudent": "Makanan untuk pelajar",
@@ -106,9 +108,10 @@
     "ms": "Burma",
     "zh": "Bahasa Cina Ringkas"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "Tutup panel carian",
-    "info-about-us": "Pada masa ini, laman web ini menyokong Orange County, NC. Dengan",
+    "info-about-us": "Pada masa ini, laman web ini menyokong Chatham County dan Orange County, NC. Dengan",
     "info-end-text": ", kami boleh mengembangkan liputan kami.",
     "info-link-text": "pertolongan anda",
     "open-panel": "Buka panel carian",

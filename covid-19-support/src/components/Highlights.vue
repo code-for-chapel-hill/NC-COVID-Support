@@ -1,16 +1,16 @@
 <template>
   <div class="row highlights" v-if="valueBoxes[0] != null">
     <div class="col-6 col-md-3 order-md-1">
-      <value-box :content="valueBoxes[0]" class="bg-blue" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[0]" class="bg-tertiary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-2">
-      <value-box :content="valueBoxes[1]" class="bg-green" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[1]" class="bg-quaternary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-4">
-      <value-box :content="valueBoxes[2]" class="bg-green" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[2]" class="bg-quaternary" @box-selected="boxSelected" />
     </div>
     <div class="col-6 col-md-3 order-md-3">
-      <value-box :content="valueBoxes[3]" class="bg-blue" @box-selected="boxSelected" />
+      <value-box :content="valueBoxes[3]" class="bg-tertiary" @box-selected="boxSelected" />
     </div>
   </div>
 </template>
@@ -163,7 +163,6 @@ export default {
 <style lang="scss">
 .highlights {
   margin: 4px !important;
-
   transition: height 0.25s ease-out;
   height: 116px;
 

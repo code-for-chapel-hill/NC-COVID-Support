@@ -28,24 +28,24 @@
       "bureau": "教堂山/橙县游客管理局",
       "cfa": "美国法典",
       "chb": "教堂山大队",
-      "farmstewards": "卡罗来纳州农场管理协会",
       "localistnc": "#LocalListNC",
-      "partnership": "教堂山市中心合作伙伴"
+      "partnership": "教堂山市中心合作伙伴",
+      "pittsboro-siler": "皮茨伯勒-西勒市会展和旅游局"
     },
     "partners": "信息来源",
     "title": "关于本网站"
   },
   "category": {
     "childcare": "育儿",
-    "family": "家庭准备饭|家庭准备饭",
-    "farm": "农场或农贸市场|农场与农贸市场",
-    "food_bev": "",
-    "grocery": "杂货|杂货",
-    "meal": "免费餐|免费餐",
-    "petsupplies": "宠物用品",
-    "pharmacy": "药房|药房",
-    "restaurant": "餐厅|餐厅",
-    "school": "学校餐|学校餐"
+    "family": "家庭准备饭",
+    "farm": "农场与农贸市场",
+    "food_bev": "特色食品和饮料",
+    "grocery": "杂货",
+    "meal": "免费餐",
+    "pet": "宠物用品",
+    "pharmacy": "药房",
+    "restaurant": "餐厅",
+    "school": "学校餐"
   },
   "dayofweek": {
     "any": "任何",
@@ -68,6 +68,7 @@
     "closedonday": "休馆（当前选定日期）",
     "curbside": "路边捡拾",
     "delivery": "交货",
+    "details-last-updated": "详细信息最近更新",
     "discountmedical": "医务人员折扣|医务人员折扣",
     "discounts": "",
     "drivethru": "得来速",
@@ -79,6 +80,7 @@
     "freemeals": "免费用餐地点|免费用餐地点",
     "freeproduce": "免费产品位置|免费产品位置",
     "instructions": "说明",
+    "locationhelplinktext": "学到更多",
     "mapkey": "地图键",
     "mealpublic": "餐点向公众开放",
     "mealstudent": "给学生的饭菜",
@@ -106,9 +108,10 @@
     "ms": "缅甸语",
     "zh": "简体中文"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "关闭搜索面板",
-    "info-about-us": "当前，此站点支持北卡罗来纳州奥兰治县。用",
+    "info-about-us": "当前，此站点支持查塔姆县和北卡罗来纳州奥兰治县。用",
     "info-end-text": "，我们可以扩大覆盖范围。",
     "info-link-text": "你的帮助",
     "open-panel": "打开搜索面板",

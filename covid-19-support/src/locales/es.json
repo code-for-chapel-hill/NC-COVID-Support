@@ -28,24 +28,24 @@
       "bureau": "Oficina de Visitantes de Chapel Hill / Condado de Orange",
       "cfa": "Código para América",
       "chb": "Brigada de Chapel Hill",
-      "farmstewards": "Asociación de administración agrícola de Carolina",
       "localistnc": "#LocalListNC",
-      "partnership": "Asociación del centro de Chapel Hill"
+      "partnership": "Asociación del centro de Chapel Hill",
+      "pittsboro-siler": "Oficina de Convenciones y Visitantes de la Ciudad de Pittsboro-Siler"
     },
     "partners": "Fuentes de información",
     "title": "Sobre este sitio"
   },
   "category": {
     "childcare": "Cuidado de los niños",
-    "family": "Comida familiar preparada | Comida familiar preparada",
-    "farm": "Granja o Mercado de Granjeros | Granjas y Mercados de Agricultores",
-    "food_bev": "",
+    "family": "Comida familiar preparada",
+    "farm": "Granjas y Mercados de Agricultores",
+    "food_bev": "Especialidad en comidas y bebidas",
     "grocery": "Comestibles",
-    "meal": "Comida gratis | Comidas gratis",
-    "petsupplies": "Suministros de mascotas",
-    "pharmacy": "Farmacia | Farmacias",
-    "restaurant": "Restaurante | Restaurantes",
-    "school": "Comida escolar | Comidas escolares"
+    "meal": "Comidas gratis",
+    "pet": "Suministros de mascotas",
+    "pharmacy": "Farmacia",
+    "restaurant": "Restaurantes",
+    "school": "Comidas escolares"
   },
   "dayofweek": {
     "any": "Alguna",
@@ -68,6 +68,7 @@
     "closedonday": "Cerrado (en el día seleccionado actual)",
     "curbside": "Negocio con recogida en la acera|Negocios con recogida en la acera",
     "delivery": "Entrega",
+    "details-last-updated": "Detalles actualizados por última vez",
     "discountmedical": "Descuento para trabajadores médicos|Descuentos para trabajadores médicos",
     "discounts": "",
     "drivethru": "Auto-servicio",
@@ -79,6 +80,7 @@
     "freemeals": "Lugar de comidas gratis|Lugares de comidas gratis",
     "freeproduce": "Lugar de productos agrícolas gratuitso|Lugares de productos agrícolas gratuitos",
     "instructions": "Instrucciones",
+    "locationhelplinktext": "aprende más",
     "mapkey": "Guia de mapa",
     "mealpublic": "Comidas abiertas al público",
     "mealstudent": "Comidas para estudiantes",
@@ -106,9 +108,10 @@
     "ms": "birmano",
     "zh": "Chino simplificado"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "Cerrar panel de búsqueda",
-    "info-about-us": "Actualmente, este sitio admite el Condado de Orange, Carolina del Norte. Con",
+    "info-about-us": "Actualmente, este sitio admite el condado de Chatham y el condado de Orange, Carolina del Norte. Con",
     "info-end-text": ", podemos ampliar nuestra cobertura.",
     "info-link-text": "su ayuda",
     "open-panel": "Abrir panel de búsqueda",

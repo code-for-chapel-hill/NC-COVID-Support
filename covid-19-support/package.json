@@ -7,11 +7,12 @@
     "name": "Code for Chapel Hill Brigade"
   },
   "scripts": {
-    "serve": "cross-env vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "format": "prettier --write .",
     "lint": "eslint src && prettier --check .",
-    "format": "prettier --write ."
+    "serve": "cross-env vue-cli-service serve",
+    "serve-demo": "cross-env VUE_APP_THEME=CodeForAmericaDemoTheme vue-cli-service serve",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@kazupon/vue-i18n-loader": "^0.5.0",
