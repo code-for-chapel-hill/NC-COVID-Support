@@ -1,9 +1,7 @@
 # NC COVID Support Project
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
@@ -83,16 +81,18 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/fredlawl"><img src="https://avatars3.githubusercontent.com/u/2502213?v=4" width="100px;" alt=""/><br /><sub><b>Frederick</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=fredlawl" title="Code">💻</a> <a href="#maintenance-fredlawl" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/zhanknight"><img src="https://avatars1.githubusercontent.com/u/20487008?v=4" width="100px;" alt=""/><br /><sub><b>zhanknight</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/issues?q=author%3Azhanknight" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/mitomon"><img src="https://avatars3.githubusercontent.com/u/11986108?v=4" width="100px;" alt=""/><br /><sub><b>mitomon</b></sub></a><br /><a href="#translation-mitomon" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/eparadise"><img src="https://avatars2.githubusercontent.com/u/43389857?v=4" width="100px;" alt=""/><br /><sub><b>Eliza Paradise</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=eparadise" title="Code">💻</a><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=eparadise" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/eparadise"><img src="https://avatars2.githubusercontent.com/u/43389857?v=4" width="100px;" alt=""/><br /><sub><b>Eliza Paradise</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=eparadise" title="Code">💻</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=eparadise" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/cw2908"><img src="https://avatars2.githubusercontent.com/u/9000855?v=4" width="100px;" alt=""/><br /><sub><b>Chris W</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=cw2908" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/codetheorem"><img src="https://avatars3.githubusercontent.com/u/54779517?v=4" width="100px;" alt=""/><br /><sub><b>Hrishikesh Agarwal</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=codetheorem" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/helenx15"><img src="https://avatars3.githubusercontent.com/u/49924616?v=4" width="100px;" alt=""/><br /><sub><b>helenx15</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=helenx15" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://levizitting.com/"><img src="https://avatars0.githubusercontent.com/u/9029666?v=4" width="100px;" alt=""/><br /><sub><b>Levi Zitting</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=glitchedmob" title="Code">💻</a> <a href="#ideas-glitchedmob" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-glitchedmob" title="Design">🎨</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
