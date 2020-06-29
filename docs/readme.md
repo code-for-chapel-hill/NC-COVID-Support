@@ -1,13 +1,16 @@
 # NC COVID Support Project
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 ![GitHub issues](https://img.shields.io/github/issues-raw/code-for-chapel-hill/NC-COVID-Support?style=flat)
 ![Continuous Integration](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Continuous%20Integration/badge.svg)
 ![Deployment](https://github.com/code-for-chapel-hill/NC-COVID-Support/workflows/Deployment/badge.svg?style=flat)
 ![Release date](https://img.shields.io/github/release/code-for-chapel-hill/NC-COVID-Support?style=flat)
-
 
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
@@ -86,6 +89,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
