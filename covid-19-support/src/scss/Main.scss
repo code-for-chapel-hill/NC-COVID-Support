@@ -84,7 +84,7 @@ h6,
 }
 
 #wrapper.toggled #search-filter-wrapper {
-  margin-left: 0;
+  transform: translateX(0);
 }
 
 @include media-breakpoint-up(sm) {

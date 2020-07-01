@@ -217,20 +217,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$desktop-width: 390px;
+
 .custom-select {
   font-size: 0.8rem;
   cursor: pointer;
 }
 
 #search-filter-wrapper {
-  margin-left: -290px;
-  -webkit-transition: margin 0.25s ease-out;
-  -moz-transition: margin 0.25s ease-out;
-  -o-transition: margin 0.25s ease-out;
-  transition: margin 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transform: translateX(-100%);
   z-index: 1035;
   max-height: 100vh;
-  max-width: 294px;
+  width: $desktop-width + 4px;
   background: theme-color('secondary');
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
@@ -259,7 +258,6 @@ export default {
 }
 
 .list-group {
-  width: 290px;
   /* border-bottom: solid 1px rgba(0, 0, 0, 0.125); */
   padding: 0;
 }
@@ -295,17 +293,13 @@ export default {
   position: absolute;
   top: 169px;
   z-index: 500;
-  left: 0;
+  right: -27px;
   background: theme-color('secondary');
+  cursor: pointer;
+
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
   }
-  transition: left 0.25s ease-out;
-  cursor: pointer;
-}
-
-#wrapper.toggled .tab {
-  left: 290px;
 }
 
 #wrapper.toggled .tab i {
