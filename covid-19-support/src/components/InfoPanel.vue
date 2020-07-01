@@ -49,6 +49,6 @@ export default {
 .note div,
 .handwash div {
   display: inline-block;
-  width: 185px;
+  width: 245px;
 }
 </style>
