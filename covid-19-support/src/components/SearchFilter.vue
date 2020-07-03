@@ -228,6 +228,7 @@ export default {
   z-index: 1035;
   max-height: 100vh;
   width: 100%;
+  height: 100vh;
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
@@ -235,6 +236,7 @@ export default {
   }
 
   @include media-breakpoint-up(md) {
+    height: auto;
     width: $desktop-sidebar-width + 4px;
   }
 }
