@@ -231,6 +231,7 @@ $desktop-width: 390px;
   max-height: 100vh;
   width: $desktop-width + 4px;
   background: theme-color('secondary');
+
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
   }
