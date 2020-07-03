@@ -3,6 +3,7 @@
     <app-header :language="language.name" @language-selected="changeLanguage" :socialMedia="socialMediaico">
       <theme-header></theme-header>
     </app-header>
+    <mobile-search-filters :need="need" :day="day" @need-selected="needSelected" @day-selected="daySelected" />
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <sidebar
@@ -50,6 +51,7 @@ import Sidebar from './components/Sidebar.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
+import MobileSearchFilters from './components/MobileSearchFilters'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
@@ -91,6 +93,7 @@ export default {
     this.fetchData()
   },
   components: {
+    MobileSearchFilters,
     AboutUsModal,
     AppHeader,
     Highlights,

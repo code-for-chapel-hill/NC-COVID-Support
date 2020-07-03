@@ -4,33 +4,36 @@
       <i class="fas fa-caret-down" />
     </div>
 
-    <search-filters
-      :day="day"
-      :need="need"
-      @need-selected="(opt) => $emit('need-selected', opt)"
-      @day-selected="(opt) => $emit('day-selected', opt)"
-    />
+    <div class="sidebar-top">
+      <search-filters
+        class="search-filters"
+        :day="day"
+        :need="need"
+        @need-selected="(opt) => $emit('need-selected', opt)"
+        @day-selected="(opt) => $emit('day-selected', opt)"
+      />
 
-    <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
-      {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
-      >{{ $t('sidebar.info-end-text') }}
-    </InfoPanel>
+      <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
+        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
+        >{{ $t('sidebar.info-end-text') }}
+      </InfoPanel>
 
-    <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
-      <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
-      <br />
-      (1) {{ $t('sidebar.stayhome') }}<br />
-      (2) {{ $t('sidebar.sixfeet') }}<br />
-      (3) {{ $t('sidebar.washhands') }}<br />
-    </InfoPanel>
+      <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+        <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
+        <br />
+        (1) {{ $t('sidebar.stayhome') }}<br />
+        (2) {{ $t('sidebar.sixfeet') }}<br />
+        (3) {{ $t('sidebar.washhands') }}<br />
+      </InfoPanel>
 
-    <BusinessDetails
-      :infotype="'green'"
-      :icon="'fa-tractor'"
-      :business="location.currentBusiness"
-      v-if="location.currentBusiness != null && showListing != true"
-      @close-details="closeDetails"
-    ></BusinessDetails>
+      <BusinessDetails
+        :infotype="'green'"
+        :icon="'fa-tractor'"
+        :business="location.currentBusiness"
+        v-if="location.currentBusiness != null && showListing != true"
+        @close-details="closeDetails"
+      ></BusinessDetails>
+    </div>
 
     <results-list
       :filteredMarkers="highlightFilteredMarkers"
@@ -147,6 +150,16 @@ export default {
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
   }
+}
+
+.sidebar-top {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.search-filters {
+  padding: 1rem 0 0 0 !important;
 }
 
 .sidebar-heading {

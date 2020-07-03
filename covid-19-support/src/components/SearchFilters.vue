@@ -88,10 +88,6 @@ export default {
   }
 }
 
-.list-group.need-day-group {
-  padding: 1rem 0 0 0 !important;
-}
-
 .list-group-flush.need-day-group .list-group-item:first-child {
   padding-bottom: 1rem !important;
 }
