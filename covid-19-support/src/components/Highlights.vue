@@ -175,7 +175,7 @@ export default {
   transition: margin-left 0.25s ease-out;
 
   @include media-breakpoint-up(sm) {
-    margin-left: 294px !important;
+    margin-left: ($desktop-sidebar-width + 12px) !important;
   }
 }
 

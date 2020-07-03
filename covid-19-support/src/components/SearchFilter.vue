@@ -217,8 +217,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$desktop-width: 390px;
-
 .custom-select {
   font-size: 0.8rem;
   cursor: pointer;
@@ -229,11 +227,15 @@ $desktop-width: 390px;
   transform: translateX(-100%);
   z-index: 1035;
   max-height: 100vh;
-  width: $desktop-width + 4px;
+  width: 100%;
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
+  }
+
+  @include media-breakpoint-up(md) {
+    width: $desktop-sidebar-width + 4px;
   }
 }
 
