@@ -52,6 +52,7 @@
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
           <a href="#" @click="getUserLocation" class="user-location-link" ref="useLocation">
+            <!--<h5>Your location</h5>-->
             <i class="fas fa-location-arrow"></i>
           </a>
         </l-control>
@@ -106,7 +107,11 @@ export default {
       showError: false,
       errorMessage: '',
       userLocationData: false,
-      mapOptions: { zoomSnap: 0.5, setView: true },
+      mapOptions: {
+        zoomSnap: 0.5,
+        setView: true,
+        zoomControl: true
+      },
       showMap: true,
       locationData: location,
       accuracy: 0,
@@ -378,6 +383,12 @@ div.markeropen svg path {
 }
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
+  @media (pointer: coarse) {
+    visibility: hidden;
+  }
+  @media (pointer: none) {
+    visibility: hidden;
+  }
 }
 .leaflet-control-zoom a:hover {
   background-color: #f4f4f4 !important;
@@ -392,28 +403,44 @@ div.markeropen svg path {
   }
 }
 .user-location-button {
-  bottom: 68px !important;
+  @media (pointer: coarse) {
+    bottom: 0px !important;
+  }
+  @media (pointer: none) {
+    bottom: 0px !important;
+  }
+  @media (pointer: fine) {
+    bottom: 68px !important;
+  }
   right: 2px !important;
   @media (min-width: 768px) {
     right: 0px !important;
   }
 }
 .user-location-link {
+  @media (pointer: none) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
+  @media (pointer: coarse) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
   border-radius: 2.5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  display: block;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   width: 30px;
   height: 30px;
+  display: block;
   line-height: 30px;
-  @media (min-width: 768px) {
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
-    border-radius: 4px;
-  }
   text-align: center;
   color: #000 !important;
   &:hover {
@@ -427,6 +454,76 @@ div.markeropen svg path {
   }
   &.disabled {
     color: theme-color('#bbb') !important;
+  }
+}
+.user-location-link1 {
+  @media (pointer: none) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
+  @media (pointer: coarse) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
+  border-radius: 20px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  width: 30px;
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7) !important;
+  &:hover {
+    background-color: #f4f4f4;
+    @media (prefers-color-scheme: dark) {
+      background-color: $gray-300 !important;
+    }
+  }
+  &.active {
+    color: theme-color('primary') !important;
+  }
+  &.disabled {
+    color: theme-color('#bbb') !important;
+  }
+}
+.user-location-link2 {
+  border-radius: 15px;
+  background-color: $white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  width: 110px;
+  height: 25px;
+  display: flex;
+  line-height: 15px;
+  text-align: center;
+  padding-top: 7px;
+  color: rgba(0, 0, 0, 0.3) !important;
+  &:hover {
+    background-color: #f4f4f4;
+    @media (prefers-color-scheme: dark) {
+      background-color: $gray-300 !important;
+    }
+  }
+  &.active {
+    color: theme-color('primary') !important;
+  }
+  &.disabled {
+    color: theme-color('#bbb') !important;
+  }
+  h5 {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 11px;
+    font-family: Geneva, sans-serif;
+    padding-right: 10px;
+    margin-left: 8px;
   }
 }
 </style>
