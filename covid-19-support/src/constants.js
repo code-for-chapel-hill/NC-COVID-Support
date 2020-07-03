@@ -53,3 +53,56 @@ export const booleanFilters = [
   'farmpick-up',
   'farmersmarket'
 ]
+
+export const needCategories = {
+  categories: [
+    {
+      code: 'food',
+      id: 1001,
+      name: 'Food Resources',
+      subcategories: [
+        {
+          code: 'restaurant',
+          id: 1002,
+          name: 'Restaurants'
+        },
+        {
+          code: 'meal',
+          id: 1004,
+          name: 'Free meals'
+        },
+        {
+          code: 'family',
+          id: 1006,
+          name: 'Prepared family meals'
+        },
+        {
+          code: 'food_bev',
+          id: 1003,
+          name: 'Specialty food & beverage'
+        },
+        {
+          code: 'grocery',
+          id: 1005,
+          name: 'Groceries'
+        }
+      ]
+    },
+    {
+      code: 'farm',
+      id: 1007,
+      name: 'Farms & farmers markets'
+    },
+    {
+      code: 'pharmacy',
+      id: 1008,
+      name: 'Pharmacy'
+    },
+    {
+      code: 'pet',
+      id: 1009,
+      name: 'Pet supplies'
+    }
+  ],
+  regions: ['Orange']
+}
