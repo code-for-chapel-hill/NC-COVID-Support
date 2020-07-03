@@ -419,17 +419,17 @@ div.markeropen svg path {
 }
 .user-location-link {
   @media (pointer: none) {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
     font-size: 18px;
   }
   @media (pointer: coarse) {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
     font-size: 18px;
   }
   border-radius: 2.5px;
