@@ -12,6 +12,7 @@ module.exports = {
     es6: true
   },
   rules: {
+    'vue/max-attributes-per-line': 0,
     'prettier/prettier': [
       'error',
       {
