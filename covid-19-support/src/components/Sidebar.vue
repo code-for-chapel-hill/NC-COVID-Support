@@ -184,18 +184,23 @@ export default {
 }
 
 .tab {
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 30px;
   height: 60px;
   position: absolute;
   top: 169px;
   z-index: 500;
   right: -27px;
-  background: theme-color('secondary');
+  margin-left: 0;
   cursor: pointer;
+  background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
 
@@ -209,12 +214,5 @@ export default {
   transform: rotate(-90deg);
   margin-top: 18px;
   margin-left: 7px;
-}
-
-@include media-breakpoint-up(sm) {
-  .tab {
-    margin-left: 0;
-    font-size: 1rem;
-  }
 }
 </style>

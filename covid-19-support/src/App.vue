@@ -4,6 +4,7 @@
       <theme-header></theme-header>
     </app-header>
     <mobile-search-filters :need="need" :day="day" @need-selected="needSelected" @day-selected="daySelected" />
+    <mobile-map-list-toggle :is-filter-open="isFilterOpen" @toggle="isFilterOpen = !isFilterOpen" />
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <sidebar
@@ -52,6 +53,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 import MobileSearchFilters from './components/MobileSearchFilters'
+import MobileMapListToggle from './components/MobileMapListToggle'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
@@ -94,6 +96,7 @@ export default {
   },
   components: {
     MobileSearchFilters,
+    MobileMapListToggle,
     AboutUsModal,
     AppHeader,
     Highlights,
