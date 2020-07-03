@@ -5,7 +5,7 @@
     </app-header>
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
-      <search-filter
+      <sidebar
         :isFilterOpen="isFilterOpen"
         :need="need"
         :day="day"
@@ -46,7 +46,7 @@
 
 <script>
 import AppHeader from './components/Header.vue'
-import SearchFilter from './components/SearchFilter.vue'
+import Sidebar from './components/Sidebar.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
@@ -95,7 +95,7 @@ export default {
     AppHeader,
     Highlights,
     ResourceMap,
-    SearchFilter,
+    Sidebar,
     ThemeHeader
   },
   data() {

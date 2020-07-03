@@ -1,5 +1,5 @@
 <template>
-  <div class="border-right" id="search-filter-wrapper">
+  <div class="border-right" id="sidebar-wrapper">
     <div class="tab bg-dialogs border-right border-top border-bottom" @click="$emit('toggle')">
       <i class="fas fa-caret-down" />
     </div>
@@ -53,7 +53,7 @@ import InfoPanel from './InfoPanel.vue'
 import ResultsList from './ResultsList.vue'
 
 export default {
-  name: 'search-filter',
+  name: 'sidebar',
   components: {
     BusinessDetails,
     InfoPanel,
@@ -222,7 +222,7 @@ export default {
   cursor: pointer;
 }
 
-#search-filter-wrapper {
+#sidebar-wrapper {
   transition: transform 0.25s ease-out;
   transform: translateX(-100%);
   z-index: 1035;
@@ -241,7 +241,7 @@ export default {
   }
 }
 
-#wrapper.toggled #search-filter-wrapper {
+#wrapper.toggled #sidebar-wrapper {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
   @media (prefers-color-scheme: dark) {

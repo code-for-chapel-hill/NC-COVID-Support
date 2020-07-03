@@ -75,7 +75,7 @@ h6,
 //   }
 // }
 
-#search-filter-wrapper,
+#sidebar-wrapper,
 #page-content-wrapper {
   padding-top: 41px;
   box-sizing: border-box;
@@ -87,7 +87,7 @@ h6,
   position: absolute;
 }
 
-#wrapper.toggled #search-filter-wrapper {
+#wrapper.toggled #sidebar-wrapper {
   transform: translateX(0);
 }
 
