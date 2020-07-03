@@ -130,7 +130,11 @@ export default {
 
   @include media-breakpoint-up(md) {
     height: auto;
-    width: $desktop-sidebar-width + 4px;
+    width: $tablet-sidebar-width;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: $desktop-sidebar-width;
   }
 }
 
