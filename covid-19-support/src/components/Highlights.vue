@@ -173,12 +173,13 @@ export default {
 
 #wrapper.toggled .highlights {
   transition: margin-left 0.25s ease-out;
-  @media (min-width: 768px) {
+
+  @include media-breakpoint-up(sm) {
     margin-left: 294px !important;
   }
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .highlights {
     height: 108px;
   }

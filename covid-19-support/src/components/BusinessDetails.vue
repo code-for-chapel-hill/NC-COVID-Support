@@ -196,6 +196,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 .backtolist {
   font-size: 0.8rem;
 
@@ -218,6 +219,7 @@ export default {
     color: theme-color('quinary');
     margin: 7px 10px 7px 0;
     float: left;
+
     @media (prefers-color-scheme: dark) {
       color: theme-color-level('quinary', 5);
     }
@@ -244,6 +246,7 @@ export default {
 
 .directionsOptions {
   background: $directions-background;
+
   @media (prefers-color-scheme: dark) {
     background: $directions-background-dark;
   }

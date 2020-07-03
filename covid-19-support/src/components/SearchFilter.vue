@@ -238,6 +238,7 @@ $desktop-width: 390px;
 
 #wrapper.toggled #search-filter-wrapper {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
   @media (prefers-color-scheme: dark) {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
@@ -247,6 +248,7 @@ $desktop-width: 390px;
 #wrapper.toggled .tab {
   z-index: 0;
   box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.4);
+
   @media (prefers-color-scheme: dark) {
     box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
   }
@@ -266,6 +268,7 @@ $desktop-width: 390px;
   border: none !important;
   padding: 0 1.25rem;
   border-bottom: none;
+
   &.need-type {
     margin-bottom: 8px;
   }
@@ -305,6 +308,7 @@ $desktop-width: 390px;
 #wrapper.toggled .tab i {
   transform: rotate(90deg);
 }
+
 .tab i {
   font-size: 1.5rem;
   color: theme-color('buttons');
@@ -313,7 +317,7 @@ $desktop-width: 390px;
   margin-left: 7px;
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .tab {
     margin-left: 0;
     font-size: 1rem;

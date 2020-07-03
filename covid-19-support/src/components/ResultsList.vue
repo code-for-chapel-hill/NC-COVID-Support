@@ -95,10 +95,12 @@ export default {
 .addloc {
   margin-bottom: 8px;
 }
+
 .resultList {
   max-height: calc(100vh - 286px);
   overflow-y: overlay;
 }
+
 .resultItem {
   padding: 10px;
   display: block;
@@ -129,6 +131,7 @@ export default {
   font-size: 0.9rem;
   margin-bottom: 0;
 }
+
 .resultAddress {
   font-size: 0.8rem;
   display: block;
