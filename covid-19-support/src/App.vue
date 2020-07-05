@@ -106,6 +106,7 @@ export default {
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const mobileMediaQuery = window.matchMedia('(min-width: 768px)')
     return {
       entries: null,
       need: 'none',
@@ -121,6 +122,7 @@ export default {
         lng: theme.settings.initialMapCenter.lng,
         zoom: theme.settings.initialMapZoom
       },
+      mobileMediaQuery: mobileMediaQuery,
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
@@ -134,11 +136,29 @@ export default {
       this.darkMode = e.matches
       this.setDarkMode(this.darkMode)
     })
+    this.mobileMediaQuery.addListener(() => this.closeListOnMobile())
+    this.closeListOnMobile()
   },
   methods: {
     setDarkMode(darkMode) {
       this.mapUrl = darkMode ? theme.maps.dark.url : theme.maps.normal.url
       this.attribution = darkMode ? theme.maps.dark.attribution : theme.maps.normal.attribution
+    },
+    // Closes the list when mobile or going to mobile as long as there are no filters selected;
+    closeListOnMobile() {
+      if (this.mobileMediaQuery.matches) {
+        return
+      }
+
+      if (this.need !== 'none') {
+        return
+      }
+
+      if (this.day !== dayAny) {
+        return
+      }
+
+      this.isFilterOpen = false
     },
     centerUpdated(center) {
       this.centroid = { lat: center.lat, lng: center.lng }
