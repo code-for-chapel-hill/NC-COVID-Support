@@ -19,6 +19,13 @@ export default {
   left: 0;
   height: 42px;
   z-index: 1037;
+  width: 100%;
+
+  button {
+    @include button-variant($gray-500, $gray-500);
+    width: 100%;
+    height: 100%;
+  }
 
   @include media-breakpoint-up(md) {
     display: none;
