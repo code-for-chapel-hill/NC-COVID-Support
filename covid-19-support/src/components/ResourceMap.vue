@@ -430,6 +430,18 @@ div.markeropen svg path {
 }
 
 .user-location-link {
+  border-radius: 2.5px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  width: 30px;
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  color: #000 !important;
+
   @media (pointer: none) {
     width: 50px;
     height: 50px;
@@ -444,30 +456,24 @@ div.markeropen svg path {
     border-radius: 25px;
     font-size: 18px;
   }
-  border-radius: 2.5px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-color: $white;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 30px;
-  height: 30px;
-  display: block;
-  line-height: 30px;
-  text-align: center;
-  color: #000 !important;
+
   &:hover {
     background-color: #f4f4f4;
+
     @media (prefers-color-scheme: dark) {
       background-color: $gray-300 !important;
     }
   }
+
   &.active {
     color: theme-color('primary') !important;
   }
+
   &.disabled {
     color: theme-color('#bbb') !important;
   }
 }
+
 .user-location-link1 {
   border-radius: 20px;
   background-position: 50% 50%;
@@ -525,6 +531,7 @@ div.markeropen svg path {
   text-align: center;
   padding-top: 7px;
   color: rgba(0, 0, 0, 0.3) !important;
+
   &:hover {
     background-color: #f4f4f4;
 

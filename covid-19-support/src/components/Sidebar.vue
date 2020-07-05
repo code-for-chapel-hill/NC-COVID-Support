@@ -178,6 +178,7 @@ export default {
 
 .side-nav {
   background: theme-color('secondary');
+
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
   }

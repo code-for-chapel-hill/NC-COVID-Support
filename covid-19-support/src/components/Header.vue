@@ -146,6 +146,7 @@ export default {
 
 .sm-name {
   display: inline;
+
   @include media-breakpoint-up(lg) {
     display: none;
   }
