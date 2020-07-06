@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage">
+    <app-header :language="language.name" @language-selected="changeLanguage" :socialMedia="socialMediaico">
       <theme-header></theme-header>
     </app-header>
     <about-us-modal />
@@ -110,11 +110,16 @@ export default {
       showList: false,
       highlightFilters: [],
       bounds: null,
-      centroid: { lat: theme.settings.initialMapCenter.lat, lng: theme.settings.initialMapCenter.lng },
+      centroid: {
+        lat: theme.settings.initialMapCenter.lat,
+        lng: theme.settings.initialMapCenter.lng,
+        zoom: theme.settings.initialMapZoom
+      },
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
-      attribution: null
+      attribution: null,
+      socialMediaico: theme.socialMedia
     }
   },
   mounted() {

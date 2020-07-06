@@ -101,7 +101,7 @@ export default {
 .closed {
   color: theme-color('danger');
   @media (prefers-color-scheme: dark) {
-    color: theme-color-level('danger', 5);
+    color: theme-color-level('danger', 2);
   }
 }
 </style>

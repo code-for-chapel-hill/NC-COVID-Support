@@ -102,20 +102,20 @@ export default {
 .resultItem {
   padding: 10px;
   display: block;
-  min-height: 100px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   max-width: 282px;
+  cursor: pointer;
   //background: #fff;
 
-  @media (prefers-color-scheme: dark) {
-    //color: $gray-100;
-    //background: $gray-800;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   //color: $gray-100;
+  //   //background: $gray-800;
+  // }
 
-  a {
-    //color: #000;
-  }
+  // a {
+  //   //color: #000;
+  // }
 
   & > span > i {
     margin-right: 8px;
@@ -134,7 +134,7 @@ export default {
   display: block;
   max-width: 262px;
 }
-.closedOne {
-  /* background: #f9f9f9 !important; */
-}
+// .closedOne {
+//   /* background: #f9f9f9 !important; */
+// }
 </style>

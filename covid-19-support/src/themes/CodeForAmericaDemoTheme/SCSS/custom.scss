@@ -16,13 +16,6 @@
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
 $font-family-base: 'Poppins', $font-family-sans-serif;
 
-$body-bg: #eee;
-$body-color: #111;
-
-$modal-bg-dark: #222;
-$modal-body-dark: #eee;
-$hover-color-dark: $gray-500;
-
 $blue: #0052a5;
 $dark-blue: #031e3b;
 $orange: #fd7e14;
@@ -34,6 +27,7 @@ $light-orange: #ee8842;
 $marker-open: #566ca9 !default;
 $marker-closed: #999 !default;
 $marker-selected: #ff3d3d !default;
+$user-marker: $pink;
 
 $warning: $yellow;
 $danger: $red;
@@ -51,6 +45,34 @@ $theme-colors: (
   'danger': $danger,
   'secondaryDark': $dark-blue
 );
+
+$body-bg: #eee;
+$body-color: #111;
+
+$modal-bg-dark: #222;
+$modal-body-dark: #eee;
+$hover-color-dark: $gray-500;
+$button-text: $black;
+
+$nav-dropdown: $white;
+$nav-dropdown-dark: rgba(255, 255, 255, 0.8);
+$nav-dropdown-bg: theme-color-level('primary', -2);
+$nav-dropdown-bg-dark: theme-color-level('primary', 6);
+$nav-dropdown-bg-hover: theme-color-level('primary', -4);
+$nav-dropdown-bg-hover-dark: theme-color-level('primary', 8);
+
+$map-key-bg: #f8f9fa;
+$map-key-bg-dark: #222;
+$map-key: color-yiq($map-key-bg);
+$map-key-dark: color-yiq($map-key);
+
+// Used for the location of the user
+$map-location: $blue;
+$map-location-outline: $white;
+
+// Used to show the possible inaccuracy of the users location
+$map-accuracy: $blue;
+$map-accuracy-outline: $white;
 
 $navbar-padding-x: 1rem;
 $navbar-padding-y: 0;

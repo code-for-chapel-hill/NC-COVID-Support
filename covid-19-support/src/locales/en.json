@@ -28,24 +28,24 @@
       "bureau": "Chapel Hill/Orange County Visitors Bureau",
       "cfa": "Code for America",
       "chb": "Chapel Hill Brigade",
-      "farmstewards": "Carolina Farm Stewardship Association",
       "localistnc": "#LocalListNC",
-      "partnership": "Chapel Hill Downtown Partnership"
+      "partnership": "Chapel Hill Downtown Partnership",
+      "pittsboro-siler": "Pittsboro-Siler City Convention & Visitors Bureau"
     },
     "partners": "Info Sources",
     "title": "About this site"
   },
   "category": {
     "childcare": "Child care",
-    "family": "Prepared family meal|Prepared family meals",
-    "farm": "Farm or farmer market|Farms & farmers' markets",
-    "food_bev": "Speciality food & beverage",
-    "grocery": "Grocery|Groceries",
-    "meal": "Free meal|Free meals",
-    "petsupplies": "Pet supplies",
-    "pharmacy": "Pharmacy|Pharmacies",
-    "restaurant": "Restaurant|Restaurants",
-    "school": "School meal|School meals"
+    "family": "Prepared family meals",
+    "farm": "Farms & farmers' markets",
+    "food_bev": "Specialty food & beverage",
+    "grocery": "Groceries",
+    "meal": "Free meals",
+    "pet": "Pet supplies",
+    "pharmacy": "Pharmacy",
+    "restaurant": "Restaurants",
+    "school": "School meals"
   },
   "dayofweek": {
     "any": "Any",
@@ -80,6 +80,7 @@
     "freemeals": "Free meal location|Free meal locations",
     "freeproduce": "Free produce location|Free produce locations",
     "instructions": "Instructions",
+    "locationhelplinktext": "Learn more",
     "mapkey": "Map Key",
     "mealpublic": "Meals open to public",
     "mealstudent": "Meals for students",
@@ -107,9 +108,10 @@
     "ms": "Burmese",
     "zh": "Simplified Chinese"
   },
+  "locationhelp": "Please make sure your device location is enabled",
   "sidebar": {
     "close-panel": "Close search panel",
-    "info-about-us": "Currently, this site supports Orange County, NC. With",
+    "info-about-us": "Currently, this site supports Chatham County and Orange County, NC. With",
     "info-end-text": ", we can expand our coverage.",
     "info-link-text": "your help",
     "open-panel": "Open search panel",
@@ -120,5 +122,6 @@
     "what-do-you-need": "What do you need?",
     "when-do-you-need-it": "When do you need it?"
   },
-  "title": "{0} COVID Support"
+  "title": "{0} COVID Support",
+  "getdirections": "Get directions"
 }

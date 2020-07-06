@@ -28,24 +28,24 @@
       "bureau": "Bureau des visiteurs de Chapel Hill / Orange County",
       "cfa": "Code pour l'Amérique",
       "chb": "Brigade de Chapel Hill",
-      "farmstewards": "Association de gestion agricole de la Caroline",
       "localistnc": "#LocalListNC",
-      "partnership": "Partenariat du centre-ville de Chapel Hill"
+      "partnership": "Partenariat du centre-ville de Chapel Hill",
+      "pittsboro-siler": "Bureau des congrès et des visiteurs de Pittsboro-Siler City"
     },
     "partners": "Sources d'informations",
     "title": "A propos de ce site"
   },
   "category": {
     "childcare": "Garde d'enfants",
-    "family": "Plats préparés en famille | Plats préparés en famille",
-    "farm": "Marché fermier ou fermier | Fermes et marchés fermiers",
-    "food_bev": "",
-    "grocery": "Épicerie | Épicerie",
-    "meal": "Repas gratuit | Repas gratuits",
-    "petsupplies": "Fournitures pour animaux",
-    "pharmacy": "Pharmacie | Pharmacies",
-    "restaurant": "Restaurant | Restaurants",
-    "school": "Repas scolaire | Repas scolaires"
+    "family": "Plats préparés en famille",
+    "farm": "Fermes et marchés fermiers",
+    "food_bev": "Spécialités alimentaires et boissons",
+    "grocery": "Épicerie",
+    "meal": "Repas gratuits",
+    "pet": "Fournitures pour animaux",
+    "pharmacy": "Pharmacie",
+    "restaurant": "Restaurants",
+    "school": "Repas scolaires"
   },
   "dayofweek": {
     "any": "Tout",
@@ -80,6 +80,7 @@
     "freemeals": "Lieu de repas gratuits|Lieux de repas gratuits",
     "freeproduce": "Lieu de production gratuit|Lieux de production gratuit",
     "instructions": "Instructions",
+    "locationhelplinktext": "apprendre encore plus",
     "mapkey": "Carte clé",
     "mealpublic": "Repas ouverts au public",
     "mealstudent": "Repas pour les étudiants",
@@ -107,9 +108,10 @@
     "ms": "birman",
     "zh": "Chinois simplifié"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "Fermer le panneau de recherche",
-    "info-about-us": "Actuellement, ce site prend en charge Orange County, NC. Avec",
+    "info-about-us": "Actuellement, ce site prend en charge le comté de Chatham et le comté d'Orange, NC. Avec",
     "info-end-text": ", nous pouvons étendre notre couverture.",
     "info-link-text": "ton aide",
     "open-panel": "Ouvrir le panneau de recherche",

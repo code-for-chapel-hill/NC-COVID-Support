@@ -28,24 +28,24 @@
       "bureau": "チャペルヒル/オレンジカウンティビジターズビューロー",
       "cfa": "アメリカのコード",
       "chb": "チャペルヒル旅団",
-      "farmstewards": "カロライナファームスチュワードシップ協会",
       "localistnc": "#LocalListNC",
-      "partnership": "チャペルヒルダウンタウンパートナーシップ"
+      "partnership": "チャペルヒルダウンタウンパートナーシップ",
+      "pittsboro-siler": "ピッツボロサイラーシティコンベンション＆ビジターズビューロー"
     },
     "partners": "情報源",
     "title": "このサイトについて"
   },
   "category": {
     "childcare": "育児",
-    "family": "家族の食事の準備|家族の食事の準備",
-    "farm": "農場または農民市場|農場および農民市場",
-    "food_bev": "",
-    "grocery": "食料品|食料品",
-    "meal": "無料の食事|無料の食事",
-    "petsupplies": "ペット用品",
-    "pharmacy": "薬局|薬局",
+    "family": "家族の食事の準備",
+    "farm": "農場および農民市場",
+    "food_bev": "専門食料品",
+    "grocery": "食料品",
+    "meal": "無料の食事",
+    "pet": "ペット用品",
+    "pharmacy": "薬局",
     "restaurant": "レストラン|レストラン",
-    "school": "学校給食|学校給食"
+    "school": "学校給食"
   },
   "dayofweek": {
     "any": "どれか",
@@ -80,6 +80,7 @@
     "freemeals": "無料の食事場所|無料の食事場所",
     "freeproduce": "無料の商品の場所|無料の商品の場所",
     "instructions": "説明書",
+    "locationhelplinktext": "もっと詳しく知る",
     "mapkey": "マップキー",
     "mealpublic": "食事は一般に公開されています",
     "mealstudent": "学生のための食事",
@@ -107,9 +108,10 @@
     "ms": "ビルマ語",
     "zh": "簡体字中国語"
   },
+  "locationhelp": "",
   "sidebar": {
     "close-panel": "検索パネルを閉じる",
-    "info-about-us": "現在、このサイトはノースカロライナ州オレンジ郡をサポートしています。と",
+    "info-about-us": "現在、このサイトはノースカロライナ州チャタム郡とオレンジ郡をサポートしています。と",
     "info-end-text": "、範囲を拡大できます。",
     "info-link-text": "あなたの助け",
     "open-panel": "検索パネルを開く",

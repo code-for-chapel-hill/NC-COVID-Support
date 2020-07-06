@@ -118,6 +118,54 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/43389857?v=4",
       "profile": "https://github.com/eparadise",
       "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "cw2908",
+      "name": "Chris W",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9000855?v=4",
+      "profile": "https://github.com/cw2908",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "codetheorem",
+      "name": "Hrishikesh Agarwal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/54779517?v=4",
+      "profile": "https://github.com/codetheorem",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "helenx15",
+      "name": "helenx15",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/49924616?v=4",
+      "profile": "https://github.com/helenx15",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "glitchedmob",
+      "name": "Levi Zitting",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9029666?v=4",
+      "profile": "http://levizitting.com/",
+      "contributions": [
+        "code",
+        "ideas",
+        "design"
+      ]
+    },
+    {
+      "login": "aliciawu-dev",
+      "name": "Alicia Wu",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/60446139?v=4",
+      "profile": "https://github.com/aliciawu-dev",
+      "contributions": [
         "code"
       ]
     }
