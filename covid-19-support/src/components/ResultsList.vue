@@ -98,9 +98,6 @@ export default {
 
 .resultList {
   overflow-y: overlay;
-  $mobile-search-filters-height: 158px;
-  $mobile-nav-height: 42px;
-  $mobile-map-list-toggle-height: 42px;
   max-height: calc(100vh - #{$mobile-search-filters-height + $mobile-nav-height});
   margin-top: $mobile-search-filters-height;
   padding-bottom: $mobile-map-list-toggle-height;

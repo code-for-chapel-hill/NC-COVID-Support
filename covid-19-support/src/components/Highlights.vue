@@ -166,6 +166,10 @@ export default {
   transition: height 0.25s ease-out, margin 0.25s ease-out;
   height: 116px;
 
+  @include media-breakpoint-down(sm) {
+    margin-top: $mobile-search-filters-height + 4px !important;
+  }
+
   div.col-md-3 {
     padding: 0 !important;
   }
