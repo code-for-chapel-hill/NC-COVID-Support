@@ -4,27 +4,29 @@
       <i class="fas fa-caret-down" />
     </div>
 
-    <div class="sidebar-top">
-      <search-filters
-        class="search-filters"
-        :day="day"
-        :need="need"
-        @need-selected="(opt) => $emit('need-selected', opt)"
-        @day-selected="(opt) => $emit('day-selected', opt)"
-      />
+    <div>
+      <div class="sidebar-top">
+        <search-filters
+          class="search-filters"
+          :day="day"
+          :need="need"
+          @need-selected="(opt) => $emit('need-selected', opt)"
+          @day-selected="(opt) => $emit('day-selected', opt)"
+        />
 
-      <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
-        {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
-        >{{ $t('sidebar.info-end-text') }}
-      </InfoPanel>
+        <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
+          {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
+          >{{ $t('sidebar.info-end-text') }}
+        </InfoPanel>
 
-      <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
-        <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
-        <br />
-        (1) {{ $t('sidebar.stayhome') }}<br />
-        (2) {{ $t('sidebar.sixfeet') }}<br />
-        (3) {{ $t('sidebar.washhands') }}<br />
-      </InfoPanel>
+        <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+          <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
+          <br />
+          (1) {{ $t('sidebar.stayhome') }}<br />
+          (2) {{ $t('sidebar.sixfeet') }}<br />
+          (3) {{ $t('sidebar.washhands') }}<br />
+        </InfoPanel>
+      </div>
 
       <BusinessDetails
         :infotype="'green'"

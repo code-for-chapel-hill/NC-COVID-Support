@@ -1,7 +1,7 @@
 <template>
   <span>
-    <b-list-group class="list-group-flush">
-      <b-list-group-item variant="sideNav" button class="backtolist" @click="$emit('close-details')">
+    <b-list-group class="list-group-flush back-to-list">
+      <b-list-group-item variant="sideNav" button @click="$emit('close-details')">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
       </b-list-group-item>
@@ -197,8 +197,12 @@ export default {
   overflow-x: hidden;
 }
 
-.backtolist {
+.back-to-list {
   font-size: 0.8rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: $mobile-search-filters-height;
+  }
 
   i {
     margin-right: 0.375rem;
@@ -237,6 +241,10 @@ export default {
 
   & > div {
     width: 243px;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
   }
 }
 
