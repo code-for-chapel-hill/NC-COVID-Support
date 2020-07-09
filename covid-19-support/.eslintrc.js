@@ -19,7 +19,8 @@ module.exports = {
         endOfLine: 'auto',
         excludeFiles: ['**/src/ExtraMarkers/**/*.*']
       }
-    ]
+    ],
+    'object-shorthand': ['error', 'methods']
   },
   ignorePatterns: ['**/src/ExtraMarkers/'],
   overrides: [
