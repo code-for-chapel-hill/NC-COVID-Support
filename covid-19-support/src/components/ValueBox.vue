@@ -29,7 +29,8 @@ export default {
   padding: 0 8px;
   margin: 4px 4px;
 }
-@media (min-width: 768px) {
+
+@include media-breakpoint-up(sm) {
   /* margin: 8px 4px; */
   .valuebox {
     height: 100px;
@@ -51,6 +52,7 @@ export default {
   line-height: 1.2rem;
   font-size: 1rem;
 }
+
 .title {
   position: absolute;
   margin-right: 24px;
@@ -61,19 +63,23 @@ export default {
 .title.ten {
   left: 36px;
 }
+
 .title.hundred {
   left: 46px;
 }
+
 .title.thousand {
   left: 56px;
 }
-@media (min-width: 768px) {
+
+@include media-breakpoint-up(sm) {
   .title {
     line-height: 1.3rem;
     font-size: 1.1rem;
     left: 18px !important;
     bottom: 10px;
   }
+
   .number {
     font-size: 2em;
     display: inline-block;
@@ -82,7 +88,8 @@ export default {
     left: 18px !important;
   }
 }
-@media (min-width: 1200px) {
+
+@include media-breakpoint-up(lg) {
   .title {
     line-height: 1.5rem;
     margin-top: 12px;
@@ -102,6 +109,7 @@ export default {
 
   &.bg-blue {
     background-color: #2eb7cb;
+
     @media (prefers-color-scheme: dark) {
       background-color: #1b6c79;
     }
@@ -109,6 +117,7 @@ export default {
 
   &.bg-green {
     background-color: #566ca9;
+
     @media (prefers-color-scheme: dark) {
       background-color: #344268;
     }
@@ -116,21 +125,23 @@ export default {
 
   &:hover {
     // background-color: #52aa36 !important;
+    cursor: pointer;
+
     i {
       opacity: 0.3;
     }
-    cursor: pointer;
   }
 
   &.selected {
     background: theme-color('success') !important;
+
     i {
       opacity: 0.5;
     }
   }
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .valuebox i.fas {
     font-size: 4.5em;
     right: 25px;

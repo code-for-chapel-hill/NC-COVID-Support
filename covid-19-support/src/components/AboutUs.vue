@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
-@media (max-width: 991px) {
+@include media-breakpoint-down(md) {
   #about-us > .modal-dialog {
     justify-content: normal;
     max-width: 100%;

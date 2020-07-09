@@ -331,6 +331,7 @@ div.markeropen svg path {
     background-color: $map-key-bg !important;
     color: $map-key;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
     @media (prefers-color-scheme: dark) {
       background-color: $map-key-bg-dark !important;
       color: $map-key-dark;
@@ -343,6 +344,7 @@ div.markeropen svg path {
     color: #000;
     cursor: pointer;
     vertical-align: middle;
+
     @media (prefers-color-scheme: dark) {
       color: #fff;
     }
@@ -371,9 +373,11 @@ div.markeropen svg path {
 .show-key {
   display: block;
 }
+
 .mapkey.show-key .title {
   display: inline;
 }
+
 .location-alert {
   position: absolute;
   bottom: 0px;
@@ -381,6 +385,7 @@ div.markeropen svg path {
   width: 350px;
   z-index: 1000;
 }
+
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
   @media (pointer: coarse) {
@@ -390,18 +395,23 @@ div.markeropen svg path {
     visibility: hidden;
   }
 }
+
 .leaflet-control-zoom a:hover {
   background-color: #f4f4f4 !important;
+
   @media (prefers-color-scheme: dark) {
     background-color: $gray-300 !important;
   }
 }
+
 .leaflet-control-zoom a.leaflet-disabled {
   background-color: #f4f4f4 !important;
+
   @media (prefers-color-scheme: dark) {
     background-color: $gray-300 !important;
   }
 }
+
 .user-location-button {
   @media (pointer: coarse) {
     bottom: 0px !important;
@@ -413,25 +423,13 @@ div.markeropen svg path {
     bottom: 68px !important;
   }
   right: 2px !important;
-  @media (min-width: 768px) {
+
+  @include media-breakpoint-up(sm) {
     right: 0px !important;
   }
 }
+
 .user-location-link {
-  @media (pointer: none) {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 25px;
-    font-size: 18px;
-  }
-  @media (pointer: coarse) {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 25px;
-    font-size: 18px;
-  }
   border-radius: 2.5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -443,20 +441,7 @@ div.markeropen svg path {
   line-height: 30px;
   text-align: center;
   color: #000 !important;
-  &:hover {
-    background-color: #f4f4f4;
-    @media (prefers-color-scheme: dark) {
-      background-color: $gray-300 !important;
-    }
-  }
-  &.active {
-    color: theme-color('primary') !important;
-  }
-  &.disabled {
-    color: theme-color('#bbb') !important;
-  }
-}
-.user-location-link1 {
+
   @media (pointer: none) {
     width: 50px;
     height: 50px;
@@ -471,6 +456,25 @@ div.markeropen svg path {
     border-radius: 25px;
     font-size: 18px;
   }
+
+  &:hover {
+    background-color: #f4f4f4;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $gray-300 !important;
+    }
+  }
+
+  &.active {
+    color: theme-color('primary') !important;
+  }
+
+  &.disabled {
+    color: theme-color('#bbb') !important;
+  }
+}
+
+.user-location-link1 {
   border-radius: 20px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -482,19 +486,40 @@ div.markeropen svg path {
   line-height: 30px;
   text-align: center;
   color: rgba(0, 0, 0, 0.7) !important;
+
+  @media (pointer: none) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
+
+  @media (pointer: coarse) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+  }
+
   &:hover {
     background-color: #f4f4f4;
+
     @media (prefers-color-scheme: dark) {
       background-color: $gray-300 !important;
     }
   }
+
   &.active {
     color: theme-color('primary') !important;
   }
+
   &.disabled {
     color: theme-color('#bbb') !important;
   }
 }
+
 .user-location-link2 {
   border-radius: 15px;
   background-color: $white;
@@ -506,18 +531,23 @@ div.markeropen svg path {
   text-align: center;
   padding-top: 7px;
   color: rgba(0, 0, 0, 0.3) !important;
+
   &:hover {
     background-color: #f4f4f4;
+
     @media (prefers-color-scheme: dark) {
       background-color: $gray-300 !important;
     }
   }
+
   &.active {
     color: theme-color('primary') !important;
   }
+
   &.disabled {
     color: theme-color('#bbb') !important;
   }
+
   h5 {
     color: rgba(0, 0, 0, 0.3);
     font-size: 11px;

@@ -163,7 +163,7 @@ export default {
 <style lang="scss">
 .highlights {
   margin: 4px !important;
-  transition: height 0.25s ease-out;
+  transition: height 0.25s ease-out, margin 0.25s ease-out;
   height: 116px;
 
   div.col-md-3 {
@@ -172,13 +172,16 @@ export default {
 }
 
 #wrapper.toggled .highlights {
-  transition: margin-left 0.25s ease-out;
-  @media (min-width: 768px) {
-    margin-left: 294px !important;
+  @include media-breakpoint-up(md) {
+    margin-left: ($tablet-sidebar-width + 8px) !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: ($desktop-sidebar-width + 8px) !important;
   }
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .highlights {
     height: 108px;
   }

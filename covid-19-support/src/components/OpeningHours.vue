@@ -94,12 +94,15 @@ export default {
 .openhours {
   margin-bottom: 10px;
 }
+
 .oh-name {
   padding-right: 20px;
   vertical-align: top;
 }
+
 .closed {
   color: theme-color('danger');
+
   @media (prefers-color-scheme: dark) {
     color: theme-color-level('danger', 2);
   }

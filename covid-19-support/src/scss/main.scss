@@ -1,11 +1,16 @@
+@import 'variables';
+@import 'mixins';
+
 html,
 body {
   overflow: hidden;
   height: 100%;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000;
   }
 }
+
 #wrapper {
   height: 100%;
 }
@@ -71,7 +76,7 @@ h6,
 //   }
 // }
 
-#search-filter-wrapper,
+#sidebar-wrapper,
 #page-content-wrapper {
   padding-top: 41px;
   box-sizing: border-box;
@@ -81,10 +86,16 @@ h6,
   width: 100%;
   height: 100%;
   position: absolute;
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 42px;
+
+    padding-top: $mobile-search-filters-height + 41px;
+  }
 }
 
-#wrapper.toggled #search-filter-wrapper {
-  margin-left: 0;
+#wrapper.toggled #sidebar-wrapper {
+  transform: translateX(0);
 }
 
 @include media-breakpoint-up(sm) {

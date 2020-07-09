@@ -3,9 +3,15 @@
     <app-header :language="language.name" @language-selected="changeLanguage" :socialMedia="socialMediaico">
       <theme-header></theme-header>
     </app-header>
+    <mobile-search-filters :need="need" :day="day" @need-selected="needSelected" @day-selected="daySelected" />
+    <mobile-map-list-toggle
+      :is-filter-open="isFilterOpen"
+      :is-resource-selected="locationData.currentBusiness != null && showList !== true"
+      @toggle="isFilterOpen = !isFilterOpen"
+    />
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
-      <search-filter
+      <sidebar
         :isFilterOpen="isFilterOpen"
         :need="need"
         :day="day"
@@ -17,6 +23,7 @@
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="needSelected"
         @day-selected="daySelected"
+        @update-show-list="updateShowList"
       />
 
       <div id="page-content-wrapper">
@@ -46,10 +53,12 @@
 
 <script>
 import AppHeader from './components/Header.vue'
-import SearchFilter from './components/SearchFilter.vue'
+import Sidebar from './components/Sidebar.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
+import MobileSearchFilters from './components/MobileSearchFilters'
+import MobileMapListToggle from './components/MobileMapListToggle'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
@@ -91,15 +100,18 @@ export default {
     this.fetchData()
   },
   components: {
+    MobileSearchFilters,
+    MobileMapListToggle,
     AboutUsModal,
     AppHeader,
     Highlights,
     ResourceMap,
-    SearchFilter,
+    Sidebar,
     ThemeHeader
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const mobileMediaQuery = window.matchMedia('(min-width: 768px)')
     return {
       entries: null,
       need: 'none',
@@ -115,6 +127,7 @@ export default {
         lng: theme.settings.initialMapCenter.lng,
         zoom: theme.settings.initialMapZoom
       },
+      mobileMediaQuery: mobileMediaQuery,
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
@@ -128,11 +141,29 @@ export default {
       this.darkMode = e.matches
       this.setDarkMode(this.darkMode)
     })
+    this.mobileMediaQuery.addListener(() => this.closeListOnMobile())
+    this.closeListOnMobile()
   },
   methods: {
     setDarkMode(darkMode) {
       this.mapUrl = darkMode ? theme.maps.dark.url : theme.maps.normal.url
       this.attribution = darkMode ? theme.maps.dark.attribution : theme.maps.normal.attribution
+    },
+    // Closes the list when mobile or going to mobile as long as there are no filters selected;
+    closeListOnMobile() {
+      if (this.mobileMediaQuery.matches) {
+        return
+      }
+
+      if (this.need !== 'none') {
+        return
+      }
+
+      if (this.day !== dayAny) {
+        return
+      }
+
+      this.isFilterOpen = false
     },
     centerUpdated(center) {
       this.centroid = { lat: center.lat, lng: center.lng }
@@ -182,10 +213,12 @@ export default {
 
       this.entries = entries.feed.entry
     },
+    updateShowList(val) {
+      this.showList = val
+    },
     passLocation: function (val) {
       val.currentBusiness = this.filteredMarkers[val.locValue]
       this.locationData = val
-      this.showList = false
       this.isFilterOpen = true
       var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
