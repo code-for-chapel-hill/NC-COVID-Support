@@ -76,11 +76,6 @@ export default {
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean
   },
-  computed: {
-    tabtitle() {
-      return this.isFilterOpen ? this.$t('sidebar.close-panel') : this.$t('sidebar.open-panel')
-    }
-  },
   methods: {
     closeDetails: function () {
       this.showListing = true
