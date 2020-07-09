@@ -89,6 +89,8 @@ h6,
 
   @include media-breakpoint-down(sm) {
     padding-bottom: 42px;
+
+    padding-top: $mobile-search-filters-height + 41px;
   }
 }
 
