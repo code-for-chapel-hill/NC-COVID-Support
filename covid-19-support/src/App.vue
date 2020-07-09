@@ -19,6 +19,7 @@
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="needSelected"
         @day-selected="daySelected"
+        @update-show-list="updateShowList"
       />
 
       <div id="page-content-wrapper">
@@ -208,10 +209,12 @@ export default {
 
       this.entries = entries.feed.entry
     },
+    updateShowList(val) {
+      this.showList = val
+    },
     passLocation: function (val) {
       val.currentBusiness = this.filteredMarkers[val.locValue]
       this.locationData = val
-      this.showList = false
       this.isFilterOpen = true
       var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t

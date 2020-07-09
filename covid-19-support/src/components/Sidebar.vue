@@ -14,7 +14,7 @@
           @day-selected="(opt) => $emit('day-selected', opt)"
         />
 
-        <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showListing">
+        <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showList">
           {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
           >{{ $t('sidebar.info-end-text') }}
         </InfoPanel>
@@ -32,7 +32,7 @@
         :infotype="'green'"
         :icon="'fa-tractor'"
         :business="location.currentBusiness"
-        v-if="location.currentBusiness != null && showListing != true"
+        v-if="location.currentBusiness != null && showList !== true"
         @close-details="closeDetails"
       ></BusinessDetails>
     </div>
@@ -41,7 +41,7 @@
       :filteredMarkers="highlightFilteredMarkers"
       :location="location"
       @location-selected="passLocation"
-      v-if="showListing"
+      v-if="showList"
       :selected-day="day"
     />
   </div>
@@ -63,8 +63,7 @@ export default {
   },
   data() {
     return {
-      locationData: location,
-      showListing: this.showList
+      locationData: location
     }
   },
   props: {
@@ -78,29 +77,29 @@ export default {
   },
   methods: {
     closeDetails: function () {
-      this.showListing = true
+      this.$emit('update-show-list', true)
     },
     passLocation: function (val) {
       this.locationData = val
-      this.showListing = false
+      this.$emit('update-show-list', false)
       this.$emit('location-selected', val)
     }
   },
   watch: {
     day: function () {
       this.locationData = null
-      this.showListing = true
+      this.$emit('update-show-list', true)
     },
     need: function (val) {
       this.locationData = null
       if (val == 'none') {
-        this.showListing = false
+        this.$emit('update-show-list', false)
       } else {
-        this.showListing = true
+        this.$emit('update-show-list', true)
       }
     },
     location: function () {
-      this.showListing = false
+      this.$emit('update-show-list', false)
     }
   }
 }
