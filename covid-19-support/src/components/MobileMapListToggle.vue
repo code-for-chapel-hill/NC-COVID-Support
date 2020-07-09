@@ -1,13 +1,27 @@
 <template>
   <div class="map-list-toggle">
-    <button @click="$emit('toggle')">Show {{ isFilterOpen ? 'Map' : 'List' }}</button>
+    <button @click="$emit('toggle')">{{ buttonText }}</button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    isFilterOpen: Boolean
+    isFilterOpen: Boolean,
+    isResourceSelected: Boolean
+  },
+  computed: {
+    buttonText() {
+      if (this.isFilterOpen) {
+        return 'Show Map'
+      }
+
+      if (this.isResourceSelected) {
+        return 'Show Resource Details'
+      }
+
+      return 'Show List'
+    }
   }
 }
 </script>

@@ -4,7 +4,11 @@
       <theme-header></theme-header>
     </app-header>
     <mobile-search-filters :need="need" :day="day" @need-selected="needSelected" @day-selected="daySelected" />
-    <mobile-map-list-toggle :is-filter-open="isFilterOpen" @toggle="isFilterOpen = !isFilterOpen" />
+    <mobile-map-list-toggle
+      :is-filter-open="isFilterOpen"
+      :is-resource-selected="locationData.currentBusiness != null && showList !== true"
+      @toggle="isFilterOpen = !isFilterOpen"
+    />
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <sidebar
