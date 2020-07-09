@@ -119,7 +119,7 @@ export default {
 
 #sidebar-wrapper {
   transition: transform 0.25s ease-out;
-  transform: translateX(-100%);
+  transform: translateY(100%);
   z-index: 1035;
   max-height: 100vh;
   width: 100%;
@@ -133,6 +133,7 @@ export default {
   @include media-breakpoint-up(md) {
     height: auto;
     width: $tablet-sidebar-width;
+    transform: translateX(-100%);
   }
 
   @include media-breakpoint-up(lg) {
