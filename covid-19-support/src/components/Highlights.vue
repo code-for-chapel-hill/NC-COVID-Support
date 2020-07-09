@@ -35,7 +35,7 @@ export default {
     highlightFilters: Array
   },
   methods: {
-    boxSelected: function (content) {
+    boxSelected(content) {
       this.$emit('box-selected', content)
     },
     buildBoxValue(labelId, icon, count, pluralize = false) {

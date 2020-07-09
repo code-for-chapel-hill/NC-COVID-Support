@@ -68,7 +68,7 @@ export default {
     selectedDay: Number
   },
   watch: {
-    location: function (locationVal) {
+    location(locationVal) {
       if (locationVal.isSetByMap) {
         var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
         this.$refs['results'].scrollTo(0, top)
@@ -76,7 +76,7 @@ export default {
     }
   },
   methods: {
-    getClosedMessage: function () {
+    getClosedMessage() {
       if (this.selectedDay > 6) {
         return this.$t(`label.closed-today`)
       }

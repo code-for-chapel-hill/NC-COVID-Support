@@ -149,11 +149,11 @@ export default {
     business: Object
   },
   methods: {
-    getDomain: function (url) {
+    getDomain(url) {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
     },
-    addressUrl: function (marker) {
+    addressUrl(marker) {
       var address = marker.gsx$address.$t
       address = address.replace(/\s/g, '%20')
       var city = marker.gsx$city.$t.replace(/\s/g, '%20')
@@ -161,13 +161,13 @@ export default {
       address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
       return address
     },
-    appleDirectionsLink: function (marker) {
+    appleDirectionsLink(marker) {
       return 'http://maps.apple.com/?q=' + marker.gsx$address.$t + '&ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t
     },
-    googleDirectionsLink: function (marker) {
+    googleDirectionsLink(marker) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + this.addressUrl(marker)
     },
-    wazeDirectionsLink: function (marker) {
+    wazeDirectionsLink(marker) {
       return 'https://www.waze.com/ul?ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t + '&navigate=yes'
     },
     getDirections() {
@@ -177,7 +177,7 @@ export default {
     getAddress: getAddress
   },
   computed: {
-    getLastUpdatedDate: function () {
+    getLastUpdatedDate() {
       return new Date(Date.parse(this.business.marker.gsx$lastupdate.$t)).toLocaleDateString()
     },
     iOS() {

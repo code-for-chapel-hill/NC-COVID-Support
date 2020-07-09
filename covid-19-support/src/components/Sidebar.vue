@@ -76,21 +76,21 @@ export default {
     showList: Boolean
   },
   methods: {
-    closeDetails: function () {
+    closeDetails() {
       this.$emit('update-show-list', true)
     },
-    passLocation: function (val) {
+    passLocation(val) {
       this.locationData = val
       this.$emit('update-show-list', false)
       this.$emit('location-selected', val)
     }
   },
   watch: {
-    day: function () {
+    day() {
       this.locationData = null
       this.$emit('update-show-list', true)
     },
-    need: function (val) {
+    need(val) {
       this.locationData = null
       if (val == 'none') {
         this.$emit('update-show-list', false)
@@ -98,7 +98,7 @@ export default {
         this.$emit('update-show-list', true)
       }
     },
-    location: function () {
+    location() {
       this.$emit('update-show-list', false)
     }
   }
