@@ -168,28 +168,28 @@ export default {
     centerUpdated(center) {
       this.centroid = { lat: center.lat, lng: center.lng }
     },
-    boundsUpdated: function (bounds) {
+    boundsUpdated(bounds) {
       this.bounds = bounds
     },
-    getDay: function (day) {
+    getDay(day) {
       if (day == 0) {
         return 6
       } else {
         return day - 1
       }
     },
-    boxSelected: function (content) {
+    boxSelected(content) {
       this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
     },
     isAnyDaySelected(day) {
       return day >= dayAny
     },
-    needSelected: function (val) {
+    needSelected(val) {
       this.need = val
       this.highlightFilters = []
       window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
-    daySelected: function (val) {
+    daySelected(val) {
       this.day = val
       this.highlightFilters = []
       window.gtag('event', 'When do you need it?', {
@@ -197,7 +197,7 @@ export default {
         event_label: weekdays[this.getDay(val)].day
       })
     },
-    changeLanguage: function (item) {
+    changeLanguage(item) {
       this.language = item
       this.$root.updateLang(item.iso)
     },
@@ -216,7 +216,7 @@ export default {
     updateShowList(val) {
       this.showList = val
     },
-    passLocation: function (val) {
+    passLocation(val) {
       val.currentBusiness = this.filteredMarkers[val.locValue]
       this.locationData = val
       this.isFilterOpen = true

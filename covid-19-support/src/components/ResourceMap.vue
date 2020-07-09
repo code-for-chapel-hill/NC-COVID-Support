@@ -245,7 +245,7 @@ export default {
   },
   watch: {
     // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-    location: function (locationVal) {
+    location(locationVal) {
       if (locationVal.isSetByMap) {
         return
       }
