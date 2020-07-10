@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
-    <b-navbar-brand href="#">
+    <b-navbar-brand href="#" class="navbar-brand">
       <slot></slot>
     </b-navbar-brand>
 

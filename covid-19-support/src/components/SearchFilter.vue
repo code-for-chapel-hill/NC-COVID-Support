@@ -5,7 +5,7 @@
     </div>
 
     <b-list-group class="need-day-group">
-      <b-list-group-item variant="sideNav" class="need-type">
+      <b-list-group-item variant="sideNav" class="need-type border-fix">
         <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
         <b-form-select class="custom-select" :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
       </b-list-group-item>
@@ -324,5 +324,9 @@ export default {
     margin-left: 0;
     font-size: 1rem;
   }
+}
+
+.border-fix {
+  border: none !important;
 }
 </style>
