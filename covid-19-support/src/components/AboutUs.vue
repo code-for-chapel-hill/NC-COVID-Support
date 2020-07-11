@@ -65,6 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 @media (max-width: 991px) {
   #about-us > .modal-dialog {
     justify-content: normal;
@@ -76,4 +77,5 @@ export default {
     }
   }
 }
+/*! purgecss end ignore */
 </style>

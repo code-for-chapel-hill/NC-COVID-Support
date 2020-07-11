@@ -67,6 +67,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .iconListItem {
   > div {
     display: inline-block;
@@ -102,4 +103,5 @@ export default {
 .ilTitle {
   min-width: 160px;
 }
+/*! purgecss end ignore */
 </style>

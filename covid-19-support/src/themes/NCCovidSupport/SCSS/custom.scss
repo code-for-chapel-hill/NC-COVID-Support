@@ -15,6 +15,7 @@
 // To see a list of variables you can customize for Bootstrap Vue
 // covid-19-support\node_modules\bootstrap-vue\src\_variables.scss
 
+/*! purgecss start ignore */
 $font-family-base: 'Poppins', $font-family-sans-serif;
 
 $blue: #374a91;
@@ -131,3 +132,4 @@ $bv-enable-table-stacked: false;
     color: $modal-body-dark;
   }
 }
+/*! purgecss end ignore */

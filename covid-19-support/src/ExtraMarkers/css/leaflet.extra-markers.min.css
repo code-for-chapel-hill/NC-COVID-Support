@@ -6,6 +6,7 @@
  * @author coryasilva <https://github.com/coryasilva>
  * @version 1.2.1
  */
+ /*! purgecss start ignore */
 .extra-marker {
   background: url('../img/markers_default.png') no-repeat 0 0;
   width: 35px;
@@ -285,3 +286,4 @@
 .extra-marker-penta-white {
   background-position: -504px -138px;
 }
+/*! purgecss end ignore */

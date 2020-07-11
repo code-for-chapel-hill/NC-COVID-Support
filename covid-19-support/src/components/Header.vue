@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
-    <b-navbar-brand href="#" class="navbar-brand">
+    <b-navbar-brand href="#">
       <slot></slot>
     </b-navbar-brand>
 
@@ -68,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 #topnav {
   position: absolute;
   width: 100%;
@@ -146,4 +147,5 @@ export default {
     display: none;
   }
 }
+/*! purgecss end ignore */
 </style>

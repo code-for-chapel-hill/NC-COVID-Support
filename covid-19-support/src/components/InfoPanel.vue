@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .note,
 .handwash {
   font-size: 0.8rem;
@@ -51,4 +52,5 @@ export default {
   display: inline-block;
   width: 185px;
 }
+/*! purgecss end ignore */
 </style>

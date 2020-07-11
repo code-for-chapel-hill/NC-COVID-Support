@@ -217,9 +217,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/*! purgecss start ignore */
 .custom-select {
   font-size: 0.8rem;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 #search-filter-wrapper {
@@ -329,4 +333,5 @@ export default {
 .border-fix {
   border: none !important;
 }
+/*! purgecss end ignore */
 </style>

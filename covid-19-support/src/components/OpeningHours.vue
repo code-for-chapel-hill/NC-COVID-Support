@@ -91,6 +91,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .openhours {
   margin-bottom: 10px;
 }
@@ -104,4 +105,5 @@ export default {
     color: theme-color-level('danger', 2);
   }
 }
+/*! purgecss end ignore */
 </style>

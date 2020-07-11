@@ -24,6 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+/*! purgecss start ignore */
 .valuebox {
   height: 50px;
   padding: 0 8px;
@@ -137,4 +138,5 @@ export default {
     top: 24px;
   }
 }
+/*! purgecss end ignore */
 </style>

@@ -267,6 +267,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .map {
   width: auto;
   height: 100%;
@@ -528,4 +529,5 @@ div.markeropen svg path {
     margin-left: 8px;
   }
 }
+/*! purgecss end ignore */
 </style>

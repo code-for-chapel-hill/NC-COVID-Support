@@ -161,6 +161,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .highlights {
   margin: 4px !important;
   transition: height 0.25s ease-out;
@@ -183,4 +184,5 @@ export default {
     height: 108px;
   }
 }
+/*! purgecss end ignore */
 </style>

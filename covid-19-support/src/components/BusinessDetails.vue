@@ -191,6 +191,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+/*! purgecss start ignore */
 .business-details {
   max-height: calc(100vh - 237px);
   overflow-y: auto;
@@ -248,4 +249,5 @@ export default {
     background: $directions-background-dark;
   }
 }
+/*! purgecss end ignore */
 </style>

@@ -88,6 +88,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*! purgecss start ignore */
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
 }
@@ -137,4 +138,5 @@ export default {
 // .closedOne {
 //   /* background: #f9f9f9 !important; */
 // }
+/*! purgecss end ignore */
 </style>

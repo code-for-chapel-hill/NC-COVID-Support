@@ -60,7 +60,7 @@ module.exports = {
               const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
               return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
             },
-            whitelist: ['html', 'body'],
+            whitelist: ['html', 'body',],
             whitelistPatterns: [
               /-(leave|enter|appear)(|-(to|from|active))$/,
               /^(?!(|.*?:)cursor-move).+-move$/,
