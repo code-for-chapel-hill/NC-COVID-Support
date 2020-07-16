@@ -20,7 +20,7 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 
 ## This project is
 
-- A mobile-friendly website with an interactive map and table of local resources.
+- A mobile-friendly website with an interactive map and list of local resources.
 - A tool to help our communities and neighbors navigate the COVID crisis.
 - A collaborative effort connected to local officials and support organizations.
 - An open project that can be quickly adapted to other locations & future needs.
