@@ -4,15 +4,11 @@
       <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
       <b-form-select class="custom-select" :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
     </b-list-group-item>
-    <b-list-group-item variant="sideNav">
-      <h6>{{ $t('sidebar.when-do-you-need-it') }}</h6>
-      <b-form-select :value="day" :options="dayOptions" @change="(opt) => $emit('day-selected', opt)" />
-    </b-list-group-item>
   </b-list-group>
 </template>
 
 <script>
-import { weekdays, needCategories } from '../constants'
+import { needCategories } from '../constants'
 
 export default {
   data() {
@@ -22,8 +18,7 @@ export default {
     }
   },
   props: {
-    need: String,
-    day: Number
+    need: String
   },
   computed: {
     needOptionGroups() {
@@ -66,12 +61,6 @@ export default {
         { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
         { value: 'pet', text: this.$t('category.pet') }
       ]
-    },
-    dayOptions() {
-      return weekdays.map((i) => ({
-        value: i.pos,
-        text: this.$t(`dayofweek.${i.day}`)
-      }))
     }
   }
 }
