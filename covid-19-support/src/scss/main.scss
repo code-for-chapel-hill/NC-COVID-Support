@@ -78,19 +78,23 @@ h6,
 
 #sidebar-wrapper,
 #page-content-wrapper {
-  padding-top: 41px;
+  margin-top: $mobile-search-filters-height;
+  padding-bottom: $mobile-nav-height;
   box-sizing: border-box;
-}
-
-#page-content-wrapper {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 134px);
   position: absolute;
+  border-top: 1px solid #ddd;
 
-  @include media-breakpoint-down(sm) {
-    padding-bottom: 42px;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 0;
+    margin-top: 41px;
+    height: calc(100% - 83px);
+  }
 
-    padding-top: $mobile-search-filters-height + 41px;
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+    height: 100%;
   }
 }
 
@@ -104,7 +108,7 @@ h6,
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(md) {
   #page-content-wrapper {
     padding-top: 47px;
   }

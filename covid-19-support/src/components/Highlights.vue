@@ -166,6 +166,10 @@ export default {
   transition: height 0.25s ease-out, margin 0.25s ease-out;
   height: 116px;
 
+  @include media-breakpoint-up(sm) {
+    height: 108px;
+  }
+
   div.col-md-3 {
     padding: 0 !important;
   }
@@ -178,12 +182,6 @@ export default {
 
   @include media-breakpoint-up(lg) {
     margin-left: ($desktop-sidebar-width + 8px) !important;
-  }
-}
-
-@include media-breakpoint-up(sm) {
-  .highlights {
-    height: 108px;
   }
 }
 </style>

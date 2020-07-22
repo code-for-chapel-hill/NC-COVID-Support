@@ -49,51 +49,56 @@ export default {
   align-items: center;
   display: flex;
   height: 50px;
-  line-height: 1.2rem;
-  font-size: 1rem;
+  line-height: 1rem;
+  font-size: 0.8rem;
+  @include media-breakpoint-up(sm) {
+    line-height: 1.1rem;
+    font-size: 0.9rem;
+  }
+  @include media-breakpoint-up(xl) {
+    line-height: 1.2rem;
+    font-size: 1rem;
+  }
 }
 
 .title {
   position: absolute;
-  margin-right: 24px;
+  margin-right: 4px;
   z-index: 3;
   left: 26px;
-}
-
-.title.ten {
-  left: 36px;
-}
-
-.title.hundred {
-  left: 46px;
-}
-
-.title.thousand {
-  left: 56px;
-}
-
-@include media-breakpoint-up(sm) {
-  .title {
+  @include media-breakpoint-up(sm) {
+    margin-right: 14px;
     line-height: 1.3rem;
     font-size: 1.1rem;
     left: 18px !important;
     bottom: 10px;
   }
+  @include media-breakpoint-up(lg) {
+    margin-right: 24px;
+    line-height: 1.5rem;
+    margin-top: 12px;
+    font-size: 1.2rem;
+  }
 
+  &.ten {
+    left: 36px;
+  }
+
+  &.hundred {
+    left: 46px;
+  }
+
+  &.thousand {
+    left: 56px;
+  }
+}
+@include media-breakpoint-up(sm) {
   .number {
     font-size: 2em;
     display: inline-block;
     position: absolute;
     top: 20px;
     left: 18px !important;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .title {
-    line-height: 1.5rem;
-    margin-top: 12px;
-    font-size: 1.2rem;
   }
 }
 

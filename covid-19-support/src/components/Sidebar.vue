@@ -147,7 +147,10 @@ export default {
 }
 
 .search-filters {
-  padding: 1rem 0 0 0 !important;
+  padding: 0.6rem 0 0 0 !important;
+  @include media-breakpoint-up(sm) {
+    padding: 3.5rem 0 0 0 !important;
+  }
 }
 
 .sidebar-heading {
