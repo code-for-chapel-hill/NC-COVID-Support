@@ -3,7 +3,7 @@
     <app-header :language="language.name" @language-selected="changeLanguage" :socialMedia="socialMediaico">
       <theme-header></theme-header>
     </app-header>
-    <mobile-search-filters :need="need" :day="day" @need-selected="needSelected" @day-selected="daySelected" />
+    <mobile-search-filters :need="need" @need-selected="needSelected" />
     <mobile-map-list-toggle
       :is-filter-open="isFilterOpen"
       :is-resource-selected="locationData.currentBusiness != null && showList !== true"
@@ -22,7 +22,6 @@
         @location-selected="passLocation"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="needSelected"
-        @day-selected="daySelected"
         @update-show-list="updateShowList"
       />
 
@@ -62,7 +61,7 @@ import MobileMapListToggle from './components/MobileMapListToggle'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
-import { weekdays, dayFilters, booleanFilters, dayAny } from './constants'
+import { dayFilters, booleanFilters, dayAny } from './constants'
 
 import { theme } from 'theme.config'
 import ThemeHeader from 'theme.header'
@@ -188,14 +187,6 @@ export default {
       this.need = val
       this.highlightFilters = []
       window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
-    },
-    daySelected(val) {
-      this.day = val
-      this.highlightFilters = []
-      window.gtag('event', 'When do you need it?', {
-        event_category: 'Search - (' + this.language.name + ')',
-        event_label: weekdays[this.getDay(val)].day
-      })
     },
     changeLanguage(item) {
       this.language = item

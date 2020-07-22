@@ -6,13 +6,7 @@
 
     <div>
       <div class="sidebar-top">
-        <search-filters
-          class="search-filters"
-          :day="day"
-          :need="need"
-          @need-selected="(opt) => $emit('need-selected', opt)"
-          @day-selected="(opt) => $emit('day-selected', opt)"
-        />
+        <search-filters class="search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)" />
 
         <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showList">
           {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
@@ -37,13 +31,7 @@
       ></BusinessDetails>
     </div>
 
-    <results-list
-      :filteredMarkers="highlightFilteredMarkers"
-      :location="location"
-      @location-selected="passLocation"
-      v-if="showList"
-      :selected-day="day"
-    />
+    <results-list :filteredMarkers="highlightFilteredMarkers" :location="location" @location-selected="passLocation" v-if="showList" />
   </div>
 </template>
 
@@ -69,7 +57,6 @@ export default {
   props: {
     isFilterOpen: Boolean,
     need: String,
-    day: Number,
     filteredMarkers: Array,
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
@@ -160,7 +147,10 @@ export default {
 }
 
 .search-filters {
-  padding: 1rem 0 0 0 !important;
+  padding: 0.6rem 0 0 0 !important;
+  @include media-breakpoint-up(sm) {
+    padding: 3.5rem 0 0 0 !important;
+  }
 }
 
 .sidebar-heading {

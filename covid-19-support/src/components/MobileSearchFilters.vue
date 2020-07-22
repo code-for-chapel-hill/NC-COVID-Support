@@ -1,19 +1,12 @@
 <template>
-  <search-filters
-    class="mobile-search-filters"
-    :day="day"
-    :need="need"
-    @need-selected="(opt) => $emit('need-selected', opt)"
-    @day-selected="(opt) => $emit('day-selected', opt)"
-  ></search-filters>
+  <search-filters class="mobile-search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)"></search-filters>
 </template>
 
 <script>
 import SearchFilters from './SearchFilters'
 export default {
   props: {
-    need: String,
-    day: Number
+    need: String
   },
   components: {
     SearchFilters
