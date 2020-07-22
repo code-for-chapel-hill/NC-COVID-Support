@@ -47,7 +47,8 @@ module.exports = {
        @import "./node_modules/bootstrap/scss/_functions.scss";
        @import "~bootstrap/scss/variables";
        @import "~bootstrap/scss/mixins";
-       @import './src/scss/Mixins.scss';
+       @import './src/scss/variables.scss';
+       @import './src/scss/mixins.scss';
        @import "./src/themes/${process.env.VUE_APP_THEME !== undefined ? process.env.VUE_APP_THEME : 'NCCovidSupport'}/SCSS/custom.scss";
       `
       }

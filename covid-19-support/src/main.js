@@ -23,7 +23,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 import './scss/bootstrap.scss'
 
 // REQUIRED - Importing our Main CSS file
-import './scss/Main.scss'
+import './scss/main.scss'
 
 // General style overrides and custom classes
 

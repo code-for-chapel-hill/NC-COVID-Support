@@ -68,7 +68,7 @@ export default {
     selectedDay: Number
   },
   watch: {
-    location: function (locationVal) {
+    location(locationVal) {
       if (locationVal.isSetByMap) {
         var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
         this.$refs['results'].scrollTo(0, top)
@@ -76,7 +76,7 @@ export default {
     }
   },
   methods: {
-    getClosedMessage: function () {
+    getClosedMessage() {
       if (this.selectedDay > 6) {
         return this.$t(`label.closed-today`)
       }
@@ -95,16 +95,30 @@ export default {
 .addloc {
   margin-bottom: 8px;
 }
+
 .resultList {
-  max-height: calc(100vh - 286px);
   overflow-y: overlay;
+  max-height: calc(100vh - #{$mobile-search-filters-height + $mobile-nav-height});
+  margin-top: $mobile-search-filters-height;
+  padding-bottom: $mobile-map-list-toggle-height;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+    padding-bottom: 0;
+    max-height: calc(100vh - 268px);
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+    padding-bottom: 0;
+    max-height: calc(100vh - 230px);
+  }
 }
+
 .resultItem {
   padding: 10px;
   display: block;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
-  max-width: 282px;
   cursor: pointer;
   //background: #fff;
 
@@ -129,6 +143,7 @@ export default {
   font-size: 0.9rem;
   margin-bottom: 0;
 }
+
 .resultAddress {
   font-size: 0.8rem;
   display: block;

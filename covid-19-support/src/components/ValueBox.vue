@@ -29,7 +29,8 @@ export default {
   padding: 0 8px;
   margin: 4px 4px;
 }
-@media (min-width: 768px) {
+
+@include media-breakpoint-up(sm) {
   /* margin: 8px 4px; */
   .valuebox {
     height: 100px;
@@ -48,45 +49,56 @@ export default {
   align-items: center;
   display: flex;
   height: 50px;
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-.title {
-  position: absolute;
-  margin-right: 24px;
-  z-index: 3;
-  left: 26px;
+  line-height: 1rem;
+  font-size: 0.8rem;
+  @include media-breakpoint-up(sm) {
+    line-height: 1.1rem;
+    font-size: 0.9rem;
+  }
+  @include media-breakpoint-up(xl) {
+    line-height: 1.2rem;
+    font-size: 1rem;
+  }
 }
 
-.title.ten {
-  left: 36px;
-}
-.title.hundred {
-  left: 46px;
-}
-.title.thousand {
-  left: 56px;
-}
-@media (min-width: 768px) {
-  .title {
+.title {
+  position: absolute;
+  margin-right: 4px;
+  z-index: 3;
+  left: 26px;
+  @include media-breakpoint-up(sm) {
+    margin-right: 14px;
     line-height: 1.3rem;
     font-size: 1.1rem;
     left: 18px !important;
     bottom: 10px;
   }
+  @include media-breakpoint-up(lg) {
+    margin-right: 24px;
+    line-height: 1.5rem;
+    margin-top: 12px;
+    font-size: 1.2rem;
+  }
+
+  &.ten {
+    left: 36px;
+  }
+
+  &.hundred {
+    left: 46px;
+  }
+
+  &.thousand {
+    left: 56px;
+  }
+}
+@include media-breakpoint-up(sm) {
   .number {
     font-size: 2em;
     display: inline-block;
     position: absolute;
     top: 20px;
     left: 18px !important;
-  }
-}
-@media (min-width: 1200px) {
-  .title {
-    line-height: 1.5rem;
-    margin-top: 12px;
-    font-size: 1.2rem;
   }
 }
 
@@ -102,6 +114,7 @@ export default {
 
   &.bg-blue {
     background-color: #2eb7cb;
+
     @media (prefers-color-scheme: dark) {
       background-color: #1b6c79;
     }
@@ -109,6 +122,7 @@ export default {
 
   &.bg-green {
     background-color: #566ca9;
+
     @media (prefers-color-scheme: dark) {
       background-color: #344268;
     }
@@ -116,21 +130,23 @@ export default {
 
   &:hover {
     // background-color: #52aa36 !important;
+    cursor: pointer;
+
     i {
       opacity: 0.3;
     }
-    cursor: pointer;
   }
 
   &.selected {
     background: theme-color('success') !important;
+
     i {
       opacity: 0.5;
     }
   }
 }
 
-@media (min-width: 768px) {
+@include media-breakpoint-up(sm) {
   .valuebox i.fas {
     font-size: 4.5em;
     right: 25px;

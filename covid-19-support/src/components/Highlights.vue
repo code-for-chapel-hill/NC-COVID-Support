@@ -35,7 +35,7 @@ export default {
     highlightFilters: Array
   },
   methods: {
-    boxSelected: function (content) {
+    boxSelected(content) {
       this.$emit('box-selected', content)
     },
     buildBoxValue(labelId, icon, count, pluralize = false) {
@@ -163,8 +163,12 @@ export default {
 <style lang="scss">
 .highlights {
   margin: 4px !important;
-  transition: height 0.25s ease-out;
+  transition: height 0.25s ease-out, margin 0.25s ease-out;
   height: 116px;
+
+  @include media-breakpoint-up(sm) {
+    height: 108px;
+  }
 
   div.col-md-3 {
     padding: 0 !important;
@@ -172,15 +176,12 @@ export default {
 }
 
 #wrapper.toggled .highlights {
-  transition: margin-left 0.25s ease-out;
-  @media (min-width: 768px) {
-    margin-left: 294px !important;
+  @include media-breakpoint-up(md) {
+    margin-left: ($tablet-sidebar-width + 8px) !important;
   }
-}
 
-@media (min-width: 768px) {
-  .highlights {
-    height: 108px;
+  @include media-breakpoint-up(lg) {
+    margin-left: ($desktop-sidebar-width + 8px) !important;
   }
 }
 </style>

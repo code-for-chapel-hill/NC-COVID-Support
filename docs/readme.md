@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -20,7 +20,7 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 
 ## This project is
 
-- A mobile-friendly website with an interactive map and table of local resources.
+- A mobile-friendly website with an interactive map and list of local resources.
 - A tool to help our communities and neighbors navigate the COVID crisis.
 - A collaborative effort connected to local officials and support organizations.
 - An open project that can be quickly adapted to other locations & future needs.
@@ -91,6 +91,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://levizitting.com/"><img src="https://avatars0.githubusercontent.com/u/9029666?v=4" width="100px;" alt=""/><br /><sub><b>Levi Zitting</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=glitchedmob" title="Code">💻</a> <a href="#ideas-glitchedmob" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-glitchedmob" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/aliciawu-dev"><img src="https://avatars2.githubusercontent.com/u/60446139?v=4" width="100px;" alt=""/><br /><sub><b>Alicia Wu</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=aliciawu-dev" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/joonyoungleeduke"><img src="https://avatars1.githubusercontent.com/u/61634932?v=4" width="100px;" alt=""/><br /><sub><b>Joon Young Lee</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=joonyoungleeduke" title="Code">💻</a></td>
   </tr>
 </table>
 

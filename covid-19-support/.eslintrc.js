@@ -12,13 +12,15 @@ module.exports = {
     es6: true
   },
   rules: {
+    'vue/max-attributes-per-line': 0,
     'prettier/prettier': [
       'error',
       {
         endOfLine: 'auto',
         excludeFiles: ['**/src/ExtraMarkers/**/*.*']
       }
-    ]
+    ],
+    'object-shorthand': ['error', 'methods']
   },
   ignorePatterns: ['**/src/ExtraMarkers/'],
   overrides: [

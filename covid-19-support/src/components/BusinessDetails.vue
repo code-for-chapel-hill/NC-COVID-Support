@@ -1,7 +1,7 @@
 <template>
   <span>
-    <b-list-group class="list-group-flush">
-      <b-list-group-item variant="sideNav" button class="backtolist" @click="$emit('close-details')">
+    <b-list-group class="list-group-flush back-to-list">
+      <b-list-group-item variant="sideNav" button @click="$emit('close-details')">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
       </b-list-group-item>
@@ -149,11 +149,11 @@ export default {
     business: Object
   },
   methods: {
-    getDomain: function (url) {
+    getDomain(url) {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
     },
-    addressUrl: function (marker) {
+    addressUrl(marker) {
       var address = marker.gsx$address.$t
       address = address.replace(/\s/g, '%20')
       var city = marker.gsx$city.$t.replace(/\s/g, '%20')
@@ -161,13 +161,13 @@ export default {
       address = address + '%2C%20' + city + '%2C%20' + state + '%20' + marker.gsx$zip.$t
       return address
     },
-    appleDirectionsLink: function (marker) {
+    appleDirectionsLink(marker) {
       return 'http://maps.apple.com/?q=' + marker.gsx$address.$t + '&ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t
     },
-    googleDirectionsLink: function (marker) {
+    googleDirectionsLink(marker) {
       return 'https://www.google.com/maps/dir/?api=1&destination=' + this.addressUrl(marker)
     },
-    wazeDirectionsLink: function (marker) {
+    wazeDirectionsLink(marker) {
       return 'https://www.waze.com/ul?ll=' + marker.gsx$lat.$t + '%2C' + marker.gsx$lon.$t + '&navigate=yes'
     },
     getDirections() {
@@ -177,7 +177,7 @@ export default {
     getAddress: getAddress
   },
   computed: {
-    getLastUpdatedDate: function () {
+    getLastUpdatedDate() {
       return new Date(Date.parse(this.business.marker.gsx$lastupdate.$t)).toLocaleDateString()
     },
     iOS() {
@@ -196,8 +196,13 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
-.backtolist {
+
+.back-to-list {
   font-size: 0.8rem;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: $mobile-search-filters-height;
+  }
 
   i {
     margin-right: 0.375rem;
@@ -218,6 +223,7 @@ export default {
     color: theme-color('quinary');
     margin: 7px 10px 7px 0;
     float: left;
+
     @media (prefers-color-scheme: dark) {
       color: theme-color-level('quinary', 5);
     }
@@ -235,6 +241,10 @@ export default {
 
   & > div {
     width: 243px;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
   }
 }
 
@@ -244,6 +254,7 @@ export default {
 
 .directionsOptions {
   background: $directions-background;
+
   @media (prefers-color-scheme: dark) {
     background: $directions-background-dark;
   }
