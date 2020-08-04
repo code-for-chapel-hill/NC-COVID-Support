@@ -9,12 +9,14 @@
 
 <script>
 import { needCategories } from '../constants'
+const axios = require('axios')
 
 export default {
   data() {
     return {
       locationData: location,
-      showListing: this.showList
+      showListing: this.showList,
+      categories: {}
     }
   },
   props: {
@@ -62,6 +64,17 @@ export default {
         { value: 'pet', text: this.$t('category.pet') }
       ]
     }
+  },
+  mounted() {
+    const apiClient = axios.create({
+      baseURL: 'https://nccovid.vizioz.com/api/v1/',
+      withCredentials: false,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    apiClient.get('resource/settings').then((response) => (this.categories = response.data.categories))
   }
 }
 </script>
