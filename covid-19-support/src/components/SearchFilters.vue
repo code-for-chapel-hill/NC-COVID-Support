@@ -2,7 +2,30 @@
   <b-list-group class="need-day-group">
     <b-list-group-item variant="sideNav" class="need-type">
       <h6>{{ $t('sidebar.what-do-you-need') }}</h6>
-      <b-form-select class="custom-select" :value="need" :options="needOptionGroups" @change="(opt) => $emit('need-selected', opt)" />
+      <b-dropdown :text="selection" block variant="primary" class="m-2">
+        <div v-for="category in needOptionGroups.slice(1)" :key="category.id">
+          <div v-if="category.label">
+            <b-dropdown-group :id="category.label" :header="category.label">
+              <div v-for="option in category.options" :key="option.value">
+                <b-dropdown-item
+                  @click.self="
+                    emitter(option.value)
+                    changeSelection(option.text)
+                  "
+                  >{{ option.text }}</b-dropdown-item
+                >
+              </div>
+            </b-dropdown-group>
+          </div>
+          <b-dropdown-item
+            @click.self="
+              emitter(category.value)
+              changeSelection(category.text)
+            "
+            >{{ category.text }}</b-dropdown-item
+          >
+        </div>
+      </b-dropdown>
     </b-list-group-item>
   </b-list-group>
 </template>
@@ -14,11 +37,20 @@ export default {
   data() {
     return {
       locationData: location,
-      showListing: this.showList
+      showListing: this.showList,
+      selection: 'Select a category...'
     }
   },
   props: {
     need: String
+  },
+  methods: {
+    emitter(val) {
+      this.$emit('need-selected', val)
+    },
+    changeSelection(val) {
+      this.selection = val
+    }
   },
   computed: {
     needOptionGroups() {
