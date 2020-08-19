@@ -51,6 +51,30 @@ module.exports = {
        @import './src/scss/mixins.scss';
        @import "./src/themes/${process.env.VUE_APP_THEME !== undefined ? process.env.VUE_APP_THEME : 'NCCovidSupport'}/SCSS/custom.scss";
       `
+      },
+      postcss: {
+        plugins: [
+          require('@fullhuman/postcss-purgecss')({
+            content: [`./public/**/*.html`, `./src/**/*.vue`],
+            defaultExtractor(content) {
+              const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
+              return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+            },
+            whitelist: ['btn-buttons', 'navbar', 'container', 'list-group-item', 'nav-item', 'navbar-nav', 'dropdown-menu'],
+            whitelistPatterns: [
+              /-(leave|enter|appear)(|-(to|from|active))$/,
+              /^(?!(|.*?:)cursor-move).+-move$/,
+              /^router-link(|-exact)-active$/,
+              /data-v-.*/,
+              /leaflet/,
+              /marker/,
+              /list-group-item-sideNav/,
+              /need-type/,
+              /primary$/,
+              /brand$/
+            ]
+          })
+        ]
       }
     }
   }
