@@ -192,7 +192,7 @@ export default {
 
 <style scoped lang="scss">
 .business-details {
-  max-height: calc(100vh - 237px);
+  max-height: calc(100vh - 174px);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -246,6 +246,10 @@ export default {
 
 .updated {
   color: #aaa;
+  margin-bottom: 3rem;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
+  }
 }
 
 .directionsOptions {
