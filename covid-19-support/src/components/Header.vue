@@ -27,7 +27,7 @@
           <i :class="'fab fa-' + item.icon"></i> <span class="sm-name">{{ item.name }}</span>
         </b-nav-item>
 
-        <b-nav-item-dropdown right>
+        <b-nav-item-dropdown right class="lang-dropdown">
           <template v-slot:button-content>
             <i class="fas fa-globe-americas" aria-hidden="true" />
             <span v-html="language" class="language" />
@@ -85,6 +85,9 @@ export default {
   float: right;
 }
 
+.lang-dropdown ul {
+  margin-bottom: 20px;
+}
 .language {
   padding: 0 5px;
 }
