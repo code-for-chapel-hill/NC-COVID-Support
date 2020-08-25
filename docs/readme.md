@@ -14,13 +14,16 @@
 
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
-## Link to live websites built with this code: 
+## Link to live websites built with this code:
+
 # [NC COVID Support](https://www.nccovidsupport.org)
+
 # [Springfield COVID Support](https://www.sgfcovidsupport.org)
 
 ![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
 ## This tool creates a mobile-friendly map of community resources, featuring:
+
 - a simple Google sheet as the database
 - interactive map and list views of the data
 - room for custom notes and business details for each listing
@@ -42,7 +45,7 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 - a map of historic trees in your community
 - .... and other community needs that you identify
 
-## A community resource map is only as good as the data behind the map, and the human relationships behind the data. We hope this tool gives you a solid starting point to start conversations within your community and to create partnerships that address community needs. 
+## A community resource map is only as good as the data behind the map, and the human relationships behind the data. We hope this tool gives you a solid starting point to start conversations within your community and to create partnerships that address community needs.
 
 If you are reading this, chances are you are most interested in using and customizing this code in support of an existing data need. Does the map you have in mind require YOU to create and maintain the database behind the map? If so, we encourage you to reach out within your community, identify needs, and build partnerships that will support the project, keep the data management sustainable, and create a living product connected to community needs.
 
