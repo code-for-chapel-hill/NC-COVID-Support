@@ -200,10 +200,6 @@ export default {
 .back-to-list {
   font-size: 0.8rem;
 
-  @include media-breakpoint-down(sm) {
-    margin-top: $mobile-search-filters-height;
-  }
-
   i {
     margin-right: 0.375rem;
   }
