@@ -90,6 +90,7 @@ export default {
 <style lang="scss">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
+  border-top: 1px solid #ddd;
 }
 
 .addloc {
@@ -104,6 +105,9 @@ export default {
   @include media-breakpoint-up(md) {
     margin-top: 0;
     padding-bottom: 0;
+    max-height: calc(100vh - 268px);
+  }
+  @include media-breakpoint-up(lg) {
     max-height: calc(100vh - 230px);
   }
 }

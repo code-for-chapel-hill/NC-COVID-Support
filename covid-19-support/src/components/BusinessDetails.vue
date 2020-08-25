@@ -236,11 +236,7 @@ export default {
   // color: #666;
 
   & > div {
-    width: 243px;
-
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 
