@@ -99,7 +99,6 @@ export default {
 .resultList {
   overflow-y: overlay;
   max-height: calc(100vh - #{$mobile-search-filters-height + $mobile-nav-height});
-  margin-top: $mobile-search-filters-height;
   padding-bottom: $mobile-map-list-toggle-height;
 
   @include media-breakpoint-up(md) {
