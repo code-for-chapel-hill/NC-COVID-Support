@@ -14,37 +14,45 @@
 
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
-## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
+## Link to live websites built with this code: 
+# [NC COVID Support](https://www.nccovidsupport.org)
+# [Springfield COVID Support](https://www.sgfcovidsupport.org)
 
 ![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
-## This project is
+## This tool creates a mobile-friendly map of community resources, featuring:
+- a simple Google sheet as the database
+- interactive map and list views of the data
+- room for custom notes and business details for each listing
+- support for multiple languages
+- a basic filter function
 
-- A mobile-friendly website with an interactive map and list of local resources.
-- A tool to help our communities and neighbors navigate the COVID crisis.
-- A collaborative effort connected to local officials and support organizations.
-- An open project that can be quickly adapted to other locations & future needs.
-
-## The types of resource questions we want to answer
+## We built this tool to help our community find answers to these questions:
 
 - Where can I find a free meal?
-- Where can I find free diapers/toilet paper/personal care items?
 - Where can I find a drive-up pharmacy?
 - Where can I find a market with senior/vulnerable shopping hours?
 - Where can I find a pet store with a drive-up option?
 - Which businesses offer discounts for medical workers?
 
+## We hope that you'll explore this tool to explore and support your community with:
+
+- a map of food pantry locations
+- a map of minority-owned businesses
+- a map of historic trees in your community
+- .... and other community needs that you identify
+
+## A community resource map is only as good as the data behind the map, and the human relationships behind the data. We hope this tool gives you a solid starting point to start conversations within your community and to create partnerships that address community needs. 
+
+If you are reading this, chances are you are most interested in using and customizing this code in support of an existing data need. Does the map you have in mind require YOU to create and maintain the database behind the map? If so, we encourage you to reach out within your community, identify needs, and build partnerships that will support the project, keep the data management sustainable, and create a living product connected to community needs.
+
 ## Authors
 
 This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhill.com/) with input from our local town and county officials.
 
-## How to contribute
+### Help us build and improve the project code!
 
-There are two areas we need help, one is with the ongoing software development of this project and the other is with the task of collating and adding accurate up to date data for the site.
-
-### Contribution to the project code
-
-It is great that you are interested in helping to contribute to our project, please take a look at our [How to Contribute](contributing.md) page for more details.
+To get started, please take a look at our [How to Contribute](contributing.md) page for more details.
 
 ### Become a Content Editor
 
@@ -52,15 +60,7 @@ We are always looking for people to join our content data team, as our site grow
 
 ## Replicating the project
 
-When we first started this project, we hoped that other areas would be interested in replicating our site for their area and working together to build an even better platform. Visit our [Replicating the site](replicating-the-site.md) page for more information.
-
-## Find us on Social Media
-
-Please follow our social media accounts and help us to spread the word about the site.
-
-- Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
-- Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
-- Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
+We've built the code to make it easy for other communities to make their own map. Visit our [Replicating the site](replicating-the-site.md) page for more information.
 
 ## Contributors ✨
 
