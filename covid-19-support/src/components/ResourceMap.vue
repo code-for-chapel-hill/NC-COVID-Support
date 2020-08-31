@@ -50,8 +50,15 @@
             @click="$emit('location-selected', { locValue: index, locId: item.marker.id.$t, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
-        <l-control position="bottomright" class="user-location-button" aria-label="Use your location">
-          <a href="#" @click="getUserLocation" class="user-location-link" ref="useLocation">
+        <l-control position="bottomright" class="user-location-button">
+          <a
+            href="#"
+            @click="getUserLocation"
+            class="user-location-link"
+            ref="useLocation"
+            :title="$t('label.useyourlocation')"
+            :aria-label="$t('label.useyourlocation')"
+          >
             <!--<h5>Your location</h5>-->
             <i class="fas fa-location-arrow"></i>
           </a>
