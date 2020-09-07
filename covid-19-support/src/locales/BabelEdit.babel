@@ -1,4 +1,4 @@
-<babeledit_project be_version="2.7.0" version="1.2">
+<babeledit_project version="1.2" be_version="2.7.1">
     <!--
 
     BabelEdit project file
@@ -1931,6 +1931,47 @@
                     </concept_node>
                 </children>
             </folder_node>
+            <concept_node>
+                <name>getdirections</name>
+                <definition_loaded>false</definition_loaded>
+                <description></description>
+                <comment></comment>
+                <default_text></default_text>
+                <translations>
+                    <translation>
+                        <language>ar-AE</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>en-US</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>es-ES</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>fr-FR</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ja-JP</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ko-KR</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>ms-MY</language>
+                        <approved>false</approved>
+                    </translation>
+                    <translation>
+                        <language>zh-CN</language>
+                        <approved>false</approved>
+                    </translation>
+                </translations>
+            </concept_node>
             <folder_node>
                 <name>label</name>
                 <children>
@@ -3453,6 +3494,47 @@
                     </concept_node>
                     <concept_node>
                         <name>specialhours</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>ar-AE</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>fr-FR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ja-JP</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ko-KR</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ms-MY</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>useyourlocation</name>
                         <definition_loaded>false</definition_loaded>
                         <description></description>
                         <comment></comment>

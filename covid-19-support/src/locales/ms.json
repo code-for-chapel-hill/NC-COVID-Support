@@ -57,6 +57,7 @@
     "tuesday": "Selasa",
     "wednesday": "Rabu"
   },
+  "getdirections": "",
   "label": {
     "address": "Alamat",
     "allweek": "Sepanjang minggu",
@@ -96,6 +97,7 @@
     "selected": "Dipilih",
     "seniorhours": "Jam kanan",
     "specialhours": "Waktu membeli-belah kanan",
+    "useyourlocation": "Gunakan lokasi anda",
     "website": "Laman web"
   },
   "languages": {

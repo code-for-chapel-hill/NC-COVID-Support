@@ -57,6 +57,7 @@
     "tuesday": "Martes",
     "wednesday": "Miércoles"
   },
+  "getdirections": "",
   "label": {
     "address": "Dirección",
     "allweek": "Toda la semana",
@@ -96,6 +97,7 @@
     "selected": "Seleccionado",
     "seniorhours": "Horas para gente mayor de edad",
     "specialhours": "Horario comercial para gente mayor de edad",
+    "useyourlocation": "Usa tu ubicación",
     "website": "Sitio web"
   },
   "languages": {

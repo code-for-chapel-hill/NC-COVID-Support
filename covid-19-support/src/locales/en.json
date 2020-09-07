@@ -57,6 +57,7 @@
     "tuesday": "Tuesday",
     "wednesday": "Wednesday"
   },
+  "getdirections": "Get directions",
   "label": {
     "address": "Address",
     "allweek": "All week",
@@ -96,6 +97,7 @@
     "selected": "Selected",
     "seniorhours": "Senior hours",
     "specialhours": "Senior shopping hours",
+    "useyourlocation": "Use your location",
     "website": "Website"
   },
   "languages": {
@@ -122,6 +124,5 @@
     "what-do-you-need": "What do you need?",
     "when-do-you-need-it": "When do you need it?"
   },
-  "title": "{0} COVID Support",
-  "getdirections": "Get directions"
+  "title": "{0} COVID Support"
 }

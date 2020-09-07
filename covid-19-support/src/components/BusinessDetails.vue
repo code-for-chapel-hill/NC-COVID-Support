@@ -192,17 +192,13 @@ export default {
 
 <style scoped lang="scss">
 .business-details {
-  max-height: calc(100vh - 237px);
+  max-height: calc(100vh - 174px);
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .back-to-list {
   font-size: 0.8rem;
-
-  @include media-breakpoint-down(sm) {
-    margin-top: $mobile-search-filters-height;
-  }
 
   i {
     margin-right: 0.375rem;
@@ -232,7 +228,7 @@ export default {
 
 .busName {
   margin-left: 54px;
-  width: 208px;
+  min-width: 208px;
 }
 
 .green {
@@ -240,16 +236,16 @@ export default {
   // color: #666;
 
   & > div {
-    width: 243px;
-
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 
 .updated {
   color: #aaa;
+  margin-bottom: 3rem;
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
+  }
 }
 
 .directionsOptions {
