@@ -51,7 +51,14 @@
           ></l-marker>
         </v-marker-cluster>
         <l-control position="bottomright" class="user-location-button">
-          <a href="#" @click="getUserLocation" class="user-location-link" ref="useLocation">
+          <a
+            href="#"
+            @click="getUserLocation"
+            class="user-location-link"
+            ref="useLocation"
+            :title="$t('label.useyourlocation')"
+            :aria-label="$t('label.useyourlocation')"
+          >
             <!--<h5>Your location</h5>-->
             <i class="fas fa-location-arrow"></i>
           </a>
@@ -422,11 +429,7 @@ div.markeropen svg path {
   @media (pointer: fine) {
     bottom: 68px !important;
   }
-  right: 2px !important;
-
-  @include media-breakpoint-up(sm) {
-    right: 0px !important;
-  }
+  right: 0px !important;
 }
 
 .user-location-link {
@@ -435,10 +438,10 @@ div.markeropen svg path {
   background-repeat: no-repeat;
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   display: block;
-  line-height: 30px;
+  line-height: 26px;
   text-align: center;
   color: #000 !important;
 

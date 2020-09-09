@@ -191,6 +191,44 @@ export default {
     changeLanguage(item) {
       this.language = item
       this.$root.updateLang(item.iso)
+      console.log(item.iso)
+
+      switch (item.iso) {
+        case 'en':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'Zoom In'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'Zoom Out'
+          break
+        case 'ko':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = '확대'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = '축소'
+          break
+        case 'es':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'Acercar'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'Alejar'
+          break
+        case 'ja':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'ズームイン'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'ズームアウト'
+          break
+        case 'fr':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'Zoomer'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'effectuer un zoom arrière'
+          break
+        case 'ms':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'zum masuk'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'Zum Keluar'
+          break
+        case 'ar':
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'تكبير'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'التصغير'
+          break
+        default:
+          document.getElementsByClassName('leaflet-control-zoom-in')[0].title = 'Zoom In'
+          document.getElementsByClassName('leaflet-control-zoom-out')[0].title = 'Zoom Out'
+          break
+      }
+
+      // document.getElementsByClassName('leaflet-control-zoom-in')[0].title
     },
     async fetchData() {
       const res = await fetch(theme.data.spreadsheetUrl)
