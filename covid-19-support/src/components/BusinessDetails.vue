@@ -28,7 +28,8 @@
               <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
             </icon-list-item>
           </div>
-          <p>
+
+          <p v-if="!Mobile">
             <icon-list-item
               v-if="business.marker.gsx$discountmedical != undefined && business.marker.gsx$discountmedical.$t == 1"
               icon="fa-user-md"
@@ -70,7 +71,9 @@
               :title="getDomain(business.marker.gsx$weblink.$t)"
               :link="business.marker.gsx$weblink.$t"
             />
+          </p>
 
+          <p v-if="!Mobile">
             <icon-list-item
               v-if="business.marker.gsx$twitter !== undefined && !!business.marker.gsx$twitter.$t"
               icon="fa fa-twitter"
@@ -100,20 +103,20 @@
             />
           </p>
 
-          <opening-hours :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
-          <opening-hours :business="business.marker" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
+          <opening-hours v-if="!Mobile" :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
+          <opening-hours v-if="!Mobile" :business="business.marker" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
 
-          <template v-if="business.marker.gsx$instructions !== undefined && !!business.marker.gsx$instructions.$t">
+          <template v-if="!Mobile && business.marker.gsx$instructions !== undefined && !!business.marker.gsx$instructions.$t">
             <p>
               <b>{{ $t('label.instructions') }}:</b><br />{{ business.marker.gsx$instructions.$t }}
             </p>
           </template>
-          <template v-if="business.marker.gsx$offers !== undefined && !!business.marker.gsx$offers.$t">
+          <template v-if="!Mobile && business.marker.gsx$offers !== undefined && !!business.marker.gsx$offers.$t">
             <p>
               <b>{{ $t('label.offers') }}:</b><br />{{ business.marker.gsx$offers.$t }}
             </p>
           </template>
-          <template v-if="business.marker.gsx$notes !== undefined && !!business.marker.gsx$notes.$t">
+          <template v-if="!Mobile && business.marker.gsx$notes !== undefined && !!business.marker.gsx$notes.$t">
             <p>
               <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.gsx$notes.$t }}
             </p>
@@ -185,6 +188,9 @@ export default {
     },
     agent() {
       return navigator.userAgent
+    },
+    Mobile() {
+      return /Mobi|Android/i.test(navigator.userAgent)
     }
   }
 }
