@@ -228,7 +228,7 @@ export default {
 
 .busName {
   margin-left: 54px;
-  width: 208px;
+  min-width: 208px;
 }
 
 .green {

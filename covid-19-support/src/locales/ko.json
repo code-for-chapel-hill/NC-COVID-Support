@@ -57,6 +57,7 @@
     "tuesday": "화요일",
     "wednesday": "수요일"
   },
+  "getdirections": "",
   "label": {
     "address": "주소",
     "allweek": "일주일",
@@ -96,6 +97,7 @@
     "selected": "선택된",
     "seniorhours": "노약자 쇼핑 시간",
     "specialhours": "노약자 쇼핑",
+    "useyourlocation": "내 위치 사용",
     "website": "웹 사이트"
   },
   "languages": {
