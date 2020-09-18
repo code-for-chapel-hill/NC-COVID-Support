@@ -57,6 +57,7 @@
     "tuesday": "الثلاثاء",
     "wednesday": "الأربعاء"
   },
+  "getdirections": "",
   "label": {
     "address": "عنوان",
     "allweek": "كل الاسبوع",
@@ -96,6 +97,7 @@
     "selected": "المحدد",
     "seniorhours": "ساعات كبار",
     "specialhours": "ساعات تسوق كبار",
+    "useyourlocation": "استخدم موقعك",
     "website": "موقع الكتروني"
   },
   "languages": {

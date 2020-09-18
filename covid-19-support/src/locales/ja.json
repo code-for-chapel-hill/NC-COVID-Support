@@ -57,6 +57,7 @@
     "tuesday": "火曜日",
     "wednesday": "水曜日"
   },
+  "getdirections": "",
   "label": {
     "address": "住所",
     "allweek": "1週間中",
@@ -96,6 +97,7 @@
     "selected": "選択済み",
     "seniorhours": "シニアアワー",
     "specialhours": "シニアショッピング時間",
+    "useyourlocation": "現在地を使用",
     "website": "ウェブサイト"
   },
   "languages": {

@@ -90,6 +90,7 @@ export default {
 <style lang="scss">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
+  border-top: 1px solid #ddd;
 }
 
 .addloc {
@@ -99,7 +100,6 @@ export default {
 .resultList {
   overflow-y: overlay;
   max-height: calc(100vh - #{$mobile-search-filters-height + $mobile-nav-height});
-  margin-top: $mobile-search-filters-height;
   padding-bottom: $mobile-map-list-toggle-height;
 
   @include media-breakpoint-up(md) {
@@ -107,9 +107,7 @@ export default {
     padding-bottom: 0;
     max-height: calc(100vh - 268px);
   }
-  @include media-breakpoint-up(xl) {
-    margin-top: 0;
-    padding-bottom: 0;
+  @include media-breakpoint-up(lg) {
     max-height: calc(100vh - 230px);
   }
 }
