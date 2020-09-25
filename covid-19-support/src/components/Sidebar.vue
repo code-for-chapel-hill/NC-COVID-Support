@@ -104,7 +104,6 @@ export default {
 }
 #wrapper.toggled #sidebar-wrapper {
   transform: translateY(67%);
-  z-index: 2000;
 
   @include media-breakpoint-up(md) {
     transform: translateX(0);
