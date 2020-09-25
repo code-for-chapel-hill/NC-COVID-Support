@@ -76,12 +76,20 @@ export default {
   transform: translateY(100%);
   z-index: 1035;
   max-height: 100vh;
-  width: 100%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 95%;
   height: 100vh;
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 
   @include media-breakpoint-up(md) {
@@ -94,8 +102,13 @@ export default {
     width: $desktop-sidebar-width;
   }
 }
-
 #wrapper.toggled #sidebar-wrapper {
+  transform: translateY(67%);
+  z-index: 2000;
+
+  @include media-breakpoint-up(md) {
+    transform: translateX(0);
+  }
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
   @media (prefers-color-scheme: dark) {

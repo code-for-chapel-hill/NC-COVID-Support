@@ -198,6 +198,10 @@ export default {
 }
 
 .back-to-list {
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
   font-size: 0.8rem;
 
   i {

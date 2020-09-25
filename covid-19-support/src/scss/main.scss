@@ -93,10 +93,6 @@ h6,
   }
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  transform: translateX(0);
-}
-
 #page-content-wrapper {
   @include media-breakpoint-up(sm) {
     min-width: 0;
