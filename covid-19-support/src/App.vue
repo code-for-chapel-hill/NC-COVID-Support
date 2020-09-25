@@ -19,10 +19,11 @@
         :highlightFilteredMarkers="highlightFilteredMarkers"
         :location="locationData"
         :show-list="showList"
-        @location-selected="passLocation"
+        @location-selected="locationSelected"
         @toggle="isFilterOpen = !isFilterOpen"
         @need-selected="needSelected"
         @update-show-list="updateShowList"
+        @close-details="closeDetails"
       />
 
       <div id="page-content-wrapper">
@@ -39,7 +40,7 @@
           :class="{ noselection: need == 'none' }"
           :location="locationData"
           :attribution="attribution"
-          @location-selected="passLocation"
+          @location-selected="locationSelected"
           @bounds="boundsUpdated"
           @center="centerUpdated"
           :mapUrl="mapUrl"
@@ -185,6 +186,7 @@ export default {
     },
     needSelected(val) {
       this.need = val
+      this.showList = this.need !== 'none'
       this.highlightFilters = []
       window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
@@ -207,10 +209,16 @@ export default {
     updateShowList(val) {
       this.showList = val
     },
-    passLocation(val) {
+    closeDetails() {
+      this.showList = true
+
+      this.locationData = { currentBusiness: null }
+    },
+    locationSelected(val) {
       val.currentBusiness = this.filteredMarkers[val.locValue]
       this.locationData = val
       this.isFilterOpen = true
+      this.showList = false
       var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         : ''
