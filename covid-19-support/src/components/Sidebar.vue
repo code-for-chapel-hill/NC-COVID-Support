@@ -27,11 +27,16 @@
         :icon="'fa-tractor'"
         :business="location.currentBusiness"
         v-if="location.currentBusiness != null && showList !== true"
-        @close-details="closeDetails"
+        @close-details="$emit('close-details')"
       ></BusinessDetails>
     </div>
 
-    <results-list :filteredMarkers="highlightFilteredMarkers" :location="location" @location-selected="passLocation" v-if="showList" />
+    <results-list
+      :filteredMarkers="highlightFilteredMarkers"
+      :location="location"
+      @location-selected="(val) => $emit('location-selected', val)"
+      v-if="showList"
+    />
   </div>
 </template>
 
@@ -49,11 +54,6 @@ export default {
     ResultsList,
     SearchFilters
   },
-  data() {
-    return {
-      locationData: location
-    }
-  },
   props: {
     isFilterOpen: Boolean,
     need: String,
@@ -61,33 +61,6 @@ export default {
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean
-  },
-  methods: {
-    closeDetails() {
-      this.$emit('update-show-list', true)
-    },
-    passLocation(val) {
-      this.locationData = val
-      this.$emit('update-show-list', false)
-      this.$emit('location-selected', val)
-    }
-  },
-  watch: {
-    day() {
-      this.locationData = null
-      this.$emit('update-show-list', true)
-    },
-    need(val) {
-      this.locationData = null
-      if (val == 'none') {
-        this.$emit('update-show-list', false)
-      } else {
-        this.$emit('update-show-list', true)
-      }
-    },
-    location() {
-      this.$emit('update-show-list', false)
-    }
   }
 }
 </script>
