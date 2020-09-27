@@ -8,30 +8,35 @@
       <div class="sidebar-top">
         <search-filters class="search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)" />
 
-        <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showList">
+        <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showList">
           {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
           >{{ $t('sidebar.info-end-text') }}
-        </InfoPanel>
+        </info-panel>
 
-        <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+        <info-panel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
           <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
           <br />
           (1) {{ $t('sidebar.stayhome') }}<br />
           (2) {{ $t('sidebar.sixfeet') }}<br />
           (3) {{ $t('sidebar.washhands') }}<br />
-        </InfoPanel>
+        </info-panel>
       </div>
 
-      <BusinessDetails
+      <business-details
         :infotype="'green'"
         :icon="'fa-tractor'"
         :business="location.currentBusiness"
         v-if="location.currentBusiness != null && showList !== true"
-        @close-details="closeDetails"
-      ></BusinessDetails>
+        @close-details="$emit('close-details')"
+      ></business-details>
     </div>
 
-    <results-list :filteredMarkers="highlightFilteredMarkers" :location="location" @location-selected="passLocation" v-if="showList" />
+    <results-list
+      :filteredMarkers="highlightFilteredMarkers"
+      :location="location"
+      @location-selected="(val) => $emit('location-selected', val)"
+      v-if="showList"
+    />
   </div>
 </template>
 
@@ -49,11 +54,6 @@ export default {
     ResultsList,
     SearchFilters
   },
-  data() {
-    return {
-      locationData: location
-    }
-  },
   props: {
     isFilterOpen: Boolean,
     need: String,
@@ -61,33 +61,6 @@ export default {
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean
-  },
-  methods: {
-    closeDetails() {
-      this.$emit('update-show-list', true)
-    },
-    passLocation(val) {
-      this.locationData = val
-      this.$emit('update-show-list', false)
-      this.$emit('location-selected', val)
-    }
-  },
-  watch: {
-    day() {
-      this.locationData = null
-      this.$emit('update-show-list', true)
-    },
-    need(val) {
-      this.locationData = null
-      if (val == 'none') {
-        this.$emit('update-show-list', false)
-      } else {
-        this.$emit('update-show-list', true)
-      }
-    },
-    location() {
-      this.$emit('update-show-list', false)
-    }
   }
 }
 </script>

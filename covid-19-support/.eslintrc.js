@@ -13,6 +13,7 @@ module.exports = {
   },
   rules: {
     'vue/max-attributes-per-line': 0,
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'prettier/prettier': [
       'error',
       {
