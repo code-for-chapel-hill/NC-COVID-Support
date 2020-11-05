@@ -4,11 +4,11 @@
       <theme-header></theme-header>
     </app-header>
     <mobile-search-filters :need="need" @need-selected="needSelected" />
-    <mobile-map-list-toggle
+    <!-- <mobile-map-list-toggle
       :is-filter-open="isFilterOpen"
       :is-resource-selected="locationData.currentBusiness != null && showList !== true"
       @toggle="isFilterOpen = !isFilterOpen"
-    />
+    /> -->
     <about-us-modal />
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <sidebar
@@ -58,7 +58,7 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 import AboutUsModal from './components/AboutUs.vue'
 import MobileSearchFilters from './components/MobileSearchFilters'
-import MobileMapListToggle from './components/MobileMapListToggle'
+// import MobileMapListToggle from './components/MobileMapListToggle'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
@@ -101,7 +101,7 @@ export default {
   },
   components: {
     MobileSearchFilters,
-    MobileMapListToggle,
+    // MobileMapListToggle,
     AboutUsModal,
     AppHeader,
     Highlights,
