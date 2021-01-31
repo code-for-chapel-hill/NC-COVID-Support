@@ -63,10 +63,9 @@ export default {
   }
 }
 
-      // { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
-      // { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
-      // { value: 'farm', text: this.$tc('category.farm', 2) },
-
+// { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
+// { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
+// { value: 'farm', text: this.$tc('category.farm', 2) },
 </script>
 
 <style lang="scss" scoped>
