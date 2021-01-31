@@ -52,10 +52,8 @@ export default {
     needOptions() {
       return [
         { value: 'selectacategory', text: this.$tc('label.selectacategory', 1) },
-        { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
         { value: 'meal', text: this.$tc('category.meal', 2) },
         { value: 'family', text: this.$tc('category.family', 2) },
-        { value: 'farm', text: this.$tc('category.farm', 2) },
         { value: 'grocery', text: this.$tc('category.grocery', 2) },
         { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
         { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
@@ -64,6 +62,11 @@ export default {
     }
   }
 }
+
+      // { value: 'restaurant', text: this.$tc('category.restaurant', 2) },
+      // { value: 'food_bev', text: this.$tc('category.food_bev', 2) },
+      // { value: 'farm', text: this.$tc('category.farm', 2) },
+
 </script>
 
 <style lang="scss" scoped>
