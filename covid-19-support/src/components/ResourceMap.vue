@@ -7,7 +7,7 @@
         :zoom="zoom"
         :center="center"
         :options="mapOptions"
-        style="height: 100%; width: 100%;"
+        style="height: 100%; width: 100%"
         @update:center="centerUpdated"
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"
@@ -249,22 +249,6 @@ export default {
     // click: (e) => console.log('clusterclick', e),
     // eslint-disable-next-line no-console
     // ready: (e) => console.log('ready', e)
-  },
-  watch: {
-    // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-    location(locationVal) {
-      if (locationVal.isSetByMap) {
-        return
-      }
-      // var item = this.filteredMarkers[locationVal.locValue]
-      if (locationVal.currentBusiness !== null && this.$refs.covidMap.mapObject.getZoom() < 17) {
-        this.$refs.covidMap.mapObject.setView(
-          latLng(locationVal.currentBusiness.marker.gsx$lat.$t, locationVal.currentBusiness.marker.gsx$lon.$t),
-          17,
-          { duration: 1 }
-        )
-      }
-    }
   }
 }
 </script>
