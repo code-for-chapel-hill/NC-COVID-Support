@@ -9,6 +9,7 @@
     <b-list-group class="list-group-flush business-details">
       <b-list-group-item variant="sideNav" :class="infotype">
         <div>
+          <div class="mobile-expand"></div>
           <div class="title">
             <i :class="businessIcon(business.marker)"></i>
             <div class="busName">
@@ -191,13 +192,45 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.mobile-expand {
+  display: block;
+  border: solid 1px #999;
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  top: -5px;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+#sidebar-wrapper.showExpandedDetails .mobile-expand {
+  display: none;
+}
+
 .business-details {
-  max-height: calc(100vh - 174px);
+  max-height: calc(100vh);
+  @include media-breakpoint-up(md) {
+    max-height: calc(100vh - 174px);
+  }
   overflow-y: auto;
   overflow-x: hidden;
 }
 
+#sidebar-wrapper.showExpandedDetails .business-details {
+  max-height: calc(100vh - 36px);
+  @include media-breakpoint-up(md) {
+    max-height: calc(100vh - 174px);
+  }
+}
+
 .back-to-list {
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
   font-size: 0.8rem;
 
   i {
