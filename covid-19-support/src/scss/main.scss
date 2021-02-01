@@ -79,7 +79,7 @@ h6,
 #sidebar-wrapper,
 #page-content-wrapper {
   margin-top: $mobile-search-filters-height;
-  padding-bottom: $mobile-nav-height;
+  // padding-bottom: $mobile-nav-height;
   box-sizing: border-box;
   width: 100%;
   height: calc(100% - 134px);
@@ -91,10 +91,10 @@ h6,
     margin-top: 0;
     height: 100%;
   }
-}
 
-#wrapper.toggled #sidebar-wrapper {
-  transform: translateX(0);
+  &.showExpandedDetails {
+    // margin-top:0;
+  }
 }
 
 #page-content-wrapper {
