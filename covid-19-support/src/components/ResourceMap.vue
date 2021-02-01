@@ -7,7 +7,7 @@
         :zoom="zoom"
         :center="center"
         :options="mapOptions"
-        style="height: 100%; width: 100%;"
+        style="height: 100%; width: 100%"
         @update:center="centerUpdated"
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"

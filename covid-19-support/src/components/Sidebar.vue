@@ -8,7 +8,7 @@
       <div class="sidebar-top">
         <search-filters class="search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)" />
 
-        <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showList">
+        <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showLists">
           {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
           >{{ $t('sidebar.info-end-text') }}
         </info-panel>
@@ -29,7 +29,7 @@
           :infotype="'green'"
           :icon="'fa-tractor'"
           :business="location.currentBusiness"
-          v-if="location.currentBusiness != null && showList !== true"
+          v-if="location.currentBusiness != null && showLists !== true"
           @close-details="$emit('close-details')"
         ></business-details>
       </div>
@@ -39,7 +39,7 @@
       :filteredMarkers="highlightFilteredMarkers"
       :location="location"
       @location-selected="(val) => $emit('location-selected', val)"
-      v-if="showList"
+      v-if="showLists"
     />
   </div>
 </template>
@@ -68,7 +68,8 @@ export default {
   },
   data() {
     return {
-      showExpandedDetails: false
+      showExpandedDetails: false,
+      showLists: this.showList
     }
   },
   methods: {
@@ -76,7 +77,7 @@ export default {
       this.showExpandedDetails = !this.showExpandedDetails
     },
     showListing() {
-      this.showList = true
+      this.showLists = true
       this.showExpandedDetails = true
     },
     expandedDetails() {
