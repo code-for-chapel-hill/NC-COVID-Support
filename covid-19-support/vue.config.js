@@ -43,7 +43,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `
+        additionalData: `
        @import "./node_modules/bootstrap/scss/_functions.scss";
        @import "~bootstrap/scss/variables";
        @import "~bootstrap/scss/mixins";

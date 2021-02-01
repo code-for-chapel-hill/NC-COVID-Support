@@ -62,11 +62,6 @@ export const needCategories = {
       name: 'Food Resources',
       subcategories: [
         {
-          code: 'restaurant',
-          id: 1002,
-          name: 'Restaurants'
-        },
-        {
           code: 'meal',
           id: 1004,
           name: 'Free meals'
@@ -77,21 +72,11 @@ export const needCategories = {
           name: 'Prepared family meals'
         },
         {
-          code: 'food_bev',
-          id: 1003,
-          name: 'Specialty food & beverage'
-        },
-        {
           code: 'grocery',
           id: 1005,
           name: 'Groceries'
         }
       ]
-    },
-    {
-      code: 'farm',
-      id: 1007,
-      name: 'Farms & farmers markets'
     },
     {
       code: 'pharmacy',
