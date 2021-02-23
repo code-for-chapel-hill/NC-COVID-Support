@@ -11,6 +11,7 @@
         @update:center="centerUpdated"
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"
+        @click="unselectBusiness"
       >
         <l-control position="topright">
           <div class="mapkey" :class="{ 'show-key': showKey }">
@@ -244,6 +245,11 @@ export default {
       })
 
       return markerIcon
+    },
+    unselectBusiness() {
+      if (this.location.currentBusiness) {
+        this.$emit('location-unselected', true)
+      }
     }
     // eslint-disable-next-line no-console
     // click: (e) => console.log('clusterclick', e),
@@ -405,7 +411,7 @@ div.markeropen svg path {
 
 .user-location-button {
   @media (pointer: coarse) {
-    bottom: 0px !important;
+    bottom: 12px !important;
   }
   @media (pointer: none) {
     bottom: 0px !important;

@@ -1,47 +1,52 @@
 <template>
-  <div class="border-right" id="sidebar-wrapper" :class="expandedDetails()">
-    <div class="tab bg-dialogs border-right border-top border-bottom" @click="$emit('toggle')">
-      <i class="fas fa-caret-down" />
+  <aside>
+    <div class="sh" @click="toggleListing()" v-if="showLists">
+      <span>{{ showListLabel }}</span>
     </div>
 
-    <div>
-      <div class="sidebar-top">
-        <search-filters class="search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)" />
-
-        <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showLists">
-          {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
-          >{{ $t('sidebar.info-end-text') }}
-        </info-panel>
-
-        <info-panel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
-          <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
-          <br />
-          (1) {{ $t('sidebar.stayhome') }}<br />
-          (2) {{ $t('sidebar.sixfeet') }}<br />
-          (3) {{ $t('sidebar.washhands') }}<br />
-        </info-panel>
+    <div class="border-right" id="sidebar-wrapper" :class="expandedDetails">
+      <div class="tab bg-dialogs border-right border-top border-bottom" @click="$emit('toggle')">
+        <i class="fas fa-caret-down" />
       </div>
 
-      <div class="sh" @click="showListing()">Show List</div>
+      <div>
+        <div class="sidebar-top">
+          <search-filters class="search-filters" :need="need" @need-selected="(opt) => $emit('need-selected', opt)" />
 
-      <div @click="toggleExpandingDetails()">
-        <business-details
-          :infotype="'green'"
-          :icon="'fa-tractor'"
-          :business="location.currentBusiness"
-          v-if="location.currentBusiness != null && showLists !== true"
-          @close-details="$emit('close-details')"
-        ></business-details>
+          <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showLists">
+            {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
+            >{{ $t('sidebar.info-end-text') }}
+          </info-panel>
+
+          <info-panel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+            <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
+            <br />
+            (1) {{ $t('sidebar.stayhome') }}<br />
+            (2) {{ $t('sidebar.sixfeet') }}<br />
+            (3) {{ $t('sidebar.washhands') }}<br />
+          </info-panel>
+        </div>
+
+        <div @click="toggleExpandingDetails()">
+          <business-details
+            :infotype="'green'"
+            :icon="'fa-tractor'"
+            :business="location.currentBusiness"
+            :snippet="businessSnippet"
+            v-if="location.currentBusiness != null && showLists !== true"
+            @close-details="$emit('close-details')"
+          ></business-details>
+        </div>
       </div>
+
+      <results-list
+        :filteredMarkers="highlightFilteredMarkers"
+        :location="location"
+        @location-selected="(val) => $emit('location-selected', val)"
+        v-if="showLists"
+      />
     </div>
-
-    <results-list
-      :filteredMarkers="highlightFilteredMarkers"
-      :location="location"
-      @location-selected="(val) => $emit('location-selected', val)"
-      v-if="showLists"
-    />
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -68,20 +73,46 @@ export default {
   },
   data() {
     return {
-      showExpandedDetails: false,
-      showLists: this.showList
+      showListsVal: this.showList,
+      showExpandedDetails: false
+    }
+  },
+  computed: {
+    expandedDetails() {
+      var cssClass = []
+
+      if (this.showExpandedDetails) {
+        cssClass.push('showExpandedDetails')
+      }
+
+      if (this.location.currentBusiness) {
+        cssClass.push('business')
+      }
+
+      return cssClass.join(' ')
+    },
+    showLists() {
+      return this.showListsVal
+    },
+    showListLabel() {
+      return this.showExpandedDetails ? 'Show Map' : 'Show List'
+    },
+    businessSnippet() {
+      return (this.$screen.xs || this.$screen.sm) && !this.showExpandedDetails
     }
   },
   methods: {
     toggleExpandingDetails() {
       this.showExpandedDetails = !this.showExpandedDetails
     },
-    showListing() {
-      this.showLists = true
-      this.showExpandedDetails = true
-    },
-    expandedDetails() {
-      if (this.showExpandedDetails) return 'showExpandedDetails'
+    toggleListing() {
+      this.showListsVal = true
+      this.showExpandedDetails = !this.showExpandedDetails
+    }
+  },
+  watch: {
+    showList(val) {
+      this.showListsVal = val
     }
   }
 }
@@ -90,13 +121,16 @@ export default {
 <style lang="scss" scoped>
 .sh {
   display: block;
-  position: absolute;
-  top: -35px;
+  position: fixed;
+  bottom: 0;
   right: 0;
   z-index: 2000;
   background: white;
   padding: 2px 10px;
   box-shadow: 0px 0px 4px #999;
+  margin-right: calc(2.5% + 4px);
+  margin-bottom: 4px;
+
   @include media-breakpoint-up(md) {
     display: none;
   }
@@ -108,7 +142,7 @@ export default {
 
 #sidebar-wrapper {
   transition: transform 0.25s ease-out;
-  transform: translateY(100%);
+  transform: translateY(calc(100vh - 132px));
   z-index: 1035;
   max-height: 100vh;
   margin-left: 2.5%;
@@ -117,6 +151,18 @@ export default {
   height: 100vh;
   background: theme-color('secondary');
   z-index: 1037;
+
+  &.business {
+    @include media-breakpoint-down(sm) {
+      transform: translateY(calc(100vh - 332px));
+    }
+  }
+
+  &.showExpandedDetails {
+    @include media-breakpoint-down(sm) {
+      transform: translateY(-92px) !important;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     background: theme-color('secondaryDark');
@@ -138,15 +184,16 @@ export default {
     width: $desktop-sidebar-width;
   }
 }
-#wrapper.toggled #sidebar-wrapper {
-  transform: translateY(calc(100vh - 215px));
 
-  &.showExpandedDetails {
-    transform: translateY(-97px);
-    @include media-breakpoint-up(md) {
-      transform: translateX(0);
-    }
-  }
+#wrapper.toggled #sidebar-wrapper {
+  // transform: translateY(calc(100vh - 215px));
+
+  // &.showExpandedDetails {
+  //   transform: translateY(-97px);
+  //   @include media-breakpoint-up(md) {
+  //     transform: translateX(0);
+  //   }
+  // }
 
   @include media-breakpoint-up(md) {
     transform: translateX(0);
