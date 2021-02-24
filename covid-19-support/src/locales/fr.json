@@ -35,6 +35,7 @@
     "partners": "Sources d'informations",
     "title": "A propos de ce site"
   },
+  "call": "Appeler",
   "category": {
     "childcare": "Garde d'enfants",
     "family": "Plats préparés en famille",
@@ -58,6 +59,7 @@
     "wednesday": "Mercredi"
   },
   "getdirections": "",
+  "getdiections_short": "",
   "label": {
     "address": "Adresse",
     "allweek": "Toute la semaine",
@@ -124,5 +126,6 @@
     "what-do-you-need": "De quoi avez-vous besoin?",
     "when-do-you-need-it": "Quand en avez-vous besoin?"
   },
-  "title": "Prise en charge de {0} COVID"
+  "title": "Prise en charge de {0} COVID",
+  "website": "Site Internet"
 }

@@ -76,7 +76,7 @@ export default {
   }
 
   a {
-    color: theme-color('warning');
+    //color: theme-color('warning');
 
     @media (prefers-color-scheme: dark) {
       color: theme-color-level(warning, 5);

@@ -1,7 +1,7 @@
 <template>
   <aside>
-    <div class="sh" @click="toggleListing()" v-if="showLists">
-      <span>{{ showListLabel }}</span>
+    <div class="sh" @click="toggleListing()" v-if="showListButton">
+      <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
     </div>
 
     <div class="border-right" id="sidebar-wrapper" :class="expandedDetails">
@@ -27,7 +27,7 @@
           </info-panel>
         </div>
 
-        <div @click="toggleExpandingDetails()">
+        <div>
           <business-details
             :infotype="'green'"
             :icon="'fa-tractor'"
@@ -35,6 +35,7 @@
             :snippet="businessSnippet"
             v-if="location.currentBusiness != null && showLists !== true"
             @close-details="$emit('close-details')"
+            @toggle-expanding-details="toggleExpandingDetails"
           ></business-details>
         </div>
       </div>
@@ -74,7 +75,8 @@ export default {
   data() {
     return {
       showListsVal: this.showList,
-      showExpandedDetails: false
+      showExpandedDetails: false,
+      listing: 'map'
     }
   },
   computed: {
@@ -94,11 +96,17 @@ export default {
     showLists() {
       return this.showListsVal
     },
+    showListButton() {
+      return this.showListsVal || this.location.currentBusiness
+    },
+    showListIcon() {
+      return this.showExpandedDetails ? 'fa-map-marked-alt' : 'fa-list-ul'
+    },
     showListLabel() {
       return this.showExpandedDetails ? 'Show Map' : 'Show List'
     },
     businessSnippet() {
-      return (this.$screen.xs || this.$screen.sm) && !this.showExpandedDetails
+      return (this.$screen.breakpoint === 'xs' || this.$screen.breakpoint === 'sm') && !this.showExpandedDetails
     }
   },
   methods: {
@@ -108,6 +116,7 @@ export default {
     toggleListing() {
       this.showListsVal = true
       this.showExpandedDetails = !this.showExpandedDetails
+      // this.previous = 'list'
     }
   },
   watch: {
@@ -124,12 +133,21 @@ export default {
   position: fixed;
   bottom: 0;
   right: 0;
+  left: 0;
   z-index: 2000;
-  background: white;
-  padding: 2px 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: calc(2.5% + 1.25rem);
+  padding-right: calc(2.5% + 1.25rem);
   box-shadow: 0px 0px 4px #999;
-  margin-right: calc(2.5% + 4px);
-  margin-bottom: 4px;
+  margin: 0;
+  line-height: 2.5;
+  background-color: #eee;
+  cursor: pointer;
+
+  i {
+    margin-right: 10px;
+  }
 
   @include media-breakpoint-up(md) {
     display: none;
@@ -154,7 +172,8 @@ export default {
 
   &.business {
     @include media-breakpoint-down(sm) {
-      transform: translateY(calc(100vh - 332px));
+      transform: translateY(calc(100vh - 280px));
+      z-index: 9999;
     }
   }
 

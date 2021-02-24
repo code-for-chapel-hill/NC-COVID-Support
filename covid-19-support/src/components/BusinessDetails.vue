@@ -1,15 +1,15 @@
 <template>
   <span>
     <b-list-group class="list-group-flush back-to-list">
-      <b-list-group-item variant="sideNav" button @click="$emit('close-details')">
+      <b-list-group-item variant="sideNav" button @click="$emit('close-details')" v-if="!snippet">
         <i class="fas fa-arrow-left" />
         {{ $t('label.backtolist') }}
       </b-list-group-item>
     </b-list-group>
-    <b-list-group class="list-group-flush business-details">
+    <b-list-group class="list-group-flush business-details" @click="expandBusinessDetails">
       <b-list-group-item variant="sideNav" :class="infotype + (snippet ? ' business-snippet' : '')">
         <div>
-          <div class="mobile-expand"></div>
+          <div class="mobile-expand" @click.stop="toggleExpand"></div>
           <div class="title">
             <i :class="businessIcon(business.marker)"></i>
             <div class="busName">
@@ -22,36 +22,82 @@
             <b>{{ $t('label.address') }}:</b><br />
             {{ getAddress(business.marker) }}<br />
 
-            <span @click="getDirections()"><icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" /></span>
-            <icon-list-item v-if="directionsBool" class="directionsOptions">
-              <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
-              <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
-              <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
+            <span class="list-item" @click.stop="getDirections">
+              <icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" />
+            </span>
+            <icon-list-item v-if="directionsBool" class="directions-options list-item">
+              <icon-list-item class="list-item" icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
+              <icon-list-item
+                class="list-item"
+                v-if="iOS"
+                icon="fa fa-apple"
+                title="Apple Maps"
+                :link="appleDirectionsLink(business.marker)"
+              />
+              <icon-list-item class="list-item" icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
             </icon-list-item>
           </div>
-          <p class="business-options">
+          <p class="business-options" v-if="!snippet">
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$discountmedical != undefined && business.marker.gsx$discountmedical.$t == 1"
               icon="fa-user-md"
               :title="$tc('label.discountmedical', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fa-user-friends" :title="$tc('category.family', 2)" />
-            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fa-school" :title="$tc('label.mealstudent', 1)" />
-            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fa-users" :title="$tc('label.mealpublic', 1)" />
-            <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
             <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$familymeal.$t == 1"
+              icon="fa-user-friends"
+              :title="$tc('category.family', 2)"
+            />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$mealstudent.$t == 1"
+              icon="fa-school"
+              :title="$tc('label.mealstudent', 1)"
+            />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$mealpublic.$t == 1"
+              icon="fa-users"
+              :title="$tc('label.mealpublic', 1)"
+            />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$freeproduce.$t == 1"
+              icon="fa-apple-alt"
+              :title="$tc('label.freeproduce', 1)"
+            />
+            <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$freegroceries != undefined && business.marker.gsx$freegroceries.$t == 1"
               icon="fa-shopping-basket"
               :title="$tc('label.freegroceries', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fa-car" :title="$tc('label.curbside', 1)" />
-            <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fa-car-side" :title="$t('label.drivethru')" />
-            <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fa-mouse" :title="$t('label.orderonline')" />
-            <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fa-shipping-fast" :title="$t('label.delivery')" />
+            <icon-list-item class="list-item" v-if="business.marker.gsx$curbside.$t == 1" icon="fa-car" :title="$tc('label.curbside', 1)" />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$drivethru.$t == 1"
+              icon="fa-car-side"
+              :title="$t('label.drivethru')"
+            />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$orderonline.$t == 1"
+              icon="fa-mouse"
+              :title="$t('label.orderonline')"
+            />
+            <icon-list-item
+              class="list-item"
+              v-if="business.marker.gsx$delivery.$t == 1"
+              icon="fa-shipping-fast"
+              :title="$t('label.delivery')"
+            />
           </p>
 
-          <p v-if="!snippet">
+          <p v-if="!snippet" class="business-actions">
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$contact !== undefined && !!business.marker.gsx$contact.$t"
               icon="fa-phone-alt"
               :title="business.marker.gsx$contact.$t"
@@ -59,6 +105,7 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$contactspanish !== undefined && !!business.marker.gsx$contactspanish.$t"
               icon="fa-phone-alt"
               :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
@@ -66,6 +113,7 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$weblink !== undefined && !!business.marker.gsx$weblink.$t"
               icon="fa-globe"
               :title="getDomain(business.marker.gsx$weblink.$t)"
@@ -73,6 +121,7 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$twitter !== undefined && !!business.marker.gsx$twitter.$t"
               icon="fa fa-twitter"
               :title="'@' + business.marker.gsx$twitter.$t"
@@ -80,6 +129,7 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$instagram !== undefined && !!business.marker.gsx$instagram.$t"
               icon="fa fa-instagram"
               :title="'@' + business.marker.gsx$instagram.$t"
@@ -87,6 +137,7 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$facebook !== undefined && !!business.marker.gsx$facebook.$t"
               icon="fa fa-facebook-square"
               :title="'Facebook'"
@@ -94,37 +145,44 @@
             />
 
             <icon-list-item
+              class="list-item"
               v-if="business.marker.gsx$email !== undefined && !!business.marker.gsx$email.$t"
               icon="fa-envelope"
               :title="getDomain(business.marker.gsx$email.$t)"
               :link="'mailto:' + business.marker.gsx$email.$t"
             />
           </p>
-          <p v-if="snippet" class="business-snippet-actions">
-            <span @click="getDirections()"><icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" /></span>
-            <icon-list-item v-if="directionsBool" class="directionsOptions">
-              <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
-              <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
-              <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
-            </icon-list-item>
-            <icon-list-item
-              v-if="business.marker.gsx$contact !== undefined && !!business.marker.gsx$contact.$t"
-              icon="fa-phone-alt"
-              :title="business.marker.gsx$contact.$t"
-              :link="'tel:' + business.marker.gsx$contact.$t"
-            />
-            <!-- <icon-list-item
-              v-if="business.marker.gsx$email !== undefined && !!business.marker.gsx$email.$t"
-              icon="fa-envelope"
-              :title="getDomain(business.marker.gsx$email.$t)"
-              :link="'mailto:' + business.marker.gsx$email.$t"
-            /> -->
-            <!-- <icon-list-item
-              v-if="business.marker.gsx$weblink !== undefined && !!business.marker.gsx$weblink.$t"
-              icon="fa-globe"
-              :title="getDomain(business.marker.gsx$weblink.$t)"
-              :link="business.marker.gsx$weblink.$t"
-            /> -->
+          <p v-if="snippet" class="business-actions">
+            <span class="list-item" @click.stop="getDirections">
+              <icon-list-item
+                class="directions"
+                :class="directionsBool ? 'selected' : 'a'"
+                icon="fa-directions"
+                :title="$t('getdirections_short')"
+                link="#"
+              />
+            </span>
+            <span @click.stop class="list-item">
+              <icon-list-item
+                v-if="business.marker.gsx$contact !== undefined && !!business.marker.gsx$contact.$t"
+                icon="fa-phone-alt"
+                :title="$t('call')"
+                :link="'tel:' + business.marker.gsx$contact.$t"
+              />
+            </span>
+            <span @click.stop class="list-item">
+              <icon-list-item
+                v-if="business.marker.gsx$weblink !== undefined && !!business.marker.gsx$weblink.$t"
+                icon="fa-globe"
+                :title="$t('website')"
+                :link="business.marker.gsx$weblink.$t"
+              />
+            </span>
+          </p>
+          <p class="directions-options" v-if="snippet && directionsBool" @click.stop>
+            <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
+            <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
+            <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
           </p>
 
           <opening-hours v-if="!snippet" :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
@@ -202,6 +260,14 @@ export default {
     getDirections() {
       this.directionsBool = !this.directionsBool
     },
+    expandBusinessDetails() {
+      if (this.snippet) {
+        this.$emit('toggle-expanding-details')
+      }
+    },
+    toggleExpand() {
+      this.$emit('toggle-expanding-details')
+    },
     businessIcon: businessIcon,
     getAddress: getAddress
   },
@@ -222,20 +288,23 @@ export default {
 <style scoped lang="scss">
 .mobile-expand {
   display: block;
-  border: solid 1px #999;
   width: 50px;
   margin: 0 auto;
-  margin-bottom: 5px;
+  padding: 5px 0;
   top: -5px;
   position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border: solid 1px #999;
+  }
 
   @include media-breakpoint-up(md) {
     display: none;
   }
-}
-
-#sidebar-wrapper.showExpandedDetails .mobile-expand {
-  display: none;
 }
 
 .business-details {
@@ -255,10 +324,7 @@ export default {
 }
 
 .back-to-list {
-  display: none;
-  @include media-breakpoint-up(sm) {
-    display: block;
-  }
+  display: block;
   font-size: 0.8rem;
 
   i {
@@ -309,11 +375,130 @@ export default {
   }
 }
 
-.directionsOptions {
+.directions-options {
   background: $directions-background;
 
   @media (prefers-color-scheme: dark) {
     background: $directions-background-dark;
+  }
+}
+
+.business-snippet {
+  @include media-breakpoint-down(sm) {
+    .busName h5 {
+      max-height: 1.5rem;
+      overflow-y: hidden;
+    }
+    .business-options {
+      .list-item {
+        display: inline-block;
+      }
+
+      ::v-deep .iconListItem {
+        display: inline-block;
+
+        .ilTitle {
+          display: none;
+        }
+      }
+    }
+
+    .business-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .list-item {
+        display: inline-block;
+        flex: 1 0 auto;
+
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+
+        .directions {
+          position: relative;
+
+          ::v-deep .iconListItem {
+            background-color: theme-color-level('quaternary');
+            color: $white;
+
+            a {
+              color: inherit;
+              text-decoration: none !important;
+            }
+          }
+
+          &.selected {
+            ::v-deep .iconListItem {
+              border-bottom: none;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 10px;
+              bottom: -10px;
+              left: 0;
+              background: theme-color-level('quaternary');
+              border-left: 1px solid #ddd;
+              border-right: 1px solid #ddd;
+            }
+          }
+        }
+      }
+
+      ::v-deep .iconListItem {
+        width: 100%;
+        display: inline-block;
+        background: $white;
+        padding: 2px 6px;
+        border: 1px solid #ddd;
+
+        a {
+          color: theme-color-level('quaternary');
+        }
+
+        .ilIcon {
+          width: auto;
+          margin-right: 4px;
+        }
+
+        .ilTitle {
+          min-width: 0;
+        }
+      }
+    }
+
+    .directions-options {
+      background-color: theme-color-level('quaternary');
+      border: 1px solid #ddd;
+      padding: 10px 6px;
+      display: flex;
+      margin-bottom: 4px;
+
+      > div {
+        flex: 1 0 auto;
+      }
+
+      ::v-deep .iconListItem {
+        background-color: transparent;
+
+        .ilIcon {
+          width: auto;
+          margin-right: 4px;
+          color: $white;
+        }
+        .ilTitle {
+          min-width: 0;
+          width: auto;
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 }
 </style>
