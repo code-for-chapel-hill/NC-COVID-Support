@@ -41,6 +41,7 @@
           :location="locationData"
           :attribution="attribution"
           @location-selected="locationSelected"
+          @location-unselected="locationUnselected"
           @bounds="boundsUpdated"
           @center="centerUpdated"
           :mapUrl="mapUrl"
@@ -227,6 +228,11 @@ export default {
         event_category: 'View details - (' + this.language.name + ')',
         event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
       })
+    },
+    locationUnselected(isSetByMap) {
+      this.locationData = { locValue: null, locId: null, currentBusiness: null, isSetByMap: isSetByMap }
+      this.isFilterOpen = false
+      this.showList = true
     }
   },
   computed: {

@@ -35,6 +35,7 @@
     "partners": "Sumber Maklumat",
     "title": "Mengenai laman web ini"
   },
+  "call": "Panggil",
   "category": {
     "childcare": "Penjagaan kanak-kanak",
     "family": "Makanan keluarga yang disediakan",
@@ -58,6 +59,7 @@
     "wednesday": "Rabu"
   },
   "getdirections": "",
+  "getdiections_short": "",
   "label": {
     "address": "Alamat",
     "allweek": "Sepanjang minggu",
@@ -124,5 +126,6 @@
     "what-do-you-need": "Apa yang anda perlukan?",
     "when-do-you-need-it": "Bilakah anda memerlukannya?"
   },
-  "title": "{0} COVID Support"
+  "title": "{0} COVID Support",
+  "website": "Laman web"
 }

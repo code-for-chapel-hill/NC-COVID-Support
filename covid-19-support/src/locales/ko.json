@@ -35,6 +35,7 @@
     "partners": "정보 출처",
     "title": "이 사이트에 대하여"
   },
+  "call": "요구",
   "category": {
     "childcare": "육아",
     "family": "가족 음식 세트",
@@ -58,6 +59,7 @@
     "wednesday": "수요일"
   },
   "getdirections": "",
+  "getdiections_short": "",
   "label": {
     "address": "주소",
     "allweek": "일주일",
@@ -124,5 +126,6 @@
     "what-do-you-need": "무엇이 필요합니까?",
     "when-do-you-need-it": "언제 필요합니까?"
   },
-  "title": "{0} COVID 지원"
+  "title": "{0} COVID 지원",
+  "website": "웹 사이트"
 }

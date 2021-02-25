@@ -7,6 +7,7 @@
 // ./src/themes/${process.env.VUE_APP_THEME}/SCSS/custom.scss - Our "theme" SCSS
 
 import Vue from 'vue'
+import VueScreen from 'vue-screen'
 import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 import i18n from './i18n'
 
@@ -26,6 +27,9 @@ import './scss/bootstrap.scss'
 import './scss/main.scss'
 
 // General style overrides and custom classes
+
+// Install Vue Screen
+Vue.use(VueScreen, 'bootstrap')
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
