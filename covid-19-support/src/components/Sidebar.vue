@@ -4,8 +4,8 @@
       <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
     </div>
 
-    <div class="border-right" id="sidebar-wrapper" :class="expandedDetails">
-      <div class="tab bg-dialogs border-right border-top border-bottom" @click="$emit('toggle')">
+    <div class="border-right" id="sidebar-wrapper" ref="sidebar" :class="expandedDetails" :style="transformVal">
+      <div class="tab bg-dialogs border-right border-top border-bottom" @click="toggle">
         <i class="fas fa-caret-down" />
       </div>
 
@@ -29,6 +29,7 @@
 
         <div>
           <business-details
+            ref="business"
             :infotype="'green'"
             :icon="'fa-tractor'"
             :business="location.currentBusiness"
@@ -36,6 +37,7 @@
             v-if="location.currentBusiness != null && showLists !== true"
             @close-details="$emit('close-details')"
             @toggle-expanding-details="toggleExpandingDetails"
+            @business-resize="businessResize"
           ></business-details>
         </div>
       </div>
@@ -70,13 +72,15 @@ export default {
     filteredMarkers: Array,
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
-    showList: Boolean
+    showList: Boolean,
+    listType: String
   },
   data() {
     return {
       showListsVal: this.showList,
       showExpandedDetails: false,
-      listing: 'map'
+      listing: 'map',
+      transformVal: 0
     }
   },
   computed: {
@@ -106,7 +110,17 @@ export default {
       return this.showExpandedDetails ? 'Show Map' : 'Show List'
     },
     businessSnippet() {
-      return (this.$screen.breakpoint === 'xs' || this.$screen.breakpoint === 'sm') && !this.showExpandedDetails
+      var isSnippet =
+        (this.$screen.breakpoint === 'xs' || this.$screen.breakpoint === 'sm') &&
+        !this.showExpandedDetails &&
+        this.location.currentBusiness != null
+      return isSnippet
+    },
+    transformStyle() {
+      return this.transformVal
+    },
+    watchSnippetList() {
+      return `${this.showListsVal}|${this.businessSnippet}`
     }
   },
   methods: {
@@ -117,11 +131,45 @@ export default {
       this.showListsVal = true
       this.showExpandedDetails = !this.showExpandedDetails
       // this.previous = 'list'
+    },
+    async transform() {
+      let t = this
+      this.promiseSidebar().then(() => {
+        if (!this.businessSnippet) {
+          t.transformVal = ''
+        } else {
+          let business = this.$refs['business']
+
+          if (business) {
+            let height = business.$vnode.elm.clientHeight
+            t.transformVal = 'transform: translateY(calc(100vh - ' + (height + 132) + 'px))'
+          } else {
+            t.transformVal = ''
+          }
+        }
+      })
+    },
+    async promiseSidebar() {
+      let t = this
+      return new Promise((resolve) => {
+        t.$nextTick()
+        resolve()
+      })
+    },
+    businessResize() {
+      this.transform()
+    },
+    toggle() {
+      this.$emit('toggle')
+      this.transform()
     }
   },
   watch: {
     showList(val) {
       this.showListsVal = val
+    },
+    watchSnippetList() {
+      this.transform()
     }
   }
 }
@@ -172,7 +220,7 @@ export default {
 
   &.business {
     @include media-breakpoint-down(sm) {
-      transform: translateY(calc(100vh - 280px));
+      //transform: translateY(calc(100vh - 280px));
       z-index: 9999;
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div>
     <b-list-group class="list-group-flush back-to-list">
       <b-list-group-item variant="sideNav" button @click="$emit('close-details')" v-if="!snippet">
         <i class="fas fa-arrow-left" />
@@ -25,7 +25,7 @@
             <span class="list-item" @click.stop="getDirections">
               <icon-list-item icon="fa-directions" :title="$t('getdirections')" link="#" />
             </span>
-            <icon-list-item v-if="directionsBool" class="directions-options list-item">
+            <p id="directions-options-expanded" v-if="directionsBool" class="directions-options list-item">
               <icon-list-item class="list-item" icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
               <icon-list-item
                 class="list-item"
@@ -35,7 +35,7 @@
                 :link="appleDirectionsLink(business.marker)"
               />
               <icon-list-item class="list-item" icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
-            </icon-list-item>
+            </p>
           </div>
           <p class="business-options" v-if="!snippet">
             <icon-list-item
@@ -179,8 +179,8 @@
               />
             </span>
           </p>
-          <p class="directions-options" v-if="snippet && directionsBool" @click.stop>
-            <icon-list-item icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
+          <p class="directions-options" id="directions-options-snippet" v-if="snippet && directionsBool" @click.stop>
+            <icon-list-item class="list-item" icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
             <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
             <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
           </p>
@@ -211,7 +211,7 @@
         </div>
       </b-list-group-item>
     </b-list-group>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -259,6 +259,7 @@ export default {
     },
     getDirections() {
       this.directionsBool = !this.directionsBool
+      this.$emit('business-resize')
     },
     expandBusinessDetails() {
       if (this.snippet) {
