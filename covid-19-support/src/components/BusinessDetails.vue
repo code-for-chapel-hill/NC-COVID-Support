@@ -341,6 +341,7 @@ export default {
 .title {
   margin: 0 0 0.75rem 0;
   display: inline-block;
+  width: 100%;
 
   i {
     font-size: 3rem;
