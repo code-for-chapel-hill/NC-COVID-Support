@@ -128,9 +128,10 @@ export default {
       this.showExpandedDetails = !this.showExpandedDetails
     },
     toggleListing() {
-      this.showListsVal = true
-      this.showExpandedDetails = !this.showExpandedDetails
-      // this.previous = 'list'
+      if (!this.location.currentBusiness) {
+        this.showListsVal = true
+        this.showExpandedDetails = !this.showExpandedDetails
+      }
     },
     async transform() {
       let t = this
