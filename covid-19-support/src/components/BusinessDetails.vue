@@ -474,29 +474,31 @@ export default {
     }
 
     .directions-options {
-      background-color: theme-color-level('quaternary');
+      background-color: white;
       border: 1px solid #ddd;
       padding: 10px 6px;
       display: flex;
       margin-bottom: 4px;
+      outline: 1px solid theme-color-level('quaternary');
+      outline-offset: -2px;
 
       > div {
         flex: 1 0 auto;
       }
 
       ::v-deep .iconListItem {
-        background-color: transparent;
+        //background-color: transparent;
 
         .ilIcon {
           width: auto;
           margin-right: 4px;
-          color: $white;
+          //color: $white;
         }
         .ilTitle {
           min-width: 0;
           width: auto;
           a {
-            color: $white;
+            color: theme-color-level('quaternary');
           }
         }
       }
