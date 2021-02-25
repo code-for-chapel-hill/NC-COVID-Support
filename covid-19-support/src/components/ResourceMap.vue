@@ -247,7 +247,7 @@ export default {
       return markerIcon
     },
     unselectBusiness() {
-      if (this.location.currentBusiness) {
+      if (this.location.currentBusiness && (this.$screen.breakpoint === 'xs' || this.$screen.breakpoint === 'sm')) {
         this.$emit('location-unselected', true)
       }
     }

@@ -387,10 +387,6 @@ export default {
 
 .business-snippet {
   @include media-breakpoint-down(sm) {
-    .busName h5 {
-      max-height: 1.5rem;
-      overflow-y: hidden;
-    }
     .business-options {
       .list-item {
         display: inline-block;
