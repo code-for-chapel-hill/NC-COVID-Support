@@ -9,13 +9,15 @@
     <b-list-group class="list-group-flush business-details" @click="expandBusinessDetails">
       <b-list-group-item variant="sideNav" :class="infotype + (snippet ? ' business-snippet' : '')">
         <div>
-          <div class="mobile-expand" @click.stop="toggleExpand"></div>
-          <div class="title">
-            <i :class="businessIcon(business.marker)"></i>
-            <div class="busName">
-              <h5>{{ business.marker.gsx$providername.$t }}</h5>
-              <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
-              <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
+          <div @click.stop="toggleExpand">
+            <div class="mobile-expand"></div>
+            <div class="title">
+              <i :class="businessIcon(business.marker)"></i>
+              <div class="busName">
+                <h5>{{ business.marker.gsx$providername.$t }}</h5>
+                <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
+                <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
+              </div>
             </div>
           </div>
           <div v-if="!snippet && getAddress(business.marker) !== ''">
