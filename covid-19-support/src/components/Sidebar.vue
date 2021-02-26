@@ -1,8 +1,10 @@
 <template>
   <aside>
-    <div class="sh" @click="toggleListing()" v-if="showListButton">
-      <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
-    </div>
+    <b-collapse class="sh" :class="showListClass" v-model="showListButton">
+      <div @click="toggleListing()">
+        <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
+      </div>
+    </b-collapse>
 
     <div class="border-right" id="sidebar-wrapper" ref="sidebar" :class="expandedDetails" :style="transformVal">
       <div class="tab bg-dialogs border-right border-top border-bottom" @click="toggle">
@@ -100,14 +102,22 @@ export default {
     showLists() {
       return this.showListsVal
     },
-    showListButton() {
-      return this.showListsVal || this.location.currentBusiness
+    showListButton: {
+      set() {
+        // do nothing. This setter needed to allow v-model for the collapse component
+      },
+      get() {
+        return this.filteredMarkers.length > 0 || this.location.currentBusiness
+      }
     },
     showListIcon() {
-      return this.showExpandedDetails ? 'fa-map-marked-alt' : 'fa-list-ul'
+      return this.highlightFilteredMarkers.length ? (this.showExpandedDetails ? 'fa-map-marked-alt' : 'fa-list-ul') : 'fa-expand-alt'
     },
     showListLabel() {
-      return this.showExpandedDetails ? 'Show Map' : 'Show List'
+      return this.highlightFilteredMarkers.length ? (this.showExpandedDetails ? 'Show Map' : 'Show List') : 'Zoom out to view results'
+    },
+    showListClass() {
+      return !this.highlightFilteredMarkers.length ? 'disabled' : ''
     },
     businessSnippet() {
       var isSnippet =
@@ -128,7 +138,7 @@ export default {
       this.showExpandedDetails = !this.showExpandedDetails
     },
     toggleListing() {
-      if (!this.location.currentBusiness) {
+      if (!this.location.currentBusiness && this.highlightFilteredMarkers.length) {
         this.showListsVal = true
         this.showExpandedDetails = !this.showExpandedDetails
       }
@@ -188,11 +198,20 @@ export default {
   padding-bottom: 2px;
   padding-left: calc(2.5% + 1.25rem);
   padding-right: calc(2.5% + 1.25rem);
-  box-shadow: 0px 0px 4px #999;
   margin: 0;
   line-height: 2.5;
   background-color: #eee;
   cursor: pointer;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  &.disabled {
+    color: rgba(0, 0, 0, 0.7);
+  }
 
   i {
     margin-right: 10px;
