@@ -179,7 +179,7 @@
               />
             </span>
           </p>
-          <p class="directions-options" id="directions-options-snippet" v-if="snippet && directionsBool" @click.stop>
+          <p class="directions-options-expanded" id="directions-options-snippet" v-if="snippet && directionsBool" @click.stop>
             <icon-list-item class="list-item" icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
             <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
             <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
@@ -469,18 +469,16 @@ export default {
       }
     }
 
-    .directions-options {
+    .directions-options-expanded {
       background-color: white;
       border: 1px solid #ddd;
       padding: 10px 6px;
       display: flex;
+      justify-content: space-around;
+      text-align: center;
       margin-bottom: 4px;
       outline: 1px solid theme-color-level('quaternary');
       outline-offset: -2px;
-
-      > div {
-        flex: 1 0 auto;
-      }
 
       ::v-deep .iconListItem {
         //background-color: transparent;
