@@ -35,6 +35,7 @@
     "partners": "情報源",
     "title": "このサイトについて"
   },
+  "call": "コール",
   "category": {
     "childcare": "育児",
     "family": "家族の食事の準備",
@@ -58,6 +59,7 @@
     "wednesday": "水曜日"
   },
   "getdirections": "",
+  "getdiections_short": "",
   "label": {
     "address": "住所",
     "allweek": "1週間中",
@@ -124,5 +126,6 @@
     "what-do-you-need": "あなたは何が必要ですか？",
     "when-do-you-need-it": "いつそれが必要ですか？"
   },
-  "title": "{0} COVIDのサポート"
+  "title": "{0} COVIDのサポート",
+  "website": "ウェブサイト"
 }

@@ -35,6 +35,7 @@
     "partners": "Fuentes de información",
     "title": "Sobre este sitio"
   },
+  "call": "Llamar",
   "category": {
     "childcare": "Cuidado de los niños",
     "family": "Comida familiar preparada",
@@ -57,7 +58,8 @@
     "tuesday": "Martes",
     "wednesday": "Miércoles"
   },
-  "getdirections": "",
+  "getdirections": "Dirección",
+  "getdiections_short": "Dirección",
   "label": {
     "address": "Dirección",
     "allweek": "Toda la semana",
@@ -124,5 +126,6 @@
     "what-do-you-need": "¿Que necesita?",
     "when-do-you-need-it": "Cuando lo necesita?"
   },
-  "title": "Soporte de {0} COVID"
+  "title": "Soporte de {0} COVID",
+  "website": ""
 }

@@ -38,6 +38,7 @@
     "@vue/test-utils": "^1.1.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
+    "decamelize": "^5.0.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
@@ -45,6 +46,7 @@
     "prettier": "^2.2.1",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
+    "vue-screen": "^1.5.3",
     "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {

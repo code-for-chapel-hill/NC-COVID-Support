@@ -35,6 +35,7 @@
     "partners": "信息来源",
     "title": "关于本网站"
   },
+  "call": "称呼",
   "category": {
     "childcare": "育儿",
     "family": "家庭准备饭",
@@ -58,6 +59,7 @@
     "wednesday": "星期三"
   },
   "getdirections": "",
+  "getdiections_short": "",
   "label": {
     "address": "地址",
     "allweek": "整个星期",
@@ -124,5 +126,6 @@
     "what-do-you-need": "你需要什么？",
     "when-do-you-need-it": "您什么时候需要它？"
   },
-  "title": "{0} COVID支持"
+  "title": "{0} COVID支持",
+  "website": "网站"
 }

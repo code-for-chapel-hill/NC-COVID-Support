@@ -11,6 +11,7 @@
         @update:center="centerUpdated"
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"
+        @click="unselectBusiness"
       >
         <l-control position="topright">
           <div class="mapkey" :class="{ 'show-key': showKey }">
@@ -244,6 +245,11 @@ export default {
       })
 
       return markerIcon
+    },
+    unselectBusiness() {
+      if (this.location.currentBusiness && (this.$screen.breakpoint === 'xs' || this.$screen.breakpoint === 'sm')) {
+        this.$emit('location-unselected', true)
+      }
     }
     // eslint-disable-next-line no-console
     // click: (e) => console.log('clusterclick', e),
@@ -379,12 +385,26 @@ div.markeropen svg path {
 
 .leaflet-bottom .leaflet-control-zoom {
   margin-bottom: 26px !important;
+  border: none !important;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 65%) !important;
   @media (pointer: coarse) {
     visibility: hidden;
   }
   @media (pointer: none) {
     visibility: hidden;
   }
+  @media (pointer: fine) {
+    margin-bottom: 70px !important;
+  }
+  @include media-breakpoint-up(md) {
+    margin-bottom: 26px !important;
+  }
+}
+
+.leaflet-control-zoom a {
+  width: 26px !important;
+  height: 26px !important;
+  line-height: 26px !important;
 }
 
 .leaflet-control-zoom a:hover {
@@ -405,15 +425,17 @@ div.markeropen svg path {
 
 .user-location-button {
   @media (pointer: coarse) {
-    bottom: 0px !important;
+    bottom: 24px !important;
   }
   @media (pointer: none) {
     bottom: 0px !important;
   }
   @media (pointer: fine) {
+    bottom: 112px !important;
+  }
+  @include media-breakpoint-up(md) {
     bottom: 68px !important;
   }
-  right: 0px !important;
 }
 
 .user-location-link {
