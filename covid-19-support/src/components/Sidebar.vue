@@ -153,7 +153,8 @@ export default {
 
           if (business) {
             let height = business.$vnode.elm.clientHeight
-            t.transformVal = 'transform: translateY(calc(100vh - ' + (height + 132) + 'px))'
+            let windowHeight = window.innerHeight
+            t.transformVal = 'transform: translateY(' + (windowHeight - (height + 132)) + 'px)'
           } else {
             t.transformVal = ''
           }
@@ -228,13 +229,13 @@ export default {
 
 #sidebar-wrapper {
   transition: transform 0.25s ease-out;
-  transform: translateY(calc(100vh - 132px));
+  transform: translateY(calc(100% - 76px));
   z-index: 1035;
-  max-height: 100vh;
+  max-height: 100%;
   margin-left: 2.5%;
   margin-right: 2.5%;
   width: 95%;
-  height: 100vh;
+  height: 100%;
   background: theme-color('secondary');
   z-index: 1037;
 
