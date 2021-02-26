@@ -9,13 +9,15 @@
     <b-list-group class="list-group-flush business-details" @click="expandBusinessDetails">
       <b-list-group-item variant="sideNav" :class="infotype + (snippet ? ' business-snippet' : '')">
         <div>
-          <div class="mobile-expand" @click.stop="toggleExpand"></div>
-          <div class="title">
-            <i :class="businessIcon(business.marker)"></i>
-            <div class="busName">
-              <h5>{{ business.marker.gsx$providername.$t }}</h5>
-              <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
-              <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
+          <div @click.stop="toggleExpand">
+            <div class="mobile-expand"></div>
+            <div class="title">
+              <i :class="businessIcon(business.marker)"></i>
+              <div class="busName">
+                <h5>{{ business.marker.gsx$providername.$t }}</h5>
+                <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
+                <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
+              </div>
             </div>
           </div>
           <div v-if="!snippet && getAddress(business.marker) !== ''">
@@ -179,7 +181,7 @@
               />
             </span>
           </p>
-          <p class="directions-options" id="directions-options-snippet" v-if="snippet && directionsBool" @click.stop>
+          <p class="directions-options-expanded" id="directions-options-snippet" v-if="snippet && directionsBool" @click.stop>
             <icon-list-item class="list-item" icon="fa fa-google" title="Google Maps" :link="googleDirectionsLink(business.marker)" />
             <icon-list-item v-if="iOS" icon="fa fa-apple" title="Apple Maps" :link="appleDirectionsLink(business.marker)" />
             <icon-list-item icon="fa-waze" iconSet="fab" title="Waze" :link="wazeDirectionsLink(business.marker)" />
@@ -469,18 +471,16 @@ export default {
       }
     }
 
-    .directions-options {
+    .directions-options-expanded {
       background-color: white;
       border: 1px solid #ddd;
       padding: 10px 6px;
       display: flex;
+      justify-content: space-around;
+      text-align: center;
       margin-bottom: 4px;
       outline: 1px solid theme-color-level('quaternary');
       outline-offset: -2px;
-
-      > div {
-        flex: 1 0 auto;
-      }
 
       ::v-deep .iconListItem {
         //background-color: transparent;

@@ -41,5 +41,6 @@ export const theme = {
       attribution:
         '&copy; <a href="https://carto.com/">Carto</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }
-  }
+  },
+  warning: 'This site is no longer being updated'
 }

@@ -1,8 +1,10 @@
 <template>
   <aside>
-    <div class="sh" @click="toggleListing()" v-if="showListButton">
-      <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
-    </div>
+    <b-collapse class="sh" :class="showListClass" v-model="showListButton">
+      <div @click="toggleListing()">
+        <span><i class="fas" :class="showListIcon" />{{ showListLabel }}</span>
+      </div>
+    </b-collapse>
 
     <div class="border-right" id="sidebar-wrapper" ref="sidebar" :class="expandedDetails" :style="transformVal">
       <div class="tab bg-dialogs border-right border-top border-bottom" @click="toggle">
@@ -16,6 +18,9 @@
           <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showLists">
             {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
             >{{ $t('sidebar.info-end-text') }}
+            <div class="warning-wrap" v-if="warning">
+              <b-alert variant="warning" show>{{ warning }}</b-alert>
+            </div>
           </info-panel>
 
           <info-panel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
@@ -73,7 +78,8 @@ export default {
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean,
-    listType: String
+    listType: String,
+    warning: String
   },
   data() {
     return {
@@ -100,14 +106,22 @@ export default {
     showLists() {
       return this.showListsVal
     },
-    showListButton() {
-      return this.showListsVal || this.location.currentBusiness
+    showListButton: {
+      set() {
+        // do nothing. This setter needed to allow v-model for the collapse component
+      },
+      get() {
+        return this.filteredMarkers.length > 0 || this.location.currentBusiness
+      }
     },
     showListIcon() {
-      return this.showExpandedDetails ? 'fa-map-marked-alt' : 'fa-list-ul'
+      return this.highlightFilteredMarkers.length ? (this.showExpandedDetails ? 'fa-map-marked-alt' : 'fa-list-ul') : 'fa-expand-alt'
     },
     showListLabel() {
-      return this.showExpandedDetails ? 'Show Map' : 'Show List'
+      return this.highlightFilteredMarkers.length ? (this.showExpandedDetails ? 'Show Map' : 'Show List') : 'Zoom out to view results'
+    },
+    showListClass() {
+      return !this.highlightFilteredMarkers.length ? 'disabled' : ''
     },
     businessSnippet() {
       var isSnippet =
@@ -128,7 +142,7 @@ export default {
       this.showExpandedDetails = !this.showExpandedDetails
     },
     toggleListing() {
-      if (!this.location.currentBusiness) {
+      if (!this.location.currentBusiness && this.highlightFilteredMarkers.length) {
         this.showListsVal = true
         this.showExpandedDetails = !this.showExpandedDetails
       }
@@ -143,7 +157,8 @@ export default {
 
           if (business) {
             let height = business.$vnode.elm.clientHeight
-            t.transformVal = 'transform: translateY(calc(100vh - ' + (height + 132) + 'px))'
+            let windowHeight = window.innerHeight
+            t.transformVal = 'transform: translateY(' + (windowHeight - (height + 132)) + 'px)'
           } else {
             t.transformVal = ''
           }
@@ -188,11 +203,20 @@ export default {
   padding-bottom: 2px;
   padding-left: calc(2.5% + 1.25rem);
   padding-right: calc(2.5% + 1.25rem);
-  box-shadow: 0px 0px 4px #999;
   margin: 0;
   line-height: 2.5;
   background-color: #eee;
   cursor: pointer;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  &.disabled {
+    color: rgba(0, 0, 0, 0.7);
+  }
 
   i {
     margin-right: 10px;
@@ -209,13 +233,13 @@ export default {
 
 #sidebar-wrapper {
   transition: transform 0.25s ease-out;
-  transform: translateY(calc(100vh - 132px));
+  transform: translateY(calc(100% - 76px));
   z-index: 1035;
-  max-height: 100vh;
+  max-height: 100%;
   margin-left: 2.5%;
   margin-right: 2.5%;
   width: 95%;
-  height: 100vh;
+  height: 100%;
   background: theme-color('secondary');
   z-index: 1037;
 
@@ -345,5 +369,18 @@ export default {
   transform: rotate(-90deg);
   margin-top: 18px;
   margin-left: 7px;
+}
+
+.warning-wrap {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  .alert {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+  }
 }
 </style>
