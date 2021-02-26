@@ -18,6 +18,9 @@
           <info-panel :infotype="'note'" :icon="'fa-info-circle'" v-if="location.currentBusiness == null || showLists">
             {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
             >{{ $t('sidebar.info-end-text') }}
+            <div class="warning-wrap" v-if="warning">
+              <b-alert variant="warning" show>{{ warning }}</b-alert>
+            </div>
           </info-panel>
 
           <info-panel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
@@ -75,7 +78,8 @@ export default {
     highlightFilteredMarkers: Array,
     location: { locValue: Number, locId: String, isSetByMap: Boolean, currentBusiness: Object },
     showList: Boolean,
-    listType: String
+    listType: String,
+    warning: String
   },
   data() {
     return {
@@ -365,5 +369,18 @@ export default {
   transform: rotate(-90deg);
   margin-top: 18px;
   margin-left: 7px;
+}
+
+.warning-wrap {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  .alert {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+  }
 }
 </style>
