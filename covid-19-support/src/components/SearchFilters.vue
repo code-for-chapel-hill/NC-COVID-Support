@@ -14,7 +14,8 @@ export default {
   data() {
     return {
       locationData: location,
-      showListing: this.showList
+      showListing: this.showList,
+      cmsCategories: null
     }
   },
   props: {
@@ -60,6 +61,17 @@ export default {
         { value: 'pet', text: this.$t('category.pet') }
       ]
     }
+  },
+  created() {
+    fetch('https://cors-anywhere.herokuapp.com/https://nccovid.vizioz.com/api/v1/resource/settings', {
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then((response) => {
+        return response.ok ? response.json() : Promise.reject(console.log(response.status))
+      })
+      .then((data) => {
+        this.cmsCategories = data.categories
+      })
   }
 }
 </script>
