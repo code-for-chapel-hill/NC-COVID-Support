@@ -9,7 +9,6 @@
 
 <script>
 import { needCategories } from '../constants'
-
 export default {
   data() {
     return {
@@ -69,12 +68,10 @@ export default {
   border: none !important;
   padding: 0 1.25rem;
   border-bottom: none;
-
   &.need-type {
     margin-bottom: 8px;
   }
 }
-
 .list-group-flush.need-day-group .list-group-item:first-child {
   padding-bottom: 1rem !important;
 }
